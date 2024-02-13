@@ -1,11 +1,11 @@
-import glad from "../../../public/Volonters/gladyshko.png";
-import bezkor from "../../../public/Volonters/bezkorowainuy.png";
-import gordilona from "../../../public/Volonters/gordienkoIlona.jpg";
+import glad from "../../../../public/Volonters/gladyshko.png";
+import bezkor from "../../../../public/Volonters/bezkorowainuy.png";
+import gordilona from "../../../../public/Volonters/gordienkoIlona.jpg";
 import {
   AboutPersonImage,
   AboutPersonDescripton,
 } from "../components/About/AboutPerson";
-import bg from "../../../public/background.png";
+import bg from "../../../../public/background.png";
 
 const Founders = () => {
   return (

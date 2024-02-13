@@ -1,5 +1,5 @@
 // import bg from "../../../public/environmentalProtection/EnvironmentalProtectionBG.jpg";
-import news from "../../../public/news.jpg";
+import news from "../../../../public/news.jpg";
 import Image from "next/image";
 const News = () => {
   return (

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import bg from "../../../public/background.png";
-import teens from "../../../public/teens.jpg";
+import bg from "../../../../public/background.png";
+import teens from "../../../../public/teens.jpg";
 
 const WorkWithTeens = () => {
   return (

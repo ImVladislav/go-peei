@@ -12,7 +12,6 @@ const navItems = [
   {
     title: { key: "aboutUs", label: "Про нас", href: "/about" },
     links: [
-      { key: "founders", label: "Засновники", href: "/founders" },
       { key: "board", label: "Правління", href: "/rule" },
       { key: "ourTeam", label: "Наша команда", href: "/team" },
       { key: "ourPartners", label: "Наші партнери", href: "/about/4" },

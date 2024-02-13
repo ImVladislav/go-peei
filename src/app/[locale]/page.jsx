@@ -15,12 +15,12 @@ export default async function Home({ params: { locale } }) {
       locale={locale}
       resources={resources}
     >
-      <main className={styles.main}>
-        <h1>{t("header")}</h1>
+      <div className={styles.main}>
+        {/* <h1>{t("header")}</h1>
         <ExampleClientComponent />
         <Link href="/about-us">{t("common:about_us")} </Link>
-        <LanguageChanger />
-      </main>
+        <LanguageChanger /> */}
+      </div>
     </TranslationsProvider>
   );
 }

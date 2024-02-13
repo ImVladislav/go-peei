@@ -1,0 +1,35 @@
+.language-switcher {
+  display: flex;
+  gap: 10px;
+  margin-left: 80px;
+}
+
+.language-switcher button {
+  padding: 8px;
+  width: 54px;
+  height: 40px;
+
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.language-switcher button.active {
+  background-color: #3d5a3b;
+  border: none;
+  color: white;
+  font-weight: 300;
+}
+
+.language-switcher button:not(.active) {
+  background-color: white;
+  color: black;
+}
+
+// border: none; /* Без рамок */  color: white; /* Білий текст */
+// padding: 15px 32px; /* Деякий відступ */  text-align: center; /* Вирівнювання тексту по центру */
+// text-decoration: none; /* Без підкреслення */  display: inline-block; /* Рядковий блок */
+// font-size: 16px; /* Зміна розміру шрифту */  margin: 4px 2px;
+//    // Закруглені кути
+//  border-radius:12px;}

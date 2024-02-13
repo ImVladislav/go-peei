@@ -7,10 +7,11 @@ import Facebook from "../../../../../public/socialSVG/Facebook Outline.svg";
 import Instagram from "../../../../../public/socialSVG/Instagram Outline.svg";
 import Linkedin from "../../../../../public/socialSVG/Linkedin Outline.svg";
 import Whatsapp from "../../../../../public/socialSVG/Whatsapp Outline.svg";
-// import Youtube from ".../.././../../public/socialSVG/Youtube Outline.svg";
+import Youtube from "../../../../../public/socialSVG/Youtube Outline.svg";
 
 import phone_icon from "../../../../../public/socialSVG/phone_icon.svg";
 import email_icon from "../../../../../public/socialSVG/email_icon.svg";
+import LanguageChanger from "./LanguageChanger";
 
 const Header: React.FC = () => {
   return (
@@ -62,9 +63,9 @@ const Header: React.FC = () => {
               <Image src={Instagram} width={24} height={24} alt="Instagram" />
             </Link>
 
-            {/* <Link className="header__svg-link " href="/">
+            <Link className="header__svg-link " href="/">
               <Image src={Youtube} width={24} height={24} alt="Youtube" />
-            </Link> */}
+            </Link>
 
             <Link className="header__svg-link " href="/">
               <Image src={Linkedin} width={24} height={24} alt="Linkedin" />
@@ -77,7 +78,8 @@ const Header: React.FC = () => {
           <Link href="/">
             <Image src={Logo} width={200} height={60} alt="Logo" />
           </Link>
-          <Navbar />
+          <Navbar params={"uk"} />
+          <LanguageChanger />
         </div>
       </div>
     </>

@@ -6,6 +6,7 @@ import TranslationsProvider from "../../../../components/TranslationsProvider";
 const i18nNamespaces = ["about-us", "common"];
 
 export default async function Home({ params: { locale } }) {
+  console.log(locale);
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
   return (

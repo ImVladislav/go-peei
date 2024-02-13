@@ -1,14 +1,13 @@
 // "use client";
 
-import { FC } from "react";
-import LanguageChanger from "./LanguageSwitcher";
+// import { FC } from "react";
+// import LanguageChanger from "./LanguageSwitcher";
 
-// import ExampleClientComponent from "../../../components/ExampleClientComponent";
+// import ExampleClientComponent from "../../../../../components/ExampleClientComponent";
 import initTranslations from "../../../../app/i18n";
 import Link from "next/link";
 import TranslationsProvider from "../../../../../components/TranslationsProvider";
-// const i18nNamespaces = ["home", "common"];
-
+import LanguageChanger from "./LanguageChanger";
 const navItems = [
   {
     title: { key: "aboutUs", label: "Про нас", href: "/about" },
@@ -68,15 +67,18 @@ const navItems = [
     ],
   },
 ];
-// export default async function Navbar({ params: { locale } }) {
-export default async function Navbar() {
-  // const { t, resources } = await initTranslations(i18nNamespaces);
+
+const i18nNamespaces = ["navbar", "common"];
+
+export default async function Navbar({ params: locale }) {
+  // console.log(locale);
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
   return (
     <TranslationsProvider
-    // namespaces={i18nNamespaces}
-    // locale={locale}
-    // resources={resources}
+      namespaces={i18nNamespaces}
+      locale={locale}
+      resources={resources}
     >
       <nav>
         {navItems.map((item) => (
@@ -86,7 +88,7 @@ export default async function Navbar() {
                 className="link"
                 style={{ fontSize: "20px", cursor: "pointer", color: "black" }}
               >
-                {/* {t(item.title.label)} */}
+                {t(item.title.key)}
               </span>
             </Link>{" "}
             <svg
@@ -114,7 +116,7 @@ export default async function Navbar() {
                     href={link.href}
                     className="link"
                   >
-                    {/* {t(link.label)} */}
+                    {t(link.key)}
                   </Link>
                 </li>
               ))}
@@ -126,10 +128,9 @@ export default async function Navbar() {
           className="link"
           style={{ fontSize: "20px", cursor: "pointer", color: "black" }}
         >
-          {/* {t("contacts")} */}
-          Контакти
+          {t("contacts")}
         </Link>
-
+        {/* <LanguageChanger /> */}
         {/* <LanguageChanger onLanguageChange={handleLanguageChange} /> */}
       </nav>
     </TranslationsProvider>

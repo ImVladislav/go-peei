@@ -1,0 +1,40 @@
+.wat-we-do {
+  &__list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    border-radius: 40px;
+    padding: 56px;
+    background: $main-white;
+    width: 904px;
+    height: 677px;
+    top: 120px;
+    left: 456px;
+  }
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__subtitle {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    color: $main-black;
+  }
+  &__desc {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+    color: $main-black;
+  }
+}

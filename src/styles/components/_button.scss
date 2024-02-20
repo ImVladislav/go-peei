@@ -1,0 +1,34 @@
+.button {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+  color: #fffefe;
+  border-radius: 40px 0;
+  padding: 16px 40px;
+  background: #0d490d;
+  border: none;
+  &:hover,
+  &:focus {
+    background: #10880d;
+  }
+  &.active {
+    background: #10880d;
+  }
+}
+.button-second {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 1.5;
+  text-align: center;
+  color: #141414;
+  border: 1px solid #0d490d;
+  border-radius: 40px 0;
+  padding: 16px 98px;
+  background: #fffefe;
+  &:hover,
+  &:focus {
+    background: #e8f1e7;
+    border: 1px solid #0d490d;
+  }
+}

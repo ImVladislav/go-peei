@@ -1,0 +1,27 @@
+.main {
+  &__inner {
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
+  &__btn {
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    color: #141414;
+
+    border: 1px solid #5a8356;
+    border-radius: 18px;
+    padding: 11px 68px;
+    width: 334px;
+    height: 70px;
+    background: #fffefe;
+  }
+}
+
+.title {
+  font-weight: 400;
+  font-size: 56px;
+  text-transform: uppercase;
+  color: #141414;
+  padding: 8px;
+}

@@ -1,0 +1,15 @@
+.title {
+  font-weight: 500;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: $main-black;
+  &__svg {
+    border-radius: 0px;
+    fill: #0d490d;
+    stroke-width: 1px;
+    stroke: #000;
+  }
+  &__box {
+    margin-bottom: 60px;
+  }
+}

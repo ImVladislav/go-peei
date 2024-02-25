@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import style from "./title.module.scss";
 interface TitleProps {
   title: string;
   width: number;
@@ -7,10 +7,10 @@ interface TitleProps {
 
 const Title: React.FC<TitleProps> = ({ title, width }) => {
   return (
-    <div className="title__box">
-      <h2 className="title">{title}</h2>
+    <div className={style.box}>
+      <h2 className={style.title}>{title}</h2>
 
-      <div className="title__svg">
+      <div className={style.svg}>
         <Image
           src="/main/Rectangle.svg"
           alt="іконка вітряка"

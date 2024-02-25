@@ -1,23 +1,24 @@
 import Image from "next/image";
+import style from "./hero.module.scss";
 
 const Hero = () => {
   return (
-    <section className="hero">
-      <div className="hero__container container">
-        <h1 className="hero__title visually-hidden">
+    <section className={style.section}>
+      <div className="container">
+        <h1 className="visually-hidden">
           Екологічна безпека - енергетична незалежність
         </h1>
-        <div className="hero__inner ">
-          <div className="hero__column">
-            <div className="hero__content">
-              <p className="hero__slogan">
+        <div className={style.inner}>
+          <div className={style.column}>
+            <div className={style.content}>
+              <p className={style.slogan}>
                 Екологічна <span>безпека -</span>
               </p>
-              <p className="hero__slogan">
+              <p className={style.slogan}>
                 <span>енергетична</span> незалежність
               </p>
             </div>
-            <button className="hero__btn button">Підтримати нас</button>
+            <button className={`${style.btn} button`}>Підтримати нас</button>
           </div>
           <Image
             src="/main/pic.png"

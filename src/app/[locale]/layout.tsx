@@ -5,8 +5,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 
 import "@/styles/index.scss";
-// import Header from "@/components/header";
-// import Footer from "@/components/footer";
 
 const exo = Exo_2({ subsets: ["latin"] });
 

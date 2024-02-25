@@ -1,4 +1,3 @@
-import styles from "./page.module.scss";
 import ExampleClientComponent from "../../../components/ExampleClientComponent";
 import initTranslations from "../i18n";
 import Link from "next/link";

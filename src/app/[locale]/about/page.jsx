@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../page.module.css";
+// import styles from "../page.module.css";
 import initTranslations from "../../i18n";
 import TranslationsProvider from "../../../../components/TranslationsProvider";
 

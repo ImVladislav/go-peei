@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./hero.module.scss";
+import Button from "../../Button/Button";
 
 const Hero = () => {
   return (
@@ -18,7 +19,7 @@ const Hero = () => {
                 <span>енергетична</span> незалежність
               </p>
             </div>
-            <button className={`${styles.btn} button`}>Підтримати нас</button>
+            <Button newStyles={styles.btn}>Підтримати нас</Button>
           </div>
           <Image
             src="/main/pic.png"

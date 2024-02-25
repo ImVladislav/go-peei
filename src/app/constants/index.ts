@@ -1,4 +1,4 @@
-import { navLinks, projectItem, reviewItem } from "@/types";
+import { navLinks, projectItem, reviewItem } from "@/app/types";
 
 // NAVIGATION
 export const NAV_LINKS: navLinks[] = [
@@ -31,12 +31,6 @@ export const initialProjects: projectItem[] = [
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia veniam explicabo rem quae incidunt repellat doloremque? Aliquam, explicabo impedit, tempora, nam saepe consequuntur laborum id nihil officiis voluptas placeat quia.",
   },
-  // {
-  //   id: "4",
-  //   title: "Проект 4 “Назва проєкту”",
-  //   imageSrc: "/no-image.jpg",
-  //   description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia veniam explicabo rem quae incidunt repellat doloremque? Aliquam, explicabo impedit, tempora, nam saepe consequuntur laborum id nihil officiis voluptas placeat quia.",
-  // },
 ];
 
 export const initialReviews: reviewItem[] = [

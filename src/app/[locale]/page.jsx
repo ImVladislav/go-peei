@@ -1,9 +1,12 @@
-import styles from "./page.module.css";
 import ExampleClientComponent from "../../../components/ExampleClientComponent";
 import initTranslations from "../i18n";
 import Link from "next/link";
 import TranslationsProvider from "../../../components/TranslationsProvider";
 import LanguageChanger from "../../../components/LanguageChanger";
+import Hero from "./components/Main/Hero/Hero";
+import WhatWeDo from "./components/Main/WhatWeDo/WhatWeDo";
+import Projects from "./components/Main/Projects/Projects";
+import Reviews from "./components/Main/Reviews/Reviews";
 const i18nNamespaces = ["home", "common"];
 
 export default async function Home({ params: { locale } }) {
@@ -15,11 +18,11 @@ export default async function Home({ params: { locale } }) {
       locale={locale}
       resources={resources}
     >
-      <div className={styles.main}>
-        {/* <h1>{t("header")}</h1>
-        <ExampleClientComponent />
-        <Link href="/about-us">{t("common:about_us")} </Link>
-        <LanguageChanger /> */}
+      <div>
+        <Hero />
+        <WhatWeDo />
+        {/* <Projects />
+        <Reviews /> */}
       </div>
     </TranslationsProvider>
   );

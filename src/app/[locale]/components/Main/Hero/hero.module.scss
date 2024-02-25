@@ -1,0 +1,37 @@
+@import "../../../../styles/utils/variables";
+
+.section {
+  padding-bottom: 120px;
+}
+.inner {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: 3px;
+}
+.slogan {
+  font-weight: 500;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: $main-black;
+  & span {
+    color: $main-green;
+  }
+}
+.btn {
+  margin-top: 34px;
+  width: 308px;
+  height: 52px;
+}

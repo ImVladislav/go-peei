@@ -1,0 +1,47 @@
+@import "../../../../styles/utils/variables";
+.section {
+  padding-bottom: 120px;
+}
+.content {
+  position: relative;
+}
+.img {
+  margin-left: -80px;
+}
+.list {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  border-radius: 40px;
+  padding: 56px;
+  background: $main-white;
+  width: 904px;
+  height: 677px;
+  top: 120px;
+  left: 456px;
+}
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.subtitle {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: $main-black;
+}
+.desc {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  color: $main-black;
+}

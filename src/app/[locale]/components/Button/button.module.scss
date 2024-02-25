@@ -1,0 +1,20 @@
+@import "../../../styles/utils/variables";
+
+.button {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+  color: $main-white;
+  border-radius: 40px 0;
+  padding: 16px 40px;
+  background: $main-green;
+  border: none;
+  &:hover,
+  &:focus {
+    background: $green-hover;
+  }
+  &.active {
+    background: $green-hover;
+  }
+}

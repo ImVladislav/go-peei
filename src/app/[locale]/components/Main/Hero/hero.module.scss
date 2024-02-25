@@ -1,3 +1,5 @@
+@import "../../../../../styles/utils/variables";
+
 .section {
   padding-bottom: 120px;
 }
@@ -23,9 +25,9 @@
   font-weight: 500;
   font-size: 40px;
   text-transform: uppercase;
-  color: #141414;
+  color: $main-black;
   & span {
-    color: #0d490d;
+    color: $main-green;
   }
 }
 .btn {

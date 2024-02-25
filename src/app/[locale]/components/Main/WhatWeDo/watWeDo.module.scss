@@ -1,3 +1,4 @@
+@import "../../../../../styles/utils/variables";
 .section {
   padding-bottom: 120px;
 }
@@ -14,7 +15,7 @@
   gap: 56px;
   border-radius: 40px;
   padding: 56px;
-  background: #fffefe;
+  background: $main-white;
   width: 904px;
   height: 677px;
   top: 120px;
@@ -35,12 +36,12 @@
   font-size: 18px;
   line-height: 1.5;
   text-transform: uppercase;
-  color: #141414;
+  color: $main-black;
 }
 .desc {
   font-weight: 300;
   font-size: 18px;
   line-height: 1.5;
   text-align: justify;
-  color: #141414;
+  color: $main-black;
 }

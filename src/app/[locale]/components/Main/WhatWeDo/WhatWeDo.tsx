@@ -1,23 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import Title from "../../Title/Title";
-import style from "./watWeDo.module.scss";
+import styles from "./watWeDo.module.scss";
 
 const WhatWeDo = () => {
   return (
-    <section className={style.section}>
+    <section className={styles.section}>
       <div className="container">
         <Title title="Просуваємо такі ідеї:" width={355} />
-        <div className={style.content}>
-          <div className={style.img}>
+        <div className={styles.content}>
+          <div className={styles.img}>
             <Image src="/main/pic-2.png" alt="line" width={849} height={921} />
           </div>
-          <ul className={style.list}>
-            <li className={style.item}>
+          <ul className={styles.list}>
+            <li className={styles.item}>
               <Image src="/main/one.svg" alt="line" width={92} height={93} />
-              <div className={style.column}>
-                <h3 className={style.subtitle}>Збереження довкілля </h3>
-                <p className={style.desc}>
+              <div className={styles.column}>
+                <h3 className={styles.subtitle}>Збереження довкілля </h3>
+                <p className={styles.desc}>
                   є ключовим завданням сучасності. Це включає зменшення викидів
                   та забруднення, охорону біорізноманіття та створення сталого
                   способу життя. Для досягнення цієї мети необхідні комплексні
@@ -26,13 +26,13 @@ const WhatWeDo = () => {
                 </p>
               </div>
             </li>
-            <li className={style.item}>
+            <li className={styles.item}>
               <Image src="/main/two.svg" alt="вітряк" width={80} height={114} />
-              <div className={style.column}>
-                <h3 className={style.subtitle}>
+              <div className={styles.column}>
+                <h3 className={styles.subtitle}>
                   Впровадження інновацій в сфері відновлювальної енергетики
                 </h3>
-                <p className={style.desc}>
+                <p className={styles.desc}>
                   відіграє важливу роль у зменшенні залежності зменшенні
                   залежності від традиційних джерел енергії та впливу на
                   довкілля. Використання передових технологій допомагає
@@ -42,16 +42,18 @@ const WhatWeDo = () => {
                 </p>
               </div>
             </li>
-            <li className={style.item}>
+            <li className={styles.item}>
               <Image
                 src="/main/three.svg"
                 alt="переробка вторинної сировини"
                 width={92}
                 height={82}
               />
-              <div className={style.column}>
-                <h3 className={style.subtitle}>Переробка вторинної сировини</h3>
-                <p className={style.desc}>
+              <div className={styles.column}>
+                <h3 className={styles.subtitle}>
+                  Переробка вторинної сировини
+                </h3>
+                <p className={styles.desc}>
                   Сучасні технології дозволяють ефективно використовувати
                   вторинну сировину для виробництва нових продуктів, що сприяє
                   зменшенню негативного впливу на навколишнє середовище.

@@ -25,6 +25,14 @@
   display: flex;
   align-items: flex-start;
   gap: 20px;
+
+  animation: myItem 2s ease 1s 1 alternate backwards;
+  &:first-child {
+    animation: myItem 2s ease 0s 1 alternate backwards;
+  }
+  &:last-child {
+    animation: myItem 2s ease 2s 1 alternate backwards;
+  }
 }
 .column {
   display: flex;
@@ -44,4 +52,16 @@
   line-height: 1.5;
   text-align: justify;
   color: $main-black;
+}
+
+@keyframes myItem {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

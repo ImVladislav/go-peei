@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-import Link from "next/link";
+
 import Title from "../../Title/Title";
 import styles from "./watWeDo.module.scss";
 

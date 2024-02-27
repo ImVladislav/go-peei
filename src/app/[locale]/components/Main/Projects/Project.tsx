@@ -1,46 +1,66 @@
 import Image from "next/image";
-import { projectItem } from "@/app/types";
 import Link from "next/link";
 
+import { projectItem } from "@/app/types";
+import Button from "../../Button/Button";
+
+import styles from "./projects.module.scss";
 interface ProjectProps {
   project: projectItem;
 }
 
 const Project: React.FC<ProjectProps> = ({ project }) => {
+  const progress = (100 / project.total) * project.fundsRaised;
+  const maxLength = 100;
+  const formatPrice = (price: number) => {
+    if (price && typeof price === "number") {
+      const priceToString = price.toString();
+      if (priceToString.length > 3) {
+        return priceToString.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+      }
+    }
+    return price;
+  };
+
   return (
-    <li className="projects__item item-project">
-      <h3 className="item-project__title">{project.title}</h3>
-      <div className="item-project__wrap--image">
-        <Image
-          className="item-project__image"
-          src={project.imageSrc}
-          alt={project.title}
-          width={300}
-          height={300}
-        />
-      </div>
-      <p className="item-project__desc">{project.description}</p>
-      <div className="item-project__wrap--links">
-        <Link href="/" className="item-project__link">
-          <svg
-            width="56"
-            height="56"
-            viewBox="0 0 56 56"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.42896 28.929C1.42896 13.7411 13.7411 1.42896 28.9289 1.42896H54.5711V27.0711C54.5711 42.2589 42.2589 54.5711 27.0711 54.5711H1.42896V28.929Z"
-              stroke="#0D490D"
-            />
-            <path
-              d="M36.0711 20.929C36.0711 20.3767 35.6234 19.929 35.0711 19.929L26.0711 19.929C25.5188 19.929 25.0711 20.3767 25.0711 20.929C25.0711 21.4813 25.5188 21.929 26.0711 21.929H34.0711V29.929C34.0711 30.4813 34.5188 30.929 35.0711 30.929C35.6234 30.929 36.0711 30.4813 36.0711 29.929V20.929ZM21.6361 35.7782L35.7782 21.6361L34.364 20.2219L20.2218 34.364L21.6361 35.7782Z"
-              fill="#0D490D"
-            />
-          </svg>
+    <li className={styles.item}>
+      <div className={styles.item__inner}>
+        <div className={styles.item__image}>
+          <Image
+            src={project.imageSrc}
+            alt={project.title}
+            width={360}
+            height={270}
+          />
+        </div>
+        <Link href="/" className={styles.item__link}>
+          <h3 className={styles.item__title}>{project.title}</h3>
         </Link>
-        <button className="item-project__btn button">Підтримати нас</button>
+        <p className={styles.item__desc}>
+          {project.description.slice(0, maxLength)}...
+        </p>
       </div>
+      <div className={styles.item__box}>
+        <div className={styles.item__progres_bar}>
+          <div
+            className={styles.item__progres_bar_fill}
+            style={{ width: `${progress}%`, background: "#0d490d" }}
+          ></div>
+        </div>
+        <div className={styles.item__progres_bar_inner}>
+          <div className={styles.item__progres_bar_label}>Зібрано</div>
+          <div className={styles.item__progres_bar_label}>Загальна сума</div>
+        </div>
+        <div className={styles.item__progres_bar_inner}>
+          <div className={styles.item__progres_bar_money}>
+            {formatPrice(project.fundsRaised)} грн
+          </div>
+          <div className={styles.item__progres_bar_money}>
+            {formatPrice(project.total)} грн
+          </div>
+        </div>
+      </div>
+      <Button newStyles={styles.item__btn}>Підтримати нас</Button>
     </li>
   );
 };

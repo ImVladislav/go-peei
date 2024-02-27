@@ -21,8 +21,8 @@ export default async function Home({ params: { locale } }) {
       <div>
         <Hero />
         <WhatWeDo />
-        {/* <Projects />
-        <Reviews /> */}
+        <Projects />
+        {/* <Reviews /> */}
       </div>
     </TranslationsProvider>
   );

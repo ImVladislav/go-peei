@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 
 import "@/app/styles/index.scss";
+import ExampleClientComponent from "../../../components/ExampleClientComponent";
 
 const exo = Exo_2({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={exo.className}>
         <div className="wrapper">
           <Header />
+          <ExampleClientComponent />
           <main>{children}</main>
           <Footer />
         </div>

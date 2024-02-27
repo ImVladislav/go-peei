@@ -11,7 +11,7 @@ import Youtube from "../../../../../public/socialSVG/Youtube Outline.svg";
 
 import phone_icon from "../../../../../public/socialSVG/phone_icon.svg";
 import email_icon from "../../../../../public/socialSVG/email_icon.svg";
-import LanguageChanger from "./LanguageChanger";
+import LanguageChanger from "../../../../../components/LanguageChanger";
 
 const Header: React.FC = () => {
   return (

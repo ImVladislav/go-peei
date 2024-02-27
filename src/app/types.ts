@@ -9,6 +9,8 @@ export type projectItem = {
   title: string;
   imageSrc: string;
   description: string;
+  total: number;
+  fundsRaised: number;
 };
 export type reviewItem = {
   id: string;

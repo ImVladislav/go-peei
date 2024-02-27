@@ -12,24 +12,30 @@ export const NAV_LINKS: navLinks[] = [
 export const initialProjects: projectItem[] = [
   {
     id: "1",
-    title: "Проект 1 “Назва проєкту Назва проєкту”",
-    imageSrc: "/no-image.jpg",
+    title: "Проєкт “Теплий та економний дім для ВПО”",
+    imageSrc: "/main/no-image.png",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia veniam explicabo rem quae incidunt repellat doloremque? Aliquam, explicabo impedit, tempora, nam saepe consequuntur laborum id nihil officiis voluptas placeat quia.",
+    total: 50000,
+    fundsRaised: 25000,
   },
   {
     id: "2",
-    title: "Проект 2 “Назва проєкту”",
-    imageSrc: "/no-image.jpg",
+    title: "Проєкт “Теплий та економний дім для ВПО”",
+    imageSrc: "/main/no-image.png",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia veniam explicabo rem quae incidunt repellat doloremque? Aliquam, explicabo impedit, tempora, nam saepe consequuntur laborum id nihil officiis voluptas placeat quia.",
+    total: 100000,
+    fundsRaised: 33000,
   },
   {
     id: "3",
-    title: "Проект 3 “Назва проєкту”",
-    imageSrc: "/no-image.jpg",
+    title: "Проєкт “Теплий та економний дім для ВПО”",
+    imageSrc: "/main/no-image.png",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia veniam explicabo rem quae incidunt repellat doloremque? Aliquam, explicabo impedit, tempora, nam saepe consequuntur laborum id nihil officiis voluptas placeat quia.",
+    total: 30000,
+    fundsRaised: 17000,
   },
 ];
 

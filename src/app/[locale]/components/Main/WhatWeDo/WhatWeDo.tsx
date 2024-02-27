@@ -8,7 +8,7 @@ const WhatWeDo = () => {
   return (
     <section className={styles.section}>
       <div className="container">
-        <Title title="Просуваємо такі ідеї:" width={355} />
+        <Title width={355}>Просуваємо такі ідеї:</Title>
         <div className={styles.content}>
           <div className={styles.img}>
             <Image src="/main/pic-2.png" alt="line" width={849} height={921} />

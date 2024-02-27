@@ -42,33 +42,30 @@ export const initialProjects: projectItem[] = [
 export const initialReviews: reviewItem[] = [
   {
     id: "1",
-
-    name: "Андрій",
+    name: "Вікторія",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia veniam explicabo rem quae incidunt repellat doloremque? Aliquam, explicabo impedit, tempora, nam saepe consequuntur laborum id nihil officiis voluptas placeat quia.",
-    imageSrc: "/no-image.jpg",
+      "Сайт організації - справжнє джерело інформації та натхнення для всіх, хто прагне долучитися до охорони довкілля. Він допомагає розуміти складність екологічних проблем і надихає до дії на благо нашої планети.",
+    imageSrc: "/main/ellipse1.svg",
   },
   {
     id: "2",
-
-    name: "Валентина",
+    name: "Олена",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia veniam explicabo rem quae incidunt repellat doloremque? Aliquam, explicabo impedit, tempora, nam saepe consequuntur laborum id nihil officiis voluptas placeat quia.",
-    imageSrc: "/no-image.jpg",
+      "Цей веб-сайт - справжнє джерело свіжої та цінної інформації Він не просто надає знання про проблеми екології, але й стимулює до конкретних кроків у збереженні природи. Тут я завжди знаходжу натхнення та ідеї для більш екологічного способу життя.",
+    imageSrc: "/main/ellipse2.svg",
   },
   {
     id: "3",
-
-    name: "Степан",
+    name: "Вікторія",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia veniam explicabo rem quae incidunt repellat doloremque? Aliquam, explicabo impedit, tempora, nam saepe consequuntur laborum id nihil officiis voluptas placeat quia.",
-    imageSrc: "/no-image.jpg",
+      "Сайт організації - справжнє джерело інформації та натхнення для всіх, хто прагне долучитися до охорони довкілля. Він допомагає розуміти складність екологічних проблем і надихає до дії на благо нашої планети.",
+    imageSrc: "/main/ellipse1.svg",
   },
   {
     id: "4",
-    name: "Висиль",
+    name: "Олена",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia veniam explicabo rem quae incidunt repellat doloremque? Aliquam, explicabo impedit, tempora, nam saepe consequuntur laborum id nihil officiis voluptas placeat quia.",
-    imageSrc: "/no-image.jpg",
+      "Цей веб-сайт - справжнє джерело свіжої та цінної інформації Він не просто надає знання про проблеми екології, але й стимулює до конкретних кроків у збереженні природи. Тут я завжди знаходжу натхнення та ідеї для більш екологічного способу життя.",
+    imageSrc: "/main/ellipse2.svg",
   },
 ];

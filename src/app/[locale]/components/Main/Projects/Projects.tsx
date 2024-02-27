@@ -9,20 +9,18 @@ import styles from "./projects.module.scss";
 const Projects = () => {
   return (
     <section className={styles.section}>
-      <div className="container">
-        <Title width={462}>допоможіть зібрать кошти</Title>
+      <Title width={462}>допоможіть зібрать кошти</Title>
 
-        <div className={styles.inner}>
-          <ul className={styles.list}>
-            {initialProjects.map((project) => (
-              <Project key={project.id} project={project} />
-            ))}
-          </ul>
+      <div className={styles.inner}>
+        <ul className={styles.list}>
+          {initialProjects.map((project) => (
+            <Project key={project.id} project={project} />
+          ))}
+        </ul>
 
-          <Link className={styles.link} href="/">
-            Усі проєкти
-          </Link>
-        </div>
+        <Link className={styles.link} href="/">
+          Усі проєкти
+        </Link>
       </div>
     </section>
   );

@@ -1,6 +1,8 @@
 import Image from "next/image";
+
 import { reviewItem } from "@/app/types";
-import Link from "next/link";
+
+import styles from "./reviews.module.scss";
 
 interface ReviewProps {
   review: reviewItem;
@@ -8,16 +10,19 @@ interface ReviewProps {
 
 const Review: React.FC<ReviewProps> = ({ review }) => {
   return (
-    <div className="review-item">
-      <h3 className="review-item__title">{review.name}</h3>
-      <p className="review-item__text">{review.description}</p>
-      <Image
-        className="review-item__image"
-        src={review.imageSrc}
-        alt={review.name}
-        width={300}
-        height={300}
-      />
+    <div className={styles.item}>
+      <div className={styles.item__inner}>
+        <div className={styles.item__img}>
+          <Image
+            src={review.imageSrc}
+            alt={review.name}
+            width={72}
+            height={72}
+          />
+        </div>
+        <h3 className={styles.item__name}>{review.name}</h3>
+      </div>
+      <p className={styles.item__desc}>{review.description}</p>
     </div>
   );
 };

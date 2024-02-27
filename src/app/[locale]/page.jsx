@@ -19,6 +19,8 @@ export default async function Home({ params: { locale } }) {
       resources={resources}
     >
       <div>
+        <LanguageChanger />
+        <ExampleClientComponent />
         <Hero />
         <WhatWeDo />
         <Projects />

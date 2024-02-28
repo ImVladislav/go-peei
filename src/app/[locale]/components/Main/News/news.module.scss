@@ -1,0 +1,108 @@
+@import "../../../../styles/utils/variables";
+.section {
+  //   background: $main-white;
+}
+.inner {
+  display: flex;
+}
+.first_card {
+  background: $main-white;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-right: 32px;
+  margin-bottom: 32px;
+  width: 766px;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.25);
+  }
+  &__img {
+    overflow: hidden;
+    border-radius: 10px;
+    width: 742px;
+    height: 534px;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: $main-black;
+  }
+  &__desc {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $main-black;
+  }
+  &__data {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $main-grey;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.item {
+  border-radius: 10px;
+  padding: 12px;
+  background: $main-white;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 482px;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  &__img {
+    overflow: hidden;
+    width: 482px;
+    height: 193px;
+    border-radius: 10px;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: $main-black;
+    margin-right: 42px;
+  }
+  &__data {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $main-grey;
+  }
+}
+.box {
+  margin-top: 48px;
+  text-align: center;
+  &__link {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    color: $main-black;
+    border-bottom: 1px solid $main-black;
+    padding: 12px;
+
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $green-hover;
+    }
+  }
+}

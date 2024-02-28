@@ -9,9 +9,10 @@ interface ProjectProps {
   project: projectItem;
 }
 
-const Project: React.FC<ProjectProps> = ({ project }) => {
+const Project = ({ project }: ProjectProps) => {
   const progress = (100 / project.total) * project.fundsRaised;
   const maxLength = 100;
+
   const formatPrice = (price: number) => {
     if (price && typeof price === "number") {
       const priceToString = price.toString();
@@ -27,6 +28,11 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
       <div className={styles.item__inner}>
         <div className={styles.item__image}>
           <Image
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              height: "270px",
+            }}
             src={project.imageSrc}
             alt={project.title}
             width={360}

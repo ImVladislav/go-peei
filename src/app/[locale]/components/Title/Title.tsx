@@ -1,5 +1,5 @@
 import Image from "next/image";
-import style from "./title.module.scss";
+import styles from "./title.module.scss";
 interface TitleProps {
   children: string;
   width: number;
@@ -7,13 +7,17 @@ interface TitleProps {
 
 const Title = ({ width, children }: TitleProps) => {
   return (
-    <div className={style.box}>
-      <h2 className={style.title}>{children}</h2>
+    <div className={styles.box}>
+      <h2 className={styles.title}>{children}</h2>
 
-      <div className={style.svg}>
+      <div className={styles.svg}>
         <Image
+          style={{
+            height: "4px",
+            objectFit: "cover",
+          }}
           src="/main/Rectangle.svg"
-          alt="іконка вітряка"
+          alt="Лінія"
           width={width}
           height={4}
         />

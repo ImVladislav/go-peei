@@ -1,0 +1,66 @@
+@import "../../../../styles/utils/variables";
+.section {
+  padding: 60px 0;
+  background: #f5f6f3;
+
+  margin: 0 -80px;
+}
+.box_title {
+  margin-left: 80px;
+}
+
+.item {
+  border: 1px solid $main-grey;
+  border-radius: 18px;
+  padding: 28px 24px;
+  width: 520px;
+  height: 264px;
+  background: $main-white;
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+  &__img {
+    width: 72px;
+    height: 72px;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  &__name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-align: justify;
+    color: $main-black;
+  }
+  &__desc {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    color: $main-black;
+  }
+}
+
+.box {
+  margin-top: 48px;
+  text-align: center;
+  &__link {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    color: $main-black;
+    border-bottom: 1px solid $main-black;
+    padding: 12px;
+
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $green-hover;
+    }
+  }
+}

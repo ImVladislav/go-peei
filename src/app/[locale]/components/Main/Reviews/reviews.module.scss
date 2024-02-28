@@ -2,6 +2,7 @@
 .section {
   padding: 60px 0;
   background: #f5f6f3;
+
   margin: 0 -80px;
 }
 .box_title {
@@ -9,12 +10,12 @@
 }
 
 .item {
-  border: 1px solid #adadad;
+  border: 1px solid $main-grey;
   border-radius: 18px;
   padding: 28px 24px;
   width: 520px;
   height: 264px;
-  background: #fffefe;
+  background: $main-white;
   &__inner {
     display: flex;
     align-items: center;
@@ -34,32 +35,32 @@
     text-decoration: underline;
     text-decoration-skip-ink: none;
     text-align: justify;
-    color: #141414;
+    color: $main-black;
   }
   &__desc {
     font-weight: 300;
     font-size: 16px;
     line-height: 1.5;
     text-align: justify;
-    color: #141414;
+    color: $main-black;
   }
 }
 
-.link {
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 1;
-  text-align: center;
-  color: $main-black;
-  border-bottom: 1px solid $main-black;
-  padding: 12px;
-
-  &:hover,
-  &:focus {
-    border-bottom: 2px solid $green-hover;
-  }
-}
-.box_link {
+.box {
   margin-top: 48px;
   text-align: center;
+  &__link {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    color: $main-black;
+    border-bottom: 1px solid $main-black;
+    padding: 12px;
+
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $green-hover;
+    }
+  }
 }

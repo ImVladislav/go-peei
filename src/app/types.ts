@@ -18,3 +18,12 @@ export type reviewItem = {
   description: string;
   imageSrc: string;
 };
+
+export type newsItem = {
+  id: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  date: string;
+  firstNew: boolean;
+};

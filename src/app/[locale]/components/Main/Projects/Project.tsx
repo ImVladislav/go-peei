@@ -28,6 +28,11 @@ const Project = ({ project }: ProjectProps) => {
       <div className={styles.item__inner}>
         <div className={styles.item__image}>
           <Image
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              height: "270px",
+            }}
             src={project.imageSrc}
             alt={project.title}
             width={360}

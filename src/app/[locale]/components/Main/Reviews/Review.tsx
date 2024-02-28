@@ -8,12 +8,17 @@ interface ReviewProps {
   review: reviewItem;
 }
 
-const Review: React.FC<ReviewProps> = ({ review }) => {
+const Review = ({ review }: ReviewProps) => {
   return (
     <div className={styles.item}>
       <div className={styles.item__inner}>
         <div className={styles.item__img}>
           <Image
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              height: "72px",
+            }}
             src={review.imageSrc}
             alt={review.name}
             width={72}

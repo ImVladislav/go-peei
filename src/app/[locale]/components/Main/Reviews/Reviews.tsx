@@ -39,8 +39,8 @@ const Reviews = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className={styles.box_link}>
-        <Link className={styles.link} href="/">
+      <div className={styles.box}>
+        <Link className={styles.box__link} href="/">
           Залишити відгук
         </Link>
       </div>

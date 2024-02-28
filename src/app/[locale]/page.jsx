@@ -9,6 +9,8 @@ import Reviews from "./components/Main/Reviews/Reviews";
 import News from "./components/Main/News/News";
 const i18nNamespaces = ["home", "common"];
 
+import styles from "./page.module.scss";
+
 export default async function Home({ params: { locale } }) {
   // const { t } = await initTranslations(locale, ["home", "common"]);
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
@@ -21,12 +23,12 @@ export default async function Home({ params: { locale } }) {
       <div className="container">
         <LanguageChanger />
         <ExampleClientComponent />
-        <div style={{ display: "flex", flexDirection: "column", gap: "120px" }}>
+        <div className={styles.wrap}>
           <Hero />
           <WhatWeDo />
           <Projects />
           <Reviews />
-          {/* <News /> */}
+          <News />
         </div>
       </div>
     </TranslationsProvider>

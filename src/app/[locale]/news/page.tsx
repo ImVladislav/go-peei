@@ -1,4 +1,5 @@
 // import bg from "../../../public/environmentalProtection/EnvironmentalProtectionBG.jpg";
+import React from "react";
 import news from "../../../../public/news.jpg";
 import Image from "next/image";
 const News = () => {

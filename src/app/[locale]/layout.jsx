@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import { Exo_2 } from "next/font/google";
 import { dir } from "i18next";
 import i18nConfig from "@/i18nConfig";
@@ -23,7 +23,7 @@ export function generateStaticParams() {
 export default async function RootLayout({ children, params: { locale } }) {
   const i18nNamespaces = ["home", "common", "navbar"];
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
-  console.log(locale);
+  // console.log(locale);
   return (
     // <html lang={locale} dir={dir(locale)}>
     // <body className={exo.className}>
@@ -41,7 +41,7 @@ export default async function RootLayout({ children, params: { locale } }) {
       resources={resources}
     >
       <html lang={locale} dir={dir(locale)}>
-        <body className={exo.className}>
+        <body className={exo.className} suppressHydrationWarning={true}>
           <div className="wrapper">
             <Header locale={locale} />
             <ExampleClientComponent />

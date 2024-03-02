@@ -59,9 +59,11 @@ const Header = ({ locale }) => {
       </div>
       <div className={s.header__container}>
         <div className={s.header}>
-          <Link className={s.header__logoLink} href="/">
-            <Image src={Logo} width={200} height={60} alt="Logo" />
-          </Link>
+          <div>
+            <Link className={s.header__logoLink} href="/">
+              <Image src={Logo} width={200} height={60} alt="Logo" />
+            </Link>
+          </div>
           <div style={{ width: "45 0px" }}></div>
           <Navbar params={locale} />
           <LanguageChanger />

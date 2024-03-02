@@ -44,7 +44,7 @@ export default async function RootLayout({ children, params: { locale } }) {
         <body className={exo.className}>
           <div className="wrapper">
             <Header locale={locale} />
-            <ExampleClientComponent />
+
             <main>{children}</main>
             <Footer />
           </div>

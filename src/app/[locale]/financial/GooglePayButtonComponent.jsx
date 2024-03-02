@@ -1,5 +1,14 @@
 import React from "react";
-import GooglePayButton from "@google-pay/button-react";
+import dynamic from "next/dynamic";
+
+const DynamicGooglePayButton = dynamic(
+  () =>
+    import("@google-pay/button-react").catch(() => ({
+      default: () => <div>Модуль не знайдено</div>,
+    })),
+  { ssr: false }
+);
+
 const GooglePayButtonComponent = () => {
   // Параметри запиту платежу
   const paymentRequest = {
@@ -47,19 +56,16 @@ const GooglePayButtonComponent = () => {
 
   // Повернення кнопки Google Pay з вказаними параметрами
   return (
-    <GooglePayButton
+    <DynamicGooglePayButton
       environment="TEST"
       paymentRequest={paymentRequest}
-      onLoadPaymentData={(onLoadPaymentData) => {
-        console.log("Payment loaded:", onLoadPaymentData);
-      }}
-      // onLoadPaymentData={onLoadPaymentData}
+      onLoadPaymentData={onLoadPaymentData}
       onError={onError}
       buttonColor="black"
       buttonType="donate"
       buttonLabel="ПІДТРИМАТИ НАС ФІНАНСОВО"
-      // Текст кнопки з вашого зображення
     />
   );
 };
+
 export default GooglePayButtonComponent;

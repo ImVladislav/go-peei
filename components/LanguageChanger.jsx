@@ -4,6 +4,10 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import i18nConfig from "@/i18nConfig";
+import s from "./LanguageChanger.module.scss";
+import ukrFlag from "../public/flags/FlagsUkr.svg";
+import engFlag from "../public/flags/FlagsEng.svg";
+import Image from "next/image";
 
 export default function LanguageChanger() {
   const { i18n } = useTranslation();
@@ -37,9 +41,24 @@ export default function LanguageChanger() {
   };
 
   return (
-    <select onChange={handleChange} value={currentLocale}>
-      <option value="en">English</option>
-      <option value="uk">Українська</option>
-    </select>
+    <>
+      <div>
+        <Image src={ukrFlag.src} alt="ukrflag" width={24} height={24} />
+      </div>
+      <select
+        className={s.changeLanguage__select}
+        onChange={handleChange}
+        value={currentLocale}
+      >
+        <option className={s.changeLanguage__options} value="en">
+          <Image src={ukrFlag.src} alt="ukrflag" width={24} height={24} />
+          Eng
+        </option>
+        <option className={s.changeLanguage__options} value="uk">
+          <Image src={engFlag.src} alt="engFlag" width={24} height={24} />
+          Укр
+        </option>
+      </select>
+    </>
   );
 }

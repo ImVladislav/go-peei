@@ -36,6 +36,11 @@ const Header = ({ locale }) => {
               +38 050 655 85 61
             </Link>
           </div>
+          <div>
+            <Link style={{ marginLeft: "auto", marginRight: "auto" }} href="/">
+              Правила безпеки під час воєнного стану
+            </Link>
+          </div>
           <div className={s.header__social}>
             <Link className={s.header__svgLink} href="/">
               <Image src={Whatsapp} width={24} height={24} alt="Whatsapp" />
@@ -59,12 +64,9 @@ const Header = ({ locale }) => {
       </div>
       <div className={s.header__container}>
         <div className={s.header}>
-          <div>
-            <Link className={s.header__logoLink} href="/">
-              <Image src={Logo} width={200} height={60} alt="Logo" />
-            </Link>
-          </div>
-          <div style={{ width: "45 0px" }}></div>
+          <Link className={s.header__logoLink} href="/">
+            <Image src={Logo} width={200} height={60} alt="Logo" />
+          </Link>
           <Navbar params={locale} />
           <LanguageChanger />
         </div>

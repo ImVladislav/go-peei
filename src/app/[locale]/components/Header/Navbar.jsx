@@ -4,7 +4,6 @@ import TranslationsProvider from "../../../../../components/TranslationsProvider
 import { navItems } from "./navItems";
 import s from "./Header.module.scss";
 const i18nNamespaces = ["navbar", "common"];
-
 export default async function Navbar({ params: locale }) {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
   return (
@@ -23,7 +22,7 @@ export default async function Navbar({ params: locale }) {
               >
                 {t(item.title.key)}
               </span>
-            </Link>{" "}
+            </Link>
             <svg
               id={`svg-${item.title.label}`}
               width="25px"
@@ -47,7 +46,7 @@ export default async function Navbar({ params: locale }) {
                   <Link
                     style={{ fontSize: "18px" }}
                     href={link.href}
-                    className={s.link}
+                    className={`${s.link} ${s.dropdownLink}`}
                   >
                     {t(link.key)}
                   </Link>
@@ -56,11 +55,7 @@ export default async function Navbar({ params: locale }) {
             </ul>
           </div>
         ))}
-        <Link
-          href="to_contact_page"
-          className={s.link}
-          style={{ fontSize: "20px", cursor: "pointer", color: "black" }}
-        >
+        <Link href="to_contact_page" className={`${s.link} ${s.contactLink}`}>
           {t("contacts")}
         </Link>
       </nav>

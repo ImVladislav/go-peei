@@ -8,16 +8,16 @@ import s from "./LanguageChanger.module.scss";
 import ukrFlag from "../public/flags/FlagsUkr.svg";
 import engFlag from "../public/flags/FlagsEng.svg";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function LanguageChanger() {
   const { i18n } = useTranslation();
   const currentLocale = i18n.language;
   const router = useRouter();
   const currentPathname = usePathname();
+  const [showLanguages, setShowLanguages] = useState(false);
 
-  const handleChange = (e) => {
-    const newLocale = e.target.value;
-
+  const handleChange = (newLocale) => {
     // set cookie for next-i18n-router
     const days = 30;
     const date = new Date();
@@ -38,27 +38,89 @@ export default function LanguageChanger() {
     }
 
     router.refresh();
+    setShowLanguages(false); // Hide language list after selecting a language
   };
 
   return (
-    <>
-      <div>
-        <Image src={ukrFlag.src} alt="ukrflag" width={24} height={24} />
+    <div className={s.languageChanger__container}>
+      <div className={s.languageChanger__block}>
+        <button
+          className={`${s.changeLanguage__button} ${
+            showLanguages ? s.active : ""
+          }`}
+          onClick={() => setShowLanguages(!showLanguages)}
+        >
+          {currentLocale === "en" ? (
+            <Image
+              className={s.flag__image}
+              src={engFlag.src}
+              alt="engFlag"
+              width={38}
+              height={25}
+            />
+          ) : (
+            <Image
+              className={s.flag__image}
+              src={ukrFlag.src}
+              alt="ukrflag"
+              width={38}
+              height={25}
+            />
+          )}
+          {currentLocale === "en" ? "Eng" : "Укр"}
+          <svg
+            // id={`svg-${item.title.label}`}
+            width="25px"
+            height="25px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={s.svgIcon}
+          >
+            <path
+              d="M6 9L12 15L18 9"
+              stroke="#000000"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+        {showLanguages && (
+          <ul className={s.languageList}>
+            <li className={s.languageListItem}>
+              <button
+                className={s.changeLanguage__button}
+                onClick={() => handleChange("en")}
+              >
+                <Image
+                  className={s.flag__image}
+                  src={engFlag.src}
+                  alt="engFlag"
+                  width={38}
+                  height={25}
+                />
+                Eng
+              </button>
+            </li>
+            <li className={s.languageListItem}>
+              <button
+                className={s.changeLanguage__button}
+                onClick={() => handleChange("uk")}
+              >
+                <Image
+                  className={s.flag__image}
+                  src={ukrFlag.src}
+                  alt="ukrflag"
+                  width={38}
+                  height={25}
+                />
+                Укр
+              </button>
+            </li>
+          </ul>
+        )}
       </div>
-      <select
-        className={s.changeLanguage__select}
-        onChange={handleChange}
-        value={currentLocale}
-      >
-        <option className={s.changeLanguage__options} value="en">
-          <Image src={ukrFlag.src} alt="ukrflag" width={24} height={24} />
-          Eng
-        </option>
-        <option className={s.changeLanguage__options} value="uk">
-          <Image src={engFlag.src} alt="engFlag" width={24} height={24} />
-          Укр
-        </option>
-      </select>
-    </>
+    </div>
   );
 }

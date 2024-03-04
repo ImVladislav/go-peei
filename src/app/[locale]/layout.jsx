@@ -32,7 +32,7 @@ export default async function RootLayout({ children, params: { locale } }) {
       resources={resources}
     >
       <html lang={locale} dir={dir(locale)}>
-        <body className={exo.className}>
+        <body className={exo.className} suppressHydrationWarning={true}>
           <div className="wrapper">
             <Header locale={locale} />
             <main>{children}</main>

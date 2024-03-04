@@ -9,16 +9,30 @@ import Link from "next/link";
 import copyLickIcon from "../../../../public/financial/Icon.svg";
 import container from "../../styles/utils/Container.module.scss";
 import GooglePayButtonComponent from "./GooglePayButtonComponent";
+import SuccessModal from "./SuccessModal";
+import ErrorModal from "./ErrorModal";
 
-const DynamicGooglePayButton = dynamic(
-  () =>
-    import("@google-pay/button-react").catch(() => ({
-      default: () => <div>Модуль не знайдено</div>,
-    })),
-  { ssr: false }
-);
+// const DynamicGooglePayButton = dynamic(
+//   () =>
+//     import("@google-pay/button-react").catch(() => ({
+//       default: () => <div>Модуль не знайдено</div>,
+//     })),
+//   { ssr: false }
+// );
 
 const FinancialPage = () => {
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+
+  const handlePaymentSuccess = () => {
+    setShowSuccessModal(true);
+    console.log("sucsess");
+  };
+
+  const handlePaymentError = () => {
+    setShowErrorModal(true);
+    console.log("error");
+  };
   const [fields] = useState([
     {
       label: "Номер рахунку в форматі",
@@ -83,15 +97,15 @@ const FinancialPage = () => {
     },
   };
 
-  const onPaymentSuccess = (paymentResult) => {
-    console.log("Payment success:", paymentResult);
-    // Обробка успішного платежу
-  };
+  // const onPaymentSuccess = (paymentResult) => {
+  //   console.log("Payment success:", paymentResult);
+  //   // Обробка успішного платежу
+  // };
 
-  const onPaymentError = (error) => {
-    console.error("Payment error:", error);
-    // Обробка помилки платежу
-  };
+  // const onPaymentError = (error) => {
+  //   console.error("Payment error:", error);
+  //   // Обробка помилки платежу
+  // };
 
   const handleAmountButtonClick = (amount) => {
     setDonationAmount(amount);
@@ -141,17 +155,20 @@ const FinancialPage = () => {
                   Оберіть платіжну систему
                 </h2>
                 <div className={s.financial__btnBlock}>
-                  <DynamicGooglePayButton
+                  {/* <DynamicGooglePayButton
                     environment="TEST"
                     paymentRequest={paymentRequest}
                     onLoadPaymentData={(paymentData) => {
                       console.log("Payment loaded:", paymentData);
                     }}
-                    onPaymentSuccess={onPaymentSuccess}
-                    onPaymentError={onPaymentError}
-                  />
+                    onPaymentSuccess={handlePaymentSuccess}
+                    onPaymentError={handlePaymentError}
+                  /> */}
                   <button>apple pay</button>
-                  <GooglePayButtonComponent />
+                  <GooglePayButtonComponent
+                    onSuccess={handlePaymentSuccess}
+                    onError={handlePaymentError}
+                  />
                 </div>
                 <Link
                   className={`${s.financial__subTitle} ${s.financial__link}`}
@@ -189,6 +206,12 @@ const FinancialPage = () => {
           </div>
         </section>
       </div>
+      {showSuccessModal && (
+        <SuccessModal onClose={() => setShowSuccessModal(false)} />
+      )}
+      {showErrorModal && (
+        <ErrorModal onClose={() => setShowErrorModal(false)} />
+      )}
     </div>
   );
 };

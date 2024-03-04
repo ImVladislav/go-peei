@@ -36,7 +36,7 @@ const Header = ({ locale }) => {
               +38 050 655 85 61
             </Link>
           </div>
-          <div>
+          <div className={s.header__contact_phoneEemail_block}>
             <Link style={{ marginLeft: "auto", marginRight: "auto" }} href="/">
               Правила безпеки під час воєнного стану
             </Link>

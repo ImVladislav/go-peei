@@ -1,16 +1,61 @@
-.changeLanguage__select {
-  border-radius: 8px;
-  padding: 8px;
-  width: 136px;
-  height: 40px;
-  border: none;
+.languageChanger__container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  //   border: 1px solid black;
+  position: relative;
+}
+.languageChanger__block {
+  //   margin-right: 20px;
+  height: -moz-fit-content;
+  height: fit-content;
+  cursor: pointer;
+  //   display: flex;
+  //   border: 1px solid red;
 }
 
-.changeLanguage__select {
+.languageList {
+  position: absolute;
+  display: block;
+  //   border-radius: 10px;
+  //   padding: 10px;
+  //   width: 156px;
+  //   height: 176px;
+}
+
+.languageChanger:hover .languageListItem {
+  background-color: #e8f1e7;
+}
+
+.flag__image {
+  border-radius: 3px;
+  margin-right: 8px;
+}
+// .changeLanguage__select {
+//   border-radius: 8px;
+//   padding: 8px;
+//   width: 136px;
+//   height: 40px;
+//   border: none;
+//   margin-top: auto;
+//   margin-bottom: auto;
+// }
+
+.changeLanguage__button {
   font-weight: 300;
   font-size: 20px;
   color: #141414;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  //   position: relative;
 }
+
+// .languageListItem {
+// }
 
 .changeLanguage__options {
   border-radius: 8px;

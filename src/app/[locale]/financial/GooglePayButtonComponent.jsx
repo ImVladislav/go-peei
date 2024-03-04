@@ -9,7 +9,7 @@ const DynamicGooglePayButton = dynamic(
   { ssr: false }
 );
 
-const GooglePayButtonComponent = () => {
+const GooglePayButtonComponent = ({ onSuccess, onError }) => {
   // Параметри запиту платежу
   const paymentRequest = {
     apiVersion: 2,
@@ -47,20 +47,21 @@ const GooglePayButtonComponent = () => {
   // Обробник події завантаження даних про платіж
   const onLoadPaymentData = (event) => {
     console.log("load payment data", event.detail);
+    onSuccess(); // Викликати у разі успішного платежу
   };
 
   // Обробник події помилки
-  const onError = (event) => {
+  const handleError = (event) => {
     console.error("error", event.detail);
+    onError(); // Викликати у разі помилки платежу
   };
-
   // Повернення кнопки Google Pay з вказаними параметрами
   return (
     <DynamicGooglePayButton
       environment="TEST"
       paymentRequest={paymentRequest}
       onLoadPaymentData={onLoadPaymentData}
-      onError={onError}
+      onError={handleError} // використовуйте змінну handleError замість onError
       buttonColor="black"
       buttonType="donate"
       buttonLabel="ПІДТРИМАТИ НАС ФІНАНСОВО"

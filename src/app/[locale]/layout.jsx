@@ -34,10 +34,10 @@ export default async function RootLayout({ children, params: { locale } }) {
         <body className={exo.className}>
           <div className="wrapper">
             <Header locale={locale} />
-
             <main>{children}</main>
             <Footer />
           </div>
+          <div id="modal-root"></div>
         </body>
       </html>
     </TranslationsProvider>

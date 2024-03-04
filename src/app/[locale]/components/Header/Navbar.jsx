@@ -2,7 +2,7 @@ import initTranslations from "../../../../app/i18n";
 import Link from "next/link";
 import TranslationsProvider from "../../../../../components/TranslationsProvider";
 import { navItems } from "./navItems";
-
+import s from "./Header.module.scss";
 const i18nNamespaces = ["navbar", "common"];
 
 export default async function Navbar({ params: locale }) {
@@ -13,12 +13,12 @@ export default async function Navbar({ params: locale }) {
       locale={locale}
       resources={resources}
     >
-      <nav>
+      <nav className={s.nav}>
         {navItems.map((item) => (
-          <div key={item.title.label} className="nav-item">
+          <div key={item.title.label} className={s.nav__item}>
             <Link href={item.title.href}>
               <span
-                className="link"
+                className={s.link}
                 style={{ fontSize: "20px", cursor: "pointer", color: "black" }}
               >
                 {t(item.title.key)}
@@ -31,7 +31,7 @@ export default async function Navbar({ params: locale }) {
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="svg-icon"
+              className={s.svgIcon}
             >
               <path
                 d="M6 9L12 15L18 9"
@@ -41,13 +41,13 @@ export default async function Navbar({ params: locale }) {
                 strokeLinejoin="round"
               />
             </svg>
-            <ul className="dropdown">
+            <ul className={s.dropdown}>
               {item.links.map((link) => (
                 <li style={{ padding: "5px" }} key={link.label}>
                   <Link
                     style={{ fontSize: "18px" }}
                     href={link.href}
-                    className="link"
+                    className={s.link}
                   >
                     {t(link.key)}
                   </Link>
@@ -58,7 +58,7 @@ export default async function Navbar({ params: locale }) {
         ))}
         <Link
           href="to_contact_page"
-          className="link"
+          className={s.link}
           style={{ fontSize: "20px", cursor: "pointer", color: "black" }}
         >
           {t("contacts")}

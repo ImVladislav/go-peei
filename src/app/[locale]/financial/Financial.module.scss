@@ -1,14 +1,18 @@
 .financial__bg {
   background-image: url("../../../../public/financial/financialBg.png");
   background-size: cover;
-  background-position: center;
+  // background-position: center;
   background-repeat: no-repeat;
+  padding: 110px 0px 140px;
+  padding-bottom: 10%;
 }
 .financial__container {
   width: 790px;
   height: 609px;
   background-color: white;
   padding: 22px 30px;
+  margin-right: 80px;
+  margin-left: auto;
 }
 .financial__container_mainBlock {
   display: flex;

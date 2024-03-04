@@ -1,9 +1,21 @@
 @import "../../../styles/utils/container";
+@import "../../../styles/utils/variables";
+
+// //  SASS Vars
+// $main-green: #0d490d;
+// $focus-green: #173614;
+// $green-50: #e8f1e7;
+// $green-30: #f5f8f5;
+// $main-black: #141414;
+// $main-white: #fffefe;
+// $main-grey: #adadad;
+// $green-hover: #10880d;
 
 .header__container {
   //   @extend .container;
   max-width: 1440px;
   margin: 0 auto;
+  width: 100%;
 }
 .header__contact {
   display: flex;
@@ -15,7 +27,7 @@
   padding-left: auto;
   padding-right: auto;
 
-  background-color: #e8f1e7;
+  header__logolinkackground-color: #e8f1e7;
   // border-radius: 15px;
   // box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
   //   15px 15px 15px rgba(0, 0, 0, 0.1),
@@ -33,8 +45,8 @@
 
   &:hover,
   &:focus {
-    color: green;
-    fill: green;
+    color: $focus-green;
+    fill: $focus-green;
     &::after {
       transform: scaleX(1);
       transform-origin: bottom left;
@@ -57,15 +69,18 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0px;
+  margin: 20px 80px;
 }
 .header__logoLink {
-  margin-left: 80px;
+  //   margin-left: 80px;
+  display: flex;
 }
 
 .header__contact_phoneEemail_block {
   display: flex;
   align-items: center;
+
+  justify-content: space-between;
 }
 .header__contact__socialBlock {
   display: "flex";
@@ -95,4 +110,72 @@
 .header__contactIcon {
   margin: "0px, 4px";
   width: 24px;
+}
+//=====================================Navbar===========================================
+
+.nav {
+  display: flex;
+  //   margin-left: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.nav__item {
+  position: relative;
+  margin-right: 20px;
+  height: fit-content;
+  cursor: pointer;
+  display: flex;
+}
+.nav-item:hover .svgIcon {
+  transform: rotate(180deg);
+  transition: transform 0.5s;
+  stroke: green; /* Додайте цей рядок, щоб змінити колір на зелений */
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px;
+  border-radius: 4px;
+  width: max-content;
+}
+
+.nav-links {
+  color: black;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+  transition: transform 1.5s;
+}
+
+.dropdown li {
+  margin: 5px 0;
+}
+
+.dropdown {
+  transition: transform 1.5s;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+  // background-color: #2ec194 !important;
+  // border-radius: 15px;
+  box-shadow: 6px 6px 2px rgba(255, 255, 255, 0.2),
+    5px 5px 15px rgb(0 0 0 / 35%);
+  z-index: 1;
+}
+
+.dropdown a:hover {
+  color: green;
+}
+
+.active {
+  font-weight: bold;
 }

@@ -22,29 +22,20 @@ export function generateStaticParams() {
 
 export default async function RootLayout({ children, params: { locale } }) {
   const i18nNamespaces = ["home", "common", "navbar"];
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
-  // console.log(locale);
+
+  const { resources } = await initTranslations(locale, i18nNamespaces);
+
   return (
-    // <html lang={locale} dir={dir(locale)}>
-    // <body className={exo.className}>
-    //   <div className="wrapper">
-    //     <Header />
-    //     <ExampleClientComponent />
-    //     <main>{children}</main>
-    //     <Footer />
-    //   </div>
-    // </body>
-    // </html>
     <TranslationsProvider
       namespaces={i18nNamespaces}
       locale={locale}
       resources={resources}
     >
       <html lang={locale} dir={dir(locale)}>
-        <body className={exo.className} suppressHydrationWarning={true}>
+        <body className={exo.className}>
           <div className="wrapper">
             <Header locale={locale} />
-            <ExampleClientComponent />
+
             <main>{children}</main>
             <Footer />
           </div>

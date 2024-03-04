@@ -7,6 +7,8 @@ import Image from "next/image";
 import s from "./Financial.module.scss";
 import Link from "next/link";
 import copyLickIcon from "../../../../public/financial/Icon.svg";
+import container from "../../styles/utils/Container.module.scss";
+import GooglePayButtonComponent from "./GooglePayButtonComponent";
 
 const DynamicGooglePayButton = dynamic(
   () =>
@@ -101,89 +103,92 @@ const FinancialPage = () => {
 
   return (
     <div className={s.financial__bg}>
-      <section className={s.financial__container}>
-        <h1 className={s.financial__title}>Підтримати нас фінансово</h1>
-        <div className={s.financial__container_mainBlock}>
-          <div>
-            <div className={s.financial__container_leftBlock}>
-              <h2 className={s.financial__subTitle}>Оберіть суму внеску</h2>
-              <div className="buttons">
-                <button
-                  className={s.financial__fixedAmountDonatBtn}
-                  onClick={() => handleAmountButtonClick("100.00")}
-                >
-                  100
-                </button>
-                <button
-                  className={s.financial__fixedAmountDonatBtn}
-                  onClick={() => handleAmountButtonClick("200.00")}
-                >
-                  200
-                </button>
-                <button
-                  className={s.financial__fixedAmountDonatBtn}
-                  onClick={() => handleAmountButtonClick("300.00")}
-                >
-                  300
-                </button>
-              </div>
-              <input
-                className={`${s.financial__fixedAmountDonatBtn} ${s.financial__fixedAmountDonatInput}`}
-                type="text"
-                placeholder="Сума"
-                value={donationAmount}
-                onChange={handleInputChange}
-              />
-              <h2 className={s.financial__subTitle}>
-                Оберіть платіжну систему
-              </h2>
-              <div className={s.financial__btnBlock}>
-                <DynamicGooglePayButton
-                  environment="TEST"
-                  paymentRequest={paymentRequest}
-                  onLoadPaymentData={(paymentData) => {
-                    console.log("Payment loaded:", paymentData);
-                  }}
-                  onPaymentSuccess={onPaymentSuccess}
-                  onPaymentError={onPaymentError}
-                />
-                <button>apple pay</button>
-              </div>
-              <Link
-                className={`${s.financial__subTitle} ${s.financial__link}`}
-                href=""
-              >
-                Договір оферти
-              </Link>
-            </div>
-          </div>
-          <div className={s.financial__container_rightBlock}>
-            <h2
-              className={`${s.financial__subTitle} ${s.financial__subTitle_leftBlock}`}
-            >
-              Банківські реквізити в межах України
-            </h2>
-            <div class="form">
-              {fields.map(({ label, value, id }) => (
-                <div className="field" key={id}>
-                  <label
-                    className={`${s.financial__subTitle} ${s.financial__subTitle_leftBlock}`}
+      <div className={container.container}>
+        <section className={s.financial__container}>
+          <h1 className={s.financial__title}>Підтримати нас фінансово</h1>
+          <div className={s.financial__container_mainBlock}>
+            <div>
+              <div className={s.financial__container_leftBlock}>
+                <h2 className={s.financial__subTitle}>Оберіть суму внеску</h2>
+                <div className="buttons">
+                  <button
+                    className={s.financial__fixedAmountDonatBtn}
+                    onClick={() => handleAmountButtonClick("100.00")}
                   >
-                    {label}
-                  </label>
-                  <div>{value}</div>
-                  <Image
-                    src={copyLickIcon}
-                    alt={`Copy ${label} icon`}
-                    onClick={() => copyToClipboard(value)}
-                    style={{ cursor: "pointer" }}
-                  />
+                    100
+                  </button>
+                  <button
+                    className={s.financial__fixedAmountDonatBtn}
+                    onClick={() => handleAmountButtonClick("200.00")}
+                  >
+                    200
+                  </button>
+                  <button
+                    className={s.financial__fixedAmountDonatBtn}
+                    onClick={() => handleAmountButtonClick("300.00")}
+                  >
+                    300
+                  </button>
                 </div>
-              ))}
+                <input
+                  className={`${s.financial__fixedAmountDonatBtn} ${s.financial__fixedAmountDonatInput}`}
+                  type="text"
+                  placeholder="Сума"
+                  value={donationAmount}
+                  onChange={handleInputChange}
+                />
+                <h2 className={s.financial__subTitle}>
+                  Оберіть платіжну систему
+                </h2>
+                <div className={s.financial__btnBlock}>
+                  <DynamicGooglePayButton
+                    environment="TEST"
+                    paymentRequest={paymentRequest}
+                    onLoadPaymentData={(paymentData) => {
+                      console.log("Payment loaded:", paymentData);
+                    }}
+                    onPaymentSuccess={onPaymentSuccess}
+                    onPaymentError={onPaymentError}
+                  />
+                  <button>apple pay</button>
+                  <GooglePayButtonComponent />
+                </div>
+                <Link
+                  className={`${s.financial__subTitle} ${s.financial__link}`}
+                  href=""
+                >
+                  Договір оферти
+                </Link>
+              </div>
+            </div>
+            <div className={s.financial__container_rightBlock}>
+              <h2
+                className={`${s.financial__subTitle} ${s.financial__subTitle_leftBlock}`}
+              >
+                Банківські реквізити в межах України
+              </h2>
+              <div class="form">
+                {fields.map(({ label, value, id }) => (
+                  <div className="field" key={id}>
+                    <label
+                      className={`${s.financial__subTitle} ${s.financial__subTitle_leftBlock}`}
+                    >
+                      {label}
+                    </label>
+                    <div>{value}</div>
+                    <Image
+                      src={copyLickIcon}
+                      alt={`Copy ${label} icon`}
+                      onClick={() => copyToClipboard(value)}
+                      style={{ cursor: "pointer" }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };

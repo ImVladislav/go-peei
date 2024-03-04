@@ -9,7 +9,7 @@ import styles from "./projects.module.scss";
 const Projects = () => {
   return (
     <section className={styles.section}>
-      <Title width={462}>допоможіть зібрать кошти</Title>
+      <Title width={462}>допоможіть зібрати кошти</Title>
 
       <div className={styles.inner}>
         <ul className={styles.list}>

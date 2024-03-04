@@ -27,7 +27,7 @@ const WhatWeDo = () => {
             </div>
           </li>
           <li className={styles.item}>
-            <Image src="/main/two.svg" alt="вітряк" width={80} height={114} />
+            <Image src="/main/two.svg" alt="вітряк" width={80} height={115} />
             <div className={styles.column}>
               <h3 className={styles.subtitle}>
                 Впровадження інновацій в сфері відновлювальної енергетики

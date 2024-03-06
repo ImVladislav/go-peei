@@ -1,13 +1,15 @@
 import React from "react";
+import s from "./Financial.module.scss";
+import sucssesPaymetnIcon from "../../../../public/financial/sucsessPayment.svg";
 
+import Image from "next/image";
 const ErrorModal = ({ onClose }) => {
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <h2>Помилка під час оплати</h2>
-        <p>Щось пішло не так. Будь ласка, спробуйте знову.</p>
-        <button onClick={onClose}>Закрити</button>
+    <div className={s.modal__content}>
+      <div className={s.modal__paymentIcomThumb}>
+        <Image src={sucssesPaymetnIcon} alt="Payment Sucsess" />
       </div>
+      <h2>Виникла проблема спробуйте ще</h2>
     </div>
   );
 };

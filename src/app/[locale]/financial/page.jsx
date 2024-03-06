@@ -11,6 +11,7 @@ import container from "../../styles/utils/Container.module.scss";
 import GooglePayButtonComponent from "./GooglePayButtonComponent";
 import SuccessModal from "./SuccessModal";
 import ErrorModal from "./ErrorModal";
+import Modal from "@/app/[locale]/components/Modal/Modal";
 
 // const DynamicGooglePayButton = dynamic(
 //   () =>
@@ -23,9 +24,10 @@ import ErrorModal from "./ErrorModal";
 const FinancialPage = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
-
+  const [showModal, setShowModal] = useState(false);
   const handlePaymentSuccess = () => {
     setShowSuccessModal(true);
+    setShowModal(true);
     console.log("sucsess");
   };
 
@@ -40,7 +42,7 @@ const FinancialPage = () => {
       id: "account",
     },
     {
-      label: "Клієнт",
+      label: "Отримувач",
       value: "Громадська Організація 'Платформа еко-енергетичних ініціатив'",
       id: "client",
     },
@@ -206,12 +208,15 @@ const FinancialPage = () => {
           </div>
         </section>
       </div>
-      {showSuccessModal && (
+      <Modal show={showModal} onClose={() => setShowModal(false)}>
+        <SuccessModal />
+      </Modal>
+      {/* {showSuccessModal && (
         <SuccessModal onClose={() => setShowSuccessModal(false)} />
-      )}
-      {showErrorModal && (
+      )} */}
+      {/* {showErrorModal && (
         <ErrorModal onClose={() => setShowErrorModal(false)} />
-      )}
+      )} */}
     </div>
   );
 };

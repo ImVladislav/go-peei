@@ -1,12 +1,16 @@
 import React from "react";
+import s from "./Financial.module.scss";
+import sucssesPaymetnIcon from "../../../../public/financial/sucsessPayment.svg";
 
-const SuccessModal = ({ onClose }) => {
+import Image from "next/image";
+
+const SuccessModal = () => {
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <h2>Успішно оплачено!</h2>
-        <button onClick={onClose}>Закрити</button>
+    <div className={s.modal__content}>
+      <div className={s.modal__paymentIcomThumb}>
+        <Image src={sucssesPaymetnIcon} alt="Payment Sucsess" />
       </div>
+      <h2>Оплата пройшла успішно</h2>
     </div>
   );
 };

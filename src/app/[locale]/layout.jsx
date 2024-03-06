@@ -6,7 +6,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 
 import "@/app/styles/index.scss";
-import ExampleClientComponent from "../../../components/ExampleClientComponent";
+// import ExampleClientComponent from "../../../components/ExampleClientComponent";
 import TranslationsProvider from "../../../components/TranslationsProvider";
 import initTranslations from "../i18n";
 const exo = Exo_2({ subsets: ["latin"] });

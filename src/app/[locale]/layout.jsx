@@ -3,7 +3,7 @@ import { Exo_2 } from "next/font/google";
 import { dir } from "i18next";
 import i18nConfig from "@/i18nConfig";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 
 import "@/app/styles/index.scss";
 import ExampleClientComponent from "../../../components/ExampleClientComponent";

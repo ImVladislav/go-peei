@@ -1,10 +1,16 @@
 export type navLinks = {
+  col: number;
   href: string;
   key: string;
   label: string;
 };
 
-export type projectItem = {
+export type socialsItem = {
+  href: string;
+  name: string;
+};
+
+export type projectsItem = {
   id: string;
   title: string;
   imageSrc: string;
@@ -12,7 +18,8 @@ export type projectItem = {
   total: number;
   fundsRaised: number;
 };
-export type reviewItem = {
+
+export type reviewsItem = {
   id: string;
   name: string;
   description: string;

@@ -1,15 +1,81 @@
-import { navLinks, projectItem, reviewItem, newsItem } from "@/app/types";
+import {
+  navLinks,
+  projectsItem,
+  reviewsItem,
+  newsItem,
+  socialsItem,
+} from "@/app/types";
 
 // NAVIGATION
-export const NAV_LINKS: navLinks[] = [
-  { href: "/", key: "home", label: "Головна" },
-  { href: "/services", key: "services", label: "Послуги" },
-  { href: "/gallery", key: "gallery", label: "Галерея" },
-  { href: "/reviews", key: "reviews", label: "Відгуки" },
-  { href: "/contacts", key: "contacts", label: "Контакти" },
+export const navFooter: navLinks[] = [
+  { col: 1, href: "/aboutUs", key: "aboutUs", label: "Про нас" },
+  { col: 1, href: "/ourTeam", key: "ourTeam", label: "Наша команда" },
+  {
+    col: 1,
+    href: "/ourPartners",
+    key: "ourPartners",
+    label: "Наші партнери",
+  },
+  {
+    col: 1,
+    href: "/officialDocuments",
+    key: "officialDocuments",
+    label: "Офіційні документи",
+  },
+  { col: 1, href: "/rule", key: "rule", label: "Правління" },
+  {
+    col: 2,
+    key: "workWithChildren",
+    label: "Робота з дітьми",
+    href: "/work-with-children",
+  },
+  {
+    col: 2,
+    key: "workWithTeenagers",
+    label: "Робота з молоддю",
+    href: "/work-with-teenagers",
+  },
+  {
+    col: 2,
+    key: "charityActions",
+    label: "Благодійні акції",
+    href: "/charityActions",
+  },
+  {
+    col: 2,
+    key: "environmentalProtection",
+    label: "Охорона довкілля",
+    href: "/environmentalProtection",
+  },
+  { col: 2, key: "news", label: "Новини", href: "/news" },
+  { col: 3, key: "support", label: "Підтримати донатом", href: "/support" },
+  {
+    col: 3,
+    key: "partnership",
+    label: "Стати партнером",
+    href: "/partnership",
+  },
+  {
+    col: 3,
+    key: "volunteering",
+    label: "Стати волонтером",
+    href: "/volunteering",
+  },
+  { col: 3, href: "/reports", key: "reports", label: "Звіти" },
+  { col: 3, href: "/contacts", key: "contacts", label: "Контакти" },
 ];
 
-export const initialProjects: projectItem[] = [
+// Socials
+export const initialSocials: socialsItem[] = [
+  { href: "/whatsup", name: "WhatsUp" },
+  { href: "/instagram", name: "Instagram" },
+  { href: "/linkedin", name: "Linkedin" },
+  { href: "/facebook", name: "Facebook" },
+  { href: "/youtube", name: "YouTube" },
+];
+
+// Projects
+export const initialProjects: projectsItem[] = [
   {
     id: "1",
     title: "Проєкт “Теплий та економний дім для ВПО”",
@@ -39,7 +105,8 @@ export const initialProjects: projectItem[] = [
   },
 ];
 
-export const initialReviews: reviewItem[] = [
+// Reviews
+export const initialReviews: reviewsItem[] = [
   {
     id: "1",
     name: "Вікторія",

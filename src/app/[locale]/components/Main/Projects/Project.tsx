@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { projectItem } from "@/app/types";
+import { projectsItem } from "@/app/types";
 import Button from "../../Button/Button";
 
 import styles from "./projects.module.scss";
 interface ProjectProps {
-  project: projectItem;
+  project: projectsItem;
 }
 
 const Project = ({ project }: ProjectProps) => {

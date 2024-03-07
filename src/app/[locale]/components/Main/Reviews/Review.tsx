@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-import { reviewItem } from "@/app/types";
+import { reviewsItem } from "@/app/types";
 
 import styles from "./reviews.module.scss";
 
 interface ReviewProps {
-  review: reviewItem;
+  review: reviewsItem;
 }
 
 const Review = ({ review }: ReviewProps) => {

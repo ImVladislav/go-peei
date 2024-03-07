@@ -1,0 +1,21 @@
+.wrap {
+  display: flex;
+  gap: 64px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.item {
+  padding: 8px;
+}
+
+.link {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #141414;
+  border-radius: 8px;
+  padding: 8px;
+}

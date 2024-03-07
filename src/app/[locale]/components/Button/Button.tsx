@@ -1,7 +1,7 @@
 import styles from "./button.module.scss";
 
 interface ButtonProps {
-  newStyles: string;
+  newStyles?: string;
   children: string;
 }
 

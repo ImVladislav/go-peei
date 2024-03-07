@@ -1,7 +1,8 @@
 import Image from "next/image";
 import styles from "./title.module.scss";
 interface TitleProps {
-  children: string;
+  newStyles?: string;
+  children: React.ReactNode;
   width: number;
 }
 
@@ -17,7 +18,7 @@ const Title = ({ width, children }: TitleProps) => {
             objectFit: "cover",
           }}
           src="/main/Rectangle.svg"
-          alt="Лінія"
+          alt="Line under the title"
           width={width}
           height={4}
         />

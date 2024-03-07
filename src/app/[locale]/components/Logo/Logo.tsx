@@ -11,13 +11,7 @@ interface LogoProps {
 const Logo = ({ width, height }: LogoProps) => {
   return (
     <Link href="/">
-      <Image
-        style={{ width: "auto", height: "auto" }}
-        src={logo}
-        width={width}
-        height={height}
-        alt="Logo"
-      />
+      <Image src={logo} width={width} height={height} alt="Logo" />
     </Link>
   );
 };

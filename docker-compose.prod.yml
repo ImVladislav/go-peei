@@ -1,0 +1,101 @@
+version: "3"
+
+services:
+  next:
+    container_name: next
+    build:
+      context: ./next
+      dockerfile: prod.Dockerfile
+      args:
+        ENV_VARIABLE: ${ENV_VARIABLE}
+        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+    restart: always
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.next-secure-headers.headers.framedeny=true"
+      - "traefik.http.middlewares.next-secure-headers.headers.contenttypenosniff=true"
+      - "traefik.http.middlewares.next-secure-headers.headers.browserxssfilter=true"
+      - "traefik.http.middlewares.next-gzip-compression.compress=true"
+      - "traefik.http.routers.next-web.rule=Host(`${NEXT_HOST:-next.example.com}`)"
+      - "traefik.http.routers.next-web.entrypoints=websecure"
+      - "traefik.http.routers.next-web.tls=${NEXT_TLS:-true}"
+      - "traefik.http.routers.next-web.tls.certresolver=le"
+      - "traefik.http.routers.next-web.service=next-web"
+      - "traefik.http.routers.next-web.middlewares=next-secure-headers,next-gzip-compression"
+      - "traefik.http.services.next-web.loadbalancer.server.port=${NEXT_PORT:-3000}"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+        compress: "true"
+    networks:
+      - next
+
+  traefik:
+    container_name: traefik
+    image: traefik:3.0
+    restart: always
+    stop_grace_period: 30s
+    env_file:
+      - .env
+    ports:
+      - "80:80"
+      - "443:443/tcp"
+      - "443:443/udp"
+    command:
+      - "--api.dashboard=false"
+      - "--log.level=ERROR"
+      - "--accesslog"
+      - "--providers.docker=true"
+      - "--providers.docker.allowemptyservices=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=traefik"
+      - "--providers.file.directory=/conf.d"
+      - "--providers.file.watch=true"
+      - "--entrypoints.ping.address=:8080"
+      - "--ping=true"
+      - "--ping.entrypoint=ping"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.websecure.http3"
+      - "--entrypoints.websecure.http3.advertisedport=443"
+      - "--certificatesresolvers.le.acme.storage=/acme/acme.json"
+      - "--certificatesresolvers.le.acme.email=${NEXT_CERT_EMAIL:-john.doe@example.com}"
+      - "--certificatesresolvers.le.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.le.acme.httpchallenge=${NEXT_CERT_HTTP_CHALLENGE:-true}"
+      - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
+      - "--global.checknewversion=false"
+      - "--global.sendanonymoususage=false"
+    volumes:
+      - ./traefik/acme:/acme:rw
+      - ./traefik/conf.d:/conf.d:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro,Z
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/traefik", "healthcheck", "--ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+        compress: "true"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - next
+
+  # Add more containers below (nginx, postgres, etc.)
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  next:
+    name: next

@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  next:
+    container_name: next
+    build:
+      context: ./next
+      dockerfile: dev.Dockerfile
+
+    # Set environment variables directly in the docker-compose file
+    environment:
+      ENV_VARIABLE: ${ENV_VARIABLE}
+      NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+
+    # Set environment variables based on the .env file
+    env_file:
+      - .env
+    volumes:
+      - ./next/src:/app/src
+      - ./next/public:/app/public
+      - ./next/components:/app/components
+      - ./next/locales:/app/locales
+    restart: always
+    ports:
+      - 127.0.0.1:3000:3000
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+        compress: "true"
+    networks:
+      - next
+
+  # Add more containers below (nginx, postgres, etc.)
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  next:
+    name: next

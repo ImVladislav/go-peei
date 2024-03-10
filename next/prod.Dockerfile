@@ -23,7 +23,6 @@ COPY locales ./locales
 COPY jsconfig.json .
 COPY next.config.js .
 COPY next.config.mjs .
-COPY next-env.d.ts .
 COPY tsconfig.json .
 COPY webpack.config.js .
 

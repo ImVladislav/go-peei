@@ -174,7 +174,7 @@ const FinancialPage = () => {
                 </div>
                 <Link
                   className={`${s.financial__subTitle} ${s.financial__link}`}
-                  href=""
+                  href="/financial/offert_contract"
                 >
                   Договір оферти
                 </Link>

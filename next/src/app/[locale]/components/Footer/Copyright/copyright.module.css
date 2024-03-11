@@ -1,0 +1,27 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #0d490d;
+  padding: 28px 0;
+}
+
+.copy {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+}
+
+.inner {
+  display: flex;
+  gap: 24px;
+}
+
+.link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #000;
+}/*# sourceMappingURL=copyright.module.css.map */

@@ -1,0 +1,36 @@
+.inner {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: 3px;
+}
+
+.slogan {
+  font-weight: 500;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #141414;
+}
+.slogan span {
+  color: #0d490d;
+}
+
+.btn {
+  margin-top: 34px;
+  width: 308px;
+  height: 52px;
+}/*# sourceMappingURL=hero.module.css.map */

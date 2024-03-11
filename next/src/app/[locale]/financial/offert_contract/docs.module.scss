@@ -1,0 +1,32 @@
+//=====================================offert_contract============================
+.offertContract__title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.offertContract__paragraf {
+  margin-top: 8px;
+}
+
+.offertContract__title__h3 {
+  margin-top: 60px;
+}
+
+.offertContract__table {
+  border-collapse: collapse;
+}
+
+.offertContract__table th,
+.offertContract__table td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.offertContract__signThumb {
+  position: relative;
+}
+
+.offertContract__sign {
+  position: absolute;
+  top: -27px;
+  left: 260px;
+}

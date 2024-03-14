@@ -1,0 +1,23 @@
+// .officialDocuments__titleThumb {
+//   //   margin-top: 100px;
+// //   margin-bottom: 60px;
+// }
+.officialDocuments__link {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  text-decoration: underline;
+  margin-top: 16px;
+}
+.officialDocuments__li_item_link {
+  margin-top: 16px;
+}
+
+.officialDocuments__section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.officialDocuments__section:last-child {
+  margin-bottom: 100px;
+}

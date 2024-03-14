@@ -38,7 +38,10 @@ First, run the production server (Final image approximately 110 MB).
 docker compose -f docker-compose.prod.yml build
 
 # Up prod in detached mode
-docker compose -f docker-compose.prod.yml up -d
+
+
+
+
 ```
 
 ## Development

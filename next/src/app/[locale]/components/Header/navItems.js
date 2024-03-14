@@ -8,7 +8,7 @@ export const navItems = [
       {
         key: "officialDocuments",
         label: "Офіційні документи",
-        href: "/about/5",
+        href: "/officialDocuments",
       },
       { key: "reports", label: "Звіти", href: "/about/6" },
       { key: "contacts", label: "Контакти", href: "/about/7" },

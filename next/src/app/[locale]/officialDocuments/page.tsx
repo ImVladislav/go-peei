@@ -3,7 +3,7 @@ import Title from "../components/Title/Title";
 import Link from "next/link";
 import s from "./OfficialDocuments.module.scss";
 import style from "../../styles/utils/Container.module.scss";
-const Page = () => {
+const OfficialDicuments = () => {
   return (
     <div className={style.container}>
       <section className={s.officialDocuments__section}>
@@ -38,7 +38,7 @@ const Page = () => {
       </section>
       <section className={s.officialDocuments__section}>
         {/* <div className={s.officialDocuments__titleThumb}> */}
-        <Title width={340}>Офіційні документи</Title>
+        <Title width={740}>Закони України пов’язані з волонтерством</Title>
         {/* </div> */}
         <ul>
           <li className={s.officialDocuments__li_item_link}>
@@ -58,4 +58,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default OfficialDicuments;

@@ -1,4 +1,8 @@
 //=====================================offert_contract============================
+.container__offertContract {
+  margin-bottom: 60px;
+}
+
 .offertContract__title {
   text-align: center;
   margin-bottom: 60px;
@@ -9,10 +13,17 @@
 
 .offertContract__title__h3 {
   margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.offertContract__title__h4 {
+  margin-top: 20px;
+  margin-bottom: 12px;
 }
 
 .offertContract__table {
   border-collapse: collapse;
+  margin: 12px 0;
 }
 
 .offertContract__table th,

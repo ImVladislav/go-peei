@@ -8,7 +8,7 @@ const DogovirOfferPage = () => {
   console.log(sign);
 
   return (
-    <div className={style.container}>
+    <div className={`${style.container} ${s.container__offertContract}`}>
       <h1 className={s.offertContract__title}>
         Договір Публічної Оферти про надання благодійного внеску
       </h1>
@@ -137,7 +137,7 @@ const DogovirOfferPage = () => {
         пожертви електронним платежем на Сайті, шляхом переказу грошових коштів
         на банківський рахунок Організації:
       </p>
-      <h4>
+      <h4 className={s.offertContract__title__h4}>
         Реквізити для здійснення благодійних пожертв в межах України у гривні:
       </h4>
       <p className={s.offertContract__paragraf}>
@@ -153,7 +153,7 @@ const DogovirOfferPage = () => {
       <ul>
         <li>• Призначення платежу : Благодійна пожертва.</li>
       </ul>
-      <h4>
+      <h4 className={s.offertContract__title__h4}>
         Реквізити для здійснення благодійних пожертв в межах України у гривні:
       </h4>
       <ul>

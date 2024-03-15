@@ -34,3 +34,8 @@ export type newsItem = {
   date: string;
   firstNew: boolean;
 };
+
+export type GoalType = {
+  title: string;
+  desc: string;
+};

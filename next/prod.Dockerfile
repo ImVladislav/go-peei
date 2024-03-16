@@ -73,9 +73,6 @@ ENV NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE}
 # Uncomment the following line to disable telemetry at run time
 ENV NEXT_TELEMETRY_DISABLED 1
 
-# Install MongoDB in the production image
-RUN apk --no-cache add mongodb-tools
-
 # Note: Don't expose ports here, Compose will handle that for us
 
 CMD ["node", "server.js"]

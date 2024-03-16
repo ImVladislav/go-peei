@@ -39,3 +39,17 @@ services:
 networks:
   next:
 
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongodb/mongodb-community-server:7.0-ubi8
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER:-mongo}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS:-mongoSuperSecretPass}
+    volumes:
+      - mongodb-data:/data/db
+
+volumes: 
+  mongodb-data:

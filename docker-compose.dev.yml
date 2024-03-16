@@ -27,8 +27,10 @@ services:
       driver: "json-file"
       options:
         max-file: "5"
-        max-size: "10m"
+        max-size: "10m" 
         compress: "true"
+    depends_on:
+      - mongodb
     networks:
       - next
 
@@ -36,20 +38,21 @@ services:
 
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname
-networks:
-  next:
-
-    depends_on:
-      - mongodb
 
   mongodb:
     image: mongodb/mongodb-community-server:7.0-ubi8
     restart: always
+    ports:
+      - 127.0.0.1:27017:27017
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER:-mongo}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS:-mongoSuperSecretPass}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-mongo} 
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS:-mongoSuperSecretPass}
+
     volumes:
       - mongodb-data:/data/db
+
+networks:
+  next:
 
 volumes: 
   mongodb-data:

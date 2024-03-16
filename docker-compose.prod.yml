@@ -92,24 +92,22 @@ services:
     networks:
       - next
 
-  # Add more containers below (nginx, postgres, etc.)
-
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-networks:
-  next:
-
-    depends_on:
-      - mongodb
-
   mongodb:
-    image: mongodb/mongodb-community-server:7.0-ubi8
+    image: mongo:latest
+    container_name: mongodb
     restart: always
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER:-mongo}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS:-mongoSuperSecretPass}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-mongo}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS:-mongoSuperSecretPass}
     volumes:
       - mongodb-data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - next
 
 volumes: 
   mongodb-data:
+
+networks:
+  next:

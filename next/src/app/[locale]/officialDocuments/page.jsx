@@ -3,7 +3,8 @@ import Title from "../components/Title/Title";
 import Link from "next/link";
 import s from "./OfficialDocuments.module.scss";
 import style from "../../styles/utils/Container.module.scss";
-const OfficialDicuments = () => {
+
+const OfficialDocuments = () => {
   return (
     <div className={style.container}>
       <section className={s.officialDocuments__section}>
@@ -58,4 +59,4 @@ const OfficialDicuments = () => {
   );
 };
 
-export default OfficialDicuments;
+export default OfficialDocuments;

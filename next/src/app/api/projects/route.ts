@@ -24,7 +24,7 @@ export const POST = async (request: Request) => {
   try {
     const body = await request.json();
 
-    const result = await Project.create({ ...body });
+    const result = await Project.create({ body });
     return new NextResponse(JSON.stringify(result), {
       status: 201,
     });

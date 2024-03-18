@@ -23,6 +23,10 @@ export const POST = async (request: Request) => {
   try {
     const body = await request.json();
 
+    // if (body.firstNew === true) {
+    //   const items = await News.find({ firstNew });
+    // }
+
     const newNews = await News.create({ body });
     return new NextResponse(JSON.stringify(newNews), {
       status: 201,

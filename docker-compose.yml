@@ -12,7 +12,7 @@ services:
     restart: always
     env_file:
       - .env
-      - ./next/env
+      - ./next/.env
     labels:
       - "traefik.enable=true"
       - "traefik.http.middlewares.next-secure-headers.headers.framedeny=true"

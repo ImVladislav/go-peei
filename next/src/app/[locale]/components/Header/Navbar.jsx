@@ -55,7 +55,7 @@ export default async function Navbar({ params: locale }) {
             </ul>
           </div>
         ))}
-        <Link href="to_contact_page" className={`${s.link} ${s.contactLink}`}>
+        <Link href="/contacts" className={`${s.link} ${s.contactLink}`}>
           {t("contacts")}
         </Link>
       </nav>

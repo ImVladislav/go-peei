@@ -1,87 +1,45 @@
-// import bg from "../../../public/environmentalProtection/EnvironmentalProtectionBG.jpg";
-import React from "react";
-import news from "../../../../public/news.jpg";
 import Image from "next/image";
-const News = () => {
+
+import Title from "../components/Title/Title";
+
+import { getData } from "../components/getData";
+import { newsItem } from "@/app/types";
+
+import styles from "./news.module.scss";
+import Link from "next/link";
+
+const News = async () => {
+  const data: newsItem[] = await getData("news");
   return (
-    //   <div style={{ backgroundImage: `url(${bg.src})`, backgroundSize: "cover" }}>
     <div className="container">
-      <h3 className="about__text-block-title">Новини</h3>
-      <section
-        style={{
-          alignItems: "center",
-          display: "flex",
-          flexDirection: "row-reverse",
-        }}
-      >
-        <Image className="about__images" src={news} alt={"about us image"} />
-        <div
-          style={{ backgroundColor: "#ffffff85", padding: "0px 20px" }}
-          className="about__text-block"
-        >
-          {/* <h3 className="about__text-block-title">
-                Наша Роль у Збереженні Навколишнього Середовища
-              </h3> */}
-          <ul>
-            <li className="about__text-block-item">
-              <p style={{ fontWeight: "900" }} className="about__text">
-                З 2023р. Наша Організація Вводить Інноваційну Технологію
-                Переробки Пластику**
-              </p>
+      <div className={styles.section}>
+        <Title width={130}>Новини</Title>
+
+        <ul className={styles.list}>
+          {data?.map((item) => (
+            <li className={styles.item} key={item._id}>
+              <div className={styles.item__img}>
+                <Image
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    height: "193px",
+                  }}
+                  src={item.imageSrc}
+                  alt={item.title}
+                  width={458}
+                  height={193}
+                />
+              </div>
+              <Link className={styles.link} href={`/news/${item._id}`}>
+                <h2 className={styles.item__title}>{item.title}</h2>
+              </Link>
+              <p className={styles.item__data}>{item.date}</p>
             </li>
-            <li className="about__text-block-item">
-              <p style={{ fontWeight: "900" }} className="about__text">
-                Сьогодні з гордістю ми оголошуємо, що наша організація стала
-                піонером в сфері екологічної відповідальності, впроваджуючи
-                новаторську технологію переробки пластику та виробництва
-                вторинного пластику. Цей крок відзначає наше рішуче прагнення до
-                сталого розвитку та революції у боротьбі з пластиковим
-                забрудненням.
-              </p>
-            </li>
-            <li className="about__text-block-item">
-              <p style={{ fontWeight: "900" }} className="about__text">
-                Інноваційна Технологія Переробки
-              </p>
-            </li>
-            <li className="about__text-block-item">
-              <p style={{ fontWeight: "900" }} className="about__text">
-                Наша нова технологія переробки пластику базується на передових
-                наукових розробках і дозволяє нам ефективно обробляти
-                різноманітні види пластику, включаючи складні відходи та
-                забруднені матеріали. Це відкриває двері до широкого спектру
-                можливостей для зменшення використання нового пластику та
-                підвищення вторинної переробки.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <div>
-        <p className="about__text">
-          ### Створення Вторинного Пластику Наша організація не обмежується лише
-          переробкою пластику. Ми вирішили йти далі, виробляючи високоякісний
-          вторинний пластик, який може бути використаний у виробництві
-          різноманітних продуктів. Це включає у себе пластик для упаковки,
-          виробів для побутового використання та інші галузі, сприяючи круговому
-          використанню матеріалів. ### Внесок у Збереження Навколишнього
-          Середовища Цей стратегічний крок підкреслює наше прагнення внести
-          реальний внесок у збереження навколишнього середовища та зменшення
-          пластикового забруднення. Замість того, щоб додавати до глобального
-          відходу, ми перетворюємо пластик у цінний ресурс, сприяючи екологічно
-          стійкому майбутньому. ### Співпраця та Партнерство Ми запрошуємо інші
-          організації, підприємства та урядові структури приєднатися до нашої
-          ініціативи. Спільно ми можемо розвивати та впроваджувати подібні
-          технології, щоб спільно працювати над збереженням нашої планети. ###
-          Створення Здорового Майбутнього Цей крок вперед - це лише початок
-          нашого зобов&lsquo;язання перед нашим світом. Ми впевнені, що разом ми
-          можемо створити здорове та екологічно чисте майбутнє для нас та наших
-          нащадків. Наша організація завжди відкрита для співпраці та нових ідей
-          для досягнення цього грандіозного завдання.
-        </p>
+          ))}
+        </ul>
       </div>
     </div>
-    //   </div>;
   );
 };
 

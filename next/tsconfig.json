@@ -21,6 +21,25 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/[locale]/page.jsx", "src/app/[locale]/components/Header/Navbar.jsx", "src/app/i18n.js", "src/app/[locale]/components/About/AboutUs.jsx", "src/app/[locale]/about/page.jsx", "src/app/[locale]/components/Header/Header.jsx", "src/app/[locale]/financial/page.jsx", "src/app/[locale]/layout.jsx", "src/app/[locale]/environmentalProtection/page.jsx", "src/app/[locale]/components/Main/SafetyRules.tsx", "src/app/[locale]/officialDocuments/page.jsx", "src/app/[locale]/officialDocuments/docs/page.jsx"],
+
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/[locale]/page.jsx",
+    "src/app/[locale]/components/Header/Navbar.jsx",
+    "src/app/i18n.js",
+    "src/app/[locale]/components/About/AboutUs.jsx",
+    "src/app/[locale]/about/page.jsx",
+    "src/app/[locale]/components/Header/Header.jsx",
+    "src/app/[locale]/financial/page.jsx",
+    "src/app/[locale]/layout.jsx",
+    "src/app/[locale]/environmentalProtection/page.jsx",
+    "src/app/[locale]/components/Main/SafetyRules.tsx",
+    "src/app/[locale]/officialDocuments/page.jsx",
+    "src/app/[locale]/officialDocuments/docs/page.jsx"
+  ],
+
   "exclude": ["node_modules"]
 }

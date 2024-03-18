@@ -11,7 +11,7 @@ export type socialsItem = {
 };
 
 export type projectsItem = {
-  id: string;
+  _id: string;
   title: string;
   imageSrc: string;
   description: string;
@@ -20,14 +20,14 @@ export type projectsItem = {
 };
 
 export type reviewsItem = {
-  id: string;
+  _id: string;
   name: string;
   description: string;
   imageSrc: string;
 };
 
 export type newsItem = {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   imageSrc: string;

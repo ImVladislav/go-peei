@@ -1,18 +1,20 @@
 "use client";
-
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import "swiper/swiper-bundle.css";
 
-import { initialReviews } from "@/app/constants/index";
+import "swiper/scss";
 
+import { reviewsItem } from "@/app/types";
 import Review from "./Review";
 import Title from "../../Title/Title";
 
 import styles from "./reviews.module.scss";
+interface ReviewProps {
+  data: reviewsItem[];
+}
 
-const Reviews = () => {
+const Reviews = ({ data }: ReviewProps) => {
   return (
     <section className={styles.section}>
       <div className={styles.box_title}>
@@ -21,7 +23,7 @@ const Reviews = () => {
       <Swiper
         slidesPerView={2.5}
         spaceBetween={56}
-        // grabCursor={true}
+        grabCursor={true}
         loop={true}
         autoplay={{
           delay: 1000,
@@ -33,14 +35,14 @@ const Reviews = () => {
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {initialReviews.map((review) => (
-          <SwiperSlide className={styles.swiper_slide} key={review.id}>
+        {data?.map((review) => (
+          <SwiperSlide className={styles.swiper_slide} key={review._id}>
             <Review review={review} />
           </SwiperSlide>
         ))}
       </Swiper>
       <div className={styles.box}>
-        <Link className={styles.box__link} href="/">
+        <Link className={styles.box__link} href="/contacts">
           Залишити відгук
         </Link>
       </div>

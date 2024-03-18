@@ -11,7 +11,7 @@ export const navItems = [
         href: "/officialDocuments",
       },
       { key: "reports", label: "Звіти", href: "/about/6" },
-      { key: "contacts", label: "Контакти", href: "/about/7" },
+      { key: "contacts", label: "Контакти", href: "contacts" },
     ],
   },
   {
@@ -34,7 +34,7 @@ export const navItems = [
       {
         key: "charityActions",
         label: "Благодійні акції",
-        href: "/activities/3",
+        href: "/activities/projects",
       },
       {
         key: "environmentalProtection",

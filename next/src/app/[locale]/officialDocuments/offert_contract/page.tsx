@@ -5,8 +5,6 @@ import sign from "../../../../../public/docs/sign.png";
 import Image from "next/image";
 
 const DogovirOfferPage = () => {
-  console.log(sign);
-
   return (
     <div className={`${style.container} ${s.container__offertContract}`}>
       <h1 className={s.offertContract__title}>
@@ -236,7 +234,9 @@ const DogovirOfferPage = () => {
       </table>
       <p>
         Please note that when transferring money, it must be marked as:
-        <span>Charitable donation for the Public Organization "PEEI"</span>
+        <span>
+          Charitable donation for the Public Organization &quot;PEEI&quot;
+        </span>
       </p>
       <p>
         Реквізити рахунків клієнта в АТ «ПУМБ»
@@ -316,7 +316,9 @@ const DogovirOfferPage = () => {
       </table>
       <p>
         Please note that when transferring money, it must be marked as:
-        <span>Charitable donation for the Public Organization "PEEI"</span>
+        <span>
+          Charitable donation for the Public Organization &quot;PEEI&quot;
+        </span>
       </p>
       <p className={s.offertContract__paragraf}>
         Благодійник на власний вибір обирає формат платежу: одноразовий або

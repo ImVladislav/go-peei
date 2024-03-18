@@ -1,0 +1,22 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  padding: 9.5px 0;
+}
+
+.link {
+  display: flex;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #141414;
+  gap: 8px;
+}
+.link + img {
+  width: 24px;
+  height: 24px;
+}/*# sourceMappingURL=socials.module.css.map */

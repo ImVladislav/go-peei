@@ -21,6 +21,12 @@ cd /opt
 umask 220
 git clone https://github.com/ImVladislav/go-peei.git
 cd go-peei
+
+
+cd /opt/go-peei
+# git reset --hard
+git pull
+
 ```
 
 Multistage builds are highly recommended in production. Combined with the Next [Output Standalone](https://nextjs.org/docs/advanced-features/output-file-tracing#automatically-copying-traced-files) feature, only `node_modules` files required for production are copied into the final Docker image.
@@ -29,10 +35,14 @@ First, run the production server (Final image approximately 110 MB).
 
 ```bash
 # Build prod
-docker compose -f docker-compose.prod.yml build
+# docker compose -f docker-compose.prod.yml build
 
+ docker compose up -d
 # Up prod in detached mode
-docker compose -f docker-compose.prod.yml up -d
+
+
+
+
 ```
 
 ## Development
@@ -40,22 +50,20 @@ docker compose -f docker-compose.prod.yml up -d
 First, run the development server:
 
 ```bash
-# Create a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-docker network create my_network
+
+# НЕ запускати на сервері !
+
 
 # Build dev
 docker compose -f docker-compose.dev.yml build
 
 # Up dev
-docker compose -f docker-compose.dev.yml up
+docker compose -f docker-compose.dev.yml up -d
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-
 
 ## Useful commands
 

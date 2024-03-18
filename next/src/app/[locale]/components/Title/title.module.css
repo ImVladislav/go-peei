@@ -1,0 +1,17 @@
+.box {
+  margin-bottom: 60px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: #141414;
+}
+
+.svg {
+  border-radius: 0px;
+  fill: #0d490d;
+  stroke-width: 1px;
+  stroke: #000000;
+}/*# sourceMappingURL=title.module.css.map */

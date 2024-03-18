@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../components/Title/Title";
 import Link from "next/link";
-import s from "./OfficialDocuments.module.scss";
+import s from "./officialDocuments.module.scss";
 import style from "../../styles/utils/Container.module.scss";
 
 const OfficialDocuments = () => {

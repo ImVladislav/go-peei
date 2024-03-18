@@ -1,16 +1,16 @@
 import glad from "../../../../public/Volonters/gladyshko.png";
 import bezkor from "../../../../public/Volonters/bezkorowainuy.png";
 import gordilona from "../../../../public/Volonters/gordienkoIlona.jpg";
-import {
-  AboutPersonImage,
-  AboutPersonDescripton,
-} from "../components/About/AboutPerson";
-import bg from "../../../../public/background.png";
+// import {
+//   AboutPersonImage,
+//   AboutPersonDescripton,
+// } from "../components/About/AboutPerson";
+// import bg from "../../../../public/background.png";
 
 const Founders = () => {
   return (
-    <div style={{ backgroundImage: `url(${bg.src})`, backgroundSize: "cover" }}>
-      <div className="container">
+    <div>
+      {/* <div className="container">
         <h1 className="about__title">Правління</h1>
         <div className="about__page">
           <div className="about__person-block">
@@ -44,7 +44,7 @@ const Founders = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

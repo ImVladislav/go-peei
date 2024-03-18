@@ -1,8 +1,14 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import styles from "./hero.module.scss";
+
 import Button from "../../Button/Button";
 
+import styles from "./hero.module.scss";
+
 const Hero = () => {
+  const router = useRouter();
   return (
     <section className={styles.section}>
       <h1 className="visually-hidden">
@@ -18,7 +24,12 @@ const Hero = () => {
               <span>енергетична</span> незалежність
             </p>
           </div>
-          <Button newStyles={styles.btn}>Підтримати нас</Button>
+          <Button
+            newStyles={styles.btn}
+            onClick={() => router.push("/financial")}
+          >
+            Підтримати нас
+          </Button>
         </div>
         <Image
           src="/main/pic.png"

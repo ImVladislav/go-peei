@@ -186,7 +186,7 @@ const FinancialPage = () => {
               >
                 Банківські реквізити в межах України
               </h2>
-              <div class="form">
+              <div className="form">
                 {fields.map(({ label, value, id }) => (
                   <div className="field" key={id}>
                     <label

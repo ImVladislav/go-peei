@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { projectsItem } from "@/app/types";
 import Button from "../../Button/Button";
@@ -9,7 +8,7 @@ interface ProjectProps {
   project: projectsItem;
 }
 
-const Project = ({ project }: ProjectProps) => {
+const Project = async ({ project }: ProjectProps) => {
   const progress = (100 / project.total) * project.fundsRaised;
   const maxLength = 100;
 
@@ -39,9 +38,9 @@ const Project = ({ project }: ProjectProps) => {
             height={270}
           />
         </div>
-        <Link href="/" className={styles.item__link}>
-          <h3 className={styles.item__title}>{project.title}</h3>
-        </Link>
+
+        <h3 className={styles.item__title}>{project.title}</h3>
+
         <p className={styles.item__desc}>
           {project.description.slice(0, maxLength)}...
         </p>
@@ -66,7 +65,13 @@ const Project = ({ project }: ProjectProps) => {
           </div>
         </div>
       </div>
-      <Button newStyles={styles.item__btn}>Підтримати нас</Button>
+      <Button
+        newStyles={styles.item__btn}
+        isLink
+        href={`/activities/projects/${project._id}`}
+      >
+        Підтримати нас
+      </Button>
     </li>
   );
 };

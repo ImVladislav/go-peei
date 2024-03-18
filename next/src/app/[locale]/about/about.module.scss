@@ -1,0 +1,16 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding-bottom: 120px;
+}
+
+.bg_img {
+  position: relative;
+  width: 1440px;
+  height: 549px;
+  background: url('/about/houses.png'), linear-gradient(180deg, #fff 0%, #e8f1e7 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  left: -80px;
+}

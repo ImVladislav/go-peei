@@ -1,0 +1,44 @@
+@import "../../../../styles/utils/_variables.scss";
+
+.top_content {
+  display: flex;
+  align-items: center;
+  width: 1056px;
+  margin: 0 auto;
+  padding: 32px 74px;
+  border-radius: 10px;
+  background: $green-30;
+  
+  &__text {
+    margin-left: 20px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+  margin-top: 63px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid $focus-green;
+  box-shadow: 18px -21px 0 0 $second-green;
+
+  &__desc {
+    margin-top: 12px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    color: $main-black;
+  }
+}

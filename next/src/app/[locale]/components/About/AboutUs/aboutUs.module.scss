@@ -1,0 +1,52 @@
+@import "../../../../styles/utils/variables";
+
+.section {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 120px;
+}
+
+.accent_text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  text-align: justify;
+}
+
+.text {
+  max-width: 813px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  color: $main-black;
+}
+
+.list {
+  margin-top: 13px;
+  margin-left: 34px;
+  max-width: 779px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+
+  &__desc {
+    margin-left: 16px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+    color: $main-black;
+  }
+}
+
+.bg_img {
+  position: absolute;
+  top: 0;
+  right: -80px;
+}

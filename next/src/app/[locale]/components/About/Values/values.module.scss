@@ -1,0 +1,46 @@
+@import "../../../../styles/utils/variables";
+
+.section {
+  padding-bottom: 53px;
+}
+
+.parallax {
+  position: relative;
+  padding: 60px 80px;
+  background: url('/about/aerial-view-green-forest.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 286px;
+}
+
+.list {
+  position: absolute;
+  top: -54px;
+  right: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 392px;
+  height: 394px;
+  border-radius: 10px;
+  background: $second-green;
+  box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.25);
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 196px;
+    height: 197px;
+
+    &__desc {
+      margin-top: 24px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.5;
+      color: $main-white;
+      text-decoration: underline;
+    }
+}

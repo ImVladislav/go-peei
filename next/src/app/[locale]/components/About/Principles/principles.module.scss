@@ -1,0 +1,39 @@
+@import "../../../../styles/utils/variables";
+
+.section {
+  padding-bottom: 67px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.item {
+  width: 305px;
+  height: 217px;
+  padding: 20px;
+  background: $green-50;
+  border-radius: 10px;
+
+  &__top_wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    margin-left: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    margin-top: 12px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}

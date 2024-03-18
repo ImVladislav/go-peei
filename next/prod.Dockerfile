@@ -19,12 +19,15 @@ RUN \
 COPY src ./src
 COPY public ./public
 COPY components ./components
+COPY libs ./libs
+COPY models ./models
 COPY locales ./locales
 COPY jsconfig.json .
 COPY next.config.js .
 COPY next.config.mjs .
 COPY tsconfig.json .
 COPY webpack.config.js .
+
 
 # Environment variables must be present at build time
 # https://github.com/vercel/next.js/discussions/14030

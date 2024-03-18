@@ -15,6 +15,8 @@ RUN \
 COPY src ./src
 COPY public ./public
 COPY components ./components
+COPY libs ./libs
+COPY models ./models
 COPY locales ./locales
 COPY jsconfig.json .
 COPY next.config.js .

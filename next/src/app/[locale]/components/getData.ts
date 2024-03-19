@@ -2,8 +2,14 @@ import { notFound } from "next/navigation";
 
 const { BASE_URL } = process.env;
 const { PROD_URL } = process.env;
+
+const { NEXT_HOST } = process.env;
+
 const url = PROD_URL || BASE_URL;
 export async function getData(name: string) {
+ console.log(PROD_URL);
+ console.log(NEXT_HOST);
+ 
   const res = await fetch(`${url}/api/${name}`, { cache: "no-store" });
   if (!res.ok) return notFound();
   return res.json();

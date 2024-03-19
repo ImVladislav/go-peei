@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import db from "../../../../libs/db";
 import Docs from "../../../../models/Docs";
 
-// get news
+// get Docs
 export const GET = async (request: Request) => {
   await db.connect();
   try {
@@ -12,7 +12,7 @@ export const GET = async (request: Request) => {
       status: 200,
     });
   } catch (error) {
-    return new NextResponse("Error in fetching news" + error, {
+    return new NextResponse("Error in fetching documents" + error, {
       status: 500,
     });
   }

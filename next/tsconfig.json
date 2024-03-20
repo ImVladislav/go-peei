@@ -38,7 +38,8 @@
     "src/app/[locale]/environmentalProtection/page.jsx",
     "src/app/[locale]/components/Main/SafetyRules.tsx",
     "src/app/[locale]/officialDocuments/page.jsx",
-    "src/app/[locale]/officialDocuments/docs/page.jsx"
+    "src/app/[locale]/officialDocuments/docs/page.jsx",
+    "src/app/[locale]/not-found.jsx"
   ],
 
   "exclude": ["node_modules"]

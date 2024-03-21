@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 const { BASE_URL } = process.env;
 const { PROD_URL } = process.env;
 
-const { NEXT_HOST } = process.env;
+// const { NEXT_HOST } = process.env;
 
 const url = PROD_URL || BASE_URL;
 export async function getData(name: string) {

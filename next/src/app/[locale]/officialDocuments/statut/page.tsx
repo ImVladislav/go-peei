@@ -7,6 +7,8 @@ interface docsType {
 
 const Statut = async () => {
   const data: docsType = await getDataId("docs", "65f9b231b01f986ad1143c90");
+  console.log(data.src);
+
   return (
     <div>
       <iframe

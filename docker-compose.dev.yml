@@ -6,22 +6,14 @@ services:
     build:
       context: ./next
       dockerfile: dev.Dockerfile
-
-    # Set environment variables directly in the docker-compose file
-    environment:
-      ENV_VARIABLE: ${ENV_VARIABLE}
-      NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
-
-    # Set environment variables based on the .env file
+    restart: always
     env_file:
       - .env
-      - ./next/.env
     volumes:
       - ./next/src:/app/src
       - ./next/public:/app/public
       - ./next/components:/app/components
       - ./next/locales:/app/locales
-    restart: always
     ports:
       - 127.0.0.1:3000:3000
     logging:
@@ -35,22 +27,24 @@ services:
     networks:
       - next
 
-  # Add more containers below (nginx, postgres, etc.)
-
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-
   mongodb:
     image: mongodb/mongodb-community-server:7.0-ubi8
     restart: always
-    ports:
-      - 127.0.0.1:27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-mongo} 
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS:-mongoSuperSecretPass}
-
     volumes:
       - mongodb-data:/data/db
+    ports:
+      - 127.0.0.1:27017:27017
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m" 
+        compress: "true"
+    networks:
+      - next
 
 networks:
   next:

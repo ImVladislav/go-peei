@@ -6,13 +6,14 @@ services:
     build:
       context: ./next
       dockerfile: prod.Dockerfile
+      network: host
       args:
-        ENV_VARIABLE: ${ENV_VARIABLE}
-        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+        NEXT_HOST: ${NEXT_HOST}
+        NEXT_TLS: ${NEXT_TLS}
+        DB_CONNECTION_STRING_AT_BUILD: ${DB_CONNECTION_STRING_AT_BUILD}
     restart: always
     env_file:
       - .env
-      - ./next/.env
     labels:
       - "traefik.enable=true"
       - "traefik.http.middlewares.next-secure-headers.headers.framedeny=true"
@@ -32,6 +33,28 @@ services:
         max-file: "5"
         max-size: "10m"
         compress: "true"
+    depends_on:
+      - mongodb
+    networks:
+      - next
+
+  mongodb:
+    container_name: mongodb
+    image: mongodb/mongodb-community-server:7.0-ubi8
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-mongo} 
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS:-mongoSuperSecretPass}
+    volumes:
+      - mongodb-data:/data/db
+    ports:
+      - 127.0.0.1:27017:27017
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+        compress: "true"
     networks:
       - next
 
@@ -42,10 +65,6 @@ services:
     stop_grace_period: 30s
     env_file:
       - .env
-    ports:
-      - "80:80"
-      - "443:443/tcp"
-      - "443:443/udp"
     command:
       - "--api.dashboard=false"
       - "--log.level=ERROR"
@@ -76,6 +95,10 @@ services:
       - ./traefik/acme:/acme:rw
       - ./traefik/conf.d:/conf.d:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro,Z
+    ports:
+      - "80:80"
+      - "443:443/tcp"
+      - "443:443/udp"
     healthcheck:
       test: ["CMD", "/usr/local/bin/traefik", "healthcheck", "--ping"]
       interval: 30s
@@ -90,26 +113,10 @@ services:
         compress: "true"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    depends_on:
+      - next
     networks:
       - next
-
-  # Add more containers below (nginx, postgres, etc.)
-
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-
-    depends_on:
-      - mongodb
-
-  mongodb:
-    image: mongodb/mongodb-community-server:7.0-ubi8
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-mongo} 
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS:-mongoSuperSecretPass}
-
-    volumes:
-      - mongodb-data:/data/db
 
 networks:
   next:

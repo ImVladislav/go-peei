@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation";
 
-const { BASE_URL } = process.env;
-const { PROD_URL } = process.env;
+const host = process.env.NEXT_HOST || 'localhost:3000';
+const tls = process.env.NEXT_TLS || 'false';
 
-// const { NEXT_HOST } = process.env;
+const url = tls === "true" ? `https://${host}` : `http://${host}`;
 
-const url = process.env.NODE_ENV === "production" ? PROD_URL : BASE_URL;
 export async function getData(name: string) {
   const res = await fetch(`${url}/api/${name}`, { cache: "no-store" });
   if (!res.ok) return notFound();

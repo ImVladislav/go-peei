@@ -1,23 +1,6 @@
-// import mongoose from "mongoose";
-
-// const { DB_HOST } = process.env;
-
-// const connect = async () => {
-//   try {
-//     await mongoose.connect(DB_HOST, {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true,
-//     });
-//     console.log("Connected to MongoDB");
-//   } catch (error) {
-//     throw new Error("Error connecting to MongoDB:", error.message);
-//   }
-// };
-// export default connect;
-
 import mongoose from "mongoose";
 
-const { DB_HOST } = process.env;
+const db_connection = process.env.DB_CONNECTION_STRING_AT_RUNTIME || process.env.DB_CONNECTION_STRING_AT_BUILD || 'mongodb://mongo-user-not-defined:mongo-password-not-defined@mongo-server-not-defined/mongo-database-not-defined';
 
 const connection = {};
 
@@ -33,48 +16,15 @@ async function connect() {
     }
     await mongoose.disconnect();
   }
-  const db = await mongoose.connect(DB_HOST);
+  const db = await mongoose.connect(db_connection);
   connection.isConnnected = db.connections[0].readyState;
 }
 async function disconnect() {
   if (connection.isConnnected) {
-    if (DB_HOST === "production") {
-      await mongoose.disconnect();
-      connection.isConnnected = false;
-    }
+    await mongoose.disconnect();
+    connection.isConnnected = false;
   }
 }
+
 const db = { connect, disconnect };
 export default db;
-
-// TS
-
-// import mongoose from "mongoose";
-
-// interface IConnectOptions {
-//   useNewUrlParser: boolean;
-//   useUnifiedTopology: boolean;
-// }
-
-// const { DB_HOST } = process.env;
-
-// const connect = async (): Promise<void> => {
-//   try {
-//     if (!DB_HOST) {
-//       throw new Error("DB_HOST environment variable is not defined");
-//     }
-
-//     const options: IConnectOptions = {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true,
-//     };
-
-//     await mongoose.connect(DB_HOST, options);
-//     console.log("Connected to MongoDB");
-//   } catch (error) {
-//     console.error("Error connecting to MongoDB:", error.message);
-//     throw error;
-//   }
-// };
-
-// export default connect;

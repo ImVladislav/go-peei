@@ -22,6 +22,7 @@ const Modal = ({ show, onClose, children }: ModalProps) => {
     if (isBrowser && show) {
       document.addEventListener("keydown", handleKeyDown);
       document.addEventListener("mousedown", handleClickOutside);
+
       return () => {
         document.removeEventListener("keydown", handleKeyDown);
         document.removeEventListener("mousedown", handleClickOutside);

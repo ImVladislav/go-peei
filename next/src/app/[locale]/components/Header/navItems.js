@@ -2,7 +2,7 @@ export const navItems = [
   {
     title: { key: "aboutUs", label: "Про нас", href: "/about" },
     links: [
-      { key: "board", label: "Правління", href: "/rule" },
+      { key: "aboutUs", label: "Про нас", href: "/about" },
       { key: "ourTeam", label: "Наша команда", href: "/team" },
       { key: "ourPartners", label: "Наші партнери", href: "/about/4" },
       {
@@ -43,10 +43,10 @@ export const navItems = [
       },
     ],
   },
-  {
-    title: { key: "news", label: "Новини", href: "/news" },
-    links: [{ key: "news", label: "Новини", href: "/news" }],
-  },
+  // {
+  //   title: { key: "news", label: "Новини", href: "/news" },
+  //   links: [{ key: "news", label: "Новини", href: "/news" }],
+  // },
   {
     title: { key: "support", label: "Підтримати", href: "/support" },
     links: [

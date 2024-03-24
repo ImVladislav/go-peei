@@ -1,1 +1,20 @@
-{"news":"News","board":"Board","aboutUs":"About Us","ourTeam":"Our Team","reports":"Reports","support":"Support","contacts":"Contacts","activities":"Activities","directions":"Directions","financially":"Financially","ourPartners":"Our Partners","partnership":"Partnership","volunteering":"Volunteering","workWithYouth":"Work with Youth","charityActions":"Charity Actions","officialDocuments":"Official Documents","environmentalProtection":"Environmental Protection"}
+{
+         "aboutUs": "About Us",
+          "activities": "Activities",
+          "news": "News",
+          "support": "Support",
+          "founders": "Founders",
+          "ourTeam": "Our Team",
+          "ourPartners": "Our Partners",
+          "officialDocuments": "Official Documents",
+          "reports": "Reports",
+          "contacts": "Contacts",
+          "workWithYouth": "Work With Youth",
+          "directions": "Directions",
+          "charityActions": "Charity Actions",
+          "environmentalProtection": "Environmental Protection",
+          "newsPage": "News Page",
+          "volunteering": "Volunteering",
+          "financially": "Financially",
+          "partnership": "Partnership"
+}

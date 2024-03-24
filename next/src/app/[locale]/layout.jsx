@@ -21,7 +21,7 @@ export function generateStaticParams() {
 }
 
 export default async function RootLayout({ children, params: { locale } }) {
-  const i18nNamespaces = ["home", "common", "navbar"];
+  const i18nNamespaces = ["home", "navbar"];
 
   const { resources } = await initTranslations(locale, i18nNamespaces);
 

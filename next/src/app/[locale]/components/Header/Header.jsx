@@ -1,3 +1,4 @@
+// "use client";
 import Navbar from "./Navbar";
 import Link from "next/link";
 import s from "./Header.module.scss";
@@ -14,6 +15,7 @@ import email_icon from "../../../../../public/socialSVG/email_icon.svg";
 import LanguageChanger from "../../../../../components/LanguageChanger";
 
 const Header = ({ locale }) => {
+  // const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
   return (
     <>
       <div className={s.header__contact}>
@@ -67,8 +69,7 @@ const Header = ({ locale }) => {
           <Link className={s.header__logoLink} href="/">
             <Image src={Logo} width={200} height={60} alt="Logo" />
           </Link>
-          <Navbar params={locale} />
-          <LanguageChanger />
+          <Navbar />
         </div>
       </div>
     </>

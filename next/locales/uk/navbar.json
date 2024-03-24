@@ -1,1 +1,19 @@
-{"news":"Новини","board":"дошка","aboutUs":"Про нас","ourTeam":"Наша команда","reports":"Звіти","support":"Підтримка","contacts":"Контакти","activities":"Діяльності","directions":"Напрямки","financially":"Фінансово","ourPartners":"Наші партнери","partnership":"Партнерство","volunteering":"Волонтерство","workWithYouth":"Робота з молоддю","charityActions":"Благодійні акції","officialDocuments":"Офіційні документи","environmentalProtection":"Охорона навколишнього середовища"}
+{
+    "aboutUs": "Про нас",
+    "founders": "Засновники",
+    "ourTeam": "Наша команда",
+    "ourPartners": "Наші партнери",
+    "officialDocuments": "Офіційні документи",
+    "reports": "Звіти",
+    "contacts": "Контакти",
+    "activities": "Напрямки діяльності",
+    "workWithYouth": "Робота з дітьми та молоддю",
+    "directions": "Направлення діяльності",
+    "charityActions": "Благодійні акції",
+    "environmentalProtection": "Охорона довкілля",
+    "news": "Новини",
+    "support": "Підтримати",
+    "volunteering": "Волонтерством",
+    "financially": "Фінансово",
+    "partnership": "Партнерством"
+  }

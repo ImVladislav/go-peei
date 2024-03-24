@@ -446,9 +446,9 @@ const DogovirOfferPage = () => {
       </p>
       <div className={s.offertContract__signThumb}>
         Голова правління _____________________ Гладишко С.О.
-        <div className={s.offertContract__sign}>
+        {/* <div className={s.offertContract__sign}>
           <Image width={70} src={sign} alt="sign" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

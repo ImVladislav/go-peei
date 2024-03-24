@@ -6,8 +6,11 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Півпрозорий чорний колір */
   display: flex;
-  justify-content: center;
-  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .modal {
@@ -16,8 +19,15 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тінь */
   //   padding: 20px;
   max-width: 80%;
-}
+  min-width: 50%;
 
+  //   @media screen and (min-width: 768px) {
+  //   display: none;
+  // }
+}
+// .modal-open {
+//   overflow: hidden;
+// }
 .header {
   display: flex;
   justify-content: flex-end;

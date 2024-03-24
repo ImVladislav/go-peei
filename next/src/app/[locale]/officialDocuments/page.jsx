@@ -13,17 +13,26 @@ const OfficialDocuments = () => {
         {/* </div> */}
         <ul>
           <li className={s.officialDocuments__li_item_link}>
-            <Link className={s.officialDocuments__link} href="">
+            <Link
+              className={s.officialDocuments__link}
+              href="/officialDocuments/extract"
+            >
               Виписка
             </Link>
           </li>
           <li className={s.officialDocuments__li_item_link}>
-            <Link className={s.officialDocuments__link} href="">
+            <Link
+              className={s.officialDocuments__link}
+              href="/officialDocuments/statut"
+            >
               Статут
             </Link>
           </li>
           <li className={s.officialDocuments__li_item_link}>
-            <Link className={s.officialDocuments__link} href="">
+            <Link
+              className={s.officialDocuments__link}
+              href="/officialDocuments/volunteerEngagement"
+            >
               Положення ГО ПЕЕІ про залучення волонтерів 2023
             </Link>
           </li>

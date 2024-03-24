@@ -6,7 +6,7 @@ interface docsType {
 }
 
 const Statut = async () => {
-  const data: docsType = await getDataId("docs", "65f9b231b01f986ad1143c90");
+  const data: docsType = await getDataId("docs", "65fdb7f2831c00f0aebbb404");
   console.log(data.src);
 
   return (

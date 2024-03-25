@@ -7,6 +7,8 @@ import LanguageChanger from "../../../../../components/LanguageChanger";
 import { useTranslation } from "react-i18next";
 import Modal from "../Modal/Modal";
 import { useState } from "react";
+import menuBtnSvg from "../../../../../public/MobileMenuButton.svg";
+import Image from "next/image";
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -16,9 +18,14 @@ export default function Navbar() {
   );
 
   const handleToggleDropdown = (index) => {
-    const updatedDropdownStates = [...dropdownStates];
-    updatedDropdownStates[index] = !updatedDropdownStates[index];
-    setDropdownStates(updatedDropdownStates);
+    // Оновлюємо стан, використовуючи функцію оновлення стану
+    setDropdownStates((prevState) => {
+      // Спочатку закриваємо всі дропдауни, крім того, на який зроблено клік
+      const updatedDropdownStates = prevState.map((state, i) =>
+        i === index ? !state : false
+      );
+      return updatedDropdownStates;
+    });
   };
 
   return (
@@ -66,20 +73,20 @@ export default function Navbar() {
             </ul>
           </div>
         ))}
-
-        <Link href="/news" className={s.contactLink}>
-          {t("news")}
-        </Link>
-
+        <div style={{ marginRight: "20px" }}>
+          <Link href="/news" className={s.contactLink}>
+            {t("news")}
+          </Link>
+        </div>
         <Link href="/contacts" className={`${s.link} ${s.contactLink}`}>
           {t("contacts")}
         </Link>
-
-        <LanguageChanger />
       </nav>
       {/* ===============================mobile============================== */}
       <nav className={s.navMobile}>
-        <button onClick={() => setIsModalOpen(true)}>modal</button>
+        <button className={s.menuBtn} onClick={() => setIsModalOpen(true)}>
+          <Image width={40} src={menuBtnSvg} alt="menu" />
+        </button>
         <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <div className={s.navMobile__wraper}>
             {navItems.map((item, index) => (

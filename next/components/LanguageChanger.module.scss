@@ -4,16 +4,20 @@
   text-align: center;
   //   border: 1px solid black;
   position: relative;
+  width: 100%;
   @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
   }
 }
+
 .languageChanger__block {
-  //   margin-right: 20px;
-  height: -moz-fit-content;
+  width: 100%;
   height: fit-content;
   cursor: pointer;
-  //   display: flex;
-  //   border: 1px solid red;
+
+  @media screen and (min-width: 768px) {
+    width: fit-content;
+  }
 }
 
 .languageList {
@@ -51,11 +55,13 @@
   background-color: transparent;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding-bottom: 8px;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
     padding: 8px;
+    justify-content: center;
   }
 }
 

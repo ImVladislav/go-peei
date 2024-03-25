@@ -50,24 +50,26 @@ export default function LanguageChanger() {
           }`}
           onClick={() => setShowLanguages(!showLanguages)}
         >
-          {currentLocale === "en" ? (
-            <Image
-              className={s.flag__image}
-              src={engFlag.src}
-              alt="engFlag"
-              width={38}
-              height={25}
-            />
-          ) : (
-            <Image
-              className={s.flag__image}
-              src={ukrFlag.src}
-              alt="ukrflag"
-              width={38}
-              height={25}
-            />
-          )}
-          {currentLocale === "en" ? "Eng" : "Укр"}
+          <div style={{ display: "flex" }}>
+            {currentLocale === "en" ? (
+              <Image
+                className={s.flag__image}
+                src={engFlag.src}
+                alt="engFlag"
+                width={38}
+                height={25}
+              />
+            ) : (
+              <Image
+                className={s.flag__image}
+                src={ukrFlag.src}
+                alt="ukrflag"
+                width={38}
+                height={25}
+              />
+            )}
+            {currentLocale === "en" ? "Eng" : "Укр"}
+          </div>
           <svg
             // id={`svg-${item.title.label}`}
             width="25px"
@@ -88,36 +90,40 @@ export default function LanguageChanger() {
         </button>
         {showLanguages && (
           <ul className={s.languageList}>
-            <li className={s.languageListItem}>
-              <button
-                className={s.changeLanguage__button}
-                onClick={() => handleChange("en")}
-              >
-                <Image
-                  className={s.flag__image}
-                  src={engFlag.src}
-                  alt="engFlag"
-                  width={38}
-                  height={25}
-                />
-                Eng
-              </button>
-            </li>
-            <li className={s.languageListItem}>
-              <button
-                className={s.changeLanguage__button}
-                onClick={() => handleChange("uk")}
-              >
-                <Image
-                  className={s.flag__image}
-                  src={ukrFlag.src}
-                  alt="ukrflag"
-                  width={38}
-                  height={25}
-                />
-                Укр
-              </button>
-            </li>
+            {currentLocale === "uk" && (
+              <li className={s.languageListItem}>
+                <button
+                  className={s.changeLanguage__button}
+                  onClick={() => handleChange("en")}
+                >
+                  <Image
+                    className={s.flag__image}
+                    src={engFlag.src}
+                    alt="engFlag"
+                    width={38}
+                    height={25}
+                  />
+                  Eng
+                </button>
+              </li>
+            )}
+            {currentLocale === "en" && (
+              <li className={s.languageListItem}>
+                <button
+                  className={s.changeLanguage__button}
+                  onClick={() => handleChange("uk")}
+                >
+                  <Image
+                    className={s.flag__image}
+                    src={ukrFlag.src}
+                    alt="ukrflag"
+                    width={38}
+                    height={25}
+                  />
+                  Укр
+                </button>
+              </li>
+            )}
           </ul>
         )}
       </div>

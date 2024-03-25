@@ -65,7 +65,10 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 20px 80px;
+  margin: 6px 28px 6px 20px;
+  @media screen and (min-width: 768px) {
+    margin: 20px 80px 20px 60px;
+  }
 }
 .header__logoLink {
   //   margin-left: 80px;
@@ -107,6 +110,13 @@
   margin: "0px, 4px";
   width: 24px;
 }
+
+.header__langChangContainer {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
 //=====================================Navbar===========================================
 
 .nav {
@@ -127,6 +137,7 @@
   flex-direction: column;
   padding: 18px 0;
   justify-content: space-between;
+  white-space: nowrap;
   @media screen and (min-width: 768px) {
     margin-right: 20px;
     flex-direction: row;
@@ -265,4 +276,9 @@ s.contactLink {
 .linkMobile {
   display: flex;
   padding: 18px 0;
+  // margin-right: 20px;
+}
+.menuBtn {
+  border: none;
+  background-color: transparent;
 }

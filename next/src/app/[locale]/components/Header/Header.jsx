@@ -14,8 +14,7 @@ import phone_icon from "../../../../../public/socialSVG/phone_icon.svg";
 import email_icon from "../../../../../public/socialSVG/email_icon.svg";
 import LanguageChanger from "../../../../../components/LanguageChanger";
 
-const Header = ({ locale }) => {
-  // const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+const Header = () => {
   return (
     <>
       <div className={s.header__contact}>
@@ -70,6 +69,9 @@ const Header = ({ locale }) => {
             <Image src={Logo} width={200} height={60} alt="Logo" />
           </Link>
           <Navbar />
+          <div className={s.header__langChangContainer}>
+            <LanguageChanger />
+          </div>
         </div>
       </div>
     </>

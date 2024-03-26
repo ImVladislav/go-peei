@@ -1,17 +1,27 @@
 @import "../../../styles/utils/variables";
 
 .box {
-  margin-bottom: 60px;
+  display: inline-block;
+  margin-bottom: 24px;
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 60px;
+  }
 }
 .title {
   font-weight: 500;
-  font-size: 32px;
+  font-size: 16px;
   text-transform: uppercase;
   color: $main-black;
+  @media screen and (min-width: 1440px) {
+    font-size: 32px;
+  }
 }
-.svg {
-  border-radius: 0px;
-  fill: $main-green;
-  stroke-width: 1px;
-  stroke: #000000;
+
+.line {
+  height: 2px;
+  background: $main-green;
+  transform: skew(-50deg, 0deg);
+  @media screen and (min-width: 1440px) {
+    height: 4px;
+  }
 }

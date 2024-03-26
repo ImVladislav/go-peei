@@ -8,7 +8,7 @@ interface ProjectProps {
   project: projectsItem;
 }
 
-const Project = async ({ project }: ProjectProps) => {
+const SingleProject = async ({ project }: ProjectProps) => {
   const progress = (100 / project.total) * project.fundsRaised;
   const maxLength = 100;
 
@@ -23,19 +23,16 @@ const Project = async ({ project }: ProjectProps) => {
   };
 
   return (
-    <li className={styles.item}>
+    <div className={styles.item}>
       <div className={styles.item__inner}>
         <div className={styles.item__image}>
           <Image
             style={{
               objectFit: "cover",
-              objectPosition: "center",
-              height: "270px",
             }}
             src={project.imageSrc}
             alt={project.title}
-            width={360}
-            height={270}
+            fill
           />
         </div>
 
@@ -72,8 +69,8 @@ const Project = async ({ project }: ProjectProps) => {
       >
         Підтримати нас
       </Button>
-    </li>
+    </div>
   );
 };
 
-export default Project;
+export default SingleProject;

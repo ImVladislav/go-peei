@@ -3,26 +3,33 @@ import Link from "next/link";
 import { projectsItem } from "@/app/types";
 import { getData } from "../../getData";
 import Title from "../../Title/Title";
-import Project from "./Project";
 
 import styles from "./projects.module.scss";
+import SwiperContainer from "./SwiperContainer";
+import Image from "next/image";
 
 const Projects = async () => {
   const data: projectsItem[] = await getData("projects");
   return (
     <section className={styles.section}>
-      <Title width={462}>допоможіть зібрати кошти</Title>
+      <div className="container">
+        <Title>допоможіть зібрати кошти</Title>
+        <div className={styles.btn_wrap}>
+          <button className={`s-button-prev ${styles.btn}`}>
+            <Image src="/main/icon-next.svg" alt="next" width={8} height={16} />
+          </button>
+          <button className={`s-button-next ${styles.btn}`}>
+            <Image src="/main/icon-prev.svg" alt="prev" width={8} height={16} />
+          </button>
+        </div>
 
-      <div className={styles.inner}>
-        <ul className={styles.list}>
-          {data?.slice(0, 3).map((item) => (
-            <Project key={item._id} project={item} />
-          ))}
-        </ul>
+        <SwiperContainer data={data} />
 
-        <Link className={styles.link} href="activities/projects">
-          Усі проєкти
-        </Link>
+        <div className={styles.box}>
+          <Link className={styles.box__link} href="activities/projects">
+            Усі проєкти
+          </Link>
+        </div>
       </div>
     </section>
   );

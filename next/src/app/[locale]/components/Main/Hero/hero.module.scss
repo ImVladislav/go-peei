@@ -1,37 +1,85 @@
 @import "../../../../styles/utils/variables";
 
 .section {
-  // padding-bottom: 120px;
+  padding-top: 120px;
+  @media screen and (min-width: 1440px) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 }
 .inner {
   display: flex;
-  justify-content: space-between;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
 }
 .content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-left: 3px;
+  gap: 10px;
+  @media screen and (min-width: 1440px) {
+    gap: 12px;
+    margin-left: 3px;
+  }
 }
 .slogan {
   font-weight: 500;
-  font-size: 40px;
+  font-size: 20px;
   text-transform: uppercase;
+  text-align: center;
   color: $main-black;
   & span {
     color: $main-green;
   }
+  @media screen and (min-width: 1024px) {
+    font-size: 40px;
+    text-align: left;
+  }
 }
 .btn {
-  margin-top: 34px;
-  width: 308px;
-  height: 52px;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+    margin-top: 34px;
+    width: 308px;
+    height: 52px;
+  }
+}
+.img_wrap {
+  position: relative;
+  width: 320px;
+  height: 302px;
+
+  @media screen and (min-width: 1440px) {
+    width: 421px;
+    height: 397px;
+  }
+}
+.img {
+  object-fit: contain;
+}
+
+.btn_last {
+  width: 320px;
+  height: 40px;
+  padding: 12px 40px;
+  font-weight: 300;
+  font-size: 16px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }

@@ -1,0 +1,12 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding-bottom: 56px;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    padding-bottom: 120px;
+  }
+}

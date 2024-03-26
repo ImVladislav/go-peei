@@ -16,7 +16,33 @@ export const GET = async (
       status: 200,
     });
   } catch (error) {
-    return new NextResponse("News was not found" + error, {
+    return new NextResponse("Project was not found" + error, {
+      status: 500,
+    });
+  }
+};
+// put id
+export const PUT = async (
+  request: Request,
+  { params }: { params: { id: string } }
+) => {
+  await db.connect();
+  const id = params.id;
+  try {
+    const body = await request.json();
+
+    const data = await Project.findById(id);
+
+    const updateProject = await Project.findByIdAndUpdate(
+      id,
+      { $set: { ...body } },
+      { new: true }
+    );
+    return new NextResponse(JSON.stringify(updateProject), {
+      status: 200,
+    });
+  } catch (error) {
+    return new NextResponse("Project was not found" + error, {
       status: 500,
     });
   }

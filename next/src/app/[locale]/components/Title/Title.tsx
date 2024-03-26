@@ -1,17 +1,17 @@
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "./title.module.scss";
 interface TitleProps {
   newStyles?: string;
   children: React.ReactNode;
-  width: number;
+  width?: number;
 }
 
-const Title = ({ width, children }: TitleProps) => {
+const Title = ({ newStyles, width, children }: TitleProps) => {
   return (
     <div className={styles.box}>
-      <h2 className={styles.title}>{children}</h2>
-
-      <div className={styles.svg}>
+      <h2 className={`${styles.title} ${newStyles}`}>{children}</h2>
+      <div className={styles.line}></div>
+      {/* <div className={styles.svg}>
         <Image
           style={{
             height: "4px",
@@ -22,7 +22,7 @@ const Title = ({ width, children }: TitleProps) => {
           width={width}
           height={4}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

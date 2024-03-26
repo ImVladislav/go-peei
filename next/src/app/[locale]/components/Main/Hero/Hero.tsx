@@ -11,32 +11,43 @@ const Hero = () => {
   const router = useRouter();
   return (
     <section className={styles.section}>
-      <h1 className="visually-hidden">
-        Екологічна безпека - енергетична незалежність
-      </h1>
-      <div className={styles.inner}>
-        <div className={styles.column}>
-          <div className={styles.content}>
-            <p className={styles.slogan}>
-              Екологічна <span>безпека -</span>
-            </p>
-            <p className={styles.slogan}>
-              <span>енергетична</span> незалежність
-            </p>
+      <div className="container">
+        <h1 className="visually-hidden">
+          Екологічна безпека - енергетична незалежність
+        </h1>
+        <div className={styles.inner}>
+          <div className={styles.column}>
+            <div className={styles.content}>
+              <p className={styles.slogan}>
+                Екологічна <span>безпека -</span>
+              </p>
+              <p className={styles.slogan}>
+                <span>енергетична</span> незалежність
+              </p>
+            </div>
+
+            <Button
+              newStyles={styles.btn}
+              onClick={() => router.push("/financial")}
+            >
+              Підтримати нас
+            </Button>
+          </div>
+          <div className={styles.img_wrap}>
+            <Image
+              className={styles.img}
+              src="/main/pic.png"
+              alt="піктограма повторної переробки"
+              fill
+            />
           </div>
           <Button
-            newStyles={styles.btn}
+            newStyles={styles.btn_last}
             onClick={() => router.push("/financial")}
           >
             Підтримати нас
           </Button>
         </div>
-        <Image
-          src="/main/pic.png"
-          alt="піктограма повторної переробки"
-          width={421}
-          height={397}
-        />
       </div>
     </section>
   );

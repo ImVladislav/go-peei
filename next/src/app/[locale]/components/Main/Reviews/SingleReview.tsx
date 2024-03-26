@@ -8,7 +8,7 @@ interface ReviewProps {
   review: reviewsItem;
 }
 
-const Review = ({ review }: ReviewProps) => {
+const SingleReview = ({ review }: ReviewProps) => {
   return (
     <div className={styles.item}>
       <div className={styles.item__inner}>
@@ -16,20 +16,20 @@ const Review = ({ review }: ReviewProps) => {
           <Image
             style={{
               objectFit: "cover",
-              objectPosition: "center",
-              height: "72px",
             }}
             src={review.imageSrc}
             alt={review.name}
-            width={72}
-            height={72}
+            fill
           />
         </div>
         <h3 className={styles.item__name}>{review.name}</h3>
       </div>
-      <p className={styles.item__desc}>{review.description}</p>
+      <p className={styles.item__desc}>
+        {review.description.slice(0, 180)}
+        ...
+      </p>
     </div>
   );
 };
 
-export default Review;
+export default SingleReview;

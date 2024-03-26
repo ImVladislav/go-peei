@@ -26,6 +26,7 @@
   padding: 20px 0px;
   padding-left: auto;
   padding-right: auto;
+  background-color: #e8f1e7;
   @media screen and (min-width: 768px) {
     display: flex;
   }
@@ -95,7 +96,7 @@
 }
 
 .header__social {
-  width: 323px;
+  width: 216px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -132,6 +133,7 @@
 .nav__itemContainer {
   position: relative;
   height: fit-content;
+  // min-width: 80%;
   cursor: pointer;
   display: flex;
   flex-direction: column;

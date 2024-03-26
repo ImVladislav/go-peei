@@ -37,11 +37,11 @@ const Header = () => {
               +38 050 655 85 61
             </Link>
           </div>
-          <div className={s.header__contact_phoneEemail_block}>
+          {/* <div className={s.header__contact_phoneEemail_block}>
             <Link style={{ marginLeft: "auto", marginRight: "auto" }} href="/">
               Правила безпеки під час воєнного стану
             </Link>
-          </div>
+          </div> */}
           <div className={s.header__social}>
             <Link className={s.header__svgLink} href="/">
               <Image src={Whatsapp} width={24} height={24} alt="Whatsapp" />

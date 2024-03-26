@@ -146,12 +146,20 @@ export default function Navbar() {
               </div>
             ))}
             <div className={s.linkMobile}>
-              <Link href="/news" className={s.contactLink}>
+              <Link
+                onClick={() => setIsModalOpen(false)}
+                href="/news"
+                className={s.contactLink}
+              >
                 {t("news")}
               </Link>
             </div>
             <div className={s.linkMobile}>
-              <Link href="/contacts" className={s.contactLink}>
+              <Link
+                onClick={() => setIsModalOpen(false)}
+                href="/contacts"
+                className={s.contactLink}
+              >
                 {t("contacts")}
               </Link>
             </div>

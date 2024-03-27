@@ -17,6 +17,8 @@ export default function Navbar() {
     navItems.map(() => false)
   );
 
+  console.log(menuBtnSvg);
+
   const handleToggleDropdown = (index) => {
     // Оновлюємо стан, використовуючи функцію оновлення стану
     setDropdownStates((prevState) => {
@@ -134,6 +136,7 @@ export default function Navbar() {
                   {item.links.map((link) => (
                     <li className={s.dropdownMobile__item} key={link.label}>
                       <Link
+                        onClick={() => setIsModalOpen(false)}
                         style={{ fontSize: "18px" }}
                         href={link.href}
                         className={`${s.link} ${s.dropdownLink}`}

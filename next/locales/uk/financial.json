@@ -1,0 +1,27 @@
+
+{
+"financialSupport": "Підтримати нас фінансово",
+"selectContributionAmount": "Оберіть суму внеску",
+"oneHundred": "100",
+"twoHundred": "200",
+"threeHundred": "300",
+"choosePaymentSystem": "Оберіть платіжну систему",
+"applePay": "Apple Pay",
+"termsOfOffer": "Договір оферти",
+"bankDetailsWithinUkraine": "Банківські реквізити в межах України",
+"accountNumberFormat": "Номер рахунку в форматі",
+"platformEcoEnergyInitiatives": "ГО 'Платформа еко-енергетичних ініціатив'",
+"copyAccountNumberFormat": "Копіювати Номер рахунку в форматі",
+"recipient": "Отримувач",
+"publicOrganizationPlatformEcoEnergy": "Громадська Організація 'Платформа еко-енергетичних ініціатив'",
+"copyRecipient": "Копіювати Отримувача",
+"iban": "IBAN",
+"ibanNumber": "UA893348510000000026002234362",
+"copyIban": "Копіювати IBAN",
+"edrpou": "ЄДРПОУ",
+"edrpouNumber": "45068741",
+"copyEdrpou": "Копіювати ЄДРПОУ",
+"purposeOfPayment": "Призначення платежу",
+"charitableDonationForStatutoryPurposes": "Благодійна пожертва на статутні цілі",
+"amount": "Сума"
+}

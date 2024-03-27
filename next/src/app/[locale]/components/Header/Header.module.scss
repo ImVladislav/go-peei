@@ -149,6 +149,15 @@
   transform: rotate(180deg);
   transition: transform 0.5s;
   stroke: green; /* Додайте цей рядок, щоб змінити колір на зелений */
+  // transform: scale(1.1); /* Збільшити розмір на 10% при ховері */
+  // fill: red;
+}
+
+.svgIcon:hover {
+  // fill: red;
+  // transform: rotate(180deg);
+  // stroke: red;
+  // transition: transform 0.5s;
 }
 
 .nav__item {
@@ -283,4 +292,13 @@ s.contactLink {
 .menuBtn {
   border: none;
   background-color: transparent;
+}
+.imageWrapper:hover img {
+  transform: scale(1.1); /* Збільшити розмір на 10% при ховері */
+  fill: red;
+}
+.svg {
+  // transform: scale(1.1); /* Збільшити розмір на 10% при ховері */
+  fill: red;
+  color: red;
 }

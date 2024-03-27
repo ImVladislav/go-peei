@@ -12,6 +12,7 @@ import GooglePayButtonComponent from "./GooglePayButtonComponent";
 import SuccessModal from "./SuccessModal";
 import ErrorModal from "./ErrorModal";
 import Modal from "@/app/[locale]/components/Modal/Modal";
+import { useTranslation } from "react-i18next";
 
 // const DynamicGooglePayButton = dynamic(
 //   () =>
@@ -25,6 +26,8 @@ const FinancialPage = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const { t } = useTranslation();
+
   const handlePaymentSuccess = () => {
     setShowSuccessModal(true);
     setShowModal(true);
@@ -37,18 +40,26 @@ const FinancialPage = () => {
   };
   const [fields] = useState([
     {
+      key: "accountNumberFormat",
       label: "Номер рахунку в форматі",
       value: "ГО 'Платформа еко-енергетичних ініціатив'",
       id: "account",
     },
     {
+      key: "recipient",
       label: "Отримувач",
       value: "Громадська Організація 'Платформа еко-енергетичних ініціатив'",
       id: "client",
     },
-    { label: "IBAN", value: "UA893348510000000026002234362", id: "iban" },
-    { label: "ЄДРПОУ", value: "45068741", id: "edrpou" },
     {
+      key: "iban",
+      label: "IBAN",
+      value: "UA893348510000000026002234362",
+      id: "iban",
+    },
+    { key: "edrpou", label: "ЄДРПОУ", value: "45068741", id: "edrpou" },
+    {
+      key: "purposeOfPayment",
       label: "Призначення платежу",
       value: "Благодійна пожертва на статутні цілі",
       id: "purpose",
@@ -121,11 +132,13 @@ const FinancialPage = () => {
     <div className={s.financial__bg}>
       <div className={container.container}>
         <section className={s.financial__container}>
-          <h1 className={s.financial__title}>Підтримати нас фінансово</h1>
+          <h1 className={s.financial__title}>{t("financialSupport")}</h1>
           <div className={s.financial__container_mainBlock}>
             <div>
               <div className={s.financial__container_leftBlock}>
-                <h2 className={s.financial__subTitle}>Оберіть суму внеску</h2>
+                <h2 className={s.financial__subTitle}>
+                  {t("selectContributionAmount")}
+                </h2>
                 <div className="buttons">
                   <button
                     className={s.financial__fixedAmountDonatBtn}
@@ -149,12 +162,12 @@ const FinancialPage = () => {
                 <input
                   className={`${s.financial__fixedAmountDonatBtn} ${s.financial__fixedAmountDonatInput}`}
                   type="text"
-                  placeholder="Сума"
+                  placeholder={t("amount")}
                   value={donationAmount}
                   onChange={handleInputChange}
                 />
                 <h2 className={s.financial__subTitle}>
-                  Оберіть платіжну систему
+                  {t("choosePaymentSystem")}
                 </h2>
                 <div className={s.financial__btnBlock}>
                   {/* <DynamicGooglePayButton
@@ -176,7 +189,7 @@ const FinancialPage = () => {
                   className={`${s.financial__subTitle} ${s.financial__link}`}
                   href="/financial/offert_contract"
                 >
-                  Договір оферти
+                  {t("termsOfOffer")}
                 </Link>
               </div>
             </div>
@@ -184,15 +197,15 @@ const FinancialPage = () => {
               <h2
                 className={`${s.financial__subTitle} ${s.financial__subTitle_leftBlock}`}
               >
-                Банківські реквізити в межах України
+                {t("termsOfOffer")}
               </h2>
               <div className="form">
-                {fields.map(({ label, value, id }) => (
+                {fields.map(({ label, value, id, key }) => (
                   <div className="field" key={id}>
                     <label
                       className={`${s.financial__subTitle} ${s.financial__subTitle_leftBlock}`}
                     >
-                      {label}
+                      {t(key)}
                     </label>
                     <div>{value}</div>
                     <Image

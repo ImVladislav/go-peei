@@ -1,26 +1,79 @@
 @import "../../../../styles/utils/variables";
 
 .section {
-  padding-bottom: 76px;
+    padding-bottom: 60px;
+    &.desktop {
+      display: none;
+    }
+    &.mobile {
+      display: block;
+    }
+  @media screen and (min-width: 1440px) {
+    padding-bottom: 74px;
+    &.mobile {
+      display: none;
+    }
+    &.desktop {
+      display: block;
+    }
+  }
+}
+
+.accentTitle {
+  color: $main-green;
 }
 
 .content {
-  display: flex;
-  justify-content: space-between;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .list {
   position: relative;
-
   &::before {
-    content: url('/about/bg-leaf-1.png');
+    content: url('/about/bg-leaf-mob-1.png');
     display: block;
     position: absolute;
-    width: 443px;
-    height: 412px;
-    top: -102px;
-    left: -80px;
+    width: 83px;
+    height: 146px;
+    top: -20px;
+    left: 0;
     z-index: -1;
+  }
+  &::after {
+    content: url('/about/bg-leaf-mob-2.png');
+    display: block;
+    position: absolute;
+    width: 83px;
+    height: 146px;
+    bottom: 10px;
+    right: 0;
+    z-index: -1;
+  }
+
+  @media screen and (min-width: 1440px) {
+    &::before {
+      content: url('/about/bg-leaf-1.png');
+      display: block;
+      position: absolute;
+      width: 443px;
+      height: 412px;
+      top: -102px;
+      left: -80px;
+      z-index: -1;
+    }
+    &::after {
+      content: url('/about/bg-leaf-2.png');
+      display: block;
+      position: absolute;
+      width: 443px;
+      height: 412px;
+      bottom: -25px;
+      right: -119%;
+      z-index: -1;
+    }
   }
 }
 
@@ -30,8 +83,11 @@
   }
 
   &__title_wrap {
-    width: 619px;
+    margin-bottom: 24px;
     cursor: pointer;
+    @media screen and (min-width: 1440px) {
+      max-width: 619px;
+    }
   }
 
 /* active */
@@ -65,97 +121,32 @@
   }
 
   &__title {
+    margin-bottom: 24px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     text-transform: uppercase;
+    @media screen and (min-width: 1440px) {
+      font-size: 18px;
+    }
   }
 }
 
 .desc_wrap {
   position: relative;
   width: 596px;
-
-  &::before {
-    content: url('/about/bg-leaf-2.png');
-    display: block;
-    position: absolute;
-    width: 443px;
-    height: 412px;
-    bottom: -52px;
-    right: -77px;
-    z-index: -1;
-  }
 }
 
 .desc {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-
-
-/* .parallax {
-  padding: 100px 64px 60px 128px;
-  background: url('/about/aerial-view-green-forest.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-}
-
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-}
-
-.wrap {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-
-  &:not(:nth-last-child(-n+2)) {
-    margin-bottom: 79px;
-  }
-}
-
-.item {
-  padding: 20px 16px;
-  width: 492px;
-  height: 100%;
-  border-radius: 10px;
-  background: $main-white;
-
-
-  &__number {
-    position: absolute;
-    top: -45px;
-    left: -47px;
-    color: red;
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__title {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.5;
-    text-transform: uppercase;
-    text-align: center;
-  }
-
-  &__desc {
+  display: none;
+  &.active {
+    display: block;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
-    text-align: justify;
   }
-} */
+  @media screen and (min-width: 1440px) {
+    display: block;
+    font-size: 18px;
+  }
+}

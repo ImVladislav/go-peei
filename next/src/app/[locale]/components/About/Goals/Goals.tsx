@@ -13,8 +13,10 @@ const Goals = () => {
   };
 
   return (
-    <section className={styles.section}>
-      <Title width={250}>Цілі організації</Title>
+    <>
+    {/* desktop */}
+    <section className={`${styles.section} ${styles.desktop}`}>
+      <Title>Цілі<span className={styles.accentTitle}> організації</span></Title>
       <div className={styles.content}>
         <ul className={styles.list}>
         {GOALS.map((item: GoalsType, index: number) => (
@@ -29,7 +31,6 @@ const Goals = () => {
           </li>
         ))}
         </ul>
-
         <div className={styles.desc_wrap}>
         {GOALS.map((item: GoalsType, index: number) => 
           index === Number(hoveredTitle) 
@@ -40,41 +41,31 @@ const Goals = () => {
         </div>
       </div>
     </section>
+    {/* mobile */}
+    <section className={`${styles.section} ${styles.mobile}`}>
+    <Title>Цілі<span className={styles.accentTitle}> організації</span></Title>
+    <ul className={styles.list}>
+        {GOALS.map((item: GoalsType, index: number) => (
+          <li key={index} className={styles.item}>
+            <div id={index.toString()} className={
+              `${styles.item__title_wrap} ${index === Number(hoveredTitle) 
+                ? `${styles.active}` 
+                : ''}`
+              } onMouseEnter={handleMouseEnter}>
+              <h3 className={styles.item__title}>{item.title}</h3>
+              <p className={
+                `${styles.desc} ${index === Number(hoveredTitle)
+              ? `${styles.active}`
+              : ''}`}>
+                {item.desc}
+              </p>
+            </div>
+          </li>
+        ))}
+        </ul>
+    </section>
+    </>
   )
 }
 
 export default Goals
-
-
-// старий дизайн
-//--------------------------------
-// import Image from 'next/image'
-// import Title from '../../Title/Title'
-// import { GOALS } from './goals.data'
-// import styles from './goals.module.scss'
-
-// const Goals = () => {
-//   return (
-//     <section className={styles.section}>
-//       <Title width={250}>Цілі організації</Title>
-//       <div className={styles.parallax}>
-//       <ul className={styles.list}>
-//         {GOALS.map(item => (
-//           <div key={item.number} className={styles.wrap}>
-//             <Image src={item.number} alt='number' width={60} height={136} className={styles.item__number} />
-//           <li className={styles.item}>
-//             <div className={styles.item__content}>
-//               <Image src={item.icon} alt='leaf' width={17} height={30} />
-//               <h3 className={styles.item__title}>{item.title}</h3>
-//               <p className={styles.item__desc}>{item.desc}</p>
-//             </div>
-//           </li>
-//           </div>
-//         ))}
-//       </ul>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default Goals;

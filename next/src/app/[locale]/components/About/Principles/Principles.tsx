@@ -1,17 +1,46 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
 import Title from '../../Title/Title'
 import { PRINCIPLES } from './principles.data'
 import styles from './principles.module.scss'
 
 const Principles = () => {
+  const [showMore, setShowMore] = useState<boolean>(false);
+
+  const handleToggleShowMore = ():void => {
+    setShowMore((prevShowMore) => !prevShowMore);
+  };
   return (
-    <section className={styles.section}>
-      <Title width={260}>наші принципи</Title>
+    <>
+    {/* mobile */}
+    <section className={`${styles.section} ${styles.mobile}`}>
+      <Title>наші <span className={styles.accentTitle}> принципи</span></Title>
       <ul className={styles.list}>
-        {PRINCIPLES.map((item, index) => (
-          <li key={index} className={styles.item}>
+        {PRINCIPLES.slice(0, showMore ? PRINCIPLES.length : 3).map((item) => (
+          <li key={item.id} className={styles.item}>
+            <div className={styles.item__top_wrap}>
+              <Image src={item.icon} alt='checkmark' width={24} height={24} />
+              <h3 className={styles.item__title}>{item.title}</h3>
+            </div>
+            <p className={styles.item__desc}>{item.desc}</p>
+          </li>
+        ))}
+      </ul>
+      {PRINCIPLES.length > 3 && (
+        <button onClick={handleToggleShowMore} className={styles.showMoreBtn}>{
+          showMore ? 'Приховати' : 'Показати більше'
+        }</button>
+      )}
+    </section>
+
+    {/* desktop */}
+    <section className={`${styles.section} ${styles.desktop}`}>
+    <Title>наші <span className={styles.accentTitle}> принципи</span></Title>
+      <ul className={styles.list}>
+        {PRINCIPLES.map((item) => (
+          <li key={item.id} className={styles.item}>
             <div className={styles.item__top_wrap}>
               <Image src={item.icon} alt='checkmark' width={24} height={24} />
               <h3 className={styles.item__title}>{item.title}</h3>
@@ -21,6 +50,7 @@ const Principles = () => {
         ))}
       </ul>
     </section>
+    </>
   )
 }
 

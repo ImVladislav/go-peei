@@ -1,5 +1,9 @@
 @import "../../../../styles/utils/_variables.scss";
 
+.accentTitle {
+  color: $main-green;
+}
+
 .top_content {
   display: flex;
   align-items: center;

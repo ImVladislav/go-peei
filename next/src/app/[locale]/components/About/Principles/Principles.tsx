@@ -16,7 +16,7 @@ const Principles = () => {
     <>
     {/* mobile */}
     <section className={`${styles.section} ${styles.mobile}`}>
-      <Title>наші принципи</Title>
+      <Title>наші <span className={styles.accentTitle}> принципи</span></Title>
       <ul className={styles.list}>
         {PRINCIPLES.slice(0, showMore ? PRINCIPLES.length : 3).map((item) => (
           <li key={item.id} className={styles.item}>
@@ -37,7 +37,7 @@ const Principles = () => {
 
     {/* desktop */}
     <section className={`${styles.section} ${styles.desktop}`}>
-      <Title width={260}>наші принципи</Title>
+    <Title>наші <span className={styles.accentTitle}> принципи</span></Title>
       <ul className={styles.list}>
         {PRINCIPLES.map((item) => (
           <li key={item.id} className={styles.item}>

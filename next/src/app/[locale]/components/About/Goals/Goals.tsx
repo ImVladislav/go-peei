@@ -16,7 +16,7 @@ const Goals = () => {
     <>
     {/* desktop */}
     <section className={`${styles.section} ${styles.desktop}`}>
-      <Title width={250}>Цілі організації</Title>
+      <Title>Цілі<span className={styles.accentTitle}> організації</span></Title>
       <div className={styles.content}>
         <ul className={styles.list}>
         {GOALS.map((item: GoalsType, index: number) => (
@@ -43,7 +43,7 @@ const Goals = () => {
     </section>
     {/* mobile */}
     <section className={`${styles.section} ${styles.mobile}`}>
-    <Title width={125}>Цілі організації</Title>
+    <Title>Цілі<span className={styles.accentTitle}> організації</span></Title>
     <ul className={styles.list}>
         {GOALS.map((item: GoalsType, index: number) => (
           <li key={index} className={styles.item}>

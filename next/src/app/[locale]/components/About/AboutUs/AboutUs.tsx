@@ -8,7 +8,7 @@ import styles from './aboutUs.module.scss'
 const AboutUs = () => {
   return (
 <section className={styles.section}>
-  <Title width={130}>Про нас</Title>
+  <Title>Про<span className={styles.accentTitle}> нас</span></Title>
   <p className={styles.text}><span className={styles.accent_text}>“Платформа еко-енергетичних ініціатив”</span> об'єднує зусилля активістів для сприяння сталому та екологічно безпечному майбутньому. За допомогою інноваційних технологій та співпраці з експертами у сфері відновлення ресурсів, ми прагнемо до зменшення негативного впливу відходів на наше середовище. </p>
   <div className={styles.bg_img}></div>
   <ul className={styles.list}>

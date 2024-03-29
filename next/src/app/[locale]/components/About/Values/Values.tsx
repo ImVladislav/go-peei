@@ -8,7 +8,7 @@ import styles from './values.module.scss'
 const Values = () => {
   return (
       <section className={styles.section}>
-      <Title width={229}>Наші Цінності</Title>
+      <Title>Наші<span className={styles.accentTitle}> Цінності</span></Title>
       <div className={styles.parallax}>
       <ul className={styles.list}>
         {VALUES.map((item, index) => (

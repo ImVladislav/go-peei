@@ -10,7 +10,7 @@ const Mission = () => {
     <section className={styles.section}>
       <Title width={273}>Місія організації</Title>
       <div className={styles.top_content}>
-        <Image src='/about/treee.svg' alt='tree' width={95} height={120} />
+        <Image src='/about/treee.svg' alt='tree' width={52} height={58} className={styles.top_content__icon} />
         <p className={styles.top_content__text}>Створення простору інноваційної активності в сфері екології та енергетики з метою формування країни свідомих громадян. Ми розглядаємо себе як каталізатора позитивних змін, що об'єднує усіх зацікавлених сторін для реалізації проектів розвитку територіальних громад та секторів національної економіки, а також підтримки інноваційних ідей у сфері екології та енергетики.
         </p>
       </div>

@@ -1,46 +1,78 @@
 @import "../../../../styles/utils/variables";
 
 .section {
-  padding-bottom: 53px;
+  padding-bottom: 25px;
+  @media screen and (min-width: 1440px) {
+    padding-bottom: 53px;
+  }
 }
 
 .parallax {
   position: relative;
-  padding: 60px 80px;
   background: url('/about/aerial-view-green-forest.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  height: 286px;
+  height: 107px;
+  @media screen and (min-width: 1440px) {
+    position: relative;
+    /* padding: 60px 80px; */
+    background: url('/about/aerial-view-green-forest.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 286px;
+  }
 }
 
 .list {
   position: absolute;
-  top: -54px;
-  right: 80px;
+  top: -25px;
+  right: 20px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  width: 392px;
-  height: 394px;
-  border-radius: 10px;
+  width: 177px;
+  height: 157px;
+  border-radius: 18px;
   background: $second-green;
   box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.25);
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    right: 80px;
+    width: 392px;
+    height: 394px;
+    border-radius: 10px;
+  }
 }
 
 .item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 88.5px;
+  height: 78.5px;
+  @media screen and (min-width: 1440px) {
     width: 196px;
     height: 197px;
+    &__icon {
+      width: 80px;
+      height: 70px;
+    }
+  }
 
     &__desc {
-      margin-top: 24px;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 1.5;
+      margin-top: 4px;
+      font-weight: 500;
+      font-size: 12px;
       color: $main-white;
-      text-decoration: underline;
+      @media screen and (min-width: 1440px) {
+        margin-top: 24px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.5;
+        text-decoration: underline;
+      }
     }
 }

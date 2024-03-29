@@ -1,16 +1,30 @@
 .wrap {
   display: flex;
   flex-direction: column;
-  gap: 120px;
-  padding-bottom: 120px;
+  gap: 56px;
+  padding-bottom: 56px;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 .bg_img {
   position: relative;
-  width: 1440px;
-  height: 549px;
-  background: url('/about/houses.png'), linear-gradient(180deg, #fff 0%, #e8f1e7 100%);
+  background: url('/about/houses-mob.png'), linear-gradient(180deg, #fff 0%, #e8f1e7 100%);
   background-repeat: no-repeat;
   background-position: center;
-  left: -80px;
+  width: 360px;
+  height: 136px;
+  left: -20px;
+  @media screen and (min-width: 1440px) {
+    background: url('/about/houses.png'), linear-gradient(180deg, #fff 0%, #e8f1e7 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1440px;
+    height: 549px;
+    left: -80px;
+  }
 }

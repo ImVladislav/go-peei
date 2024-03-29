@@ -13,7 +13,7 @@ const Values = () => {
       <ul className={styles.list}>
         {VALUES.map((item, index) => (
           <li key={index} className={styles.item}>
-            <Image src={item.icon} alt='icon' width={70} height={70}/>
+            <Image src={item.icon} alt='icon' width={20} height={20} className={styles.item__icon}/>
             <p className={styles.item__desc}>{item.desc}</p>
           </li>
         ))}

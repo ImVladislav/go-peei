@@ -11,18 +11,6 @@ const Title = ({ newStyles, width, children }: TitleProps) => {
     <div className={styles.box}>
       <h2 className={`${styles.title} ${newStyles}`}>{children}</h2>
       <div className={styles.line}></div>
-      {/* <div className={styles.svg}>
-        <Image
-          style={{
-            height: "4px",
-            objectFit: "cover",
-          }}
-          src="/main/Rectangle.svg"
-          alt="Line under the title"
-          width={width}
-          height={4}
-        />
-      </div> */}
     </div>
   );
 };

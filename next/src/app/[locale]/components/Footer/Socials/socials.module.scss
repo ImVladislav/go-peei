@@ -1,21 +1,33 @@
+@import "../../../../styles/utils/variables";
+
 .wrap {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 .item {
-  padding: 9.5px 0;
+  padding: 8px 0;
 }
 
 .link {
   display: flex;
+  align-items: center;
   font-weight: 300;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #141414;
-  gap: 8px;
-  & + img {
-    width: 24px;
-    height: 24px;
+  font-size: 12px;
+  line-height: 1;
+  color: $main-black;
+  justify-content: space-between;
+  gap: 23px;
+  &:hover,
+  &:focus {
+    color: $green-hover;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.5;
+    gap: 8px;
+  }
+  @media screen and (min-width: 1440px) {
+    justify-content: start;
   }
 }

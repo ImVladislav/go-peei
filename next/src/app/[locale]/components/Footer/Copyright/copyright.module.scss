@@ -1,24 +1,74 @@
+@import "../../../../styles/utils/variables";
 .wrap {
   display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #0d490d;
-  padding: 28px 0;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 24px 0;
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid $main-green;
+    padding: 28px 0;
+  }
 }
 .copy {
+  padding: 24px 0 0;
   font-weight: 300;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #000;
+  font-size: 12px;
+  @media screen and (min-width: 1440px) {
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000000;
+  }
 }
 .inner {
   display: flex;
-  gap: 24px;
+  justify-content: space-between;
+
+  @media screen and (min-width: 425px) {
+    gap: 24px;
+  }
+}
+.link_wrap {
+  &:last-child {
+    text-align: end;
+  }
+  @media screen and (min-width: 425px) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 24px;
+  }
 }
 .link {
+  display: inline-block;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  color: #000;
+  &:hover,
+  &:focus {
+    color: $green-hover;
+  }
+  &:last-child {
+    margin-top: 8px;
+  }
+  @media screen and (min-width: 768px) {
+    &:last-child {
+      margin-top: 0;
+    }
+    @media screen and (min-width: 1440px) {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.5;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #000000;
+    }
+  }
 }

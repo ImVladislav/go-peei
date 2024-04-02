@@ -8,12 +8,12 @@ import styles from './values.module.scss'
 const Values = () => {
   return (
       <section className={styles.section}>
-      <Title width={229}>Наші Цінності</Title>
+      <Title>Наші<span className={styles.accentTitle}> Цінності</span></Title>
       <div className={styles.parallax}>
       <ul className={styles.list}>
         {VALUES.map((item, index) => (
           <li key={index} className={styles.item}>
-            <Image src={item.icon} alt='icon' width={70} height={70}/>
+            <Image src={item.icon} alt='icon' width={20} height={20} className={styles.item__icon}/>
             <p className={styles.item__desc}>{item.desc}</p>
           </li>
         ))}

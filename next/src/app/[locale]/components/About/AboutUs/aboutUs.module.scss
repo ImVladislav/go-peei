@@ -2,32 +2,70 @@
 
 .section {
   position: relative;
-  padding-top: 100px;
-  padding-bottom: 120px;
+  padding: 42px 18px 0px 18px;
+  @media screen and (min-width: 1440px) {
+    padding-top: 100px;
+    padding-bottom: 66px;
+  }
+}
+
+.accentTitle {
+  color: $main-green;
 }
 
 .accent_text {
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.5;
-  text-transform: uppercase;
-
-  text-align: justify;
+  @media screen and (min-width: 1440px) {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: justify;
+  }
 }
 
 .text {
-  max-width: 813px;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
-  text-align: justify;
   color: $main-black;
+  padding-bottom: 24px;
+  @media screen and (min-width: 1440px) {
+    max-width: 813px;
+    font-size: 18px;
+    text-align: justify;
+  }
+}
+
+.bg_img {
+  position: relative;
+  left: -30px;
+  background: url('/about/about_bgimg_mob.png'), linear-gradient(180deg, #fff 0%, #fff 26.56%, #fff 77.06%, #fff 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 356px;
+  height: 235px;
+  @media screen and (min-width: 1440px) {
+    position: absolute;
+    top: 0;
+    left: 64%;
+    background: url('/about/about_bgimg.png'), linear-gradient(180deg, #fff 0%, #fff 26.56%, #fff 77.06%, #fff 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 540px;
+    height: 638px;
+    z-index: -1;
+  }
 }
 
 .list {
-  margin-top: 13px;
-  margin-left: 34px;
-  max-width: 779px;
+  margin-top: 24px;
+  @media screen and (min-width: 1440px) {
+    margin-top: 16px;
+    margin-left: 34px;
+    max-width: 779px;
+  }
 }
 
 .item {
@@ -38,15 +76,12 @@
   &__desc {
     margin-left: 16px;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
-    text-align: justify;
     color: $main-black;
+    @media screen and (min-width: 1440px) {
+      font-size: 18px;
+      text-align: justify;
+    }
   }
-}
-
-.bg_img {
-  position: absolute;
-  top: 0;
-  right: -80px;
 }

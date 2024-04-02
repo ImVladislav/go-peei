@@ -3,15 +3,12 @@ import Image from "next/image";
 
 import logo from "../../../../../public/Logo.svg";
 
-interface LogoProps {
-  width: number;
-  height: number;
-}
+import styles from "./logo.module.scss";
 
-const Logo = ({ width, height }: LogoProps) => {
+const Logo = () => {
   return (
-    <Link href="/">
-      <Image src={logo} width={width} height={height} alt="Logo" />
+    <Link className={styles.img_wrap} href="/">
+      <Image className={styles.img} src={logo} alt="Logo" fill />
     </Link>
   );
 };

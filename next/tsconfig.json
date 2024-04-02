@@ -31,7 +31,7 @@
     "components/Navbar.jsx",
     "src/app/i18n.js",
     "src/app/[locale]/components/About/AboutUs.jsx",
-    "src/app/[locale]/about/page.jsx",
+    "src/app/[locale]/about/page.tsx",
     "src/app/[locale]/components/Header/Header.jsx",
     "src/app/[locale]/financial/page.jsx",
     "src/app/[locale]/layout.jsx",

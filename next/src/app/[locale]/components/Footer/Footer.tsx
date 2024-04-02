@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
 import NavFooter from "./Nav/NavFooter";
@@ -15,7 +16,7 @@ const Footer = () => {
       <div className="container">
         <div className={styles.wrap}>
           <div className={styles.logo}>
-            <Logo width={303} height={84} />
+            <Logo />
             <Button onClick={() => router.push("/financial")}>
               Підтримати нас
             </Button>

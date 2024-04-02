@@ -39,3 +39,12 @@ export type GoalsType = {
   title: string;
   desc: string;
 };
+
+export type SvgProps = {
+  path: string;
+  viewBox: string;
+  fill?: string;
+  name?: string;
+  fillHovered?: string;
+  isHovered?: boolean;
+};

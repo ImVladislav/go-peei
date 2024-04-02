@@ -1,21 +1,64 @@
+@import "../../../../styles/utils/variables";
+
+.container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    gap: 64px;
+    margin-top: 0;
+  }
+}
 .wrap {
   display: flex;
-  gap: 64px;
+
+  justify-content: space-between;
+  @media screen and (min-width: 425px) {
+    margin: 0 50px;
+  }
+  @media screen and (min-width: 768px) {
+    margin: 0 100px;
+  }
+  @media screen and (min-width: 1440px) {
+    gap: 64px;
+    margin: 0;
+  }
 }
 .list {
   display: flex;
   flex-direction: column;
+
   gap: 8px;
+  @media screen and (min-width: 1440px) {
+  }
 }
 .item {
-  padding: 8px;
+  padding: 8px 0;
+  font-size: 12px;
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 .link {
   font-weight: 300;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #141414;
+  font-size: 12px;
+  line-height: 1;
+  color: $main-black;
   border-radius: 8px;
-  padding: 8px;
+  &:hover,
+  &:focus {
+    color: $green-hover;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+.active {
+  color: $green-hover;
 }

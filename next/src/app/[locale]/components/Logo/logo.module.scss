@@ -1,0 +1,13 @@
+.img_wrap {
+  position: relative;
+  width: 202px;
+  height: 57px;
+  margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    width: 303px;
+    height: 84px;
+  }
+}
+.img {
+  object-fit: contain;
+}

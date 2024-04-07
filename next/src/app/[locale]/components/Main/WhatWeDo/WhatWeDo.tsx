@@ -1,15 +1,17 @@
-"use client";
 import Image from "next/image";
 
 import Title from "../../Title/Title";
 import styles from "./watWeDo.module.scss";
+import Translator from "../../translator/Translator";
 
 const WhatWeDo = () => {
   return (
     <section className={styles.section}>
       <div className="container">
         <div>
-          <Title>Просуваємо такі ідеї:</Title>
+          <Title>
+            <Translator>wePromoteSuchIdeas</Translator>
+          </Title>
 
           <div className={styles.img_container}>
             <Image
@@ -27,16 +29,16 @@ const WhatWeDo = () => {
                 <div className={styles.icon_first}>
                   <Image src="/main/one.svg" alt="icon" fill />
                 </div>
-                <h3 className={styles.subtitle}>Збереження довкілля </h3>
+                <h3 className={styles.subtitle}>
+                  <Translator>preservingTheEnvironment</Translator>
+                </h3>
               </div>
               <div className={styles.desc_wrap}>
-                <h3 className={styles.subtitle_desktop}>Збереження довкілля</h3>
+                <h3 className={styles.subtitle_desktop}>
+                  <Translator>preservingTheEnvironment</Translator>
+                </h3>
                 <p className={styles.desc}>
-                  є ключовим завданням сучасності. Це включає зменшення викидів
-                  та забруднення, охорону біорізноманіття та створення сталого
-                  способу життя. Для досягнення цієї мети необхідні комплексні
-                  заходи на рівні країни та глобально, інновації в переробці
-                  вторинної сировини та підтримка сталого споживання.
+                  <Translator>preservingTheEnvironmentDesc</Translator>
                 </p>
               </div>
             </li>
@@ -46,20 +48,21 @@ const WhatWeDo = () => {
                   <Image src="/main/two.svg" alt="вітряк" fill />
                 </div>
                 <h3 className={styles.subtitle}>
-                  Впровадження інновацій в сфері відновлювальної енергетики
+                  <Translator>
+                    implementationOfInnovationsInTheFieldOfRenewableEnergy
+                  </Translator>
                 </h3>
               </div>
               <div className={styles.desc_wrap}>
                 <h3 className={styles.subtitle_desktop}>
-                  Впровадження інновацій в сфері відновлювальної енергетики
+                  <Translator>
+                    implementationOfInnovationsInTheFieldOfRenewableEnergy
+                  </Translator>
                 </h3>
                 <p className={styles.desc}>
-                  відіграє важливу роль у зменшенні залежності зменшенні
-                  залежності від традиційних джерел енергії та впливу на
-                  довкілля. Використання передових технологій допомагає
-                  підвищити ефективність та надійність виробництва енергії з
-                  відновлюваних джерел, сприяючи сталому розвитку та дотриманню
-                  екологічних стандартів.
+                  <Translator>
+                    implementationOfInnovationsInTheFieldOfRenewableEnergyDesc
+                  </Translator>
                 </p>
               </div>
             </li>
@@ -73,17 +76,15 @@ const WhatWeDo = () => {
                   />
                 </div>
                 <h3 className={styles.subtitle}>
-                  Переробка вторинної сировини
+                  <Translator>recyclingOfSecondaryRawMaterials</Translator>
                 </h3>
               </div>
               <div className={styles.desc_wrap}>
                 <h3 className={styles.subtitle_desktop}>
-                  Переробка вторинної сировини
+                  <Translator>recyclingOfSecondaryRawMaterials</Translator>
                 </h3>
                 <p className={styles.desc}>
-                  Сучасні технології дозволяють ефективно використовувати
-                  вторинну сировину для виробництва нових продуктів, що сприяє
-                  зменшенню негативного впливу на навколишнє середовище.
+                  <Translator>recyclingOfSecondaryRawMaterialsDesc</Translator>
                 </p>
               </div>
             </li>

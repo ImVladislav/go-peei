@@ -8,6 +8,7 @@ import NavFooter from "./Nav/NavFooter";
 import Copyright from "./Copyright/Copyright";
 
 import styles from "./footer.module.scss";
+import Translator from "../translator/Translator";
 
 const Footer = () => {
   const router = useRouter();
@@ -18,7 +19,7 @@ const Footer = () => {
           <div className={styles.logo}>
             <Logo />
             <Button onClick={() => router.push("/financial")}>
-              Підтримати нас
+              <Translator>supportUs</Translator>
             </Button>
           </div>
           <NavFooter />

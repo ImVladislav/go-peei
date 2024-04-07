@@ -6,23 +6,31 @@ import Image from "next/image";
 import Button from "../../Button/Button";
 
 import styles from "./hero.module.scss";
+import Translator from "../../translator/Translator";
 
 const Hero = () => {
   const router = useRouter();
+
   return (
     <section className={styles.section}>
       <div className="container">
         <h1 className="visually-hidden">
-          Екологічна безпека - енергетична незалежність
+          <Translator>environmentalSecurityEnergyIndependence</Translator>
         </h1>
         <div className={styles.inner}>
           <div className={styles.column}>
             <div className={styles.content}>
               <p className={styles.slogan}>
-                Екологічна <span>безпека -</span>
+                <Translator>environmental</Translator>
+                <span>
+                  <Translator>security</Translator> -
+                </span>
               </p>
               <p className={styles.slogan}>
-                <span>енергетична</span> незалежність
+                <span>
+                  <Translator>energy</Translator>
+                </span>
+                <Translator>independence</Translator>
               </p>
             </div>
 
@@ -30,7 +38,7 @@ const Hero = () => {
               newStyles={styles.btn}
               onClick={() => router.push("/financial")}
             >
-              Підтримати нас
+              <Translator>supportUs</Translator>
             </Button>
           </div>
           <div className={styles.img_wrap}>
@@ -45,7 +53,7 @@ const Hero = () => {
             newStyles={styles.btn_last}
             onClick={() => router.push("/financial")}
           >
-            Підтримати нас
+            <Translator>supportUs</Translator>
           </Button>
         </div>
       </div>

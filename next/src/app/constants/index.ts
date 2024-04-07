@@ -2,62 +2,62 @@ import { SvgProps, navLinks, socialsItem } from "@/app/types";
 
 // NAVIGATION
 export const navFooter: navLinks[] = [
-  { col: 1, href: "/about", key: "aboutUs", label: "Про нас" },
-  { col: 1, href: "/ourTeam", key: "ourTeam", label: "Наша команда" },
+  { col: 1, href: "/about", key: "aboutUs", label: "aboutUs" },
+  { col: 1, href: "/ourTeam", key: "ourTeam", label: "ourTeam" },
   {
     col: 1,
     href: "/ourPartners",
     key: "ourPartners",
-    label: "Наші партнери",
+    label: "ourPartners",
   },
   {
     col: 1,
     href: "/about/5",
     key: "officialDocuments",
-    label: "Офіційні документи",
+    label: "officialDocuments",
   },
-  { col: 1, href: "/rule", key: "rule", label: "Правління" },
+  { col: 1, href: "/rule", key: "rule", label: "boardOfManagement" },
   {
     col: 2,
     key: "workWithChildren",
-    label: "Робота з дітьми",
+    label: "workWithChildren",
     href: "/work-with-children",
   },
   {
     col: 2,
     key: "workWithTeenagers",
-    label: "Робота з молоддю",
+    label: "workWithTeenagers",
     href: "/work-with-teenagers",
   },
   {
     col: 2,
     key: "charityActions",
-    label: "Благодійні акції",
+    label: "charityActions",
     href: "/activities/projects",
     // href: "/charityActions",
   },
   {
     col: 2,
     key: "environmentalProtection",
-    label: "Охорона довкілля",
+    label: "environmentalProtection",
     href: "/environmentalProtection",
   },
-  { col: 2, key: "news", label: "Новини", href: "/news" },
-  { col: 3, key: "support", label: "Підтримати донатом", href: "/support" },
+  { col: 2, key: "news", label: "news", href: "/news" },
+  { col: 3, key: "support", label: "supportWithADonation", href: "/support" },
   {
     col: 3,
     key: "partnership",
-    label: "Стати партнером",
+    label: "becomeAPartner",
     href: "/partnership",
   },
   {
     col: 3,
     key: "volunteering",
-    label: "Стати волонтером",
+    label: "becomeAVolunteer",
     href: "/volunteering",
   },
-  { col: 3, href: "/reports", key: "reports", label: "Звіти" },
-  { col: 3, href: "/contacts", key: "contacts", label: "Контакти" },
+  { col: 3, href: "/reports", key: "reports", label: "reports" },
+  { col: 3, href: "/contacts", key: "contacts", label: "contacts" },
 ];
 
 // Socials

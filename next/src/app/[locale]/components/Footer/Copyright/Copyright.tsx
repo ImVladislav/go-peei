@@ -1,18 +1,20 @@
 import Link from "next/link";
 
 import styles from "./copyright.module.scss";
+import Translator from "../../translator/Translator";
 
 const Copyright = () => {
   return (
     <div className={styles.wrap}>
       <p className={styles.copy}>
-        <span>&copy;</span> 2024 Всі права захищено
+        <span>&copy;</span> 2024
+        <Translator>allRightsReserved</Translator>
       </p>
       <div>
         <div className={styles.inner}>
           <div className={styles.link_wrap}>
             <Link className={styles.link} href="/">
-              Команда розробки сайту
+              <Translator>theWebsiteDevelopmentTeam</Translator>
             </Link>
             <Link className={styles.link} href="/">
               Privacy Policy

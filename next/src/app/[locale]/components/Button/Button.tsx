@@ -4,7 +4,8 @@ import styles from "./button.module.scss";
 interface ButtonProps {
   newStyles?: string;
   typeBtn?: "button" | "submit" | "reset";
-  children: string;
+  disabled?: false;
+  children: React.ReactNode;
   onClick?: () => void;
   isLink?: boolean;
   href?: string;
@@ -12,6 +13,7 @@ interface ButtonProps {
 
 const Button = ({
   typeBtn = "button",
+  disabled,
   newStyles,
   onClick,
   isLink = false,
@@ -23,7 +25,12 @@ const Button = ({
     : styles.button;
 
   const buttonElement = (
-    <button type={typeBtn} className={buttonClass} onClick={onClick}>
+    <button
+      type={typeBtn}
+      disabled={disabled}
+      className={buttonClass}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

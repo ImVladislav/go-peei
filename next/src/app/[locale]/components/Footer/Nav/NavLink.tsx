@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { navLinks } from "@/app/types";
 
 import styles from "./navFooter.module.scss";
+import Translator from "../../translator/Translator";
 
 const NavLink = ({ item }: { item: navLinks }) => {
   const pathname = usePathname();
@@ -16,7 +17,7 @@ const NavLink = ({ item }: { item: navLinks }) => {
       className={`${styles.link} ${activeStyle && styles.active}`}
       href={item.href}
     >
-      {item.label}
+      <Translator>{item.label}</Translator>
     </Link>
   );
 };

@@ -4,6 +4,7 @@ import { projectsItem } from "@/app/types";
 import Button from "../../Button/Button";
 
 import styles from "./projects.module.scss";
+import Translator from "../../translator/Translator";
 interface ProjectProps {
   project: projectsItem;
 }
@@ -50,8 +51,12 @@ const SingleProject = async ({ project }: ProjectProps) => {
           ></div>
         </div>
         <div className={styles.item__progres_bar_inner}>
-          <div className={styles.item__progres_bar_label}>Зібрано</div>
-          <div className={styles.item__progres_bar_label}>Загальна сума</div>
+          <div className={styles.item__progres_bar_label}>
+            <Translator>collected</Translator>
+          </div>
+          <div className={styles.item__progres_bar_label}>
+            <Translator>totalAmount</Translator>
+          </div>
         </div>
         <div className={styles.item__progres_bar_inner}>
           <div className={styles.item__progres_bar_money}>
@@ -67,7 +72,7 @@ const SingleProject = async ({ project }: ProjectProps) => {
         isLink
         href={`/activities/projects/${project._id}`}
       >
-        Підтримати нас
+        <Translator>supportUs</Translator>
       </Button>
     </div>
   );

@@ -10,10 +10,17 @@ export async function getData(name: string) {
   if (!res.ok) return notFound();
   return res.json();
 }
+
 export async function getDataId(name: string, id: string) {
   const res = await fetch(`${url}/api/${name}/${id}`, {
     cache: "no-store",
   });
+  if (!res.ok) return notFound();
+  return res.json();
+}
+
+export async function setData(name: string) {
+  const res = await fetch(`${url}/api/${name}`, { cache: "no-store" });
   if (!res.ok) return notFound();
   return res.json();
 }

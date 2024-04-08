@@ -7,6 +7,7 @@ import { newsItem } from "@/app/types";
 import { getData } from "../../getData";
 
 import styles from "./news.module.scss";
+import Translator from "../../translator/Translator";
 
 const News = async () => {
   const data: newsItem[] = await getData("news");
@@ -16,7 +17,9 @@ const News = async () => {
   return (
     <section className={styles.section}>
       <div className="container">
-        <Title>Новини</Title>
+        <Title>
+          <Translator>news</Translator>
+        </Title>
         <div className={styles.inner}>
           <div className={styles.first_card}>
             <div className={styles.first_card__img_wrap}>
@@ -65,7 +68,7 @@ const News = async () => {
         </div>
         <div className={styles.box}>
           <Link className={styles.box__link} href="/news">
-            Усі новини
+            <Translator>allNews</Translator>
           </Link>
         </div>
       </div>

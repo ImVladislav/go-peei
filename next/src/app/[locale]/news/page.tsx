@@ -13,7 +13,7 @@ const News = async () => {
   return (
     <div className="container">
       <div className={styles.section}>
-        <Title width={130}>Новини</Title>
+        <Title>Новини</Title>
 
         <ul className={styles.list}>
           {data?.map((item) => (

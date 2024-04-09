@@ -25,7 +25,7 @@ const Projects = async () => {
   return (
     <div className="container">
       <section className={styles.section}>
-        {/* <Title width={270}>Благодійні акції</Title> */}
+        <Title>Благодійні акції</Title>
 
         <div className={styles.inner}>
           <ul className={styles.list}>

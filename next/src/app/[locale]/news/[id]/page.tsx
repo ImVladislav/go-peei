@@ -25,7 +25,7 @@ const NewsDetails = async ({ params }: { params: { id: string } }) => {
             height={500}
           />
         </div>
-        <Title width={1100}> {data.title}</Title>
+        <Title> {data.title}</Title>
         <p className={styles.card__description}>{data.description}</p>
         <p className={styles.card__data}>{data.date}</p>
       </div>

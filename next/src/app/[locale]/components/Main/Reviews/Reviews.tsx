@@ -9,19 +9,22 @@ import Title from "../../Title/Title";
 import SwiperContainer from "./SwiperContainer";
 
 import styles from "./reviews.module.scss";
+import Translator from "../../translator/Translator";
 
 const Reviews = async () => {
   const data: reviewsItem[] = await getData("reviews");
   return (
     <section className={styles.section}>
       <div className="container">
-        <Title>Відгуки</Title>
+        <Title>
+          <Translator>reviews</Translator>
+        </Title>
 
         <SwiperContainer data={data} />
 
         <div className={styles.box}>
           <Link className={styles.box__link} href="/contacts">
-            Залишити відгук
+            <Translator>leaveAReview</Translator>
           </Link>
         </div>
       </div>

@@ -1,12 +1,10 @@
-// import Image from "next/image";
 import styles from "./title.module.scss";
 interface TitleProps {
   newStyles?: string;
   children: React.ReactNode;
-  width?: number;
 }
 
-const Title = ({ newStyles, width, children }: TitleProps) => {
+const Title = ({ newStyles, children }: TitleProps) => {
   return (
     <div className={styles.box}>
       <h2 className={`${styles.title} ${newStyles}`}>{children}</h2>

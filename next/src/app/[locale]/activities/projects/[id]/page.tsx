@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { projectsItem } from "@/app/types";
 import { getDataId } from "@/app/[locale]/components/getData";
-import Title from "@/app/[locale]/components/Title/Title";
+// import Title from "@/app/[locale]/components/Title/Title";
 import Button from "@/app/[locale]/components/Button/Button";
 
 import styles from "../projects.module.scss";
@@ -26,7 +26,7 @@ const ProjectsDetails = async ({ params }: { params: { id: string } }) => {
             height={500}
           />
         </div>
-        <Title width={740}> {data.title}</Title>
+        {/* <Title width={740}> {data.title}</Title> */}
         <p className={styles.card__description}>{data.description}</p>
         <p className={styles.card__description}>
           Загальна сума збору: <span> {data.total}</span>

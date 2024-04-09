@@ -1,15 +1,8 @@
-// "use client";
 import Navbar from "./Navbar";
 import Link from "next/link";
 import s from "./Header.module.scss";
-
 import Image from "next/image";
 import Logo from "../../../../../public/Logo.svg";
-import Facebook from "../../../../../public/socialSVG/Facebook Outline.svg";
-import Instagram from "../../../../../public/socialSVG/Instagram Outline.svg";
-import Linkedin from "../../../../../public/socialSVG/Linkedin Outline.svg";
-import Whatsapp from "../../../../../public/socialSVG/Whatsapp Outline.svg";
-import Youtube from "../../../../../public/socialSVG/Youtube Outline.svg";
 import phone_icon from "../../../../../public/socialSVG/phone_icon.svg";
 import email_icon from "../../../../../public/socialSVG/email_icon.svg";
 import LanguageChanger from "../../../../../components/LanguageChanger";
@@ -37,11 +30,6 @@ const Header = () => {
               +38 050 655 85 61
             </Link>
           </div>
-          {/* <div className={s.header__contact_phoneEemail_block}>
-            <Link style={{ marginLeft: "auto", marginRight: "auto" }} href="/">
-              Правила безпеки під час воєнного стану
-            </Link>
-          </div> */}
 
           <SocialLinks />
         </div>

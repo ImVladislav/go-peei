@@ -46,7 +46,12 @@ export const navItems = [
     title: { key: "support", label: "Підтримати", href: "/support" },
     links: [
       { key: "volunteering", label: "Волонтерством", href: "/support/1" },
-      { key: "financially", label: "Фінансово", href: "/financial" },
+      // { key: "financially", label: "Фінансово", href: "/financial" },
+      {
+        key: "financially",
+        label: "Фінансово",
+        href: "https://payhub.com.ua/#/service/98840",
+      },
       { key: "partnership", label: "Партнерством", href: "/support/3" },
     ],
   },

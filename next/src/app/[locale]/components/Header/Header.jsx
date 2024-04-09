@@ -13,7 +13,7 @@ import Youtube from "../../../../../public/socialSVG/Youtube Outline.svg";
 import phone_icon from "../../../../../public/socialSVG/phone_icon.svg";
 import email_icon from "../../../../../public/socialSVG/email_icon.svg";
 import LanguageChanger from "../../../../../components/LanguageChanger";
-
+import SocialLinks from "./SocialLinks";
 const Header = () => {
   return (
     <>
@@ -42,25 +42,8 @@ const Header = () => {
               Правила безпеки під час воєнного стану
             </Link>
           </div> */}
-          <div className={s.header__social}>
-            <Link className={s.header__svgLink} href="/">
-              <Image src={Whatsapp} width={24} height={24} alt="Whatsapp" />
-            </Link>
-            <Link className={s.header__svgLink} href="/">
-              <Image src={Facebook} width={24} height={24} alt="Facebook" />
-            </Link>
-            <Link className={s.header__svgLink} href="/">
-              <Image src={Instagram} width={24} height={24} alt="Instagram" />
-            </Link>
 
-            <Link className={s.header__svgLink} href="/">
-              <Image src={Youtube} width={24} height={24} alt="Youtube" />
-            </Link>
-
-            <Link className={s.header__svgLink} href="/">
-              <Image src={Linkedin} width={24} height={24} alt="Linkedin" />
-            </Link>
-          </div>
+          <SocialLinks />
         </div>
       </div>
       <div className={s.header__container}>

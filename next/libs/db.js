@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
-const db_connection = process.env.DB_CONNECTION_STRING_AT_RUNTIME || process.env.DB_CONNECTION_STRING_AT_BUILD || 'mongodb://mongo-user-not-defined:mongo-password-not-defined@mongo-server-not-defined/mongo-database-not-defined';
+const db_connection =
+  "mongodb://mongo:eFEm1E0V6Ovr0ZKoi1px@localhost:27017/go?authSource=admin";
+// process.env.DB_CONNECTION_STRING_AT_RUNTIME ||
+// process.env.DB_CONNECTION_STRING_AT_BUILD ||
+// "mongodb://mongo-user-not-defined:mongo-password-not-defined@mongo-server-not-defined/mongo-database-not-defined";
 
 const connection = {};
 
@@ -14,6 +18,7 @@ async function connect() {
     if (connection.isConnnected === 1) {
       return;
     }
+
     await mongoose.disconnect();
   }
   const db = await mongoose.connect(db_connection);

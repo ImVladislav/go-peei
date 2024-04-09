@@ -52,12 +52,18 @@ const OfficialDocuments = () => {
         {/* </div> */}
         <ul>
           <li className={s.officialDocuments__li_item_link}>
-            <Link className={s.officialDocuments__link} href="">
+            <Link
+              className={s.officialDocuments__link}
+              href="https://zakon.rada.gov.ua/laws/main/3236-17#Text"
+            >
               Закон України “Про волонтерську діяльність”
             </Link>
           </li>
           <li className={s.officialDocuments__li_item_link}>
-            <Link className={s.officialDocuments__link} href="">
+            <Link
+              className={s.officialDocuments__link}
+              href="https://zakon.rada.gov.ua/laws/main/5073-17#Text"
+            >
               Закон України “Про благодійну діяльність та благодійні
               організації”
             </Link>

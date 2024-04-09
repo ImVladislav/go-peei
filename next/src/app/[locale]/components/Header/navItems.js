@@ -27,11 +27,6 @@ export const navItems = [
         href: "/work-with-teens",
       },
       {
-        key: "directions",
-        label: "Направлення діяльності",
-        href: "/activities/2",
-      },
-      {
         key: "charityActions",
         label: "Благодійні акції",
         href: "/activities/projects",

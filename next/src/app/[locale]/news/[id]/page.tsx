@@ -1,10 +1,11 @@
 import Image from "next/image";
 
 import Title from "../../components/Title/Title";
-import { getDataId } from "../../components/getData";
+import { getDataId } from "../../../../../libs/getData";
 import { newsItem } from "@/app/types";
 
 import styles from "../news.module.scss";
+import { formatDate } from "../../components/formatDate";
 
 const NewsDetails = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
@@ -27,7 +28,7 @@ const NewsDetails = async ({ params }: { params: { id: string } }) => {
         </div>
         <Title> {data.title}</Title>
         <p className={styles.card__description}>{data.description}</p>
-        <p className={styles.card__data}>{data.date}</p>
+        <p className={styles.card__data}>{formatDate(data.createdAt)}</p>
       </div>
     </div>
   );

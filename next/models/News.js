@@ -16,10 +16,6 @@ const newsSchema = new Schema(
       type: String,
       required: true,
     },
-    date: {
-      type: String,
-      default: "",
-    },
     firstNew: {
       type: Boolean,
       default: false,

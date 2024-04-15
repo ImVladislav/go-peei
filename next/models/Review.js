@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { type } from "os";
 
 const { Schema } = mongoose;
 
@@ -8,13 +9,20 @@ const reviewSchema = new Schema(
       type: String,
       required: true,
     },
-    description: {
+    email: {
       type: String,
       required: true,
     },
-    imageSrc: {
+    message: {
       type: String,
       required: true,
+    },
+    verify: {
+      type: Boolean,
+      default: false,
+    },
+    imageSrc: {
+      type: String,
     },
   },
   { timestamps: true }

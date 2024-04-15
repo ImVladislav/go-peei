@@ -1,5 +1,5 @@
 import React from "react";
-import { getDataId } from "../../components/getData";
+import { getDataId } from "../../../../../libs/getData";
 
 interface docsType {
   src: string;

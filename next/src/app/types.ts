@@ -22,8 +22,10 @@ export type projectsItem = {
 export type reviewsItem = {
   _id: string;
   name: string;
-  description: string;
+  email: string;
+  message: string;
   imageSrc: string;
+  verify: boolean;
 };
 
 export type newsItem = {
@@ -31,7 +33,7 @@ export type newsItem = {
   title: string;
   description: string;
   imageSrc: string;
-  date: string;
+  createdAt: string;
   firstNew: boolean;
 };
 

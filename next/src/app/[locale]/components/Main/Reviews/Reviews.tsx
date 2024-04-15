@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { reviewsItem } from "@/app/types";
 
-import { getData } from "../../getData";
+import { getData } from "../../../../../../libs/getData";
 
 import Title from "../../Title/Title";
 import SwiperContainer from "./SwiperContainer";

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { projectsItem } from "@/app/types";
-import { getData } from "../../getData";
+import { getData } from "../../../../../../libs/getData";
 import Title from "../../Title/Title";
 
 import styles from "./projects.module.scss";

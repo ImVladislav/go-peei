@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
@@ -9,28 +8,30 @@ import Title from "../components/Title/Title";
 import Translator from "../components/translator/Translator";
 
 import styles from "./contact.module.scss";
+import { addData } from "../../../../libs/getData";
+import { useRouter } from "next/navigation";
 
 interface FormValues {
-  fullName: string;
+  name: string;
   email: string;
   message: string;
 }
 
 const ContactsPage = () => {
   const { t } = useTranslation();
+  const router = useRouter();
+  const formValues: FormValues = {
+    name: "",
+    email: "",
+    message: "",
+  };
 
   const validationSchema = Yup.object({
-    fullName: Yup.string().required(`${t("messageErrorName")}`),
+    name: Yup.string().required(`${t("messageErrorName")}`),
     email: Yup.string()
       .email(`${t("emailAddressFormatIsIncorrect")}`)
       .required(`${t("messageErrorEmail")}`),
     message: Yup.string().required(`${t("messagePlaceholder")}`),
-  });
-
-  const [formValues, setFormValues] = useState<FormValues>({
-    fullName: "",
-    email: "",
-    message: "",
   });
 
   const handleFormSubmit = (
@@ -40,12 +41,11 @@ const ContactsPage = () => {
       resetForm,
     }: { setSubmitting: (isSubmitting: boolean) => void; resetForm: () => void }
   ) => {
-    setFormValues(values);
+    addData("reviews", { imageSrc: "/main/avatar/noavatar.png", ...values });
     setSubmitting(false);
     resetForm();
+    router.push("/"); //змінити на  "/"
   };
-
-  // console.log(formValues);
 
   return (
     <div className="container">
@@ -66,19 +66,20 @@ const ContactsPage = () => {
                 <h2 className={styles.title}>
                   <Translator>writeToUs</Translator>
                 </h2>
+
                 <label className={styles.lable}>
                   <Translator>fullName</Translator>
                   <Field
                     className={`${styles.input} ${
-                      errors.fullName && touched.fullName ? styles.error : ""
+                      errors.name && touched.name ? styles.error : ""
                     }`}
                     type="text"
-                    name="fullName"
+                    name="name"
                     placeholder={t("fullName")}
                   />
                   <ErrorMessage
                     className={styles.errorMessage}
-                    name="fullName"
+                    name="name"
                     component="div"
                   />
                 </label>

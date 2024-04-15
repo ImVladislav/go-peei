@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 import { projectsItem } from "@/app/types";
-import { getDataId } from "@/app/[locale]/components/getData";
+import { getDataId } from "../../../../../../libs/getData";
 
 import Button from "@/app/[locale]/components/Button/Button";
 
 import styles from "../projects.module.scss";
 import Title from "@/app/[locale]/components/Title/Title";
 
-const ProjectsDetails = async ({ params }: { params: { id: string } }) => {
+const ProjectDetails = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
   const data: projectsItem = await getDataId("projects", id);
   return (
@@ -43,4 +43,4 @@ const ProjectsDetails = async ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default ProjectsDetails;
+export default ProjectDetails;

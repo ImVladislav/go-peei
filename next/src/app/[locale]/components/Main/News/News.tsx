@@ -4,10 +4,11 @@ import Image from "next/image";
 import Title from "../../Title/Title";
 
 import { newsItem } from "@/app/types";
-import { getData } from "../../getData";
+import { getData } from "../../../../../../libs/getData";
 
 import styles from "./news.module.scss";
 import Translator from "../../translator/Translator";
+import { formatDate } from "../../formatDate";
 
 const News = async () => {
   const data: newsItem[] = await getData("news");
@@ -37,7 +38,9 @@ const News = async () => {
               <h2 className={styles.first_card__title}>{data[0].title}</h2>
             </Link>
             <p className={styles.first_card__desc}>{data[0].description}</p>
-            <p className={styles.first_card__data}>{data[0].date}</p>
+            <p className={styles.first_card__data}>
+              {formatDate(data[0].createdAt)}
+            </p>
           </div>
 
           <div>
@@ -60,7 +63,9 @@ const News = async () => {
                       <h2 className={styles.item__title}>{item.title}</h2>
                     </Link>
                   </div>
-                  <p className={styles.item__data}>{item.date}</p>
+                  <p className={styles.item__data}>
+                    {formatDate(item.createdAt)}
+                  </p>
                 </li>
               ))}
             </ul>

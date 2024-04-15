@@ -1,5 +1,6 @@
 import { newsItem } from '@/app/types'
 import React from 'react'
+import { formatDate } from '../../formatDate'
 import styles from './newsCardInfo.module.scss'
 
 const NewsCardInfo: React.FC<{ newsItem: newsItem }> = ({ newsItem }) => {
@@ -19,7 +20,7 @@ const NewsCardInfo: React.FC<{ newsItem: newsItem }> = ({ newsItem }) => {
 					<p className={styles.card__description}>{newsItem.description}</p>
 					<p className={styles.card__data}>
 						<span className={styles.card__dataTitle}>Опубліковано: </span>
-						{newsItem.date}
+						{formatDate(newsItem.createdAt)}
 					</p>
 				</div>
 			</div>

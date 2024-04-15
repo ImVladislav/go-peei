@@ -1,13 +1,13 @@
 import Image from "next/image";
 
 import { projectsItem } from "@/app/types";
-import { getData } from "../../components/getData";
+import { getData } from "../../../../../libs/getData";
 import Title from "../../components/Title/Title";
 import Button from "../../components/Button/Button";
 
 import styles from "./projects.module.scss";
 
-const Projects = async () => {
+const ProjectsPage = async () => {
   const data: projectsItem[] = await getData("projects");
 
   const maxLength = 100;
@@ -25,7 +25,7 @@ const Projects = async () => {
   return (
     <div className="container">
       <section className={styles.section}>
-        <Title width={270}>Благодійні акції</Title>
+        <Title>Благодійні акції</Title>
 
         <div className={styles.inner}>
           <ul className={styles.list}>
@@ -98,4 +98,4 @@ const Projects = async () => {
   );
 };
 
-export default Projects;
+export default ProjectsPage;

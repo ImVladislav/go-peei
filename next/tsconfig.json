@@ -39,7 +39,9 @@
     "src/app/[locale]/components/Main/SafetyRules.tsx",
     "src/app/[locale]/officialDocuments/page.jsx",
     "src/app/[locale]/officialDocuments/docs/page.jsx",
-    "src/app/[locale]/not-found.jsx"
+    "src/app/[locale]/supportVolonter/page.jsx",
+    "src/app/[locale]/not-found.jsx",
+    "libs/db.js"
   ],
 
   "exclude": ["node_modules"]

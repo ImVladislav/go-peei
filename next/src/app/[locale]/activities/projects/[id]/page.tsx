@@ -1,13 +1,14 @@
 import Image from "next/image";
 
 import { projectsItem } from "@/app/types";
-import { getDataId } from "@/app/[locale]/components/getData";
-import Title from "@/app/[locale]/components/Title/Title";
+import { getDataId } from "../../../../../../libs/getData";
+
 import Button from "@/app/[locale]/components/Button/Button";
 
 import styles from "../projects.module.scss";
+import Title from "@/app/[locale]/components/Title/Title";
 
-const ProjectsDetails = async ({ params }: { params: { id: string } }) => {
+const ProjectDetails = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
   const data: projectsItem = await getDataId("projects", id);
   return (
@@ -26,7 +27,7 @@ const ProjectsDetails = async ({ params }: { params: { id: string } }) => {
             height={500}
           />
         </div>
-        <Title width={740}> {data.title}</Title>
+        <Title> {data.title}</Title>
         <p className={styles.card__description}>{data.description}</p>
         <p className={styles.card__description}>
           Загальна сума збору: <span> {data.total}</span>
@@ -42,4 +43,4 @@ const ProjectsDetails = async ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default ProjectsDetails;
+export default ProjectDetails;

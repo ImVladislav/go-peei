@@ -24,10 +24,10 @@ const SingleReview = ({ review }: ReviewProps) => {
 				</div>
 				<h3 className={styles.item__name}>{review.name}</h3>
 			</div>
-			{/* <p className={styles.item__desc}>
-        {review.description.slice(0, 180)}
-        ...
-      </p> */}
+			<p className={styles.item__desc}>
+				{review.message.slice(0, 180)}
+				...
+			</p>
 		</div>
 	)
 }

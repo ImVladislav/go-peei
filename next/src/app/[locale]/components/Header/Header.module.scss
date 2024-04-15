@@ -27,7 +27,7 @@
   padding-left: auto;
   padding-right: auto;
   background-color: #e8f1e7;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     display: flex;
   }
 }
@@ -67,7 +67,7 @@
   display: flex;
   justify-content: space-between;
   margin: 6px 28px 6px 20px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     margin: 20px 80px 20px 60px;
   }
 }
@@ -114,7 +114,7 @@
 
 .header__langChangContainer {
   display: none;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     display: flex;
   }
 }
@@ -125,7 +125,7 @@
   margin: 0px 20px;
   align-items: center;
   text-align: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     display: flex;
   }
 }
@@ -140,7 +140,7 @@
   padding: 18px 0;
   justify-content: space-between;
   white-space: nowrap;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     margin-right: 20px;
     flex-direction: row;
   }
@@ -153,12 +153,15 @@
   // fill: red;
 }
 
-.svgIcon:hover {
-  // fill: red;
-  // transform: rotate(180deg);
-  // stroke: red;
-  // transition: transform 0.5s;
-}
+// .menuBtnSvg {
+//   fill: red;
+//   :hover {
+//     fill: green;
+//   }
+//   // transform: rotate(180deg);
+//   // stroke: red;
+//   // transition: transform 0.5s;
+// }
 
 .nav__item {
   display: flex;
@@ -215,7 +218,7 @@ s.contactLink {
   cursor: "pointer";
   color: "black";
   padding: 18px 0;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     margin-right: 20px;
     display: flex;
   }
@@ -225,8 +228,8 @@ s.contactLink {
 //   min-width: 320px;
 // }
 
-// @media screen and (min-width: 768px) {
-//   min-width: 768px;
+// @media screen and (min-width: 1024px) {
+//   min-width: 1024px;
 //   padding-left: 32px;
 //   padding-right: 32px;
 // }
@@ -246,7 +249,7 @@ s.contactLink {
   display: flex;
   align-items: center;
   text-align: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     display: none;
   }
 }
@@ -272,7 +275,7 @@ s.contactLink {
   //   5px 5px 15px rgb(0 0 0 / 35%);
   z-index: 1;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     // display: none;
   }
 }
@@ -301,4 +304,12 @@ s.contactLink {
   // transform: scale(1.1); /* Збільшити розмір на 10% при ховері */
   fill: red;
   color: red;
+}
+//=======================SocialLinks========================
+.socials__List {
+  display: flex;
+  justify-content: space-between;
+}
+.socials__List_item {
+  margin-right: 24px;
 }

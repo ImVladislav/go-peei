@@ -224,12 +224,6 @@ const FinancialPage = () => {
       <Modal show={showModal} onClose={() => setShowModal(false)}>
         <SuccessModal />
       </Modal>
-      {/* {showSuccessModal && (
-        <SuccessModal onClose={() => setShowSuccessModal(false)} />
-      )} */}
-      {/* {showErrorModal && (
-        <ErrorModal onClose={() => setShowErrorModal(false)} />
-      )} */}
     </div>
   );
 };

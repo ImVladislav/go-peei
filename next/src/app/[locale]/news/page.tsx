@@ -2,18 +2,20 @@ import Image from "next/image";
 
 import Title from "../components/Title/Title";
 
-import { getData } from "../components/getData";
+import { getData } from "../../../../libs/getData";
 import { newsItem } from "@/app/types";
 
 import styles from "./news.module.scss";
 import Link from "next/link";
+import { formatDate } from "../components/formatDate";
 
 const News = async () => {
   const data: newsItem[] = await getData("news");
+
   return (
     <div className="container">
       <div className={styles.section}>
-        <Title width={130}>Новини</Title>
+        <Title>Новини</Title>
 
         <ul className={styles.list}>
           {data?.map((item) => (
@@ -34,7 +36,7 @@ const News = async () => {
               <Link className={styles.link} href={`/news/${item._id}`}>
                 <h2 className={styles.item__title}>{item.title}</h2>
               </Link>
-              <p className={styles.item__data}>{item.date}</p>
+              <p className={styles.item__data}>{formatDate(item.createdAt)}</p>
             </li>
           ))}
         </ul>

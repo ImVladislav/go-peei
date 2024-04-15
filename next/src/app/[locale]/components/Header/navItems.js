@@ -45,7 +45,11 @@ export const navItems = [
   {
     title: { key: "support", label: "Підтримати", href: "/support" },
     links: [
-      { key: "volunteering", label: "Волонтерством", href: "/support/1" },
+      {
+        key: "volunteering",
+        label: "Волонтерством",
+        href: "/supportVolonter",
+      },
       // { key: "financially", label: "Фінансово", href: "/financial" },
       {
         key: "financially",

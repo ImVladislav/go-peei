@@ -1,0 +1,51 @@
+@import '../../../../styles/utils/_variables.scss';
+.section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-top: 32px;
+	height: 100vh;
+	&__wrapDescription {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		margin-top: -50px;
+		border-radius: 18px;
+		padding: 24px 20px;
+		width: 320px;
+		background: $main-white;
+	}
+	&__title {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 1.5;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+	&__description {
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 1.5;
+		color: $main-black;
+		margin-bottom: 20px;
+	}
+	&__dataTitle {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 1.5;
+		color: $main-black;
+	}
+	&__data {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 1.5;
+		color: $main-black;
+	}
+}

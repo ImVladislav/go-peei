@@ -1,0 +1,38 @@
+@import '../../../../styles/utils/_variables.scss';
+
+.section {
+	margin-top: 45px;
+
+	&__title {
+		margin-bottom: 35px;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 1.5;
+		text-transform: uppercase;
+		text-align: center;
+		color: $main-black;
+	}
+}
+
+.list {
+	margin-bottom: 20px;
+
+	&__box_link {
+		margin: 24px 0px 24px 0px;
+		text-align: center;
+	}
+	&__link {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 1;
+		text-align: center;
+		color: $main-black;
+		border-bottom: 1px solid $main-black;
+		padding: 12px;
+
+		&:hover,
+		&:focus {
+			border-bottom: 2px solid $green-hover;
+		}
+	}
+}

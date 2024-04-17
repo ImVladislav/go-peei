@@ -2,7 +2,6 @@ import { newsItem } from '@/app/types'
 import { getDataId } from '../../../../../libs/getData'
 import NewsCardInfo from '../../components/NewsItem/NewsCardInfo/NewsCardInfo'
 import ReadMore from '../../components/NewsItem/ReadMore/ReadMore'
-import SocialSection from '../../components/NewsItem/SocialSection/SocialSection'
 import Title from '../../components/Title/Title'
 import styles from '../news.module.scss'
 
@@ -11,9 +10,10 @@ const NewsDetails = async ({ params }: { params: { id: string } }) => {
 	const data: newsItem = await getDataId('news', id)
 	return (
 		<div className={styles.section}>
-			<Title>новини</Title>
+			<div className='container'>
+				<Title>новини</Title>
+			</div>
 			<NewsCardInfo newsItem={data} />
-			<SocialSection />
 			<ReadMore />
 		</div>
 	)

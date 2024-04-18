@@ -2,14 +2,15 @@
 
 .box {
   display: inline-block;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   @media screen and (min-width: 1440px) {
     margin-bottom: 60px;
   }
 }
 .title {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
+  line-height: 1.5;
   text-transform: uppercase;
   color: $main-black;
   @media screen and (min-width: 1440px) {
@@ -20,7 +21,7 @@
   color: $main-green;
 }
 .line {
-  height: 2px;
+  height: 4px;
   background: $main-green;
   transform: skew(-50deg, 0deg);
   @media screen and (min-width: 1440px) {

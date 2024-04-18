@@ -1,4 +1,9 @@
-import { SvgProps, navLinks, socialsItem } from "@/app/types";
+import {
+  SvgProps,
+  workWithChildrenItem,
+  navLinks,
+  socialsItem,
+} from "@/app/types";
 
 // NAVIGATION
 export const navFooter: navLinks[] = [
@@ -21,13 +26,13 @@ export const navFooter: navLinks[] = [
     col: 2,
     key: "workWithChildren",
     label: "workWithChildren",
-    href: "/work-with-children",
+    href: "/activities/work-with-children",
   },
   {
     col: 2,
     key: "workWithTeenagers",
     label: "workWithTeenagers",
-    href: "/work-with-teenagers",
+    href: "/activities/work-with-teenagers",
   },
   {
     col: 2,
@@ -94,6 +99,35 @@ export const iconsData: SvgProps[] = [
     path: "M12.0765 0.498535H12.21C13.443 0.503035 19.6905 0.548035 21.375 1.00104C21.8842 1.13929 22.3483 1.40877 22.7207 1.78255C23.0932 2.15633 23.361 2.62131 23.4975 3.13103C23.649 3.70103 23.7555 4.45553 23.8275 5.23404L23.8425 5.39004L23.8755 5.78003L23.8875 5.93603C23.985 7.30703 23.997 8.59103 23.9985 8.87153V8.98403C23.997 9.27503 23.9835 10.646 23.8755 12.074L23.8635 12.2315L23.85 12.3875C23.775 13.2455 23.664 14.0975 23.4975 14.7245C23.361 15.2343 23.0932 15.6992 22.7207 16.073C22.3483 16.4468 21.8842 16.7163 21.375 16.8545C19.635 17.3225 13.0215 17.3555 12.105 17.357H11.892C11.4285 17.357 9.5115 17.348 7.5015 17.279L7.2465 17.27L7.116 17.264L6.8595 17.2535L6.603 17.243C4.938 17.1695 3.3525 17.051 2.622 16.853C2.11294 16.7149 1.64902 16.4457 1.27658 16.0722C0.904129 15.6987 0.636185 15.234 0.4995 14.7245C0.333 14.099 0.222 13.2455 0.147 12.3875L0.135 12.23L0.123 12.074C0.0485451 11.0577 0.00752298 10.0391 0 9.02003L0 8.83554C0.003 8.51303 0.015 7.39853 0.096 6.16853L0.1065 6.01403L0.111 5.93603L0.123 5.78003L0.156 5.39004L0.171 5.23404C0.243 4.45553 0.3495 3.69953 0.501 3.13103C0.637456 2.62131 0.905298 2.15633 1.27776 1.78255C1.65022 1.40877 2.11426 1.13929 2.6235 1.00104C3.354 0.806035 4.9395 0.686035 6.6045 0.611035L6.8595 0.600535L7.1175 0.591535L7.2465 0.587035L7.503 0.576535C8.93056 0.530641 10.3587 0.505138 11.787 0.500035L12.0765 0.498535ZM9.6 5.31353V12.5405L15.8355 8.92853L9.6 5.31353Z",
     name: "YouTube",
     viewBox: "0 0 24 18",
+  },
+];
+
+export const workWithChildrenData: workWithChildrenItem[] = [
+  {
+    imageSrc:
+      "/workWithChildren/hands-cupping-plant-save-environment-campaign.jpg",
+    title: "ourCommitment",
+    description: "ourCommitmentDesc",
+  },
+  {
+    imageSrc: "/workWithChildren/environment-education-day-concept.jpg",
+    title: "environmentalEducationItAllStartsWithKnowledge",
+    description: "environmentalEducationItAllStartsWithKnowledgeDesc",
+  },
+  {
+    imageSrc: "/workWithChildren/kids-with-their-hands-up-with-copy-space.jpg",
+    title: "greenInitiativesOfYoungPeople",
+    description: "greenInitiativesOfYoungPeopleDesc",
+  },
+  {
+    imageSrc: "/workWithChildren/sustainable-development-goals-still-life.jpg",
+    title: "anInvitationToChange",
+    description: "anInvitationToChangeDesc",
+  },
+  {
+    imageSrc: "/workWithChildren/kids-learnign-about-environment.jpg",
+    title: "forPreservationForTheFuture",
+    description: "forPreservationForTheFutureDesc",
   },
 ];
 

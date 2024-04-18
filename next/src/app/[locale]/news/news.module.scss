@@ -1,3 +1,23 @@
+@import '../../styles/utils/_variables.scss';
+
 .section {
-	padding: 60px 0px 60px 0px;
+	padding: 10px 0px 60px 0px;
+	&__leftBtn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 10px;
+		cursor: pointer;
+		border: none;
+		border-radius: 999px;
+		padding: 8px;
+		width: 40px;
+		height: 40px;
+		background: $green-50;
+	}
+	&__btnIcon {
+		&:active {
+			transform: rotate(90deg);
+		}
+	}
 }

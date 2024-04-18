@@ -22,9 +22,14 @@ export const navItems = [
     },
     links: [
       {
-        key: "workWithYouth",
-        label: "Робота з дітьми та молоддю",
-        href: "/work-with-teens",
+        key: "workWithChildren",
+        label: "workWithChildren",
+        href: "/activities/work-with-children",
+      },
+      {
+        key: "workWithTeenagers",
+        label: "workWithTeenagers",
+        href: "/activities/work-with-teenagers",
       },
       {
         key: "charityActions",

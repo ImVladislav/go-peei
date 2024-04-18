@@ -50,3 +50,9 @@ export type SvgProps = {
   fillHovered?: string;
   isHovered?: boolean;
 };
+
+export type workWithChildrenItem = {
+  imageSrc: string;
+  title: string;
+  description: string;
+};

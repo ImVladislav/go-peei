@@ -38,7 +38,7 @@ const ReadMore = async ({
 					))}
 				</ul>
 				<div className={styles.more__box}>
-					<Link href='/' className={styles.more__link}>
+					<Link href='/news' className={styles.more__link}>
 						Усі новини
 					</Link>
 				</div>

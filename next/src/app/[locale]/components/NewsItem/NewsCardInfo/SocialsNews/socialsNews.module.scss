@@ -1,0 +1,10 @@
+@import '../../../../../styles/utils/_variables.scss';
+
+.social {
+	&__wrap {
+		margin-bottom: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}

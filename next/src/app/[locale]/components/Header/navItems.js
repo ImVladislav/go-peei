@@ -38,8 +38,8 @@ export const navItems = [
       },
       {
         key: "environmentalProtection",
-        label: "Охорона довкілля",
-        href: "/environmentalProtection",
+        label: "environmentalProtection",
+        href: "/activities/environmental-protection",
       },
     ],
   },

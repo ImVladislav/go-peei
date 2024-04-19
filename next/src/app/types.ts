@@ -56,3 +56,9 @@ export type workWithChildrenItem = {
   title: string;
   description: string;
 };
+
+export type environmentalProtectionItem = {
+  imageSrc: string;
+  title: string;
+  description: string;
+};

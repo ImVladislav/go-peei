@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-const host = process.env.NEXT_HOST || "http://localhost:3000";
+const host = process.env.NEXT_HOST || "localhost:3000";
 const tls = process.env.NEXT_TLS || "false";
 
 const url = tls === "true" ? `https://${host}` : `http://${host}`; // // important!!!

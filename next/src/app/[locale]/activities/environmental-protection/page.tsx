@@ -1,26 +1,23 @@
-"use client";
 import Image from "next/image";
 import Title from "../../components/Title/Title";
 import Translator from "../../components/translator/Translator";
 
-import { workWithChildrenData } from "@/app/constants";
+import { environmentalProtectionData } from "@/app/constants";
 
-import styles from "./workWithChildren.module.scss";
-import { useTranslation } from "react-i18next";
+import styles from "./environmentalProtection.module.scss";
 
-const WorkWithChildrenPage = () => {
-  const { t } = useTranslation();
+const EnvironmentalProtectionPage = () => {
   return (
     <div className={styles.section}>
       <div className="container">
         <Title>
-          <Translator>work</Translator>
+          <Translator>protection</Translator>
           <span className={styles.accentTitle}>
-            <Translator>withChildren</Translator>
+            <Translator>surroundings</Translator>
           </span>
         </Title>
         <ul className={styles.list}>
-          {workWithChildrenData.map((item) => (
+          {environmentalProtectionData.map((item) => (
             <li className={styles.item}>
               <div className={styles.imgContent}>
                 <div className={styles.wrapImg}>
@@ -58,4 +55,4 @@ const WorkWithChildrenPage = () => {
   );
 };
 
-export default WorkWithChildrenPage;
+export default EnvironmentalProtectionPage;

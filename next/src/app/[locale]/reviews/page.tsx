@@ -1,5 +1,5 @@
-"use client";
-import { useEffect, useState } from "react";
+// "use client";
+
 import Image from "next/image";
 
 import { getData, removeDataId } from "../../../../libs/getData";
@@ -9,30 +9,30 @@ import { reviewsItem } from "@/app/types";
 import Title from "../components/Title/Title";
 import ButtonEdit from "../components/Button/ButtonEdit";
 import ButtonAdd from "../components/Button/ButtonAdd";
-import ButtonDelete from "../components/Button/ButtonDelete";
+// import ButtonDelete from "../components/Button/ButtonDelete";
 
 import styles from "./reviews.module.scss";
 
-const RewiewsPage = () => {
-  // const data: reviewsItem[] = await getData("reviews");
-  const [reviews, setReviews] = useState<reviewsItem[]>([]);
+const RewiewsPage = async () => {
+  const data: reviewsItem[] = await getData("reviews");
+  // const [reviews, setReviews] = useState<reviewsItem[]>([]);
 
-  const fetchData = async () => {
-    const data: reviewsItem[] = await getData("reviews");
-    setReviews(data);
-  };
+  // const fetchData = async () => {
+  //   const data: reviewsItem[] = await getData("reviews");
+  //   setReviews(data);
+  // };
 
-  useEffect(() => {
-    fetchData();
-  }, [reviews.length]);
+  // useEffect(() => {
+  //   fetchData();
+  // }, [reviews.length]);
 
-  const handleDeleteReview = async (id: string) => {
-    const confirmed = confirm("Are yoy sure?");
-    if (confirmed) {
-      await removeDataId("reviews", id);
-    }
-    fetchData();
-  };
+  // const handleDeleteReview = (id: string) => {
+  //   const confirmed = confirm("Are yoy sure?");
+  //   if (confirmed) {
+  //     removeDataId("reviews", id);
+  //   }
+  //   // fetchData();
+  // };
   return (
     <div className="container">
       <div style={{ marginBottom: "50px" }}>
@@ -46,7 +46,7 @@ const RewiewsPage = () => {
           <ButtonAdd path="contacts" />
         </div>
         <ul>
-          {reviews?.map((review) => (
+          {data?.map((review) => (
             <li className={styles.item} key={review._id}>
               <div className={styles.item__inner}>
                 <div className={styles.item__img}>
@@ -73,10 +73,10 @@ const RewiewsPage = () => {
                 }}
               >
                 <ButtonEdit path={`edit-review/${review._id}`} />
-                <ButtonDelete
+                {/* <ButtonDelete
                   id={review._id}
-                  handleClick={handleDeleteReview}
-                />
+                  handleClick={() => handleDeleteReview}
+                /> */}
               </div>
             </li>
           ))}

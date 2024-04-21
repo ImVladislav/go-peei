@@ -1,10 +1,21 @@
 @import "../../../styles/utils/variables";
 
 .section {
-  //   padding: 60px 0 75px;
-  //   @media screen and (min-width: 1440px) {
-  //     padding: 60px 0 120px;
-  //   }
+  padding: 60px 0 54px;
+  @media screen and (min-width: 1440px) {
+    padding: 60px 0 120px;
+  }
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+  }
 }
 .accentTitle {
   color: $main-green;
@@ -12,49 +23,287 @@
 
 .imgContent {
   margin: 0 -20px;
+  @media screen and (min-width: 1440px) {
+    margin: 0 -80px;
+  }
 }
-.wrapImg {
+.imgContainer {
   position: relative;
 
   width: 100%;
   height: 192px;
   overflow: hidden;
+  @media screen and (min-width: 1440px) {
+    height: 463px;
+  }
 }
 
 .img {
   object-fit: cover;
   object-position: bottom;
   transform: scale(1.3);
+  @media screen and (min-width: 1440px) {
+    transform: scale(1.2);
+    object-position: 0px -280px;
+  }
 }
-.card {
+.textContent {
   position: relative;
   border: 1px solid #e8f1e7;
   border-radius: 18px;
   padding: 18px 0px;
-  width: 320px;
-  height: 440px;
+  max-width: 676px;
   background: #fffefe;
   margin-top: -28px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  &::after {
+    content: url("/workWithTeenagers/bg-leaf.png");
+    display: block;
+    position: absolute;
+    width: 72px;
+    height: 126px;
+    top: 220px;
+
+    right: 30px;
+    z-index: -1;
+
+    @media screen and (min-width: 1440px) {
+      top: 48px;
+      right: 50px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: -133px;
+    border-radius: 40px;
+    padding: 24px 119px;
+  }
 }
 
-.textContent {
+.textContainer {
   display: flex;
   flex-direction: column;
   padding: 10px;
   gap: 24px;
+
+  @media screen and (min-width: 1440px) {
+    align-items: center;
+    padding: 0;
+  }
 }
 
-.hello {
+.title {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   text-transform: uppercase;
   text-align: center;
   color: #141414;
+
+  @media screen and (min-width: 1440px) {
+    font-weight: 500;
+    font-size: 32px;
+  }
 }
 .description {
   font-weight: 300;
   font-size: 16px;
   line-height: 1.5;
   color: #141414;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+  }
+}
+
+.contentSecond {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  @media screen and (min-width: 1440px) {
+    gap: 0;
+  }
+}
+.containerSecond {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media screen and (min-width: 1440px) {
+    gap: 60px;
+  }
+}
+.listSecond {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media screen and (min-width: 1440px) {
+    background: $green-30;
+    gap: 0;
+  }
+}
+.itemSecond {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  @media screen and (min-width: 1440px) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    margin-bottom: 0;
+  }
+  .imgContainerSecond {
+    position: relative;
+    border-radius: 18px;
+    width: 100%;
+
+    height: 213px;
+    overflow: hidden;
+    @media screen and (min-width: 1440px) {
+      border-radius: 0 24px 24px 0;
+      width: 632px;
+      height: 409px;
+    }
+  }
+  .imgSecond {
+    object-fit: cover;
+    object-position: left;
+  }
+  .description {
+    @media screen and (min-width: 1440px) {
+      width: 648px;
+      height: 409px;
+      padding: 119px;
+    }
+  }
+}
+.itemSecond:nth-child(even) {
+  @media screen and (min-width: 1440px) {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .imgContainerSecond {
+    @media screen and (min-width: 1440px) {
+      border-radius: 24px 0 0 24px;
+      width: 632px;
+      height: 409px;
+    }
+  }
+}
+
+.bgrSecond {
+  margin: -20px;
+  background: #f5f8f5;
+  @media screen and (min-width: 1440px) {
+    margin: 0;
+  }
+}
+.bgrContainer {
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+  @media screen and (min-width: 1440px) {
+    padding: 24px 370px;
+    gap: 24px;
+  }
+}
+
+.bgrImg {
+  margin-left: auto;
+  margin-right: auto;
+  width: 36px;
+  height: 52px;
+  @media screen and (min-width: 1440px) {
+    width: 61px;
+    height: 88px;
+  }
+}
+
+.btn {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 308px;
+}
+
+.contentThird {
+  padding: -20px;
+  @media screen and (min-width: 1440px) {
+    padding: -80px;
+  }
+}
+.containerThird {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media screen and (min-width: 1440px) {
+    gap: 60px;
+  }
+}
+.imgContentThird {
+  margin: 0 -20px;
+  @media screen and (min-width: 1440px) {
+    margin: 0 -80px;
+  }
+}
+
+.imgContainerThird {
+  position: relative;
+  width: 100%;
+  height: 241px;
+  overflow: hidden;
+  @media screen and (min-width: 1440px) {
+    height: 463px;
+  }
+}
+.imgThird {
+  object-fit: cover;
+  @media screen and (min-width: 1440px) {
+    object-position: 0px -330px;
+  }
+}
+.textContentThird {
+  position: relative;
+  border: 1px solid #e8f1e7;
+  border-radius: 24px;
+  padding: 24px 0px;
+
+  max-width: 652px;
+  background: #fffefe;
+  margin-top: -28px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: 1440px) {
+    margin-top: -133px;
+    border-radius: 40px;
+    padding: 24px;
+  }
+}
+.textContainerThird {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.listThird {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.itemThird {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  width: 13px;
+  height: 22px;
 }

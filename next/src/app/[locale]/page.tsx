@@ -11,9 +11,9 @@ export default function Home() {
     <div className={styles.wrap}>
       <Hero />
       <WhatWeDo />
-      {/* <Projects />
+      <Projects />
       <Reviews />
-      <News /> */}
+      <News />
     </div>
   );
 }

@@ -18,7 +18,7 @@ export const navFooter: navLinks[] = [
   },
   {
     col: 1,
-    href: "/about/5",
+    href: "/officialDocuments",
     key: "officialDocuments",
     label: "officialDocuments",
   },
@@ -49,7 +49,12 @@ export const navFooter: navLinks[] = [
     href: "/activities/environmental-protection",
   },
   { col: 2, key: "news", label: "news", href: "/news" },
-  { col: 3, key: "support", label: "supportWithADonation", href: "/support" },
+  {
+    col: 3,
+    key: "support",
+    label: "supportWithADonation",
+    href: "https://payhub.com.ua/#/service/98840",
+  },
   {
     col: 3,
     key: "partnership",
@@ -69,10 +74,10 @@ export const navFooter: navLinks[] = [
 // Socials
 export const initialSocials: socialsItem[] = [
   { href: "/whatsup", name: "WhatsUp" },
-  { href: "/instagram", name: "Instagram" },
-  { href: "/linkedin", name: "Linkedin" },
-  { href: "/facebook", name: "Facebook" },
-  { href: "/youtube", name: "YouTube" },
+  { href: "https://www.instagram.com/", name: "Instagram" },
+  { href: "https://linkedin.com/", name: "Linkedin" },
+  { href: "https://www.facebook.com/", name: "Facebook" },
+  { href: "https://www.youtube.com/", name: "YouTube" },
 ];
 
 // all svg for the hover to work

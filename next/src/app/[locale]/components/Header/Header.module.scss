@@ -145,9 +145,10 @@
     flex-direction: row;
   }
 }
-.nav-item:hover .svgIcon {
+.nav__itemContainer:hover .svgIcon {
   transform: rotate(180deg);
-  transition: transform 0.5s;
+  transition: transform 0.8s;
+
   stroke: green; /* Додайте цей рядок, щоб змінити колір на зелений */
   // transform: scale(1.1); /* Збільшити розмір на 10% при ховері */
   // fill: red;
@@ -188,21 +189,25 @@
   z-index: 1;
 }
 
+.dropdown__item {
+  display: flex;
+  padding: 10px 5px;
+  width: 100%;
+}
+
 .nav-links {
   color: black;
 }
 
 .nav__itemContainer:hover .dropdown {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .nav-item:hover .dropdown {
   display: block;
   transition: transform 1.5s;
-}
-
-.dropdown li {
-  margin: 5px 0;
 }
 
 .dropdown li:hover {

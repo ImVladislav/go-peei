@@ -60,7 +60,7 @@ export default function Navbar() {
             </svg>
             <ul className={s.dropdown}>
               {item.links.map((link) => (
-                <li style={{ padding: "5px" }} key={link.label}>
+                <li className={s.dropdown__item} key={link.label}>
                   <Link
                     style={{ fontSize: "18px" }}
                     href={link.href}

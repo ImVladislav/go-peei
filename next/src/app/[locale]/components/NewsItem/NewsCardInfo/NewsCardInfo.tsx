@@ -13,9 +13,6 @@ const NewsCardInfo: React.FC<{ newsItem: newsItem }> = ({ newsItem }) => {
 		`http://localhost:3000/news/${newsItem._id}`
 	)
 
-	const copyPageLink = (): void => {
-		navigator.clipboard.writeText(pageLink)
-	}
 	return (
 		<div className={styles.section}>
 			{/* card section */}
@@ -32,6 +29,8 @@ const NewsCardInfo: React.FC<{ newsItem: newsItem }> = ({ newsItem }) => {
 					<div className={styles.card__wrapDescription}>
 						<h3 className={styles.card__title}>{newsItem.title}</h3>
 						<p className={styles.card__description}>{newsItem.description}</p>
+					</div>
+					<div className={styles.bottomInfoWrap}>
 						{/* box data */}
 						<div className={styles.boxData}>
 							<p className={styles.boxData__data}>
@@ -43,9 +42,11 @@ const NewsCardInfo: React.FC<{ newsItem: newsItem }> = ({ newsItem }) => {
 						</div>
 						{/* social section */}
 						<div className={styles.socialSection}>
-							<h3 className={styles.socialSection__title}>Поділитися:</h3>
-							<SocialsNews />
-							<InputLinkNews pageLink={pageLink} copyPageLink={copyPageLink} />
+							<div className={styles.socialSection__topWrap}>
+								<h3 className={styles.socialSection__title}>Поділитися:</h3>
+								<SocialsNews />
+							</div>
+							<InputLinkNews pageLink={pageLink} />
 						</div>
 					</div>
 				</div>

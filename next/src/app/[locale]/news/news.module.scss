@@ -15,9 +15,12 @@
 		height: 40px;
 		background: $green-50;
 		&:hover,
-		&:focus,
-		&:active {
+		&:focus {
 			background: $green-hover;
+		}
+		&:hover .section__leftBtnIcon,
+		&:focus .section__leftBtnIcon {
+			filter: invert(100%);
 		}
 	}
 }

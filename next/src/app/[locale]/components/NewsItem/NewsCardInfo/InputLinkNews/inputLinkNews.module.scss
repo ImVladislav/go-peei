@@ -4,6 +4,9 @@
 	&__wrap {
 		display: flex;
 		align-items: center;
+		@media screen and (min-width: 768px) {
+			min-width: 416px;
+		}
 	}
 	&__input {
 		margin-right: 8px;
@@ -19,7 +22,20 @@
 	}
 	&__btn {
 		border-radius: 4px;
+		min-width: 36px;
+		height: 36px;
 		border: none;
-		cursore: pointer;
+		cursor: pointer;
+		background: $main-green;
+		&:hover,
+		&:focus {
+			background: $green-hover;
+		}
+		&:active {
+			background: $green-hover;
+		}
+	}
+	&__img {
+		margin: 0 auto;
 	}
 }

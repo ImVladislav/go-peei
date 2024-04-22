@@ -10,7 +10,7 @@ export const navItems = [
         label: "Офіційні документи",
         href: "/officialDocuments",
       },
-      { key: "reports", label: "Звіти", href: "/about/6" },
+      // { key: "reports", label: "Звіти", href: "/about/6" },
       { key: "contacts", label: "Контакти", href: "contacts" },
     ],
   },

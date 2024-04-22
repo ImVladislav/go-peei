@@ -79,38 +79,38 @@
 .header__contact_phoneEemail_block {
   display: flex;
   align-items: center;
-
+  margin-left: 60px;
   justify-content: space-between;
 }
-.header__contact__socialBlock {
-  display: "flex";
-}
-.social-icon {
-  width: 30px;
-  height: 30px;
+// .header__contact__socialBlock {
+//   display: "flex";
+// }
+// .social-icon {
+//   width: 30px;
+//   height: 30px;
 
-  &:hover {
-    fill: green;
-    color: green;
-  }
-}
+//   &:hover {
+//     fill: green;
+//     color: green;
+//   }
+// }
 
-.header__social {
-  width: 216px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header__contactLink {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  font-size: 20px;
-}
-.header__contactIcon {
-  margin: "0px, 4px";
-  width: 24px;
-}
+// .header__social {
+//   width: 216px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+// .header__contactLink {
+//   display: flex;
+//   align-items: center;
+//   margin-left: 20px;
+//   font-size: 20px;
+// }
+// .header__contactIcon {
+//   margin: "0px, 4px";
+//   width: 24px;
+// }
 
 .header__langChangContainer {
   display: none;
@@ -312,4 +312,11 @@ s.contactLink {
 }
 .socials__List_item {
   margin-right: 24px;
+}
+
+.social__link {
+  font-size: 18px;
+  line-height: 1.5;
+  gap: 8px;
+  display: flex;
 }

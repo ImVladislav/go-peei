@@ -4,6 +4,7 @@ import {
   navLinks,
   socialsItem,
   environmentalProtectionItem,
+  contactItem,
 } from "@/app/types";
 
 // NAVIGATION
@@ -71,6 +72,14 @@ export const navFooter: navLinks[] = [
   { col: 3, href: "/contacts", key: "contacts", label: "contacts" },
 ];
 
+// Header contacts
+  export const headerContacts: contactItem[] = [
+  { href: "mailto:copeeiua@gmail.com", name: "copeeiua@gmail.com" },
+  { href: "tel:+380506558561", name: "380506558561" },
+
+];
+
+
 // Socials
 export const initialSocials: socialsItem[] = [
   { href: "/whatsup", name: "WhatsUp" },
@@ -78,7 +87,10 @@ export const initialSocials: socialsItem[] = [
   { href: "https://linkedin.com/", name: "Linkedin" },
   { href: "https://www.facebook.com/", name: "Facebook" },
   { href: "https://www.youtube.com/", name: "YouTube" },
+  
 ];
+
+
 
 // all svg for the hover to work
 export const iconsData: SvgProps[] = [

@@ -63,6 +63,12 @@ export type environmentalProtectionItem = {
   description: string;
 };
 
+
+
+export type contactItem = {
+  href: string;
+  name: string;
+};
 export type reUseContentItem = {
   imgSrc: string;
   title: string;
@@ -81,3 +87,4 @@ export type contactUsContentItem = {
   imgStyle?: string;
   description: string[];
 };
+

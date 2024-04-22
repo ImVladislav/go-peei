@@ -62,3 +62,9 @@ export type environmentalProtectionItem = {
   title: string;
   description: string;
 };
+
+
+export type contactItem = {
+  href: string;
+  name: string;
+};

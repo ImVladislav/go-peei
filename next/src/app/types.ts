@@ -62,3 +62,22 @@ export type environmentalProtectionItem = {
   title: string;
   description: string;
 };
+
+export type reUseContentItem = {
+  imgSrc: string;
+  title: string;
+  subtitle?: string;
+  description: string[];
+};
+
+export type listContentItem = {
+  title: string;
+  list: { imgSrc: string; description: string }[];
+};
+
+export type contactUsContentItem = {
+  imgSrc: string;
+  imgAlt: string;
+  imgStyle?: string;
+  description: string[];
+};

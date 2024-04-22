@@ -164,6 +164,7 @@ export const environmentalProtectionData: environmentalProtectionItem[] = [
     description: "commitmentToSustainableDevelopmentDesc",
   },
 ];
+
 // Projects
 // export const initialProjects: projectsItem[] = [
 //   {

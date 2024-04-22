@@ -1,0 +1,110 @@
+@import "../../../../styles/utils/variables";
+
+.container {
+  margin: 0 -20px;
+  @media screen and (min-width: 1440px) {
+    margin: 0 -80px;
+  }
+}
+.imgContainer {
+  position: relative;
+
+  width: 100%;
+  height: 192px;
+  overflow: hidden;
+  @media screen and (min-width: 1440px) {
+    height: 463px;
+  }
+}
+
+.img {
+  object-fit: cover;
+  object-position: bottom;
+  transform: scale(1.3);
+  @media screen and (min-width: 1440px) {
+    transform: scale(1.2);
+    object-position: 0px -280px;
+  }
+}
+.textContainer {
+  position: relative;
+  border: 1px solid $green-50;
+  border-radius: 18px;
+  padding: 18px 0px;
+  max-width: 676px;
+  background: $main-white;
+  margin-top: -28px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  &::after {
+    content: url("/workWithTeenagers/bg-leaf.png");
+    display: block;
+    position: absolute;
+    width: 72px;
+    height: 126px;
+    top: 220px;
+
+    right: 30px;
+    z-index: -1;
+
+    @media screen and (min-width: 1440px) {
+      top: 48px;
+      right: 50px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: -133px;
+    border-radius: 40px;
+    padding: 24px 119px;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 24px;
+
+  @media screen and (min-width: 1440px) {
+    align-items: center;
+    padding: 0;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  color: $main-black;
+
+  @media screen and (min-width: 1440px) {
+    font-weight: 500;
+    font-size: 32px;
+  }
+}
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.description {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-black;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+  }
+}
+
+.btn {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 308px;
+}

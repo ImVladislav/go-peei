@@ -21,10 +21,12 @@ const FirstContent = ({ imgSrc, imgStyle, title, list }: reUseContentItem) => {
             <Translator>{title}</Translator>
           </h2>
           <ul className={styles.descriptionContainer}>
-            {list?.map((item) => (
-              <li>
+            {list?.map((item, index) => (
+              <li key={index}>
                 <p className={styles.description}>
-                  {item && <Translator>{item.description}</Translator>}
+                  {item.description && (
+                    <Translator>{item.description}</Translator>
+                  )}
                 </p>
               </li>
             ))}

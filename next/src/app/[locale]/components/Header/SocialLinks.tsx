@@ -9,16 +9,24 @@ import SvgComponent from "../SvgComponent/SvgComponent";
 
 import s from "./Header.module.scss";
 // import styles from "./socials.module.scss";
+interface SocialLinksProps {
+  socialName: string;
+  initialSocials: { href: string; name: string }[];
+  iconsData: any[];
+}
 
-const SocialLinks = ({ socialName }: { socialName: string }) => {
-  // const SocialLinks = (initialSocials: { href: string; name: string; }[], iconsData: any[] { socialName }: { socialName: string }) => {
+// const SocialLinks = ({ socialName }: { socialName: string }) => {
+const SocialLinks = ({
+  socialName,
+  initialSocials,
+  iconsData,
+}: SocialLinksProps) => {
   const [isHovered, setIsHovered] = useState("");
 
   let tumbler = "on";
   if (socialName === "off") {
     tumbler = "off";
   }
-  console.log(tumbler);
 
   return (
     <ul className={s.socials__List}>
@@ -28,6 +36,7 @@ const SocialLinks = ({ socialName }: { socialName: string }) => {
             href={href}
             onMouseEnter={() => setIsHovered(name)}
             onMouseLeave={() => setIsHovered("")}
+            className={s.social__link}
           >
             {iconsData.map(
               (icon) =>

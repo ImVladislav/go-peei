@@ -1,36 +1,29 @@
+"use client";
 import Navbar from "./Navbar";
 import Link from "next/link";
 import s from "./Header.module.scss";
 import Image from "next/image";
-import Logo from "../../../../../public/Logo.svg";
-import phone_icon from "../../../../../public/socialSVG/phone_icon.svg";
-import email_icon from "../../../../../public/socialSVG/email_icon.svg";
 import LanguageChanger from "../../../../../components/LanguageChanger";
 import SocialLinks from "./SocialLinks";
-import { initialSocials, iconsData } from "@/app/constants/index";
-const Header = () => {
+import {
+  initialSocials,
+  headerContacts,
+  iconsData,
+  headerIconsData,
+} from "@/app/constants/index";
+import { useTranslation } from "react-i18next";
+export default function Header() {
+  const { t } = useTranslation();
   return (
     <>
       <div className={s.header__contact}>
         <div className={s.header__contactToCenter}>
           <div className={s.header__contact_phoneEemail_block}>
-            <SocialLinks socialName="on" />
-            {/* <Link
-              className={s.header__contactLink}
-              href="mailto:copeeiua@gmail.com"
-            >
-              <Image
-                className={s.header__contactIcon}
-                src={email_icon}
-                alt="phone_icon"
-              />
-              copeeiua@gmail.com
-            </Link>
-
-            <Link className={s.header__contactLink} href="tel:+380506558561">
-              <Image src={phone_icon} width={24} height={24} alt="phone_icon" />
-              +38 050 655 85 61
-            </Link> */}
+            <SocialLinks
+              socialName="on"
+              initialSocials={headerContacts}
+              iconsData={headerIconsData}
+            />
           </div>
 
           <SocialLinks
@@ -43,7 +36,7 @@ const Header = () => {
       <div className={s.header__container}>
         <div className={s.header}>
           <Link className={s.header__logoLink} href="/">
-            <Image src={Logo} width={200} height={60} alt="Logo" />
+            <Image src={t("logo")} width={200} height={60} alt="Logo" />
           </Link>
           <Navbar />
           <div className={s.header__langChangContainer}>
@@ -53,6 +46,4 @@ const Header = () => {
       </div>
     </>
   );
-};
-
-export default Header;
+}

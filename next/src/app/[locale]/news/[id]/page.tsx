@@ -1,37 +1,32 @@
-import Image from "next/image";
-
-import Title from "../../components/Title/Title";
-import { getDataId } from "../../../../../libs/getData";
-import { newsItem } from "@/app/types";
-
-import styles from "../news.module.scss";
-import { formatDate } from "../../components/formatDate";
+import { newsItem } from '@/app/types'
+import Image from 'next/image'
+import Link from 'next/link'
+import { getDataId } from '../../../../../libs/getData'
+import NewsCardInfo from '../../components/NewsItem/NewsCardInfo/NewsCardInfo'
+import ReadMore from '../../components/NewsItem/ReadMore/ReadMore'
+import styles from '../news.module.scss'
 
 const NewsDetails = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
-  const data: newsItem = await getDataId("news", id);
-  return (
-    <div className="container">
-      <div className={styles.card}>
-        <div className={styles.card__img}>
-          <Image
-            style={{
-              objectFit: "cover",
-              objectPosition: "center",
-              borderRadius: "10px",
-            }}
-            src={data.imageSrc}
-            alt={data.title}
-            width={1000}
-            height={500}
-          />
-        </div>
-        <Title> {data.title}</Title>
-        <p className={styles.card__description}>{data.description}</p>
-        <p className={styles.card__data}>{formatDate(data.createdAt)}</p>
-      </div>
-    </div>
-  );
-};
+	const { id } = params
+	const data: newsItem = await getDataId('news', id)
 
-export default NewsDetails;
+	return (
+		<div className={styles.section}>
+			<div className='container'>
+				<Link href='/news' className={styles.section__leftBtn}>
+					<Image
+						src='/news/leftArrow.svg'
+						width={24}
+						height={24}
+						alt='arrow'
+						className={styles.section__leftBtnIcon}
+					/>
+				</Link>
+			</div>
+			<NewsCardInfo newsItem={data} />
+			<ReadMore currentNewsItemId={data._id} />
+		</div>
+	)
+}
+
+export default NewsDetails

@@ -26,8 +26,8 @@ const ContactUsContent = ({
           height={52}
         />
         <ul className={styles.list}>
-          {list?.map((item) => (
-            <li>
+          {list?.map((item, index) => (
+            <li key={index}>
               <p className={styles.description}>
                 {item && (
                   <>

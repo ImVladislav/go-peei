@@ -1,83 +1,83 @@
-.financial__bg {
-  background-image: url("../../../../public/financial/financialBg.png");
-  background-size: cover;
-  // background-position: center;
-  background-repeat: no-repeat;
-  padding: 110px 0px 140px;
-  padding-bottom: 10%;
-}
-.financial__container {
-  width: 790px;
-  height: 609px;
-  background-color: white;
-  padding: 22px 30px;
-  margin-right: 80px;
-  margin-left: auto;
-}
-.financial__container_mainBlock {
-  display: flex;
-}
-.financial__container_leftBlock {
-  max-height: 440px;
-  max-width: 406px;
-}
-.financial__container_rightBlock {
-  max-height: 282px;
-  max-width: 322px;
-  margin-left: 42px;
-}
-
-.financial__fixedAmountDonatBtn {
-  border: 1px solid #0d490d;
-  border-radius: 8px;
-  padding: 4px 16px;
-  width: 86px;
-  height: 43px;
-  margin: 6px;
-  background-color: white;
-
-  &.financial__fixedAmountDonatInput {
-    margin: 6px;
-    width: 282px;
-    text-align: center;
-  }
-}
-.financial__title {
-  font-family: "Exo 2", sans-serif;
-  font-weight: 500;
-  font-size: 32px;
-  text-transform: uppercase;
-  color: #141414;
-  text-align: center;
-  margin-bottom: 48px;
-}
-.financial__subTitle {
-  font-family: "Exo 2", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #141414;
-  &.financial__link {
-    text-decoration: underline;
-  }
-  &.financial__subTitle_leftBlock {
-    font-weight: 700;
-  }
-}
-.financial__btnBlock {
-  margin: 16px 0;
-}
-//====================Modal===============================
-.modal__content {
-  padding: 30px 55px 50px;
-}
-.modal__paymentIcomThumb {
-  width: 146px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 24px;
-}
-//====================Modal Sucsess===============================
-// .Modal__content {
-//   padding: 20px;
+// .financial__bg {
+//   background-image: url("../../../../public/financial/financialBg.png");
+//   background-size: cover;
+//   // background-position: center;
+//   background-repeat: no-repeat;
+//   padding: 110px 0px 140px;
+//   padding-bottom: 10%;
 // }
+// .financial__container {
+//   width: 790px;
+//   height: 609px;
+//   background-color: white;
+//   padding: 22px 30px;
+//   margin-right: 80px;
+//   margin-left: auto;
+// }
+// .financial__container_mainBlock {
+//   display: flex;
+// }
+// .financial__container_leftBlock {
+//   max-height: 440px;
+//   max-width: 406px;
+// }
+// .financial__container_rightBlock {
+//   max-height: 282px;
+//   max-width: 322px;
+//   margin-left: 42px;
+// }
+
+// .financial__fixedAmountDonatBtn {
+//   border: 1px solid #0d490d;
+//   border-radius: 8px;
+//   padding: 4px 16px;
+//   width: 86px;
+//   height: 43px;
+//   margin: 6px;
+//   background-color: white;
+
+//   &.financial__fixedAmountDonatInput {
+//     margin: 6px;
+//     width: 282px;
+//     text-align: center;
+//   }
+// }
+// .financial__title {
+//   font-family: "Exo 2", sans-serif;
+//   font-weight: 500;
+//   font-size: 32px;
+//   text-transform: uppercase;
+//   color: #141414;
+//   text-align: center;
+//   margin-bottom: 48px;
+// }
+// .financial__subTitle {
+//   font-family: "Exo 2", sans-serif;
+//   font-weight: 300;
+//   font-size: 16px;
+//   line-height: 1.5;
+//   color: #141414;
+//   &.financial__link {
+//     text-decoration: underline;
+//   }
+//   &.financial__subTitle_leftBlock {
+//     font-weight: 700;
+//   }
+// }
+// .financial__btnBlock {
+//   margin: 16px 0;
+// }
+// //====================Modal===============================
+// .modal__content {
+//   padding: 30px 55px 50px;
+// }
+// .modal__paymentIcomThumb {
+//   width: 146px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   margin-bottom: 24px;
+// }
+// //====================Modal Sucsess===============================
+// // .Modal__content {
+// //   padding: 20px;
+// // }

@@ -18,7 +18,11 @@ const Footer = () => {
         <div className={styles.wrap}>
           <div className={styles.logo}>
             <Logo />
-            <Button onClick={() => router.push("/financial")}>
+            <Button
+              onClick={() =>
+                router.push("https://payhub.com.ua/#/service/98840")
+              }
+            >
               <Translator>supportUs</Translator>
             </Button>
           </div>

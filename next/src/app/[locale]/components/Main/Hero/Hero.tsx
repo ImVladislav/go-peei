@@ -36,7 +36,9 @@ const Hero = () => {
 
             <Button
               newStyles={styles.btn}
-              onClick={() => router.push("/financial")}
+              onClick={() =>
+                router.push("https://payhub.com.ua/#/service/98840")
+              }
             >
               <Translator>supportUs</Translator>
             </Button>
@@ -51,7 +53,7 @@ const Hero = () => {
           </div>
           <Button
             newStyles={styles.btn_last}
-            onClick={() => router.push("/financial")}
+            onClick={() => router.push("https://payhub.com.ua/#/service/98840")}
           >
             <Translator>supportUs</Translator>
           </Button>

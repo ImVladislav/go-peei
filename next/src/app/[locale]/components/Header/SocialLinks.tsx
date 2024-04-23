@@ -9,9 +9,25 @@ import SvgComponent from "../SvgComponent/SvgComponent";
 
 import s from "./Header.module.scss";
 // import styles from "./socials.module.scss";
+interface SocialLinksProps {
+  socialName: string;
+  initialSocials: { href: string; name: string }[];
+  iconsData: any[];
+}
 
-const SocialLinks = () => {
+// const SocialLinks = ({ socialName }: { socialName: string }) => {
+const SocialLinks = ({
+  socialName,
+  initialSocials,
+  iconsData,
+}: SocialLinksProps) => {
   const [isHovered, setIsHovered] = useState("");
+
+  let tumbler = "on";
+  if (socialName === "off") {
+    tumbler = "off";
+  }
+
   return (
     <ul className={s.socials__List}>
       {initialSocials.map(({ href, name }) => (
@@ -20,6 +36,7 @@ const SocialLinks = () => {
             href={href}
             onMouseEnter={() => setIsHovered(name)}
             onMouseLeave={() => setIsHovered("")}
+            className={s.social__link}
           >
             {iconsData.map(
               (icon) =>
@@ -32,6 +49,7 @@ const SocialLinks = () => {
                   />
                 )
             )}
+            {tumbler === "on" && <span>{name}</span>}
           </Link>
         </li>
       ))}
@@ -40,3 +58,25 @@ const SocialLinks = () => {
 };
 
 export default SocialLinks;
+
+//             {iconsData.map(
+//               (icon) =>
+//                 icon.name === name && (
+//                   <SvgComponent
+//                     key={icon.name}
+//                     viewBox={icon.viewBox}
+//                     path={icon.path}
+//                     isHovered={isHovered === name}
+//                   />
+//                 )
+//             )}
+
+//             {name}
+//           </Link>
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// };
+
+// export default Socials;

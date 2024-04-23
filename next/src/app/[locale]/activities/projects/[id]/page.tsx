@@ -35,7 +35,11 @@ const ProjectDetails = async ({ params }: { params: { id: string } }) => {
         <p className={styles.card__description}>
           Зібрано: <span>{data.fundsRaised}</span>
         </p>
-        <Button newStyles={styles.item__btn} isLink href="/financial">
+        <Button
+          newStyles={styles.item__btn}
+          isLink
+          href="https://payhub.com.ua/#/service/98840"
+        >
           Підтримати нас
         </Button>
       </div>

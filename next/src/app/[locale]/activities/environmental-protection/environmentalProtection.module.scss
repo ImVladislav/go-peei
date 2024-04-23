@@ -1,0 +1,128 @@
+@import "../../../styles/utils/variables";
+
+.section {
+  padding: 60px 0 75px;
+  @media screen and (min-width: 1440px) {
+    padding: 60px 0 120px;
+  }
+}
+.accentTitle {
+  color: $main-green;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  @media screen and (min-width: 1440px) {
+    background: $green-30;
+    gap: 0;
+  }
+}
+.item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 1440px) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .imgContent {
+    margin-left: -20px;
+    margin-bottom: 16px;
+    @media screen and (min-width: 1440px) {
+      flex: 1;
+      margin: 0;
+    }
+  }
+  .wrapImg {
+    position: relative;
+    border-radius: 0 24px 24px 0;
+
+    width: 100%;
+    height: 145px;
+    overflow: hidden;
+    @media screen and (min-width: 1440px) {
+      width: 632px;
+      height: 409px;
+    }
+  }
+  .img {
+    object-fit: cover;
+  }
+}
+.item:nth-child(even) {
+  width: 100%;
+  display: flex;
+
+  @media screen and (min-width: 1440px) {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .imgContent {
+    margin-right: -20px;
+    margin-left: 0px;
+    @media screen and (min-width: 1440px) {
+      flex: 1;
+      margin: 0;
+    }
+  }
+  .wrapImg {
+    position: relative;
+    border-radius: 24px 0 0 24px;
+    width: 100%;
+    height: 145px;
+    overflow: hidden;
+    @media screen and (min-width: 1440px) {
+      width: 632px;
+      height: 409px;
+    }
+  }
+}
+
+.textContent {
+  @media screen and (min-width: 1440px) {
+    padding: 60px;
+    width: 648px;
+    height: 409px;
+  }
+}
+.titleWrap {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+  @media screen and (min-width: 1440px) {
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+}
+.wrapIcon {
+  position: relative;
+  min-width: 13px;
+  width: 13px;
+  height: 22px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-black;
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+}
+.description {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-black;
+  margin-bottom: 14px;
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+  }
+}

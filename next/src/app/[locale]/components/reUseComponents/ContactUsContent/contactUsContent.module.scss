@@ -1,0 +1,54 @@
+@import "../../../../styles/utils/variables";
+
+.container {
+  margin: -20px;
+  background: $green-30;
+  @media screen and (min-width: 1440px) {
+    margin: 0;
+  }
+}
+.inner {
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+  @media screen and (min-width: 1440px) {
+    padding: 24px 370px;
+    gap: 24px;
+  }
+}
+
+.img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 36px;
+  height: 52px;
+  @media screen and (min-width: 1440px) {
+    width: 61px;
+    height: 88px;
+  }
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-black;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+  }
+}
+
+.btn {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 308px;
+}

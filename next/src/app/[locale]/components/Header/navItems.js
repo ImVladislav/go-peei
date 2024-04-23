@@ -10,7 +10,7 @@ export const navItems = [
         label: "Офіційні документи",
         href: "/officialDocuments",
       },
-      { key: "reports", label: "Звіти", href: "/about/6" },
+      // { key: "reports", label: "Звіти", href: "/about/6" },
       { key: "contacts", label: "Контакти", href: "contacts" },
     ],
   },
@@ -22,9 +22,14 @@ export const navItems = [
     },
     links: [
       {
-        key: "workWithYouth",
-        label: "Робота з дітьми та молоддю",
-        href: "/work-with-teens",
+        key: "workWithChildren",
+        label: "workWithChildren",
+        href: "/activities/work-with-children",
+      },
+      {
+        key: "workWithTeenagers",
+        label: "workWithTeenagers",
+        href: "/activities/work-with-teenagers",
       },
       {
         key: "charityActions",
@@ -33,8 +38,8 @@ export const navItems = [
       },
       {
         key: "environmentalProtection",
-        label: "Охорона довкілля",
-        href: "/environmentalProtection",
+        label: "environmentalProtection",
+        href: "/activities/environmental-protection",
       },
     ],
   },

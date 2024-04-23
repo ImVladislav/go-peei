@@ -42,7 +42,7 @@
     "src/app/[locale]/supportVolonter/page.jsx",
     "src/app/[locale]/not-found.jsx",
     "libs/db.js"
-  ],
+, "src/app/[locale]/components/Header/Navbar.jsx"  ],
 
   "exclude": ["node_modules"]
 }

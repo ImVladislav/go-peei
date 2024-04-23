@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 
-const host = process.env.NEXT_HOST || "http://localhost:3000";
-const tls = process.env.NEXT_TLS || "false";
+// const host = process.env.NEXT_HOST || "localhost:3000";
+// const tls = process.env.NEXT_TLS || "false";
 
-const url = tls === "true" ? `https://${host}` : `http://${host}`; // // important!!!
-// const url = "http://localhost:3000"; //localhost
+// const url = tls === "true" ? `https://${host}` : `http://${host}`; // // important!!!
+
+// const url = "http://localhost:3000"; // localhost
+const url = "https://peei.org.ua";
 
 // get all
 export async function getData(name: string) {

@@ -17,8 +17,6 @@ export default function Navbar() {
     navItems.map(() => false)
   );
 
-  console.log(menuBtnSvg);
-
   const handleToggleDropdown = (index) => {
     // Оновлюємо стан, використовуючи функцію оновлення стану
     setDropdownStates((prevState) => {
@@ -62,7 +60,7 @@ export default function Navbar() {
             </svg>
             <ul className={s.dropdown}>
               {item.links.map((link) => (
-                <li style={{ padding: "5px" }} key={link.label}>
+                <li className={s.dropdown__item} key={link.label}>
                   <Link
                     style={{ fontSize: "18px" }}
                     href={link.href}
@@ -87,12 +85,7 @@ export default function Navbar() {
       {/* ===============================mobile============================== */}
       <nav className={s.navMobile}>
         <button className={s.menuBtn} onClick={() => setIsModalOpen(true)}>
-          <Image
-            width={40}
-            src={menuBtnSvg}
-            alt="menu"
-          />
-
+          <Image width={40} src={menuBtnSvg} alt="menu" />
         </button>
         <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <div className={s.navMobile__wraper}>

@@ -1,4 +1,11 @@
-import { SvgProps, navLinks, socialsItem } from "@/app/types";
+import {
+  SvgProps,
+  workWithChildrenItem,
+  navLinks,
+  socialsItem,
+  environmentalProtectionItem,
+  contactItem,
+} from "@/app/types";
 
 // NAVIGATION
 export const navFooter: navLinks[] = [
@@ -12,7 +19,7 @@ export const navFooter: navLinks[] = [
   },
   {
     col: 1,
-    href: "/about/5",
+    href: "/officialDocuments",
     key: "officialDocuments",
     label: "officialDocuments",
   },
@@ -21,13 +28,13 @@ export const navFooter: navLinks[] = [
     col: 2,
     key: "workWithChildren",
     label: "workWithChildren",
-    href: "/work-with-children",
+    href: "/activities/work-with-children",
   },
   {
     col: 2,
     key: "workWithTeenagers",
     label: "workWithTeenagers",
-    href: "/work-with-teenagers",
+    href: "/activities/work-with-teenagers",
   },
   {
     col: 2,
@@ -40,10 +47,15 @@ export const navFooter: navLinks[] = [
     col: 2,
     key: "environmentalProtection",
     label: "environmentalProtection",
-    href: "/environmentalProtection",
+    href: "/activities/environmental-protection",
   },
   { col: 2, key: "news", label: "news", href: "/news" },
-  { col: 3, key: "support", label: "supportWithADonation", href: "/support" },
+  {
+    col: 3,
+    key: "support",
+    label: "supportWithADonation",
+    href: "https://payhub.com.ua/#/service/98840",
+  },
   {
     col: 3,
     key: "partnership",
@@ -60,15 +72,27 @@ export const navFooter: navLinks[] = [
   { col: 3, href: "/contacts", key: "contacts", label: "contacts" },
 ];
 
+// Header contacts
+  export const headerContacts: contactItem[] = [
+    { href: "tel:+380506558561", name: "+380506558561" },
+  { href: "mailto:copeeiua@gmail.com", name: "copeeiua@gmail.com" },
+
+];
+
+
 // Socials
 export const initialSocials: socialsItem[] = [
   { href: "/whatsup", name: "WhatsUp" },
-  { href: "/instagram", name: "Instagram" },
-  { href: "/linkedin", name: "Linkedin" },
-  { href: "/facebook", name: "Facebook" },
-  { href: "/youtube", name: "YouTube" },
+  { href: "https://www.instagram.com/", name: "Instagram" },
+  { href: "https://linkedin.com/", name: "Linkedin" },
+  { href: "https://www.facebook.com/", name: "Facebook" },
+  { href: "https://www.youtube.com/", name: "YouTube" },
+  
 ];
 
+
+
+// all svg for the hover to work
 export const iconsData: SvgProps[] = [
   {
     path: "M20.4015 3.98908C19.3014 2.87833 17.9911 1.99775 16.5471 1.39872C15.1031 0.799696 13.5543 0.494209 11.991 0.500083C5.4405 0.500083 0.102 5.83708 0.096 12.3891C0.096 14.4876 0.645 16.5291 1.6815 18.3366L0 24.5001L6.306 22.8471C8.04973 23.7984 10.0046 24.2962 11.991 24.2946H11.997C18.549 24.2946 23.886 18.9576 23.892 12.3996C23.8933 10.8367 23.5855 9.28894 22.9862 7.8455C22.3869 6.40206 21.5094 5.09143 20.4015 3.98908ZM11.991 22.2816C10.2198 22.2802 8.48134 21.8036 6.957 20.9016L6.597 20.6856L2.856 21.6666L3.855 18.0171L3.621 17.6406C2.63071 16.0661 2.10697 14.2431 2.1105 12.3831C2.1105 6.94408 6.546 2.50708 11.997 2.50708C13.2956 2.50475 14.5818 2.75949 15.7815 3.25662C16.9812 3.75375 18.0706 4.48342 18.987 5.40358C19.9063 6.32031 20.6352 7.4099 21.1315 8.60957C21.6279 9.80925 21.8819 11.0953 21.879 12.3936C21.873 17.8521 17.4375 22.2816 11.991 22.2816ZM17.4135 14.8806C17.118 14.7321 15.6585 14.0136 15.384 13.9116C15.111 13.8141 14.9115 13.7631 14.7165 14.0601C14.517 14.3556 13.947 15.0291 13.776 15.2226C13.605 15.4221 13.428 15.4446 13.131 15.2976C12.8355 15.1476 11.877 14.8356 10.743 13.8201C9.858 13.0326 9.2655 12.0576 9.0885 11.7621C8.9175 11.4651 9.072 11.3061 9.2205 11.1576C9.351 11.0256 9.516 10.8096 9.6645 10.6386C9.8145 10.4676 9.864 10.3416 9.9615 10.1436C10.059 9.94258 10.0125 9.77158 9.939 9.62308C9.864 9.47458 9.2715 8.00908 9.021 7.41808C8.781 6.83458 8.5365 6.91558 8.3535 6.90808C8.1825 6.89758 7.983 6.89758 7.7835 6.89758C7.63286 6.90142 7.48464 6.9363 7.3481 7.00005C7.21156 7.06381 7.08965 7.15505 6.99 7.26808C6.717 7.56508 5.9535 8.28358 5.9535 9.74908C5.9535 11.2146 7.0185 12.6231 7.1685 12.8226C7.3155 13.0221 9.2595 16.0206 12.243 17.3106C12.948 17.6181 13.503 17.7996 13.9365 17.9376C14.649 18.1656 15.2925 18.1311 15.8055 18.0576C16.3755 17.9706 17.562 17.3376 17.8125 16.6431C18.0585 15.9471 18.0585 15.3531 17.9835 15.2286C17.91 15.1026 17.7105 15.0291 17.4135 14.8806Z",
@@ -94,6 +118,75 @@ export const iconsData: SvgProps[] = [
     path: "M12.0765 0.498535H12.21C13.443 0.503035 19.6905 0.548035 21.375 1.00104C21.8842 1.13929 22.3483 1.40877 22.7207 1.78255C23.0932 2.15633 23.361 2.62131 23.4975 3.13103C23.649 3.70103 23.7555 4.45553 23.8275 5.23404L23.8425 5.39004L23.8755 5.78003L23.8875 5.93603C23.985 7.30703 23.997 8.59103 23.9985 8.87153V8.98403C23.997 9.27503 23.9835 10.646 23.8755 12.074L23.8635 12.2315L23.85 12.3875C23.775 13.2455 23.664 14.0975 23.4975 14.7245C23.361 15.2343 23.0932 15.6992 22.7207 16.073C22.3483 16.4468 21.8842 16.7163 21.375 16.8545C19.635 17.3225 13.0215 17.3555 12.105 17.357H11.892C11.4285 17.357 9.5115 17.348 7.5015 17.279L7.2465 17.27L7.116 17.264L6.8595 17.2535L6.603 17.243C4.938 17.1695 3.3525 17.051 2.622 16.853C2.11294 16.7149 1.64902 16.4457 1.27658 16.0722C0.904129 15.6987 0.636185 15.234 0.4995 14.7245C0.333 14.099 0.222 13.2455 0.147 12.3875L0.135 12.23L0.123 12.074C0.0485451 11.0577 0.00752298 10.0391 0 9.02003L0 8.83554C0.003 8.51303 0.015 7.39853 0.096 6.16853L0.1065 6.01403L0.111 5.93603L0.123 5.78003L0.156 5.39004L0.171 5.23404C0.243 4.45553 0.3495 3.69953 0.501 3.13103C0.637456 2.62131 0.905298 2.15633 1.27776 1.78255C1.65022 1.40877 2.11426 1.13929 2.6235 1.00104C3.354 0.806035 4.9395 0.686035 6.6045 0.611035L6.8595 0.600535L7.1175 0.591535L7.2465 0.587035L7.503 0.576535C8.93056 0.530641 10.3587 0.505138 11.787 0.500035L12.0765 0.498535ZM9.6 5.31353V12.5405L15.8355 8.92853L9.6 5.31353Z",
     name: "YouTube",
     viewBox: "0 0 24 18",
+  },
+];
+
+export const headerIconsData: SvgProps[] = [
+  {
+    path: "M17 21.5003C15.3463 21.4988 13.7183 21.0901 12.26 20.3103L11.81 20.0603C8.70075 18.3886 6.15169 15.8395 4.48 12.7303L4.23 12.2803C3.42982 10.8137 3.00713 9.17097 3 7.50027V6.83027C2.99958 6.29723 3.21196 5.78607 3.59 5.41027L5.28 3.72027C5.44413 3.55487 5.67581 3.47515 5.90696 3.50453C6.13811 3.53391 6.34248 3.66907 6.46 3.87027L8.71 7.73027C8.93753 8.12316 8.87183 8.62003 8.55 8.94027L6.66 10.8303C6.50304 10.9855 6.46647 11.2253 6.57 11.4203L6.92 12.0803C8.17704 14.4087 10.0893 16.3175 12.42 17.5703L13.08 17.9303C13.275 18.0338 13.5148 17.9972 13.67 17.8403L15.56 15.9503C15.8802 15.6285 16.3771 15.5628 16.77 15.7903L20.63 18.0403C20.8312 18.1578 20.9664 18.3622 20.9957 18.5933C21.0251 18.8245 20.9454 19.0562 20.78 19.2203L19.09 20.9103C18.7142 21.2883 18.203 21.5007 17.67 21.5003H17Z",
+    name: "+380506558561",
+    viewBox: "0 0 24 25",
+  },
+  {
+    path: "M4 4.50049H20C21.1046 4.50049 22 5.39592 22 6.50049V18.5005C22 19.6051 21.1046 20.5005 20 20.5005H4C2.89543 20.5005 2 19.6051 2 18.5005V6.50049C2 5.39592 2.89543 4.50049 4 4.50049ZM13.65 15.9505L20 11.5005V9.40049L12.65 14.5505C12.2591 14.8218 11.7409 14.8218 11.35 14.5505L4 9.40049V11.5005L10.35 15.9505C11.341 16.6432 12.659 16.6432 13.65 15.9505Z",
+    name: "copeeiua@gmail.com",
+    viewBox: "0 0 24 25",
+  },
+];
+
+// work with children page
+export const workWithChildrenData: workWithChildrenItem[] = [
+  {
+    imageSrc:
+      "/workWithChildren/hands-cupping-plant-save-environment-campaign.jpg",
+    title: "ourCommitment",
+    description: "ourCommitmentDesc",
+  },
+  {
+    imageSrc: "/workWithChildren/environment-education-day-concept.jpg",
+    title: "environmentalEducationItAllStartsWithKnowledge",
+    description: "environmentalEducationItAllStartsWithKnowledgeDesc",
+  },
+  {
+    imageSrc: "/workWithChildren/kids-with-their-hands-up-with-copy-space.jpg",
+    title: "greenInitiativesOfYoungPeople",
+    description: "greenInitiativesOfYoungPeopleDesc",
+  },
+  {
+    imageSrc: "/workWithChildren/sustainable-development-goals-still-life.jpg",
+    title: "anInvitationToChange",
+    description: "anInvitationToChangeDesc",
+  },
+  {
+    imageSrc: "/workWithChildren/kids-learnign-about-environment.jpg",
+    title: "forPreservationForTheFuture",
+    description: "forPreservationForTheFutureDesc",
+  },
+];
+
+// environmental protection page
+export const environmentalProtectionData: environmentalProtectionItem[] = [
+  {
+    imageSrc:
+      "/environmentalProtection/close-up-environment-sign-collection.jpg",
+    title: "issues",
+    description: "issuesDesc",
+  },
+  {
+    imageSrc:
+      "/environmentalProtection/sustainable-development-goals-still-life.jpg",
+    title: "innovationAsOneOfTheVectors",
+    description: "innovationAsOneOfTheVectorsDesc",
+  },
+  {
+    imageSrc: "/environmentalProtection/sustainable-development.jpg",
+    title: "recyclingOfPlasticWaste",
+    description: "recyclingOfPlasticWasteDesc",
+  },
+  {
+    imageSrc: "/environmentalProtection/3d-eco-project-environment.jpg",
+    title: "commitmentToSustainableDevelopment",
+    description: "commitmentToSustainableDevelopmentDesc",
   },
 ];
 

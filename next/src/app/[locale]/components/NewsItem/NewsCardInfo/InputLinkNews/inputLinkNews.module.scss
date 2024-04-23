@@ -1,0 +1,41 @@
+@import '../../../../../styles/utils/_variables.scss';
+
+.inputLink {
+	&__wrap {
+		display: flex;
+		align-items: center;
+		@media screen and (min-width: 768px) {
+			min-width: 416px;
+		}
+	}
+	&__input {
+		margin-right: 8px;
+		border: 1px solid $main-grey;
+		border-radius: 4px;
+		padding: 0px 12px 0px 12px;
+		width: 100%;
+		height: 40px;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 1.5;
+		color: $grey-text;
+	}
+	&__btn {
+		border-radius: 4px;
+		min-width: 36px;
+		height: 36px;
+		border: none;
+		cursor: pointer;
+		background: $main-green;
+		&:hover,
+		&:focus {
+			background: $green-hover;
+		}
+		&:active {
+			background: $green-hover;
+		}
+	}
+	&__img {
+		margin: 0 auto;
+	}
+}

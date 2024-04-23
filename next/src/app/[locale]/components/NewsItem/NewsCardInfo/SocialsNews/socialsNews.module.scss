@@ -1,0 +1,17 @@
+@import '../../../../../styles/utils/_variables.scss';
+
+.social {
+	&__wrap {
+		margin-bottom: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media screen and (min-width: 768px) {
+			margin-bottom: 0;
+			gap: 43px;
+		}
+		@media screen and (min-width: 1024px) {
+			gap: 40px;
+		}
+	}
+}

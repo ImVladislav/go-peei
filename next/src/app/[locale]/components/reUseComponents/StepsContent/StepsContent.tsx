@@ -5,13 +5,16 @@ import Translator from "../../translator/Translator";
 import styles from "./stepsContent.module.scss";
 
 import { reUseContentItem } from "@/app/types";
+import Link from "next/link";
 
 const StepsContent = ({
   imgSrc,
+  imgStyle,
   title,
   subtitle,
-  description,
+  list,
 }: reUseContentItem) => {
+  const iconClass = imgStyle ? `${styles.img} ${imgStyle}` : styles.img;
   return (
     <div className={styles.container}>
       <div className={styles.inner}>
@@ -21,16 +24,18 @@ const StepsContent = ({
         <div>
           <div className={styles.imgContainer}>
             <div className={styles.imgInner}>
-              <Image className={styles.img} src={imgSrc} alt={title} fill />
+              <Image className={iconClass} src={imgSrc} alt={title} fill />
             </div>
           </div>
           <div className={styles.textContainer}>
             <div className={styles.textInner}>
-              <h2 className={styles.title}>
-                {subtitle && <Translator>{subtitle}</Translator>}
-              </h2>
+              {subtitle && (
+                <h2 className={styles.title}>
+                  <Translator>{subtitle}</Translator>
+                </h2>
+              )}
               <ul className={styles.list}>
-                {description.map((item, index) => (
+                {list.map((item, index) => (
                   <li className={styles.item} key={index}>
                     <Image
                       className={styles.icon}
@@ -40,7 +45,26 @@ const StepsContent = ({
                       height={22}
                     />
                     <p className={styles.description}>
-                      {item && <Translator>{item}</Translator>}
+                      {item.title && (
+                        <span className={styles.descTitle}>
+                          <Translator>{item.title}</Translator>
+                        </span>
+                      )}
+                      {item.descriptionBefore && (
+                        <Translator>{item.descriptionBefore}</Translator>
+                      )}
+                      {item.description && (
+                        <Translator>{item.description}</Translator>
+                      )}
+
+                      {item.href && (
+                        <Link className={styles.link} href={item.href}>
+                          {item.link && <Translator>{item.link}</Translator>}
+                        </Link>
+                      )}
+                      {item.descriptionAfter && (
+                        <Translator>{item.descriptionAfter}</Translator>
+                      )}
                     </p>
                   </li>
                 ))}

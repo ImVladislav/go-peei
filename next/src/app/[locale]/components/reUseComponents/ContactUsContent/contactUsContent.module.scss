@@ -45,7 +45,12 @@
     font-size: 18px;
   }
 }
-
+.link {
+  font-weight: 600;
+  color: $main-green;
+  @media screen and (min-width: 1440px) {
+  }
+}
 .btn {
   width: 100%;
   margin: 0 auto;

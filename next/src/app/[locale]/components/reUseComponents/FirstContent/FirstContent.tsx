@@ -6,12 +6,13 @@ import Button from "../../Button/Button";
 import styles from "./firstContent.module.scss";
 import { reUseContentItem } from "@/app/types";
 
-const FirstContent = ({ imgSrc, title, description }: reUseContentItem) => {
+const FirstContent = ({ imgSrc, imgStyle, title, list }: reUseContentItem) => {
+  const iconClass = imgStyle ? `${styles.img} ${imgStyle}` : styles.img;
   return (
     <div>
       <div className={styles.container}>
         <div className={styles.imgContainer}>
-          <Image className={styles.img} src={imgSrc} alt={title} fill />
+          <Image className={iconClass} src={imgSrc} alt={title} fill />
         </div>
       </div>
       <div className={styles.textContainer}>
@@ -20,10 +21,10 @@ const FirstContent = ({ imgSrc, title, description }: reUseContentItem) => {
             <Translator>{title}</Translator>
           </h2>
           <ul className={styles.descriptionContainer}>
-            {description?.map((item) => (
+            {list?.map((item) => (
               <li>
                 <p className={styles.description}>
-                  {item && <Translator>{item}</Translator>}
+                  {item && <Translator>{item.description}</Translator>}
                 </p>
               </li>
             ))}

@@ -16,10 +16,10 @@ import styles from "./workWithTeenagers.module.scss";
 export const firstContentData: reUseContentItem = {
   imgSrc: "/workWithTeenagers/environment-volunteer-teamwork-concept.jpg",
   title: "hello",
-  description: [
-    "joinTheTeamDescFirst",
-    "joinTheTeamDescSecond",
-    "joinTheTeamDescThird",
+  list: [
+    { description: "joinTheTeamDescFirst" },
+    { description: "joinTheTeamDescSecond" },
+    { description: "joinTheTeamDescThird" },
   ],
 };
 
@@ -33,6 +33,7 @@ export const listContentData: listContentItem = {
     },
     {
       imgSrc: "/workWithTeenagers/recycle-all-it-s-worth-poster.jpg",
+      imgStyle: styles.imgSecond,
       description: "whatWeOfferSecond",
     },
   ],
@@ -41,20 +42,38 @@ export const listContentData: listContentItem = {
 export const contactUsContentData: contactUsContentItem = {
   imgSrc: "/workWithTeenagers/question.svg",
   imgAlt: "question",
-
-  description: ["whatWeOfferThird"],
+  list: [{ description: "whatWeOfferThird" }],
 };
 
 export const stepsContentData: reUseContentItem = {
   imgSrc: "/workWithTeenagers/young-friends-park.jpg",
   title: "stepsTitle",
   subtitle: "steps",
-  description: [
-    "stepsDescFirst",
-    "stepsDescSecond",
-    "stepsDescThird",
-    "stepsDescFourth",
-    "stepsDescFifth",
+
+  list: [
+    {
+      descriptionBefore: "stepsDescFirstBefore",
+      link: "stepsDescFirstLink",
+      href: "/",
+    },
+    {
+      descriptionBefore: "stepsDescSecondBefore",
+      link: "stepsDescSecondLink",
+      href: "/",
+      descriptionAfter: "stepsDescSecondAfter",
+    },
+    {
+      descriptionBefore: "stepsDescThirdBefore",
+      link: "stepsDescThirdLink",
+      href: "/",
+      descriptionAfter: "stepsDescThirdAfter",
+    },
+    {
+      descriptionBefore: "stepsDescSecondBefore",
+      link: "stepsDescFourthLink",
+      href: "/",
+    },
+    { description: "stepsDescFifth" },
   ],
 };
 
@@ -73,7 +92,7 @@ const WorkWithTeenagersPage = () => {
             <FirstContent
               imgSrc={firstContentData.imgSrc}
               title={firstContentData.title}
-              description={firstContentData.description}
+              list={firstContentData.list}
             />
           </div>
           <div className={styles.contentSecond}>
@@ -85,14 +104,14 @@ const WorkWithTeenagersPage = () => {
             <ContactUsContent
               imgSrc={contactUsContentData.imgSrc}
               imgAlt={contactUsContentData.imgAlt}
-              description={contactUsContentData.description}
+              list={contactUsContentData.list}
             />
           </div>
           <StepsContent
             imgSrc={stepsContentData.imgSrc}
             title={stepsContentData.title}
             subtitle={stepsContentData.subtitle}
-            description={stepsContentData.description}
+            list={stepsContentData.list}
           />
         </div>
       </div>

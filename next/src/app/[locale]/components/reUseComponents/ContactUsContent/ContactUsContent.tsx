@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Translator from "../../translator/Translator";
 import Button from "../../Button/Button";
@@ -10,23 +11,37 @@ const ContactUsContent = ({
   imgSrc,
   imgAlt,
   imgStyle,
-  description,
+  list,
 }: contactUsContentItem) => {
+  const iconClass = imgStyle ? `${styles.img} ${imgStyle}` : styles.img;
+
   return (
     <div className={styles.container}>
-      <div className={`${styles.inner} ${imgStyle}`}>
+      <div className={styles.inner}>
         <Image
-          className={styles.img}
+          className={iconClass}
           src={imgSrc}
           alt={imgAlt}
           width={36}
           height={52}
         />
         <ul className={styles.list}>
-          {description.map((item) => (
+          {list?.map((item) => (
             <li>
               <p className={styles.description}>
-                {item && <Translator>{item}</Translator>}
+                {item && (
+                  <>
+                    <Translator>{item.description}</Translator>{" "}
+                    {item.href && (
+                      <Link className={styles.link} href={item.href}>
+                        {item.link && <Translator>{item.link}</Translator>}
+                      </Link>
+                    )}
+                    {item.descAfter && (
+                      <Translator>{item.descAfter}</Translator>
+                    )}
+                  </>
+                )}
               </p>
             </li>
           ))}

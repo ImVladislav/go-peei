@@ -63,28 +63,44 @@ export type environmentalProtectionItem = {
   description: string;
 };
 
-
-
 export type contactItem = {
   href: string;
   name: string;
 };
+
 export type reUseContentItem = {
   imgSrc: string;
+  imgStyle?: string;
   title: string;
   subtitle?: string;
-  description: string[];
+  list: {
+    title?: string;
+    descriptionBefore?: string;
+    description?: string;
+    descriptionAfter?: string;
+    link?: string;
+    href?: string;
+  }[];
 };
 
 export type listContentItem = {
   title: string;
-  list: { imgSrc: string; description: string }[];
+  list: {
+    imgSrc: string;
+    imgStyle?: string;
+    title?: string;
+    description: string;
+  }[];
 };
 
 export type contactUsContentItem = {
   imgSrc: string;
   imgAlt: string;
   imgStyle?: string;
-  description: string[];
+  list: {
+    description: string;
+    link?: string;
+    href?: string;
+    descAfter?: string;
+  }[];
 };
-

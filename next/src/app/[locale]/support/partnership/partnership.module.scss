@@ -1,0 +1,63 @@
+@import "../../../styles/utils/variables";
+
+.section {
+  padding: 60px 0 54px;
+  @media screen and (min-width: 1440px) {
+    padding: 60px 0 120px;
+  }
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+  }
+}
+
+.imgFirstContent {
+  transform: scale(1);
+}
+
+.imgListContentFirst {
+  object-position: -75px -40px;
+  transform: scale(1.6);
+  @media screen and (min-width: 1440px) {
+    object-position: -135px -75px;
+    transform: scale(1.6);
+  }
+}
+
+.imgListContentSecond {
+  object-position: right;
+}
+.imgThird {
+}
+
+.imgStepContent {
+  object-position: -5px 0px;
+  @media screen and (min-width: 1440px) {
+    object-position: -5px -70px;
+  }
+}
+
+.contactUsWrap {
+  margin: 20px 0;
+  @media screen and (min-width: 1440px) {
+    margin: 0;
+  }
+}
+.imgContactUs {
+  margin-left: auto;
+  margin-right: auto;
+  width: 52px;
+  height: 58px;
+  @media screen and (min-width: 1440px) {
+    width: 95px;
+    height: 120px;
+  }
+}

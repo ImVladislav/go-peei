@@ -2,7 +2,8 @@ import { newsItem } from '@/app/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getData } from '../../../../../../libs/getData'
-import { formatDate } from '../../formatDate'
+import SingleNewsItem from './SingleNewsItem'
+import SwiperContainer from './SwiperContainer'
 import styles from './readMore.module.scss'
 
 const ReadMore = async ({
@@ -11,32 +12,41 @@ const ReadMore = async ({
 	currentNewsItemId: string
 }) => {
 	const data: newsItem[] = await getData('news')
-	const itemsToShow = data
-		.filter(item => item._id !== currentNewsItemId)
-		.slice(0, 2)
 
 	return (
 		<div className='container'>
-			<div className={styles.section}>
+			{/* mobile */}
+			<div className={`${styles.section} ${styles.mobile}`}>
 				<h3 className={styles.section__title}>читайте також</h3>
 				<ul className={styles.news__list}>
-					{itemsToShow?.map(item => (
-						<li key={item._id} className={styles.news__item}>
-							<div className={styles.news__itemWrap}>
-								<h3 className={styles.news__title}>{item.title}</h3>
-								<div className={styles.news__imgBox}>
-									<Image
-										src={item.imageSrc}
-										alt={item.title}
-										fill
-										className={styles.news__img}
-									/>
-								</div>
-							</div>
-							<p className={styles.news__date}>{formatDate(item.createdAt)}</p>
-						</li>
-					))}
+					{data?.map(
+						item =>
+							item._id !== currentNewsItemId && (
+								<SingleNewsItem key={item._id} newsItem={item} />
+							)
+					)}
 				</ul>
+				<div className={styles.more__box}>
+					<Link href='/news' className={styles.more__link}>
+						Усі новини
+					</Link>
+				</div>
+			</div>
+
+			{/* desktop */}
+			<div className={`${styles.section} ${styles.desktop}`}>
+				<h3 className={styles.section__title}>читайте також</h3>
+
+				<div className={styles.btn_wrap}>
+					<button className={`s-button-prev ${styles.btn}`}>
+						<Image src='/main/icon-next.svg' alt='next' width={8} height={16} />
+					</button>
+					<button className={`s-button-next ${styles.btn}`}>
+						<Image src='/main/icon-prev.svg' alt='prev' width={8} height={16} />
+					</button>
+				</div>
+				<SwiperContainer data={data} currentNewsItemId={currentNewsItemId} />
+
 				<div className={styles.more__box}>
 					<Link href='/news' className={styles.more__link}>
 						Усі новини

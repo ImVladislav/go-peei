@@ -10,5 +10,8 @@
 			margin-bottom: 0;
 			gap: 43px;
 		}
+		@media screen and (min-width: 1024px) {
+			gap: 40px;
+		}
 	}
 }

@@ -1,9 +1,28 @@
 @import '../../../../styles/utils/_variables.scss';
 
 .section {
-	margin-top: 45px;
+	&.desktop {
+		display: none;
+	}
+	&.mobile {
+		display: block;
+		margin-top: 45px;
+	}
+
 	@media screen and (min-width: 768px) {
-		margin-top: 56px;
+		margin-top: 80px;
+		&.mobile {
+			display: none;
+		}
+		&.desktop {
+			display: block;
+		}
+	}
+	@media screen and (min-width: 1024px) {
+		margin-top: 100px;
+	}
+	@media screen and (min-width: 1440px) {
+		margin-top: 120px;
 	}
 
 	&__title {
@@ -14,48 +33,53 @@
 		text-transform: uppercase;
 		text-align: center;
 		color: $main-black;
+		@media screen and (min-width: 768px) {
+			margin-bottom: 40px;
+			font-family: var(--font-family);
+			font-weight: 500;
+			font-size: 24px;
+		}
+		@media screen and (min-width: 1024px) {
+			margin-bottom: 42px;
+			font-size: 32px;
+		}
+		@media screen and (min-width: 1440px) {
+			margin-bottom: 48px;
+		}
+	}
+}
+
+.btn_wrap {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 14px;
+}
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 4px;
+	background: #fff;
+	border: none;
+	&:hover,
+	&:focus {
+		background: #e8f1e7;
 	}
 }
 
 .news {
 	&__list {
 		margin-bottom: 20px;
-	}
-	&__item {
-		border-bottom: 1px solid $main-grey;
-		padding: 12px;
-		min-width: 320px;
-		height: 132px;
-		&:not(:last-child) {
-			margin-bottom: 12px;
+		@media screen and (min-width: 768px) {
+			display: flex;
+			gap: 16px;
 		}
-	}
-	&__itemWrap {
-		display: flex;
-		justify-content: space-between;
-	}
-	&__title {
-		margin-right: 12px;
-		margin-bottom: 12px;
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 1.5;
-		color: $main-black;
-	}
-	&__imgBox {
-		position: relative;
-		min-width: 75px;
-		height: 75px;
-	}
-	&__img {
-		border-radius: 4px;
-		object-fit: cover;
-	}
-	&__date {
-		font-weight: 300;
-		font-size: 14px;
-		line-height: 1.5;
-		color: $main-grey;
+		@media screen and (min-width: 1024px) {
+			gap: 24px;
+		}
 	}
 }
 
@@ -63,6 +87,9 @@
 	&__box {
 		margin: 24px 0px 24px 0px;
 		text-align: center;
+		@media screen and (min-width: 768px) {
+			display: none;
+		}
 	}
 	&__link {
 		font-weight: 300;

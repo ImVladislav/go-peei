@@ -4,6 +4,7 @@ import { newsItem } from '@/app/types'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { formatDate } from '../../formatDate'
+import Translator from '../../translator/Translator'
 import InputLinkNews from './InputLinkNews/InputLinkNews'
 import SocialsNews from './SocialsNews/SocialsNews'
 import styles from './newsCardInfo.module.scss'
@@ -35,7 +36,7 @@ const NewsCardInfo: React.FC<{ newsItem: newsItem }> = ({ newsItem }) => {
 						<div className={styles.boxData}>
 							<p className={styles.boxData__data}>
 								<span className={styles.boxData__dataTitle}>
-									Опубліковано:{' '}
+									<Translator>publishedBy</Translator>:{' '}
 								</span>
 								{formatDate(newsItem.createdAt)}
 							</p>
@@ -43,7 +44,9 @@ const NewsCardInfo: React.FC<{ newsItem: newsItem }> = ({ newsItem }) => {
 						{/* social section */}
 						<div className={styles.socialSection}>
 							<div className={styles.socialSection__topWrap}>
-								<h3 className={styles.socialSection__title}>Поділитися:</h3>
+								<h3 className={styles.socialSection__title}>
+									<Translator>toShare</Translator>:
+								</h3>
 								<SocialsNews />
 							</div>
 							<InputLinkNews pageLink={pageLink} />

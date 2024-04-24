@@ -2,48 +2,50 @@
 .wrap {
   display: flex;
   flex-direction: column-reverse;
-  align-items: center;
   padding: 24px 0;
-
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
+    border-top: 1px solid $main-green;
+  }
+  @media screen and (min-width: 1024px) {
     flex-direction: row;
     justify-content: space-between;
-    border-top: 1px solid $main-green;
     padding: 28px 0;
   }
 }
 .copy {
-  padding: 24px 0 0;
+  margin-top: 28px;
   font-weight: 300;
   font-size: 12px;
-  @media screen and (min-width: 1440px) {
-    padding: 0;
+  line-height: 1.5;
+  text-align: center;
+  color: $main-black;
+  @media screen and (min-width: 768px) {
+    text-align: start;
     font-size: 14px;
-    line-height: 1.5;
-    color: #000000;
+    margin-top: 16px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0;
   }
 }
 .inner {
   display: flex;
-  justify-content: space-between;
-
+  gap: 26px;
   @media screen and (min-width: 425px) {
     gap: 24px;
   }
 }
+
 .link_wrap {
-  &:last-child {
-    text-align: end;
-  }
-  @media screen and (min-width: 425px) {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   @media screen and (min-width: 768px) {
     flex-direction: row;
     gap: 24px;
   }
 }
+
 .link {
   display: inline-block;
   font-weight: 400;
@@ -51,24 +53,13 @@
   line-height: 1.5;
   text-decoration: underline;
   text-decoration-skip-ink: none;
+  color: $main-black;
   &:hover,
   &:focus {
     color: $green-hover;
   }
-  &:last-child {
-    margin-top: 8px;
-  }
+
   @media screen and (min-width: 768px) {
-    &:last-child {
-      margin-top: 0;
-    }
-    @media screen and (min-width: 1440px) {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 1.5;
-      text-decoration: underline;
-      text-decoration-skip-ink: none;
-      color: #000000;
-    }
+    font-size: 14px;
   }
 }

@@ -1,9 +1,18 @@
 @import "../../../../styles/utils/variables";
 
 .wrap {
+  margin-top: 24px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  // flex-direction: column;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 28px;
+    gap: 0;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
 }
 .item {
   padding: 8px 0;
@@ -13,11 +22,11 @@
   display: flex;
   align-items: center;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1;
   color: $main-black;
   justify-content: space-between;
-  gap: 23px;
+  gap: 8px;
   &:hover,
   &:focus {
     color: $green-hover;

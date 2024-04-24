@@ -2,23 +2,26 @@
 
 import { useRouter } from "next/navigation";
 
+import Translator from "../translator/Translator";
+
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
 import NavFooter from "./Nav/NavFooter";
 import Copyright from "./Copyright/Copyright";
 
 import styles from "./footer.module.scss";
-import Translator from "../translator/Translator";
+import Socials from "./Socials/Socials";
 
-const Footer = () => {
+const Footer = ({ locale }: any) => {
   const router = useRouter();
   return (
-    <div className={styles.background}>
+    <div className={styles.section}>
       <div className="container">
         <div className={styles.wrap}>
           <div className={styles.logo}>
-            <Logo />
+            <Logo locale={locale} />
             <Button
+              newStyles={styles.btn}
               onClick={() =>
                 router.push("https://payhub.com.ua/#/service/98840")
               }
@@ -28,6 +31,7 @@ const Footer = () => {
           </div>
           <NavFooter />
         </div>
+        <Socials />
         <Copyright />
       </div>
     </div>

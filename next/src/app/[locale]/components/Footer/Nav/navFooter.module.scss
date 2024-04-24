@@ -2,20 +2,16 @@
 
 .container {
   margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-
-  @media screen and (min-width: 1440px) {
-    flex-direction: row;
-    gap: 64px;
+  @media screen and (min-width: 768px) {
+    margin-top: 28px;
+  }
+  @media screen and (min-width: 1024px) {
     margin-top: 0;
   }
 }
 .wrap {
   display: flex;
-
-  justify-content: space-between;
+  flex-direction: column;
   @media screen and (min-width: 425px) {
     margin: 0 50px;
   }
@@ -28,35 +24,40 @@
   }
 }
 .list {
-  display: flex;
-  flex-direction: column;
-
-  gap: 8px;
+  display: grid;
+  grid-auto-flow: column dense;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(8, 1fr);
+  justify-content: space-between;
+  row-gap: 8px;
+  @media screen and (min-width: 768px) {
+    grid-auto-flow: column dense;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 8px;
+    justify-content: space-between;
+  }
   @media screen and (min-width: 1440px) {
+    gap: 8px 64px;
   }
 }
 .item {
   padding: 8px 0;
-  font-size: 12px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1;
   @media screen and (min-width: 768px) {
+    padding: 8px;
     font-size: 18px;
+    line-height: 1.5;
   }
 }
 
 .link {
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 1;
   color: $main-black;
-  border-radius: 8px;
   &:hover,
   &:focus {
     color: $green-hover;
-  }
-
-  @media screen and (min-width: 768px) {
-    font-size: 18px;
-    line-height: 1.5;
   }
 }
 .active {

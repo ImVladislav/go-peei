@@ -36,7 +36,7 @@ export default async function RootLayout({ children, params: { locale } }) {
           <div className="wrapper">
             <Header locale={locale} />
             <main>{children}</main>
-            <Footer />
+            <Footer locale={locale} />
           </div>
           <div id="modal-root"></div>
         </body>

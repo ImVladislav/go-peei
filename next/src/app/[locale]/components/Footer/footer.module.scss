@@ -1,16 +1,19 @@
 @import "../../../styles/utils/variables";
 
-.background {
+.section {
   background: $green-50;
+  padding: 24px 0 0;
+  @media screen and (min-width: 768px) {
+    padding: 40px 0 0;
+  }
 }
 .wrap {
-  margin-top: 24px;
-
-  @media screen and (min-width: 1440px) {
-    padding-top: 40px;
+  @media screen and (min-width: 1024px) {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 28px;
+    gap: 33px;
+  }
+  @media screen and (min-width: 1440px) {
     margin-top: 0;
     gap: 125px;
   }
@@ -18,13 +21,35 @@
 .logo {
   display: flex;
   flex-direction: column;
-
   gap: 24px;
-  @media screen and (min-width: 425px) {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 320px;
+  @media screen and (min-width: 768px) {
+    gap: 64px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media screen and (min-width: 1024px) {
+    flex-direction: column;
+    justify-content: flex-start;
     gap: 32px;
-    margin-top: 18px;
+  }
+  @media screen and (min-width: 1440px) {
+  }
+}
+.btn {
+  margin: 0 auto;
+  width: 317px;
+  height: 40px;
+  @media screen and (min-width: 765px) {
+    width: 409px;
+    height: 48px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 259px;
+    height: 52px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 303px;
+    height: 52px;
   }
 }

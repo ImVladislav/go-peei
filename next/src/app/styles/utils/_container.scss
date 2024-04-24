@@ -8,15 +8,20 @@
   }
   @media screen and (min-width: 768px) {
     min-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media screen and (min-width: 1024px) {
+    min-width: 1024px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 
-  @media screen and (min-width: 1280px) {
-    max-width: 1280px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
+  // @media screen and (min-width: 1280px) {
+  //   max-width: 1280px;
+  //   padding-left: 60px;
+  //   padding-right: 60px;
+  // }
   @media screen and (min-width: 1440px) {
     max-width: 1440px;
     padding-left: 80px;

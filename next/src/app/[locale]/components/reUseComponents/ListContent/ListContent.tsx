@@ -18,15 +18,33 @@ const ListContent = ({ title, list }: listContentItem) => {
           <li className={styles.item} key={index}>
             <div className={styles.imgContainer}>
               <Image
-                className={styles.img}
+                className={
+                  item.imgStyle ? `${styles.img} ${item.imgStyle}` : styles.img
+                }
                 src={item.imgSrc}
-                alt={item.description}
+                alt={item.title ? item.title : item.description}
                 fill
               />
             </div>
-            <p className={styles.description}>
-              <Translator>{item.description}</Translator>
-            </p>
+            <div className={styles.descWrap}>
+              {item.title && (
+                <div className={styles.subtitleWrap}>
+                  <Image
+                    className={styles.icon}
+                    src="/about/leaf.svg"
+                    alt="img"
+                    width={13}
+                    height={22}
+                  />
+                  <h2 className={styles.subtitle}>
+                    <Translator>{item.title}</Translator>
+                  </h2>
+                </div>
+              )}
+              <p className={styles.description}>
+                <Translator>{item.description}</Translator>
+              </p>
+            </div>
           </li>
         ))}
       </ul>

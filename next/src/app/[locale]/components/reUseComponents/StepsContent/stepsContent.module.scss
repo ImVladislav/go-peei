@@ -89,6 +89,15 @@
   width: 13px;
   height: 22px;
 }
+.descWrap {
+  display: flex;
+}
+.descTitle {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #141414;
+}
 .description {
   font-weight: 300;
   font-size: 16px;
@@ -98,4 +107,10 @@
   @media screen and (min-width: 1440px) {
     font-size: 18px;
   }
+}
+.link {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #0d490d;
 }

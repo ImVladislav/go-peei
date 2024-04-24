@@ -69,14 +69,36 @@
 
   .img {
     object-fit: cover;
-    object-position: left;
   }
+  .subtitleWrap {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+  }
+  .icon {
+    width: 13px;
+    height: 22px;
+  }
+  .subtitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $main-black;
+    @media screen and (min-width: 1440px) {
+      font-size: 18px;
 
-  .description {
+      text-transform: uppercase;
+    }
+  }
+  .descWrap {
     @media screen and (min-width: 1440px) {
       width: 648px;
       height: 409px;
-      padding: 119px;
+      padding: 0 119px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
     }
   }
 }

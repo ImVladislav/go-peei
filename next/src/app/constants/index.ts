@@ -41,7 +41,6 @@ export const navFooter: navLinks[] = [
     key: "charityActions",
     label: "charityActions",
     href: "/activities/projects",
-    // href: "/charityActions",
   },
   {
     col: 2,
@@ -52,7 +51,7 @@ export const navFooter: navLinks[] = [
   { col: 2, key: "news", label: "news", href: "/news" },
   {
     col: 3,
-    key: "support",
+    key: "financially",
     label: "supportWithADonation",
     href: "https://payhub.com.ua/#/service/98840",
   },
@@ -60,25 +59,23 @@ export const navFooter: navLinks[] = [
     col: 3,
     key: "partnership",
     label: "becomeAPartner",
-    href: "/partnership",
+    href: "/support/partnership",
   },
   {
     col: 3,
     key: "volunteering",
     label: "becomeAVolunteer",
-    href: "/volunteering",
+    href: "/support/volonter",
   },
   { col: 3, href: "/reports", key: "reports", label: "reports" },
   { col: 3, href: "/contacts", key: "contacts", label: "contacts" },
 ];
 
 // Header contacts
-  export const headerContacts: contactItem[] = [
-    { href: "tel:+380506558561", name: "+380506558561" },
+export const headerContacts: contactItem[] = [
+  { href: "tel:+380506558561", name: "+380506558561" },
   { href: "mailto:copeeiua@gmail.com", name: "copeeiua@gmail.com" },
-
 ];
-
 
 // Socials
 export const initialSocials: socialsItem[] = [
@@ -87,10 +84,7 @@ export const initialSocials: socialsItem[] = [
   { href: "https://linkedin.com/", name: "Linkedin" },
   { href: "https://www.facebook.com/", name: "Facebook" },
   { href: "https://www.youtube.com/", name: "YouTube" },
-  
 ];
-
-
 
 // all svg for the hover to work
 export const iconsData: SvgProps[] = [

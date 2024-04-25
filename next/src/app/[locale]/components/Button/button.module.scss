@@ -21,12 +21,10 @@
 
 .button {
   font-weight: 300;
-  font-size: 16px;
   line-height: 1;
   text-align: center;
   color: $main-white;
   border-radius: 40px 0;
-  padding: 12px 40px;
   background: $main-green;
   border: none;
   &:hover,
@@ -37,8 +35,5 @@
     background: $green-hover;
   }
   @media screen and (min-width: 1440px) {
-    font-size: 20px;
-    border-radius: 40px 0;
-    padding: 16px 40px;
   }
 }

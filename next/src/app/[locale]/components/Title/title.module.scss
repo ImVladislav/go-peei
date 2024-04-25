@@ -3,6 +3,12 @@
 .box {
   display: inline-block;
   margin-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 52px;
+  }
   @media screen and (min-width: 1440px) {
     margin-bottom: 60px;
   }
@@ -24,7 +30,4 @@
   height: 4px;
   background: $main-green;
   transform: skew(-50deg, 0deg);
-  @media screen and (min-width: 1440px) {
-    height: 4px;
-  }
 }

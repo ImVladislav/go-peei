@@ -1,85 +1,192 @@
 @import "../../../../styles/utils/variables";
 
 .section {
-  padding-top: 120px;
+  padding-top: 81px;
+  @media screen and (min-width: 768px) {
+    padding-top: 132px;
+  }
+  @media screen and (min-width: 1024px) {
+    padding-top: 0;
+    height: 445px;
+  }
   @media screen and (min-width: 1440px) {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 0;
+    height: auto;
   }
 }
 .inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+
   @media screen and (min-width: 768px) {
-    display: flex;
+  }
+  @media screen and (min-width: 1024px) {
     flex-direction: row;
+    gap: 0;
+  }
+  @media screen and (min-width: 1024px) {
     justify-content: space-between;
   }
 }
 .column {
-  @media screen and (min-width: 1440px) {
+  margin-bottom: 41px;
+  @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  @media screen and (min-width: 1024px) {
     align-items: flex-start;
   }
+  @media screen and (min-width: 1440px) {
+    gap: 42px;
+  }
 }
-.content {
+.sloganContainer {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  @media screen and (min-width: 768px) {
+    gap: 14px;
+  }
+  @media screen and (min-width: 1024px) {
+    align-items: flex-start;
+    gap: 20px;
+  }
   @media screen and (min-width: 1440px) {
     gap: 12px;
     margin-left: 3px;
   }
 }
+.sloganInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  @media screen and (min-width: 1024px) {
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
+}
 .slogan {
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1;
   text-transform: uppercase;
   text-align: center;
   color: $main-black;
-  & span {
+
+  span {
     color: $main-green;
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    font-weight: 500;
+    font-size: 36px;
+
+    text-align: left;
   }
   @media screen and (min-width: 1024px) {
     font-size: 40px;
-    text-align: left;
+  }
+}
+.btnWrap {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
   }
 }
 .btn {
   display: none;
   @media screen and (min-width: 768px) {
     display: inline-block;
-    margin-top: 34px;
+
     width: 308px;
     height: 52px;
+    font-size: 20px;
+    padding: 12px 40px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 20px;
+    padding: 16px 40px;
   }
 }
 .img_wrap {
   position: relative;
   width: 320px;
   height: 302px;
+  margin-bottom: 7px;
+  overflow: hidden;
 
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    width: 562px;
+    height: 530px;
+  }
+  @media screen and (min-width: 1024px) {
+    // width: 415px;
+    height: 530px;
+    margin-left: -25px;
+    margin-right: -60px;
+    z-index: -1;
+    margin-bottom: -55px;
+  }
   @media screen and (min-width: 1440px) {
     width: 421px;
     height: 397px;
+    margin: 24px 0;
   }
 }
 .img {
-  object-fit: contain;
-}
+  object-fit: cover;
 
+  @media screen and (min-width: 1024px) {
+    object-position: -30px 0px;
+  }
+  @media screen and (min-width: 1440px) {
+    // object-position: left;
+  }
+}
+.btn_lastWrap {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
 .btn_last {
   width: 320px;
   height: 40px;
   padding: 12px 40px;
-  font-weight: 300;
   font-size: 16px;
-
   @media screen and (min-width: 768px) {
     display: none;
+  }
+}
+.linkSecurity {
+  position: absolute;
+  right: -20px;
+  border-radius: 0 24px 24px 0;
+  padding: 32px 8px;
+  background: #f5f8f5;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  top: 30px;
+  border: none;
+  writing-mode: tb-rl;
+  transform: rotate(180deg);
+  @media screen and (min-width: 768px) {
+    top: -100px;
+    right: -40px;
+  }
+  @media screen and (min-width: 1024px) {
+    top: 20px;
+    right: -60px;
+  }
+  @media screen and (min-width: 1440px) {
+    top: 20px;
+    right: -80px;
   }
 }

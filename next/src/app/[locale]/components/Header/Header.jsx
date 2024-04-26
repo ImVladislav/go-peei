@@ -12,8 +12,11 @@ import {
   headerIconsData,
 } from "@/app/constants/index";
 import { useTranslation } from "react-i18next";
-export default function Header() {
+import logoUA from "../../../../../public/logo/logoUA.svg";
+import logoENG from "../../../../../public/logo/logoENG.svg";
+export default function Header({ locale }) {
   const { t } = useTranslation();
+  console.log("locale", locale);
   return (
     <>
       <div className={s.header__contact}>
@@ -36,7 +39,12 @@ export default function Header() {
       <div className={s.header__container}>
         <div className={s.header}>
           <Link className={s.header__logoLink} href="/">
-            <Image src={t("logo")} width={200} height={60} alt="Logo" />
+            <Image
+              src={locale === "uk" ? logoUA : logoENG}
+              width={200}
+              height={60}
+              alt="Logo"
+            />
           </Link>
           <Navbar />
           <div className={s.header__langChangContainer}>

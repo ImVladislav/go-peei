@@ -13,7 +13,7 @@ import StepsContent from "../../components/reUseComponents/StepsContent/StepsCon
 
 import styles from "./workWithTeenagers.module.scss";
 
-export const firstContentData: reUseContentItem = {
+const firstContentData: reUseContentItem = {
   imgSrc: "/workWithTeenagers/environment-volunteer-teamwork-concept.jpg",
   title: "hello",
   list: [
@@ -23,7 +23,7 @@ export const firstContentData: reUseContentItem = {
   ],
 };
 
-export const listContentData: listContentItem = {
+const listContentData: listContentItem = {
   title: "whatWeOffer",
   list: [
     {
@@ -39,13 +39,13 @@ export const listContentData: listContentItem = {
   ],
 };
 
-export const contactUsContentData: contactUsContentItem = {
+const contactUsContentData: contactUsContentItem = {
   imgSrc: "/workWithTeenagers/question.svg",
   imgAlt: "question",
   list: [{ description: "whatWeOfferThird" }],
 };
 
-export const stepsContentData: reUseContentItem = {
+const stepsContentData: reUseContentItem = {
   imgSrc: "/workWithTeenagers/young-friends-park.jpg",
   title: "stepsTitle",
   subtitle: "steps",

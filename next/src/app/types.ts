@@ -1,5 +1,5 @@
 export type navLinks = {
-  col: number;
+  col?: number;
   href: string;
   key: string;
   label: string;

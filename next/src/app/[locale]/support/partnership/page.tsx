@@ -12,7 +12,7 @@ import Translator from "../../components/translator/Translator";
 
 import styles from "./partnership.module.scss";
 
-export const firstContentData: reUseContentItem = {
+const firstContentData: reUseContentItem = {
   imgSrc: "/partners/front-view-man-with-wooden-blocks.jpg",
   imgStyle: styles.imgFirstContent,
   title: "partners",
@@ -22,7 +22,7 @@ export const firstContentData: reUseContentItem = {
   ],
 };
 
-export const listContentData: listContentItem = {
+const listContentData: listContentItem = {
   title: "howYouCanSupport",
   list: [
     {
@@ -45,7 +45,7 @@ export const listContentData: listContentItem = {
   ],
 };
 
-export const contactUsContentData: contactUsContentItem = {
+const contactUsContentData: contactUsContentItem = {
   imgSrc: "/partners/tree.svg",
   imgAlt: "question",
   imgStyle: styles.imgContactUs,
@@ -62,7 +62,7 @@ export const contactUsContentData: contactUsContentItem = {
   ],
 };
 
-export const stepsContentData: reUseContentItem = {
+const stepsContentData: reUseContentItem = {
   imgSrc: "/partners/people.png",
   imgStyle: styles.imgStepContent,
   title: "benefitsOfPartnership",

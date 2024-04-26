@@ -6,7 +6,7 @@ import ContactUsContent from "../../components/reUseComponents/ContactUsContent/
 import Translator from "../../components/translator/Translator";
 import styles from "./volonter.module.scss";
 
-export const firstContentData: reUseContentItem = {
+const firstContentData: reUseContentItem = {
   imgSrc: "/volontersPage/photo_2024-04-22_17-32-44.jpg",
   title: "volunteers",
   imgStyle: styles.imgFirst,
@@ -15,7 +15,7 @@ export const firstContentData: reUseContentItem = {
     { description: "volunteersSecond" },
   ],
 };
-export const stepsContentData: reUseContentItem = {
+const stepsContentData: reUseContentItem = {
   imgSrc: "/volontersPage/people-cleaning-garbage-from-nature.png",
   title: "stepsTitle",
   subtitle: "steps",
@@ -46,7 +46,7 @@ export const stepsContentData: reUseContentItem = {
     { description: "volunteersStepSixth" },
   ],
 };
-export const contactUsContentData: contactUsContentItem = {
+const contactUsContentData: contactUsContentItem = {
   imgSrc: "/partners/tree.svg",
   imgAlt: "question",
   imgStyle: styles.imgStyle,

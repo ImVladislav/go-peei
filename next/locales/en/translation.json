@@ -7,7 +7,8 @@
   "energy": "energy",
   "independence": " independence",
 
-  "wePromoteSuchIdeas": "We promote such ideas:",
+  "wePromoteSuchIdeas": "We promote such ",
+  "wePromoteSuchIdeasAccent": "ideas:",
   "preservingTheEnvironment": "Preserving the environment",
   "preservingTheEnvironmentDesc": "is a key challenge of our time. This includes reducing emissions and pollution, protecting biodiversity and creating sustainable lifestyles. To achieve this goal, comprehensive measures are needed at the national and global level, as well as innovations in recycling and support for sustainable consumption.",
   "implementationOfInnovationsInTheFieldOfRenewableEnergy": "Implementation of innovations in the field of renewable energy",
@@ -15,7 +16,8 @@
   "recyclingOfSecondaryRawMaterials": "Recycling of secondary raw materials",
   "recyclingOfSecondaryRawMaterialsDesc": "Modern technologies make it possible to effectively use recycled materials to manufacture new products, which helps reduce the negative impact on the environment. ",
 
-  "helpRaiseFunds": "help raise funds",
+  "helpRaiseFunds": "help raise ",
+  "helpRaiseFundsAccent": "funds",
   "collected": "Collected",
   "totalAmount": "Total amount",
   "allProjects": "All projects",

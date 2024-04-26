@@ -4,14 +4,12 @@ import Image from "next/image";
 import Title from "../../Title/Title";
 
 import { newsItem } from "@/app/types";
-import { getData } from "../../../../../../libs/getData";
 
 import styles from "./news.module.scss";
 import Translator from "../../translator/Translator";
 import { formatDate } from "../../formatDate";
 
-const News = async () => {
-  const data: newsItem[] = await getData("news");
+const News = ({ data }: { data: newsItem[] }) => {
   // const basicNews = data.filter((item) => item.firstNew === true);
   // const otherNews = data.filter((item) => item.firstNew !== true);
 

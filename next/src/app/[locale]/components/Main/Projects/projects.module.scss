@@ -7,67 +7,36 @@
   justify-content: space-between;
   margin-bottom: 14px;
 }
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  background: #fff;
-  border: none;
-  &:hover,
-  &:focus {
-    background: #e8f1e7;
-  }
+.accentTitle {
+  color: $main-green;
 }
 
-.inner {
-  text-align: center;
-}
 .list {
   display: flex;
-  gap: 40px;
-  margin-bottom: 48px;
-}
-.box {
-  margin-top: 24px;
-  text-align: center;
-
-  &__link {
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1;
-    text-align: center;
-    color: $main-black;
-    border-bottom: 1px solid $main-black;
-    padding: 12px;
-
-    &:hover,
-    &:focus {
-      border-bottom: 2px solid $green-hover;
-    }
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 24px;
   }
-  @media screen and (min-width: 1440px) {
-    margin-top: 48px;
-    text-align: center;
-
-    &__link {
-      font-size: 20px;
-      padding: 12px;
-    }
+  @media screen and (min-width: 768px) {
+    gap: 40px;
   }
 }
+
 .item {
   width: 320px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(20, 20, 20, 0.12);
   border-radius: 16px;
   padding: 12px;
   display: flex;
   flex-direction: column;
+
   gap: 18px;
   background: $main-white;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     width: 400px;
     gap: 20px;
     border-radius: 18px;
@@ -80,9 +49,9 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: 17px;
-    @media screen and (min-width: 1440px) {
-      gap: 10px;
+    gap: 16px;
+    @media screen and (min-width: 1024px) {
+      gap: 12px;
       margin-bottom: 15px;
     }
   }
@@ -92,26 +61,23 @@
     width: 100%;
     height: 208px;
     border-radius: 12px;
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1024px) {
       border-radius: 10px;
 
-      width: 360px;
+      // width: 360px;
       height: 270px;
     }
   }
 
   &__title {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
     text-transform: uppercase;
     text-align: left;
     color: $main-black;
-    @media screen and (min-width: 1440px) {
-      font-weight: 600;
+    @media screen and (min-width: 1024px) {
       font-size: 18px;
-
-      text-align: justify;
     }
   }
   &__desc {
@@ -121,10 +87,10 @@
     text-align: justify;
     text-overflow: ellipsis;
     overflow: hidden;
-    max-height: 72px;
+    height: 72px;
     color: $main-black;
-    @media screen and (min-width: 1440px) {
-      max-height: 100px;
+    @media screen and (min-width: 1024px) {
+      height: 100px;
     }
   }
   &__box {
@@ -134,7 +100,7 @@
     width: 100%;
     height: 6px;
     border-radius: 2px;
-    border: 0.5px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     background: $main-white;
     margin-bottom: 4px;
   }
@@ -145,12 +111,15 @@
     background-color: $main-green;
     transition: width 0.5s ease-out;
   }
-  &__progres_bar_inner {
+  .item__progres_bar_text {
     display: flex;
     justify-content: space-between;
-    &:last-child {
-      margin-top: 2px;
-    }
+    // flex-direction: column;
+  }
+  &__progres_bar_inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   &__progres_bar_label {
     font-weight: 300;
@@ -166,19 +135,63 @@
     text-transform: uppercase;
     text-align: justify;
     color: $main-black;
+    margin-top: 2px;
     @media screen and (min-width: 1440px) {
       font-size: 18px;
     }
   }
   &__btn {
-    padding: 8px 36px;
-    width: 296px;
     font-size: 16px;
-    @media screen and (min-width: 1440px) {
-      padding: 12px 36px;
-      font-size: 20px;
+    padding: 14px 36px;
+    width: 296px;
+
+    @media screen and (min-width: 1024px) {
+      padding: 14px 36px;
+      font-size: 16px;
       width: 360px;
       height: 44px;
+    }
+  }
+}
+.item:last-child {
+  display: none;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+  }
+}
+
+.box {
+  margin-top: 16px;
+  text-align: center;
+  margin-bottom: 4px;
+
+  &__link {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+    color: $main-black;
+    border-bottom: 1px solid $main-black;
+    padding: 12px;
+
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $green-hover;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    margin-top: 32px;
+
+    &__link {
+      font-size: 20px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: 48px;
+
+    &__link {
+      font-size: 20px;
     }
   }
 }

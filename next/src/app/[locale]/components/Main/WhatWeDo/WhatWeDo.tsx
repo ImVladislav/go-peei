@@ -12,6 +12,9 @@ const WhatWeDo = () => {
           <div>
             <Title>
               <Translator>wePromoteSuchIdeas</Translator>
+              <span className={styles.accentTitle}>
+                <Translator>wePromoteSuchIdeasAccent</Translator>
+              </span>
             </Title>
 
             <div className={styles.imgContent}>

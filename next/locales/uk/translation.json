@@ -7,7 +7,8 @@
   "energy": "енергетична",
   "independence": " незалежність",
 
-  "wePromoteSuchIdeas": "Просуваємо такі ідеї:",
+  "wePromoteSuchIdeas": "Просуваємо такі ",
+  "wePromoteSuchIdeasAccent": "ідеї:",
   "preservingTheEnvironment": "Збереження довкілля",
   "preservingTheEnvironmentDesc": "є ключовим завданням сучасності. Це включає зменшення викидів та забруднення, охорону біорізноманіття та створення сталого способу життя. Для досягнення цієї мети необхідні комплексні заходи на рівні країни та глобально, інновації в переробці вторинної сировини та підтримка сталого споживання.",
   "implementationOfInnovationsInTheFieldOfRenewableEnergy": "Впровадження інновацій в сфері відновлювальної енергетики ",
@@ -15,7 +16,8 @@
   "recyclingOfSecondaryRawMaterials": "Переробка вторинної сировини",
   "recyclingOfSecondaryRawMaterialsDesc": "Сучасні технології дозволяють ефективно використовувати вторинну сировину для виробництва нових продуктів, що сприяє зменшенню негативного впливу на навколишнє середовище.",
 
-  "helpRaiseFunds": "допоможіть зібрати кошти",
+  "helpRaiseFunds": "допоможіть зібрати ",
+  "helpRaiseFundsAccent": "кошти",
   "collected": "Зібрано",
   "totalAmount": "Загальна сума",
   "allProjects": "Усі проєкти",

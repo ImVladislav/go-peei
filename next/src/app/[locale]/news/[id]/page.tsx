@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { getDataId } from '../../../../../libs/getData'
 import NewsCardInfo from '../../components/NewsItem/NewsCardInfo/NewsCardInfo'
 import ReadMore from '../../components/NewsItem/ReadMore/ReadMore'
-import styles from '../news.module.scss'
+import styles from './newsItem.module.scss'
 
 const NewsDetails = async ({ params }: { params: { id: string } }) => {
 	const { id } = params

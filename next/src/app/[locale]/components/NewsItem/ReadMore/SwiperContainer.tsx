@@ -32,10 +32,10 @@ const SwiperContainer = ({ data, currentNewsItemId }: swiperItemsNewsProps) => {
 				},
 
 				1024: {
-					slidesPerView: 2,
+					slidesPerView: 2.5,
 				},
 				1228: {
-					slidesPerView: 2.5,
+					slidesPerView: 2.7,
 				},
 				1440: {
 					slidesPerView: 3,

@@ -4,26 +4,31 @@ import Link from 'next/link'
 import { formatDate } from '../../formatDate'
 import styles from './singleNewsItem.module.scss'
 
-const SingleNewsItem = async ({ newsItem }: { newsItem: newsItem }) => {
+interface SingleNewsItemProps {
+	newsItem: newsItem
+	newStyle?: string
+}
+
+const SingleNewsItem = async ({ newsItem, newStyle }: SingleNewsItemProps) => {
 	return (
 		<>
-			<li key={newsItem._id} className={styles.newsItem}>
-				<Link href={`/news/${newsItem._id}`}>
-					<div className={styles.newsItem__wrap}>
+			<li key={newsItem._id} className={`${styles.newsItem} ${newStyle}`}>
+				<div className={styles.newsItem__wrap}>
+					<Link href={`/news/${newsItem._id}`}>
 						<h3 className={styles.newsItem__title}>{newsItem.title}</h3>
-						<div className={styles.newsItem__imgBox}>
-							<Image
-								src={newsItem.imageSrc}
-								alt={newsItem.title}
-								fill
-								className={styles.newsItem__img}
-							/>
-						</div>
+					</Link>
+					<div className={styles.newsItem__imgBox}>
+						<Image
+							src={newsItem.imageSrc}
+							alt={newsItem.title}
+							fill
+							className={styles.newsItem__img}
+						/>
 					</div>
-					<p className={styles.newsItem__date}>
-						{formatDate(newsItem.createdAt)}
-					</p>
-				</Link>
+				</div>
+				<p className={styles.newsItem__date}>
+					{formatDate(newsItem.createdAt)}
+				</p>
 			</li>
 		</>
 	)

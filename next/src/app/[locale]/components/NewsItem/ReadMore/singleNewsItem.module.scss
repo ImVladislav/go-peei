@@ -9,6 +9,10 @@
 		margin-bottom: 12px;
 	}
 	@media screen and (min-width: 768px) {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
 		border: none;
 		border-radius: 10px;
 		min-width: 336px;
@@ -64,6 +68,7 @@
 		line-height: 1.5;
 		color: $main-grey;
 		@media screen and (min-width: 768px) {
+			margin-top: auto;
 			font-size: 16px;
 		}
 	}

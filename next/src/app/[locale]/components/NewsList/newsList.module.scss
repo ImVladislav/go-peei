@@ -1,0 +1,73 @@
+@import '../../../styles/utils/_variables.scss';
+
+.section {
+	&.desktop {
+		display: none;
+	}
+	&.mobile {
+		display: block;
+	}
+	@media screen and (min-width: 768px) {
+		margin-top: 8px;
+	}
+	@media screen and (min-width: 1204px) {
+		margin-top: 20px;
+	}
+	@media screen and (min-width: 1440px) {
+		&.mobile {
+			display: none;
+		}
+		&.desktop {
+			display: block;
+		}
+	}
+}
+
+.list {
+	margin-bottom: 24px;
+	@media screen and (min-width: 768px) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		margin-bottom: 32px;
+	}
+	@media screen and (min-width: 1024px) {
+		gap: 24px;
+	}
+	@media screen and (min-width: 1440px) {
+		gap: 40px;
+		margin-bottom: 48px;
+	}
+	&__item {
+		@media screen and (min-width: 768px) {
+			border: none;
+			border-radius: 10px;
+			width: calc((100% - 16px) / 2);
+			height: 367px;
+		}
+		@media screen and (min-width: 1024px) {
+			width: calc((100% - 24px) / 2);
+		}
+		@media screen and (min-width: 1440px) {
+			width: calc((100% - 80px) / 3);
+		}
+	}
+}
+
+.showMoreBtn {
+	display: flex;
+	margin: 0 auto;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1;
+	color: $main-black;
+	border: none;
+	background: none;
+	border-bottom: 1px solid $main-black;
+	padding: 12px;
+
+	&:hover,
+	&:focus {
+		border-bottom: 2px solid $green-hover;
+	}
+}

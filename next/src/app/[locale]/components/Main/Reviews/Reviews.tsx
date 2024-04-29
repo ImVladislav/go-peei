@@ -16,14 +16,7 @@ const Reviews = ({ data }: { data: reviewsItem[] }) => {
         <Title>
           <Translator>reviews</Translator>
         </Title>
-
         <SwiperContainer data={data} />
-
-        <div className={styles.box}>
-          <Link className={styles.box__link} href="/contacts">
-            <Translator>leaveAReview</Translator>
-          </Link>
-        </div>
       </div>
     </section>
   );

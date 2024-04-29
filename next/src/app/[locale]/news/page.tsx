@@ -1,48 +1,23 @@
-import Image from "next/image";
-
-import Title from "../components/Title/Title";
-
-import { getData } from "../../../../libs/getData";
-import { newsItem } from "@/app/types";
-
-import styles from "./news.module.scss";
-import Link from "next/link";
-import { formatDate } from "../components/formatDate";
+import { newsItem } from '@/app/types'
+import { getData } from '../../../../libs/getData'
+import NewsList from '../components/NewsList/NewsList'
+import Title from '../components/Title/Title'
+import Translator from '../components/translator/Translator'
+import styles from './news.module.scss'
 
 const News = async () => {
-  const data: newsItem[] = await getData("news");
+	const data: newsItem[] = await getData('news')
 
-  return (
-    <div className="container">
-      <div className={styles.section}>
-        <Title>Новини</Title>
+	return (
+		<div className='container'>
+			<div className={styles.section}>
+				<Title newStyles={styles.section__title}>
+					<Translator>News</Translator>
+				</Title>
+				<NewsList data={data} />
+			</div>
+		</div>
+	)
+}
 
-        <ul className={styles.list}>
-          {data?.map((item) => (
-            <li className={styles.item} key={item._id}>
-              <div className={styles.item__img}>
-                <Image
-                  style={{
-                    objectFit: "cover",
-                    objectPosition: "center",
-                    height: "193px",
-                  }}
-                  src={item.imageSrc}
-                  alt={item.title}
-                  width={458}
-                  height={193}
-                />
-              </div>
-              <Link className={styles.link} href={`/news/${item._id}`}>
-                <h2 className={styles.item__title}>{item.title}</h2>
-              </Link>
-              <p className={styles.item__data}>{formatDate(item.createdAt)}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-export default News;
+export default News

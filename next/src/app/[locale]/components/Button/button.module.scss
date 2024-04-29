@@ -1,4 +1,4 @@
-@import "../../../styles/utils/variables";
+@import '../../../styles/utils/variables';
 
 // .button {
 //   font-weight: 300;
@@ -20,25 +20,54 @@
 // }
 
 .button {
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1;
-  text-align: center;
-  color: $main-white;
-  border-radius: 40px 0;
-  padding: 12px 40px;
-  background: $main-green;
-  border: none;
-  &:hover,
-  &:focus {
-    background: $green-hover;
-  }
-  &.active {
-    background: $green-hover;
-  }
-  @media screen and (min-width: 1440px) {
-    font-size: 20px;
-    border-radius: 40px 0;
-    padding: 16px 40px;
-  }
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1;
+	text-align: center;
+	color: $main-white;
+	border-radius: 40px 0;
+	padding: 12px 40px;
+	background: $main-green;
+	border: none;
+	&:hover,
+	&:focus {
+		background: $green-hover;
+	}
+	&.active {
+		background: $green-hover;
+	}
+	@media screen and (min-width: 1440px) {
+		font-size: 20px;
+		border-radius: 40px 0;
+		padding: 16px 40px;
+	}
+}
+
+/* Button scroll top */
+
+.scrollTopBtn {
+	cursor: pointer;
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	z-index: 1;
+	border: none;
+	border-radius: 999px;
+	padding: 8px;
+	width: 40px;
+	height: 40px;
+	background: $green-50;
+	&:hover,
+	&:focus {
+		background: $green-hover;
+	}
+}
+
+.show {
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+.hide {
+	opacity: 0;
 }

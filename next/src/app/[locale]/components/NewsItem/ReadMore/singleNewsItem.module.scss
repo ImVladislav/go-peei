@@ -5,6 +5,10 @@
 	padding: 12px;
 	min-width: 320px;
 	height: 132px;
+	&:hover,
+	&:focus {
+		box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.25);
+	}
 	&:not(:last-child) {
 		margin-bottom: 12px;
 	}
@@ -28,6 +32,12 @@
 			flex-direction: column-reverse;
 		}
 	}
+	&__titleLink {
+		&:hover .newsItem__title,
+		&:focus .newsItem__title {
+			color: $focus-green;
+		}
+	}
 	&__title {
 		margin-right: 12px;
 		margin-bottom: 12px;
@@ -48,10 +58,6 @@
 		@media screen and (min-width: 768px) {
 			min-width: 312px;
 			height: 214px;
-			margin-bottom: 12px;
-		}
-		@media screen and (min-width: 1024px) {
-			min-width: 412px;
 			margin-bottom: 12px;
 		}
 	}

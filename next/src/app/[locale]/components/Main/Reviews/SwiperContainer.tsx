@@ -17,7 +17,7 @@ const SwiperContainer = ({ data }: { data: reviewsItem[] }) => {
         "--swiper-theme-color": "#0d490d",
         "--swiper-pagination-bullet-size": "20px",
         "--swiper-pagination-bottom": "0px",
-        " --swiper-pagination-bullet-horizontal-gap": "16px",
+        // " --swiper-pagination-bullet-horizontal-gap": "16px",
       }}
       slidesPerView={1.03}
       spaceBetween={12}

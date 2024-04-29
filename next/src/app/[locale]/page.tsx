@@ -20,7 +20,7 @@ const Home = async () => {
       <WhatWeDo />
       {projects && <Projects data={projects} />}
       {reviews && <Reviews data={reviews} />}
-      {/* {news && <News data={news} />} */}
+      {news && <News data={news} />}
     </div>
   );
 };

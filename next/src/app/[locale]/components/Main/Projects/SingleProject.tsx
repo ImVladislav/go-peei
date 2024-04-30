@@ -24,7 +24,7 @@ const SingleProject = async ({ project }: ProjectProps) => {
   };
 
   return (
-    <div className={styles.item}>
+    <li className={styles.item}>
       <div className={styles.item__inner}>
         <div className={styles.item__image}>
           <Image
@@ -50,20 +50,22 @@ const SingleProject = async ({ project }: ProjectProps) => {
             style={{ width: `${progress}%`, background: "#0d490d" }}
           ></div>
         </div>
-        <div className={styles.item__progres_bar_inner}>
-          <div className={styles.item__progres_bar_label}>
-            <Translator>collected</Translator>
+        <div className={styles.item__progres_bar_text}>
+          <div className={styles.item__progres_bar_inner}>
+            <p className={styles.item__progres_bar_label}>
+              <Translator>collected</Translator>
+            </p>
+            <p className={styles.item__progres_bar_money}>
+              {formatPrice(project.total)} грн
+            </p>
           </div>
-          <div className={styles.item__progres_bar_label}>
-            <Translator>totalAmount</Translator>
-          </div>
-        </div>
-        <div className={styles.item__progres_bar_inner}>
-          <div className={styles.item__progres_bar_money}>
-            {formatPrice(project.fundsRaised)} грн
-          </div>
-          <div className={styles.item__progres_bar_money}>
-            {formatPrice(project.total)} грн
+          <div className={styles.item__progres_bar_inner}>
+            <p className={styles.item__progres_bar_label}>
+              <Translator>totalAmount</Translator>
+            </p>
+            <p className={styles.item__progres_bar_money}>
+              {formatPrice(project.fundsRaised)} грн
+            </p>
           </div>
         </div>
       </div>
@@ -74,7 +76,7 @@ const SingleProject = async ({ project }: ProjectProps) => {
       >
         <Translator>supportUs</Translator>
       </Button>
-    </div>
+    </li>
   );
 };
 

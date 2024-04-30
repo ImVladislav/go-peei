@@ -1,20 +1,23 @@
 @import "../../../../styles/utils/variables";
 .section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media screen and (min-width: 1440px) {
-    display: inline-block;
-  }
 }
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 12px;
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    justify-content: center;
     gap: 32px;
+    align-items: start;
+  }
+}
+.firstList {
+  display: flex;
+  gap: 16px;
+  @media screen and (min-width: 1024px) {
+    gap: 24px;
   }
 }
 .first_card {
@@ -25,6 +28,13 @@
   padding: 12px;
   width: 320px;
   gap: 12px;
+  @media screen and (min-width: 768px) {
+    border-radius: 10px;
+    width: 336px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 440px;
+  }
   @media screen and (min-width: 1440px) {
     padding: 12px;
     display: flex;
@@ -43,13 +53,14 @@
     width: 100%;
     height: 214px;
     border-radius: 10px;
+    overflow: hidden;
     @media screen and (min-width: 1440px) {
       width: 742px;
       height: 534px;
     }
   }
   &__img {
-    object-fit: contain;
+    object-fit: cover;
   }
   &__title_link {
     color: $main-black;
@@ -59,13 +70,12 @@
     }
   }
   &__title {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
     text-transform: uppercase;
 
-    @media screen and (min-width: 1440px) {
-      font-weight: 600;
+    @media screen and (min-width: 1024px) {
       font-size: 18px;
     }
   }
@@ -86,11 +96,27 @@
     color: $main-grey;
   }
 }
-
+.first_card:last-child {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
+}
+.last_cards {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 1440px) {
+    display: block;
+  }
+}
 .list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   @media screen and (min-width: 1440px) {
     gap: 12px;
   }
@@ -130,9 +156,9 @@
     overflow: hidden;
     width: 100%;
     height: 75px;
-    border-radius: 10px;
+    border-radius: 4px;
     @media screen and (min-width: 1440px) {
-      height: 193px;
+      height: 214px;
     }
   }
   &__img {
@@ -163,34 +189,43 @@
   }
   &__data {
     font-weight: 300;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
     color: $main-grey;
+    @media screen and (min-width: 1440px) {
+      font-size: 16px;
+    }
   }
 }
 .box {
   margin-top: 24px;
   text-align: center;
-
+  @media screen and (min-width: 768px) {
+    margin-top: 32px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: 48px;
+    text-align: center;
+    margin-bottom: 4px;
+  }
   &__link {
+    display: inline-block;
     font-weight: 300;
     font-size: 16px;
     line-height: 1;
     text-align: center;
     color: $main-black;
     border-bottom: 1px solid $main-black;
-    padding: 12px;
+    padding: 14px 12px;
 
     &:hover,
     &:focus {
       border-bottom: 2px solid $green-hover;
     }
-  }
-  @media screen and (min-width: 1440px) {
-    margin-top: 48px;
-    text-align: center;
-
-    &__link {
+    @media screen and (min-width: 1024px) {
       font-size: 20px;
       padding: 12px;
     }

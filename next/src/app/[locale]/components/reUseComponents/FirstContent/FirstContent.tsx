@@ -33,7 +33,7 @@ const FirstContent = ({ imgSrc, imgStyle, title, list }: reUseContentItem) => {
             <Button
               newStyles={styles.btn}
               isLink
-              href="/supportVolonter/newVolonter"
+              href="/support/volonter/newVolonter"
             >
               <Translator>joinTheTeam</Translator>
             </Button>

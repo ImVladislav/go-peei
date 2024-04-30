@@ -6,8 +6,7 @@ import logo from "../../../../../public/logo/logoENG.svg";
 
 import styles from "./logo.module.scss";
 
-const Logo = ({ locale }: any) => {
-  // console.log(locale);
+const Logo = ({ locale }: { locale: string }) => {
   return (
     <Link className={styles.img_wrap} href="/">
       {locale === "en" ? (

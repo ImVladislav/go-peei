@@ -19,11 +19,14 @@
 		height: 100%;
 		border: none;
 		border-radius: 10px;
-		min-width: 336px;
+		width: calc((100% - 16px) / 2);
 		height: 367px;
 	}
 	@media screen and (min-width: 1024px) {
-		width: 440px;
+		width: calc((100% - 24px) / 2);
+	}
+	@media screen and (min-width: 1440px) {
+		width: calc((100% - 80px) / 3);
 	}
 	&__wrap {
 		display: flex;

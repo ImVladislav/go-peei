@@ -1,22 +1,10 @@
 @import '../../../../styles/utils/_variables.scss';
 
 .section {
-	&.desktop {
-		display: none;
-	}
-	&.mobile {
-		display: block;
-		margin-top: 45px;
-	}
+	margin-top: 45px;
 
 	@media screen and (min-width: 768px) {
 		margin-top: 80px;
-		&.mobile {
-			display: none;
-		}
-		&.desktop {
-			display: block;
-		}
 	}
 	@media screen and (min-width: 1024px) {
 		margin-top: 100px;
@@ -72,16 +60,45 @@
 
 .news {
 	&__list {
-		margin-bottom: 20px;
+		&.mobile {
+			display: block;
+			margin-bottom: 20px;
+		}
+		&.tablet {
+			display: none;
+		}
+		&.desktop {
+			display: none;
+		}
 		@media screen and (min-width: 768px) {
-			display: flex;
-			gap: 16px;
+			&.mobile {
+				display: none;
+			}
+			&.tablet {
+				display: block;
+				display: flex;
+				gap: 16px;
+				margin-bottom: 32px;
+			}
+			&.desktop {
+				display: none;
+			}
 		}
 		@media screen and (min-width: 1024px) {
-			gap: 24px;
+			&.tablet {
+				gap: 24px;
+			}
 		}
 		@media screen and (min-width: 1440px) {
-			gap: 40px;
+			&.tablet {
+				display: none;
+			}
+			&.desktop {
+				display: block;
+				display: flex;
+				gap: 40px;
+				margin-bottom: 48px;
+			}
 		}
 	}
 }
@@ -90,9 +107,6 @@
 	&__box {
 		margin: 24px 0px 24px 0px;
 		text-align: center;
-		@media screen and (min-width: 768px) {
-			display: none;
-		}
 	}
 	&__link {
 		font-weight: 300;
@@ -102,6 +116,9 @@
 		color: $main-black;
 		border-bottom: 1px solid $main-black;
 		padding: 12px;
+		@media screen and (min-width: 1024px) {
+			font-size: 20px;
+		}
 
 		&:hover,
 		&:focus {

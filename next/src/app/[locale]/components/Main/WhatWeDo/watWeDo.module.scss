@@ -1,65 +1,108 @@
 @import "../../../../styles/utils/variables";
 .section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media screen and (min-width: 1440px) {
-    display: inline-block;
-  }
 }
 
-.img_container {
-  position: relative;
+.imgContent {
   margin-left: -20px;
   margin-right: -20px;
-  width: 360px;
-  height: 381px;
   @media screen and (min-width: 768px) {
-    width: 768px;
-    height: 381px;
-    margin-left: -32px;
-    margin-right: -32px;
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-left: -60px;
+    margin-right: 0;
   }
   @media screen and (min-width: 1440px) {
     margin-left: -80px;
     margin-right: 0;
+  }
+}
+.accentTitle {
+  color: $main-green;
+}
+.img_container {
+  position: relative;
+
+  width: 100%;
+  height: 381px;
+  overflow: hidden;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    height: 832px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 731px;
+    height: 792px;
+  }
+  @media screen and (min-width: 1440px) {
     width: 849px;
     height: 921px;
   }
 }
 .img {
   object-fit: cover;
-  object-position: -250px;
+  object-position: center;
 
-  transform: scaleX(-1);
   @media screen and (min-width: 768px) {
-    object-position: 0px;
+    transform: scaleX(-1);
+  }
+  @media screen and (min-width: 768px) {
+    object-position: left;
   }
   @media screen and (min-width: 1440px) {
     object-position: -700px;
-    transform: scaleX(1);
+    object-position: 0px;
   }
 }
 .text_container {
   position: relative;
   display: flex;
   justify-content: center;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
+    margin-right: -40px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-right: 0;
   }
 }
 .list {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 20px;
   border-radius: 18px;
   padding: 18px 0px 0px;
   background: $main-white;
   width: 320px;
   margin-top: -50px;
+
   @media screen and (min-width: 768px) {
-    width: 700px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 18px 0 0 18px;
+    padding: 28px 40px 28px 28px;
+    width: 470px;
+    height: 717px;
+
+    bottom: 56px;
+    right: 0;
+  }
+  @media screen and (min-width: 1024px) {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-radius: 40px;
+    padding: 40px 0px 40px 40px;
+    width: 673px;
+    height: 736px;
+    background: $main-white;
+
+    bottom: 28px;
+    right: 0;
   }
   @media screen and (min-width: 1440px) {
     position: absolute;
@@ -80,6 +123,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 10px;
+  gap: 8px;
 
   animation: myItem 2s ease 1s 1 alternate backwards;
   &:first-child {
@@ -88,11 +132,16 @@
   &:last-child {
     animation: myItem 2s ease 2s 1 alternate backwards;
   }
-
-  @media screen and (min-width: 1440px) {
-    gap: 20px;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+  @media screen and (min-width: 1024px) {
+    gap: 16px;
     flex-direction: row;
     padding: 0px;
+  }
+  @media screen and (min-width: 1440px) {
+    gap: 20px;
   }
 }
 
@@ -101,8 +150,11 @@
   padding: 0 9px;
 
   gap: 10px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
+    align-items: center;
     padding: 0;
+  }
+  @media screen and (min-width: 1440px) {
   }
 }
 
@@ -110,7 +162,14 @@
   position: relative;
   width: 36px;
   height: 36px;
-
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 80px;
+    height: 81px;
+  }
   @media screen and (min-width: 1440px) {
     width: 92px;
     height: 93px;
@@ -120,17 +179,31 @@
   position: relative;
   min-width: 36px;
   height: 48px;
-
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 58px;
+  }
+  @media screen and (min-width: 1024px) {
     width: 80px;
     height: 115px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 92px;
+    height: 132px;
   }
 }
 .icon_third {
   position: relative;
   min-width: 36px;
   height: 36px;
-
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 36px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 80px;
+    height: 72px;
+  }
   @media screen and (min-width: 1440px) {
     width: 92px;
     height: 82px;
@@ -143,12 +216,12 @@
   gap: 16px;
 }
 .subtitle {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   text-transform: uppercase;
   color: $main-black;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     display: none;
     font-weight: 600;
     font-size: 18px;
@@ -158,7 +231,7 @@
 .subtitle_desktop {
   display: none;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     display: inline-block;
     font-weight: 600;
     font-size: 18px;
@@ -171,15 +244,24 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media screen and (min-width: 1024px) {
+    gap: 12px;
+  }
+  @media screen and (min-width: 1044px) {
+    gap: 16px;
+  }
 }
 .desc {
   font-weight: 300;
   font-size: 16px;
   line-height: 1.5;
-  @media screen and (min-width: 1440px) {
+  color: $main-black;
+  @media screen and (min-width: 1024px) {
     font-size: 18px;
+  }
+  @media screen and (min-width: 1440px) {
     text-align: justify;
-    color: $main-black;
   }
 }
 

@@ -4,14 +4,13 @@ import Image from "next/image";
 import Title from "../../Title/Title";
 
 import { newsItem } from "@/app/types";
-import { getData } from "../../../../../../libs/getData";
 
 import styles from "./news.module.scss";
 import Translator from "../../translator/Translator";
 import { formatDate } from "../../formatDate";
 
-const News = async () => {
-  const data: newsItem[] = await getData("news");
+const News = ({ data }: { data: newsItem[] }) => {
+  const maxLength = 180;
   // const basicNews = data.filter((item) => item.firstNew === true);
   // const otherNews = data.filter((item) => item.firstNew !== true);
 
@@ -22,28 +21,34 @@ const News = async () => {
           <Translator>news</Translator>
         </Title>
         <div className={styles.inner}>
-          <div className={styles.first_card}>
-            <div className={styles.first_card__img_wrap}>
-              <Image
-                className={styles.first_card__img}
-                src={data[0].imageSrc}
-                alt={data[0].title}
-                fill
-              />
-            </div>
-            <Link
-              className={styles.first_card__title_link}
-              href={`/news/${data[0]._id}`}
-            >
-              <h2 className={styles.first_card__title}>{data[0].title}</h2>
-            </Link>
-            <p className={styles.first_card__desc}>{data[0].description}</p>
-            <p className={styles.first_card__data}>
-              {formatDate(data[0].createdAt)}
-            </p>
-          </div>
+          <ul className={styles.firstList}>
+            {data.slice(0, 2).map((item) => (
+              <li className={styles.first_card} key={item._id}>
+                <div className={styles.first_card__img_wrap}>
+                  <Image
+                    className={styles.first_card__img}
+                    src={item.imageSrc}
+                    alt={item.title}
+                    fill
+                  />
+                </div>
+                <Link
+                  className={styles.first_card__title_link}
+                  href={`/news/${item._id}`}
+                >
+                  <h2 className={styles.first_card__title}>{item.title}</h2>
+                </Link>
+                <p className={styles.first_card__desc}>
+                  {item.description.slice(0, maxLength)}...
+                </p>
+                <p className={styles.first_card__data}>
+                  {formatDate(item.createdAt)}
+                </p>
+              </li>
+            ))}
+          </ul>
 
-          <div>
+          <div className={styles.last_cards}>
             <ul className={styles.list}>
               {data.slice(1, 3).map((item) => (
                 <li className={styles.item} key={item._id}>

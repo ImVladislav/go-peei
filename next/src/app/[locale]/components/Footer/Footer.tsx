@@ -12,7 +12,7 @@ import Copyright from "./Copyright/Copyright";
 import styles from "./footer.module.scss";
 import Socials from "./Socials/Socials";
 
-const Footer = ({ locale }: any) => {
+const Footer = ({ locale }: { locale: string }) => {
   const router = useRouter();
   return (
     <div className={styles.section}>

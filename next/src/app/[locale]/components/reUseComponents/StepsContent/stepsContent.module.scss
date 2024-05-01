@@ -1,11 +1,5 @@
 @import "../../../../styles/utils/variables";
 
-.container {
-  padding: -20px;
-  @media screen and (min-width: 1440px) {
-    padding: -80px;
-  }
-}
 .inner {
   display: flex;
   flex-direction: column;
@@ -30,6 +24,12 @@
 }
 .imgContainer {
   margin: 0 -20px;
+  @media screen and (min-width: 768px) {
+    margin: 0 -40px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0 -60px;
+  }
   @media screen and (min-width: 1440px) {
     margin: 0 -80px;
   }
@@ -46,9 +46,6 @@
 }
 .img {
   object-fit: cover;
-  @media screen and (min-width: 1440px) {
-    object-position: 0px -330px;
-  }
 }
 .textContainer {
   position: relative;

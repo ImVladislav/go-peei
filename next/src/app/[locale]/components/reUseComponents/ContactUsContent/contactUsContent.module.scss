@@ -3,6 +3,12 @@
 .container {
   margin: -20px;
   background: $green-30;
+  @media screen and (min-width: 768px) {
+    margin: 0 -40px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0 -60px;
+  }
   @media screen and (min-width: 1440px) {
     margin: 0;
   }
@@ -56,4 +62,10 @@
   margin: 0 auto;
   display: block;
   max-width: 308px;
+  font-size: 16px;
+  padding: 12px 40px;
+  @media screen and (min-width: 1440px) {
+    padding: 16px 40px;
+    font-size: 20px;
+  }
 }

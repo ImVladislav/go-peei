@@ -1,10 +1,11 @@
 import { headerContacts, headerIconsData } from "@/app/constants";
 
-import styles from "./contact.module.scss";
-import Title from "../components/Title/Title";
 import Translator from "../components/translator/Translator";
+import Title from "../components/Title/Title";
 import LinkComponent from "../components/LinkComponent/LinkComponent";
 import FormComponent from "./FormComponent";
+
+import styles from "./contact.module.scss";
 
 const ContactPage = () => {
   return (

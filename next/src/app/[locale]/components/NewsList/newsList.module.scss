@@ -65,6 +65,9 @@
 	background: none;
 	border-bottom: 1px solid $main-black;
 	padding: 12px;
+	@media screen and (min-width: 1024px) {
+		font-size: 20px;
+	}
 
 	&:hover,
 	&:focus {

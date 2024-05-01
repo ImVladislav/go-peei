@@ -1,10 +1,8 @@
 import { newsItem } from '@/app/types'
-import Image from 'next/image'
 import Link from 'next/link'
 import { getData } from '../../../../../../libs/getData'
 import Translator from '../../translator/Translator'
 import SingleNewsItem from './SingleNewsItem'
-import SwiperContainer from './SwiperContainer'
 import styles from './readMore.module.scss'
 
 const ReadMore = async ({
@@ -13,15 +11,21 @@ const ReadMore = async ({
 	currentNewsItemId: string
 }) => {
 	const data: newsItem[] = await getData('news')
+	const showItemsOnTab = data
+		.filter(item => item._id !== currentNewsItemId)
+		.slice(0, 2)
+	const showItemsOnDesktop = data
+		.filter(item => item._id !== currentNewsItemId)
+		.slice(0, 3)
 
 	return (
 		<div className='container'>
-			{/* mobile */}
-			<div className={`${styles.section} ${styles.mobile}`}>
+			<div className={styles.section}>
 				<h3 className={styles.section__title}>
 					<Translator>readAlso</Translator>
 				</h3>
-				<ul className={styles.news__list}>
+				{/* mobile */}
+				<ul className={`${styles.news__list} ${styles.mobile}`}>
 					{data?.map(
 						item =>
 							item._id !== currentNewsItemId && (
@@ -29,28 +33,24 @@ const ReadMore = async ({
 							)
 					)}
 				</ul>
+				{/* tablet */}
+				<ul className={`${styles.news__list} ${styles.tablet}`}>
+					{showItemsOnTab?.map(item => (
+						<SingleNewsItem key={item._id} newsItem={item} />
+					))}
+				</ul>
+				{/* desktop */}
+				<ul className={`${styles.news__list} ${styles.desktop}`}>
+					{showItemsOnDesktop?.map(item => (
+						<SingleNewsItem key={item._id} newsItem={item} />
+					))}
+				</ul>
+
 				<div className={styles.more__box}>
 					<Link href='/news' className={styles.more__link}>
 						<Translator>allNews</Translator>
 					</Link>
 				</div>
-			</div>
-
-			{/* desktop */}
-			<div className={`${styles.section} ${styles.desktop}`}>
-				<h3 className={styles.section__title}>
-					<Translator>readAlso</Translator>
-				</h3>
-
-				<div className={styles.btn_wrap}>
-					<button className={`s-button-prev ${styles.btn}`}>
-						<Image src='/main/icon-next.svg' alt='next' width={8} height={16} />
-					</button>
-					<button className={`s-button-next ${styles.btn}`}>
-						<Image src='/main/icon-prev.svg' alt='prev' width={8} height={16} />
-					</button>
-				</div>
-				<SwiperContainer data={data} currentNewsItemId={currentNewsItemId} />
 			</div>
 		</div>
 	)

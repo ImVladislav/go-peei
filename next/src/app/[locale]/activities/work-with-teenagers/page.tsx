@@ -15,6 +15,7 @@ import styles from "./workWithTeenagers.module.scss";
 
 const firstContentData: reUseContentItem = {
   imgSrc: "/workWithTeenagers/environment-volunteer-teamwork-concept.jpg",
+  imgStyle: styles.img,
   title: "hello",
   list: [
     { description: "joinTheTeamDescFirst" },
@@ -47,6 +48,7 @@ const contactUsContentData: contactUsContentItem = {
 
 const stepsContentData: reUseContentItem = {
   imgSrc: "/workWithTeenagers/young-friends-park.jpg",
+  imgStyle: styles.imgStep,
   title: "stepsTitle",
   subtitle: "steps",
 
@@ -91,6 +93,7 @@ const WorkWithTeenagersPage = () => {
             </Title>
             <FirstContent
               imgSrc={firstContentData.imgSrc}
+              imgStyle={firstContentData.imgStyle}
               title={firstContentData.title}
               list={firstContentData.list}
             />
@@ -104,11 +107,13 @@ const WorkWithTeenagersPage = () => {
             <ContactUsContent
               imgSrc={contactUsContentData.imgSrc}
               imgAlt={contactUsContentData.imgAlt}
+              imgStyle={contactUsContentData.imgStyle}
               list={contactUsContentData.list}
             />
           </div>
           <StepsContent
             imgSrc={stepsContentData.imgSrc}
+            imgStyle={stepsContentData.imgStyle}
             title={stepsContentData.title}
             subtitle={stepsContentData.subtitle}
             list={stepsContentData.list}

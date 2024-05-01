@@ -21,6 +21,13 @@
 
 .imgFirstContent {
   transform: scale(1);
+
+  object-position: bottom;
+
+  @media screen and (min-width: 1440px) {
+    transform: scale(1.2);
+    object-position: 0px -280px;
+  }
 }
 
 .imgListContentFirst {

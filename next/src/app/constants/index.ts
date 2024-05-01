@@ -1,10 +1,10 @@
 import {
   SvgProps,
-  workWithChildrenItem,
+  contactItem,
+  environmentalProtectionItem,
   navLinks,
   socialsItem,
-  environmentalProtectionItem,
-  contactItem,
+  workWithChildrenItem,
 } from "@/app/types";
 
 // NAVIGATION

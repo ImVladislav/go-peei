@@ -14,7 +14,10 @@ const SingleNewsItem = async ({ newsItem, newStyle }: SingleNewsItemProps) => {
 		<>
 			<li key={newsItem._id} className={`${styles.newsItem} ${newStyle}`}>
 				<div className={styles.newsItem__wrap}>
-					<Link href={`/news/${newsItem._id}`}>
+					<Link
+						href={`/news/${newsItem._id}`}
+						className={styles.newsItem__titleLink}
+					>
 						<h3 className={styles.newsItem__title}>{newsItem.title}</h3>
 					</Link>
 					<div className={styles.newsItem__imgBox}>

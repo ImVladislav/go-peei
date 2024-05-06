@@ -26,7 +26,13 @@ const AboutUs = () => {
 			<ul className={styles.list}>
 				{ABOUT_US.map((item, index) => (
 					<li key={index} className={styles.item}>
-						<Image src={item.icon} alt='Icon' width={17} height={30} />
+						<Image
+							src={item.icon}
+							alt='Icon'
+							width={13}
+							height={22}
+							className={styles.item__icon}
+						/>
 						<p className={styles.item__desc}>
 							<Translator>{item.desc}</Translator>
 						</p>

@@ -23,8 +23,8 @@ const Values = () => {
 							<Image
 								src={item.icon}
 								alt='icon'
-								width={20}
-								height={20}
+								width={55}
+								height={48}
 								className={styles.item__icon}
 							/>
 							<p className={styles.item__desc}>

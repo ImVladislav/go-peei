@@ -82,10 +82,12 @@
 	box-shadow: 12px -12px 0 0 $second-green;
 	@media screen and (min-width: 768px) {
 		min-width: 308px;
+		height: 370px;
 		box-shadow: 16px -16px 0 0 $second-green;
 	}
 	@media screen and (min-width: 1024px) {
 		min-width: 392px;
+		height: 352px;
 		box-shadow: 18px -18px 0 0 $second-green;
 	}
 

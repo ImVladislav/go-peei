@@ -4,12 +4,12 @@ export const VALUES = [
 		desc: 'openness',
 	},
 	{
-		icon: '/about/icon-hands.svg',
-		desc: 'trust',
-	},
-	{
 		icon: '/about/icon-up.svg',
 		desc: 'efficiency',
+	},
+	{
+		icon: '/about/icon-hands.svg',
+		desc: 'trust',
 	},
 	{
 		icon: '/about/icon-setting.svg',

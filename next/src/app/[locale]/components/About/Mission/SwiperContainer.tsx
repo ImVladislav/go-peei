@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
-import { Navigation, Pagination } from 'swiper/modules'
-import { Swiper } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
@@ -16,40 +16,37 @@ type MissionItem = {
 const SwiperContainer = ({ data }: { data: MissionItem[] }) => {
 	return (
 		<Swiper
-			slidesPerView={2}
-			spaceBetween={24}
-			navigation={{
-				nextEl: '.s-button-next',
-				prevEl: '.s-button-prev',
-			}}
-			modules={[Pagination, Navigation]}
+			slidesPerView={1.03}
+			grabCursor={true}
+			modules={[Pagination]}
 			breakpoints={{
 				768: {
-					slidesPerView: 2,
+					slidesPerView: 2.2,
+					spaceBetween: 40,
 				},
-				900: {
-					slidesPerView: 2.5,
-				},
-
 				1024: {
-					slidesPerView: 2.5,
+					slidesPerView: 2.3,
+					spaceBetween: 48,
 				},
-				1228: {
-					slidesPerView: 2.7,
+				1200: {
+					slidesPerView: 2.6,
 				},
 				1440: {
 					slidesPerView: 3,
+					spaceBetween: 0,
 				},
 			}}
 			className={`mySwiper ${styles.swiper}`}
 		>
 			{data.map((item, index) => (
-				<li key={index} className={styles.item}>
-					<Image src={item.icon} alt='icon' width={17} height={30} />
-					<p className={styles.item__desc}>
-						<Translator>{item.desc}</Translator>
-					</p>
-				</li>
+				<SwiperSlide className={styles.swiper_slide} key={index}>
+					<li className={styles.item}>
+						<Image src={item.icon} alt='icon' width={17} height={30} />
+						<p className={styles.item__desc}>
+							<Translator>{item.desc}</Translator>
+						</p>
+					</li>
+				</SwiperSlide>
 			))}
 		</Swiper>
 	)

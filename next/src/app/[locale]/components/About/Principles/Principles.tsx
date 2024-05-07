@@ -18,7 +18,7 @@ const Principles = () => {
 			{/* mobile */}
 			<section className={`${styles.section} ${styles.mobile}`}>
 				<Title>
-					<Translator>our</Translator>{' '}
+					<Translator>ours</Translator>{' '}
 					<span className={styles.accentTitle}>
 						{' '}
 						<Translator>principles</Translator>

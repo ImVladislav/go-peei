@@ -1,89 +1,99 @@
-@import "../../../../styles/utils/variables";
+@import '../../../../styles/utils/variables';
 
 .section {
-  &.desktop {
-    display: none;
-  }
-  &.mobile {
-    display: block;
-  }
+	&.desktop {
+		display: none;
+	}
+	&.mobile {
+		display: block;
+	}
 
-  @media screen and (min-width: 1440px) {
-    padding-bottom: 67px;
-    &.mobile {
-      display: none;
-    }
-    &.desktop {
-      display: block;
-    }
-  }
+	@media screen and (min-width: 768px) {
+		&.mobile {
+			display: none;
+		}
+		&.desktop {
+			display: block;
+		}
+	}
 }
 
 .accentTitle {
-  color: $main-green;
+	color: $main-green;
 }
 
-
 .list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	@media screen and (min-width: 768px) {
+		gap: 20px;
+	}
+	@media screen and (min-width: 1024px) {
+		justify-content: center;
+	}
 }
 
 .item {
-  height: 172px;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid $green-50;
-  background: $green-50;
-  @media screen and (min-width: 1440px) {
-    width: 305px;
-    height: 217px;
-  }
+	height: 172px;
+	padding: 20px;
+	border-radius: 10px;
+	border: 1px solid $green-50;
+	background: $green-50;
+	@media screen and (min-width: 768px) {
+		width: calc((100% - 40px) / 2);
+	}
+	@media screen and (min-width: 1024px) {
+		width: calc((100% - 40px) / 3);
+		height: 217px;
+	}
+	@media screen and (min-width: 1440px) {
+		width: 305px;
+		height: 217px;
+	}
 
-  &__top_wrap {
-    display: flex;
-    align-items: center;
-  }
+	&__top_wrap {
+		display: flex;
+		align-items: center;
+	}
 
-  &__title {
-    margin-left: 8px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.5;
-    text-transform: uppercase;
-    @media screen and (min-width: 1440px) {
-      font-size: 18px;
-    }
-  }
+	&__title {
+		margin-left: 8px;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 1.5;
+		text-transform: uppercase;
+		@media screen and (min-width: 1024px) {
+			font-size: 18px;
+		}
+	}
 
-  &__desc {
-    margin-top: 12px;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.5;
-    @media screen and (min-width: 1440px) {
-      font-size: 18px;
-    }
-  }
+	&__desc {
+		margin-top: 12px;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 1.5;
+		@media screen and (min-width: 1024px) {
+			font-size: 18px;
+		}
+	}
 }
 
 .showMoreBtn {
-  display: flex;
-  margin: 0 auto;
-  margin-top: 20px;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1;
-  /* text-align: center; */
-  color: $main-black;
-  border: none;
-  background: none;
-  border-bottom: 1px solid $main-black;
-  padding: 12px;
+	display: flex;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1;
+	color: $main-black;
+	border: none;
+	background: none;
+	border-bottom: 1px solid $main-black;
+	padding: 12px;
 
-  &:hover,
-  &:focus {
-    border-bottom: 2px solid $green-hover;
-  }
+	&:hover,
+	&:focus {
+		border-bottom: 2px solid $green-hover;
+	}
 }

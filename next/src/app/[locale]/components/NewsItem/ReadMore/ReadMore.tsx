@@ -11,7 +11,7 @@ const ReadMore = async ({
 	currentNewsItemId: string
 }) => {
 	const data: newsItem[] = await getData('news')
-	const showItemsOnTab = data
+	const showItemsOnMob = data
 		.filter(item => item._id !== currentNewsItemId)
 		.slice(0, 2)
 	const showItemsOnDesktop = data
@@ -26,18 +26,12 @@ const ReadMore = async ({
 				</h3>
 				{/* mobile */}
 				<ul className={`${styles.news__list} ${styles.mobile}`}>
-					{data?.map(
+					{showItemsOnMob?.map(
 						item =>
 							item._id !== currentNewsItemId && (
 								<SingleNewsItem key={item._id} newsItem={item} />
 							)
 					)}
-				</ul>
-				{/* tablet */}
-				<ul className={`${styles.news__list} ${styles.tablet}`}>
-					{showItemsOnTab?.map(item => (
-						<SingleNewsItem key={item._id} newsItem={item} />
-					))}
 				</ul>
 				{/* desktop */}
 				<ul className={`${styles.news__list} ${styles.desktop}`}>

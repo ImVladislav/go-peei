@@ -1,5 +1,22 @@
 @import '../../../../styles/utils/_variables.scss';
 
+.section {
+	&.mobile {
+		display: block;
+	}
+	&.desktop {
+		display: none;
+	}
+	@media screen and (min-width: 768px) {
+		&.mobile {
+			display: none;
+		}
+		&.desktop {
+			display: block;
+		}
+	}
+}
+
 .accentTitle {
 	color: $main-green;
 }
@@ -8,6 +25,7 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	margin-bottom: 40px;
 	width: 100%;
 	padding: 24px 26px;
 	border-radius: 18px;
@@ -16,10 +34,12 @@
 		flex-direction: row;
 		margin: 0 auto;
 		padding: 24px;
+		margin-bottom: 52px;
 		border-radius: 10px;
 	}
 	@media screen and (min-width: 1024px) {
 		padding: 32px;
+		margin-bottom: 64px;
 	}
 	@media screen and (min-width: 1440px) {
 		width: 1087px;
@@ -55,38 +75,23 @@
 	align-items: center;
 	flex-direction: column;
 	gap: 32px;
-	margin-top: 40px;
-	@media screen and (min-width: 768px) {
-		display: flex;
-		align-items: center;
-		flex-direction: row;
-		gap: 40px;
-		margin-top: 52px;
-	}
-	@media screen and (min-width: 1024px) {
-		gap: 48px;
-		margin-top: 64px;
-	}
-	@media screen and (min-width: 1440px) {
-		gap: 52px;
-	}
 }
 
 .item {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 308px;
 	padding: 20px;
 	border: 1px solid $focus-green;
 	border-radius: 10px;
 	box-shadow: 12px -12px 0 0 $second-green;
 	@media screen and (min-width: 768px) {
-		min-width: 308px;
 		height: 370px;
 		box-shadow: 16px -16px 0 0 $second-green;
 	}
 	@media screen and (min-width: 1024px) {
-		min-width: 392px;
+		width: 392px;
 		height: 352px;
 		box-shadow: 18px -18px 0 0 $second-green;
 	}

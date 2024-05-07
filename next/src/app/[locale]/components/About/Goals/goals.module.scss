@@ -47,7 +47,7 @@
 		width: 83px;
 		height: 146px;
 		bottom: 10px;
-		right: 0;
+		right: 3px;
 		z-index: -1;
 	}
 
@@ -141,6 +141,7 @@
 	}
 
 	&__title {
+		width: 264px;
 		margin-bottom: 12px;
 		font-weight: 600;
 		font-size: 16px;

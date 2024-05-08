@@ -21,7 +21,7 @@ const ContactPage = () => {
             </Title>
             <ul className={styles.list}>
               {headerContacts.map((item) => (
-                <li className={styles.item}>
+                <li className={styles.item} key={item.name}>
                   <LinkComponent
                     iconsData={headerIconsData}
                     isVisible

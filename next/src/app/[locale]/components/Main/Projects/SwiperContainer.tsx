@@ -10,7 +10,13 @@ import { projectsItem } from "@/app/types";
 import styles from "./projects.module.scss";
 import SingleProject from "./SingleProject";
 
-const SwiperContainer = ({ data }: { data: projectsItem[] }) => {
+const SwiperContainer = ({
+  data,
+  locale,
+}: {
+  data: projectsItem[];
+  locale: string;
+}) => {
   return (
     <Swiper
       slidesPerView={1}
@@ -49,7 +55,7 @@ const SwiperContainer = ({ data }: { data: projectsItem[] }) => {
     >
       {data?.slice(0, 3).map((item) => (
         <SwiperSlide className={styles.swiper_slide} key={item._id}>
-          <SingleProject key={item._id} project={item} />
+          <SingleProject key={item._id} project={item} locale={locale} />
         </SwiperSlide>
       ))}
     </Swiper>

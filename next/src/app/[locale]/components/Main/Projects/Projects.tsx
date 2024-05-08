@@ -8,7 +8,13 @@ import Translator from "../../translator/Translator";
 
 import styles from "./projects.module.scss";
 
-const Projects = ({ data }: { data: projectsItem[] }) => {
+const Projects = ({
+  data,
+  locale,
+}: {
+  data: projectsItem[];
+  locale: string;
+}) => {
   return (
     <section className={styles.section}>
       <div className="container">
@@ -21,7 +27,7 @@ const Projects = ({ data }: { data: projectsItem[] }) => {
 
         <ul className={styles.list}>
           {data.slice(0, 3).map((item) => (
-            <SingleProject key={item._id} project={item} />
+            <SingleProject key={item._id} project={item} locale={locale} />
           ))}
         </ul>
 

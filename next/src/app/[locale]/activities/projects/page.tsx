@@ -8,7 +8,9 @@ import Button from "../../components/Button/Button";
 import styles from "./projects.module.scss";
 import Translator from "../../components/translator/Translator";
 
-const ProjectsPage = async () => {
+const ProjectsPage = async ({ params }: { params: { locale: string } }) => {
+  const { locale } = params;
+
   const data: projectsItem[] = await getData("projects");
 
   const maxLength = 100;
@@ -52,10 +54,15 @@ const ProjectsPage = async () => {
                     />
                   </div>
 
-                  <h3 className={styles.item__title}>{project.title}</h3>
+                  <h3 className={styles.item__title}>
+                    {locale == "uk" ? project.title : project.titleEn}
+                  </h3>
 
                   <p className={styles.item__desc}>
-                    {project.description.slice(0, maxLength)}...
+                    {locale === "uk"
+                      ? project.description.slice(0, maxLength)
+                      : project.descriptionEn?.slice(0, maxLength)}
+                    ...
                   </p>
                 </div>
                 <div className={styles.item__box}>
@@ -72,10 +79,10 @@ const ProjectsPage = async () => {
                   </div>
                   <div className={styles.item__progres_bar_inner}>
                     <div className={styles.item__progres_bar_label}>
-                      Зібрано
+                      <Translator>collected</Translator>
                     </div>
                     <div className={styles.item__progres_bar_label}>
-                      Загальна сума
+                      <Translator>totalAmount</Translator>
                     </div>
                   </div>
                   <div className={styles.item__progres_bar_inner}>
@@ -93,7 +100,7 @@ const ProjectsPage = async () => {
                   isLink
                   href={`/activities/projects/${project._id}`}
                 >
-                  Підтримати нас
+                  <Translator>supportUs</Translator>
                 </Button>
               </li>
             ))}

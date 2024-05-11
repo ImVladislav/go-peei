@@ -9,7 +9,7 @@ import styles from "./news.module.scss";
 import Translator from "../../translator/Translator";
 import { formatDate } from "../../formatDate";
 
-const News = ({ data }: { data: newsItem[] }) => {
+const News = ({ data, locale }: { data: newsItem[]; locale: string }) => {
   const maxLength = 180;
   // const basicNews = data.filter((item) => item.firstNew === true);
   // const otherNews = data.filter((item) => item.firstNew !== true);
@@ -36,10 +36,15 @@ const News = ({ data }: { data: newsItem[] }) => {
                   className={styles.first_card__title_link}
                   href={`/news/${item._id}`}
                 >
-                  <h2 className={styles.first_card__title}>{item.title}</h2>
+                  <h2 className={styles.first_card__title}>
+                    {locale === "uk" ? item.title : item.titleEn}
+                  </h2>
                 </Link>
                 <p className={styles.first_card__desc}>
-                  {item.description.slice(0, maxLength)}...
+                  {locale === "uk"
+                    ? item.description.slice(0, maxLength)
+                    : item.descriptionEn?.slice(0, maxLength)}
+                  ...
                 </p>
                 <p className={styles.first_card__data}>
                   {formatDate(item.createdAt)}
@@ -65,7 +70,9 @@ const News = ({ data }: { data: newsItem[] }) => {
                       className={styles.item__title_link}
                       href={`/news/${item._id}`}
                     >
-                      <h2 className={styles.item__title}>{item.title}</h2>
+                      <h2 className={styles.item__title}>
+                        {locale === "uk" ? item.title : item.titleEn}
+                      </h2>
                     </Link>
                   </div>
                   <p className={styles.item__data}>

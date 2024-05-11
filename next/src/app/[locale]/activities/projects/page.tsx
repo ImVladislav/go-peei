@@ -6,6 +6,7 @@ import Title from "../../components/Title/Title";
 import Button from "../../components/Button/Button";
 
 import styles from "./projects.module.scss";
+import Translator from "../../components/translator/Translator";
 
 const ProjectsPage = async () => {
   const data: projectsItem[] = await getData("projects");
@@ -25,9 +26,14 @@ const ProjectsPage = async () => {
   return (
     <div className="container">
       <section className={styles.section}>
-        <Title>Благодійні акції</Title>
+        <Title>
+          <Translator>charityActionsFirst</Translator>
+          <span className={styles.accentTitle}>
+            <Translator>charityActionsSecond</Translator>
+          </span>
+        </Title>
 
-        <div className={styles.inner}>
+        {/* <div className={styles.inner}>
           <ul className={styles.list}>
             {data?.map((project) => (
               <li className={styles.item} key={project._id}>
@@ -92,7 +98,7 @@ const ProjectsPage = async () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </section>
     </div>
   );

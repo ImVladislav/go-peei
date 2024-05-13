@@ -42,7 +42,7 @@
     "src/app/[locale]/supportVolonter/page.jsx",
     "src/app/[locale]/not-found.jsx",
     "libs/db.js"
-, "src/app/[locale]/components/Header/Navbar.jsx"  ],
+, "src/app/[locale]/components/Header/Navbar.jsx", ".next/types/app/api/auth/[...nextauth]/route.ts"  ],
 
   "exclude": ["node_modules"]
 }

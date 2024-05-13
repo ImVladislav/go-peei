@@ -22,7 +22,10 @@ const Register = () => {
     }
     try {
       setPending(true);
+<<<<<<< Updated upstream
       // const res = await fetch("http://localhost:3000/api/register", {
+=======
+>>>>>>> Stashed changes
       const res = await fetch("https://peei.org.ua/api/register", {
         method: "POST",
         headers: {

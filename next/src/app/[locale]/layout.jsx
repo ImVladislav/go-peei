@@ -6,9 +6,12 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 import "@/app/styles/index.scss";
-// import ExampleClientComponent from "../../../components/ExampleClientComponent";
 import TranslationsProvider from "../../../components/TranslationsProvider";
 import initTranslations from "../i18n";
+
+import { getServerSession } from "next-auth";
+import SessionProvider from "../SessionProvider";
+
 const exo = Exo_2({ subsets: ["latin"] });
 
 export const metadata = {
@@ -24,7 +27,7 @@ export default async function RootLayout({ children, params: { locale } }) {
   const i18nNamespaces = ["home", "navbar", "financial", "translation"];
 
   const { resources } = await initTranslations(locale, i18nNamespaces);
-
+  const session = await getServerSession();
   return (
     <TranslationsProvider
       namespaces={i18nNamespaces}
@@ -33,12 +36,14 @@ export default async function RootLayout({ children, params: { locale } }) {
     >
       <html lang={locale} dir={dir(locale)}>
         <body className={exo.className} suppressHydrationWarning={true}>
-          <div className="wrapper">
-            <Header locale={locale} />
-            <main>{children}</main>
-            <Footer locale={locale} />
-          </div>
-          <div id="modal-root"></div>
+          <SessionProvider session={session}>
+            <div className="wrapper">
+              <Header locale={locale} />
+              <main>{children}</main>
+              <Footer locale={locale} />
+            </div>
+            <div id="modal-root"></div>
+          </SessionProvider>
         </body>
       </html>
     </TranslationsProvider>

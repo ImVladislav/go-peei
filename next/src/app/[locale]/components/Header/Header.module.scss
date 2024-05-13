@@ -82,36 +82,13 @@
   margin-left: 60px;
   justify-content: space-between;
 }
-// .header__contact__socialBlock {
-//   display: "flex";
-// }
-// .social-icon {
-//   width: 30px;
-//   height: 30px;
-
-//   &:hover {
-//     fill: green;
-//     color: green;
-//   }
-// }
-
-// .header__social {
-//   width: 216px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// }
-// .header__contactLink {
-//   display: flex;
-//   align-items: center;
-//   margin-left: 20px;
-//   font-size: 20px;
-// }
-// .header__contactIcon {
-//   margin: "0px, 4px";
-//   width: 24px;
-// }
-
+.header__logout {
+  background-color: transparent;
+  border: none;
+  @media screen and (max-width: 1240px) {
+    display: none;
+  }
+}
 .header__langChangContainer {
   display: none;
   @media screen and (min-width: 1240px) {
@@ -149,20 +126,9 @@
   transform: rotate(180deg);
   transition: transform 0.8s;
 
-  stroke: green; /* Додайте цей рядок, щоб змінити колір на зелений */
-  // transform: scale(1.1); /* Збільшити розмір на 10% при ховері */
-  // fill: red;
+  stroke: green;
 }
 
-// .menuBtnSvg {
-//   fill: red;
-//   :hover {
-//     fill: green;
-//   }
-//   // transform: rotate(180deg);
-//   // stroke: red;
-//   // transition: transform 0.5s;
-// }
 
 .nav__item {
   display: flex;
@@ -309,6 +275,10 @@ s.contactLink {
   // transform: scale(1.1); /* Збільшити розмір на 10% при ховері */
   fill: red;
   color: red;
+}
+.nav__logoutMobile {
+  background-color: transparent;
+  border: none;
 }
 //=======================SocialLinks========================
 .socials__List {

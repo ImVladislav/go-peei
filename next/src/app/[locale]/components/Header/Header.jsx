@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Navbar from "./Navbar";
 import Link from "next/link";
 import s from "./Header.module.scss";
@@ -11,12 +12,12 @@ import {
   iconsData,
   headerIconsData,
 } from "@/app/constants/index";
-import { useTranslation } from "react-i18next";
 import logoUA from "../../../../../public/logo/logoUA.svg";
 import logoENG from "../../../../../public/logo/logoENG.svg";
+import { signOut, useSession } from "next-auth/react";
+import logoutSVG from "../../../../../public/logout.svg";
 export default function Header({ locale }) {
-  const { t } = useTranslation();
-  console.log("locale", locale);
+  const { data: session } = useSession();
   return (
     <>
       <div className={s.header__contact}>
@@ -47,6 +48,21 @@ export default function Header({ locale }) {
             />
           </Link>
           <Navbar />
+          {!session ? (
+            <></>
+          ) : (
+            <>
+              {session.user?.email}
+              <button
+                className={s.header__logout}
+                onClick={() => {
+                  signOut();
+                }}
+              >
+                <Image src={logoutSVG} width={20} height={20} alt="Logout" />
+              </button>
+            </>
+          )}
           <div className={s.header__langChangContainer}>
             <LanguageChanger />
           </div>

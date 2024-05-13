@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/scss'
-import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import Translator from '../../translator/Translator'
 import styles from './mission.module.scss'
@@ -19,10 +18,10 @@ const SwiperContainer = ({ data }: { data: MissionItem[] }) => {
 			slidesPerView={1.03}
 			grabCursor={true}
 			modules={[Pagination]}
+			spaceBetween={40}
 			breakpoints={{
 				768: {
 					slidesPerView: 2.2,
-					spaceBetween: 40,
 				},
 				1024: {
 					slidesPerView: 2.3,
@@ -40,12 +39,12 @@ const SwiperContainer = ({ data }: { data: MissionItem[] }) => {
 		>
 			{data.map((item, index) => (
 				<SwiperSlide className={styles.swiper_slide} key={index}>
-					<li className={styles.item}>
+					<div className={styles.item}>
 						<Image src={item.icon} alt='icon' width={17} height={30} />
 						<p className={styles.item__desc}>
 							<Translator>{item.desc}</Translator>
 						</p>
-					</li>
+					</div>
 				</SwiperSlide>
 			))}
 		</Swiper>

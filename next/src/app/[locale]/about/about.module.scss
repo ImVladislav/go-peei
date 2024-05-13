@@ -28,11 +28,12 @@
 		height: 392px;
 	}
 	@media screen and (min-width: 1440px) {
+		margin: 0 auto;
 		width: 1440px;
 		height: 549px;
 	}
 }
 .img {
 	object-fit: cover;
-	object-position: center;
+	object-position: center top;
 }

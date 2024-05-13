@@ -12,12 +12,14 @@ const Mission = () => {
 		<>
 			{/* mobile */}
 			<section className={`${styles.section} ${styles.mobile}`}>
-				<Title>
-					<Translator>mission</Translator>{' '}
-					<span className={styles.accentTitle}>
-						<Translator>organizations</Translator>
-					</span>
-				</Title>
+				<div className='container'>
+					<Title>
+						<Translator>mission</Translator>{' '}
+						<span className={styles.accentTitle}>
+							<Translator>organizations</Translator>
+						</span>
+					</Title>
+				</div>
 				<div className={styles.top_content}>
 					<Image
 						src='/about/treee.svg'
@@ -30,38 +32,42 @@ const Mission = () => {
 						<Translator>missionPrimaryText</Translator>
 					</p>
 				</div>
-				<ul className={styles.list}>
-					{MISSION.map((item, index) => (
-						<li key={index} className={styles.item}>
-							<Image src={item.icon} alt='icon' width={17} height={30} />
-							<p className={styles.item__desc}>
-								<Translator>{item.desc}</Translator>
-							</p>
-						</li>
-					))}
-				</ul>
+				<div className='container'>
+					<ul className={styles.list}>
+						{MISSION.map((item, index) => (
+							<li key={index} className={styles.item}>
+								<Image src={item.icon} alt='icon' width={17} height={30} />
+								<p className={styles.item__desc}>
+									<Translator>{item.desc}</Translator>
+								</p>
+							</li>
+						))}
+					</ul>
+				</div>
 			</section>
 			{/* desktop */}
 			<section className={`${styles.section} ${styles.desktop}`}>
-				<Title>
-					<Translator>mission</Translator>{' '}
-					<span className={styles.accentTitle}>
-						<Translator>organizations</Translator>
-					</span>
-				</Title>
-				<div className={styles.top_content}>
-					<Image
-						src='/about/treee.svg'
-						alt='tree'
-						width={52}
-						height={58}
-						className={styles.top_content__icon}
-					/>
-					<p className={styles.top_content__text}>
-						<Translator>missionPrimaryText</Translator>
-					</p>
+				<div className='container'>
+					<Title>
+						<Translator>mission</Translator>{' '}
+						<span className={styles.accentTitle}>
+							<Translator>organizations</Translator>
+						</span>
+					</Title>
+					<div className={styles.top_content}>
+						<Image
+							src='/about/treee.svg'
+							alt='tree'
+							width={52}
+							height={58}
+							className={styles.top_content__icon}
+						/>
+						<p className={styles.top_content__text}>
+							<Translator>missionPrimaryText</Translator>
+						</p>
+					</div>
+					<SwiperContainer data={MISSION} />
 				</div>
-				<SwiperContainer data={MISSION} />
 			</section>
 		</>
 	)

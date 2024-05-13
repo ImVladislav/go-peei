@@ -9,13 +9,15 @@ import styles from './values.module.scss'
 const Values = () => {
 	return (
 		<section className={styles.section}>
-			<Title>
-				<Translator>ours</Translator>
-				<span className={styles.accentTitle}>
-					{' '}
-					<Translator>values</Translator>
-				</span>
-			</Title>
+			<div className='container'>
+				<Title>
+					<Translator>ours</Translator>
+					<span className={styles.accentTitle}>
+						{' '}
+						<Translator>values</Translator>
+					</span>
+				</Title>
+			</div>
 			<div className={styles.parallax}>
 				<ul className={styles.list}>
 					{VALUES.map((item, index) => (

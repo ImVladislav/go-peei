@@ -17,61 +17,78 @@ const Principles = () => {
 		<>
 			{/* mobile */}
 			<section className={`${styles.section} ${styles.mobile}`}>
-				<Title>
-					<Translator>ours</Translator>{' '}
-					<span className={styles.accentTitle}>
-						{' '}
-						<Translator>principles</Translator>
-					</span>
-				</Title>
-				<ul className={styles.list}>
-					{PRINCIPLES.slice(0, showMore ? PRINCIPLES.length : 3).map(item => (
-						<li key={item.id} className={styles.item}>
-							<div className={styles.item__top_wrap}>
-								<Image src={item.icon} alt='checkmark' width={24} height={24} />
-								<h3 className={styles.item__title}>
-									<Translator>{item.title}</Translator>
-								</h3>
-							</div>
-							<p className={styles.item__desc}>
-								<Translator>{item.desc}</Translator>
-							</p>
-						</li>
-					))}
-				</ul>
-				{PRINCIPLES.length > 3 && (
-					<button onClick={handleToggleShowMore} className={styles.showMoreBtn}>
-						<Translator>
-							{showMore ? 'buttonHide' : 'buttonShowMore'}
-						</Translator>
-					</button>
-				)}
+				<div className='container'>
+					<Title>
+						<Translator>ours</Translator>{' '}
+						<span className={styles.accentTitle}>
+							{' '}
+							<Translator>principles</Translator>
+						</span>
+					</Title>
+					<ul className={styles.list}>
+						{PRINCIPLES.slice(0, showMore ? PRINCIPLES.length : 3).map(item => (
+							<li key={item.id} className={styles.item}>
+								<div className={styles.item__top_wrap}>
+									<Image
+										src={item.icon}
+										alt='checkmark'
+										width={24}
+										height={24}
+									/>
+									<h3 className={styles.item__title}>
+										<Translator>{item.title}</Translator>
+									</h3>
+								</div>
+								<p className={styles.item__desc}>
+									<Translator>{item.desc}</Translator>
+								</p>
+							</li>
+						))}
+					</ul>
+					{PRINCIPLES.length > 3 && (
+						<button
+							onClick={handleToggleShowMore}
+							className={styles.showMoreBtn}
+						>
+							<Translator>
+								{showMore ? 'buttonHide' : 'buttonShowMore'}
+							</Translator>
+						</button>
+					)}
+				</div>
 			</section>
 
 			{/* desktop */}
 			<section className={`${styles.section} ${styles.desktop}`}>
-				<Title>
-					<Translator>our</Translator>{' '}
-					<span className={styles.accentTitle}>
-						{' '}
-						<Translator>principles</Translator>
-					</span>
-				</Title>
-				<ul className={styles.list}>
-					{PRINCIPLES.map(item => (
-						<li key={item.id} className={styles.item}>
-							<div className={styles.item__top_wrap}>
-								<Image src={item.icon} alt='checkmark' width={24} height={24} />
-								<h3 className={styles.item__title}>
-									<Translator>{item.title}</Translator>
-								</h3>
-							</div>
-							<p className={styles.item__desc}>
-								<Translator>{item.desc}</Translator>
-							</p>
-						</li>
-					))}
-				</ul>
+				<div className='container'>
+					<Title>
+						<Translator>ours</Translator>{' '}
+						<span className={styles.accentTitle}>
+							{' '}
+							<Translator>principles</Translator>
+						</span>
+					</Title>
+					<ul className={styles.list}>
+						{PRINCIPLES.map(item => (
+							<li key={item.id} className={styles.item}>
+								<div className={styles.item__top_wrap}>
+									<Image
+										src={item.icon}
+										alt='checkmark'
+										width={24}
+										height={24}
+									/>
+									<h3 className={styles.item__title}>
+										<Translator>{item.title}</Translator>
+									</h3>
+								</div>
+								<p className={styles.item__desc}>
+									<Translator>{item.desc}</Translator>
+								</p>
+							</li>
+						))}
+					</ul>
+				</div>
 			</section>
 		</>
 	)

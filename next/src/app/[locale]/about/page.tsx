@@ -8,22 +8,20 @@ import styles from './about.module.scss'
 
 export default async function About() {
 	return (
-		<div className='container'>
-			<div className={styles.wrap}>
-				<AboutUs />
-				<Mission />
-				<Values />
-				<Goals />
-				<div className={styles.imgWrapper}>
-					<Image
-						src='/about/houses.png'
-						alt='background image'
-						fill
-						className={styles.img}
-					/>
-				</div>
-				<Principles />
+		<div className={styles.wrap}>
+			<AboutUs />
+			<Mission />
+			<Values />
+			<Goals />
+			<div className={styles.imgWrapper}>
+				<Image
+					src='/about/houses.png'
+					alt='background image'
+					fill
+					className={styles.img}
+				/>
 			</div>
+			<Principles />
 		</div>
 	)
 }

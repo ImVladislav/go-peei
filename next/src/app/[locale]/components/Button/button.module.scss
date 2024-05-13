@@ -21,10 +21,12 @@
 
 .button {
   font-weight: 300;
+
   line-height: 1;
   text-align: center;
   color: $main-white;
   border-radius: 40px 0;
+
   background: $main-green;
   border: none;
   &:hover,
@@ -34,6 +36,42 @@
   &.active {
     background: $green-hover;
   }
-  @media screen and (min-width: 1440px) {
+}
+
+/* Button scroll top */
+
+.scrollTopBtn {
+  text-align: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1;
+  border: none;
+  border-radius: 999px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  background: $green-50;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  &:hover,
+  &:focus {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+    background: $green-hover;
   }
+  & > svg {
+    width: 10px;
+    height: 14px;
+  }
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.hide {
+  opacity: 0;
 }

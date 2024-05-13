@@ -7,9 +7,10 @@ import styles from "./projects.module.scss";
 import Translator from "../../translator/Translator";
 interface ProjectProps {
   project: projectsItem;
+  locale: string;
 }
 
-const SingleProject = async ({ project }: ProjectProps) => {
+const SingleProject = async ({ project, locale }: ProjectProps) => {
   const progress = (100 / project.total) * project.fundsRaised;
   const maxLength = 100;
 
@@ -37,10 +38,15 @@ const SingleProject = async ({ project }: ProjectProps) => {
           />
         </div>
 
-        <h3 className={styles.item__title}>{project.title}</h3>
+        <h3 className={styles.item__title}>
+          {locale === "uk" ? project.title : project.titleEn}
+        </h3>
 
         <p className={styles.item__desc}>
-          {project.description.slice(0, maxLength)}...
+          {locale === "uk"
+            ? project.description.slice(0, maxLength)
+            : project.descriptionEn?.slice(0, maxLength)}
+          ...
         </p>
       </div>
       <div className={styles.item__box}>

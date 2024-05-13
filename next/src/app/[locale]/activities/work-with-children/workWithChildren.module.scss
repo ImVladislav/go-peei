@@ -30,6 +30,12 @@
   .imgContent {
     margin-left: -20px;
     margin-bottom: 16px;
+    @media screen and (min-width: 768px) {
+      margin-left: -40px;
+    }
+    @media screen and (min-width: 1024px) {
+      margin-left: -60px;
+    }
     @media screen and (min-width: 1440px) {
       flex: 1;
       margin: 0;
@@ -63,6 +69,12 @@
   .imgContent {
     margin-right: -20px;
     margin-left: 0px;
+    @media screen and (min-width: 768px) {
+      margin-right: -40px;
+    }
+    @media screen and (min-width: 1024px) {
+      margin-right: -60px;
+    }
     @media screen and (min-width: 1440px) {
       flex: 1;
       margin: 0;

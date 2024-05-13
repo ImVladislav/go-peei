@@ -1,15 +1,16 @@
+import { getData } from "../../../libs/getData";
+import { newsItem, projectsItem, reviewsItem } from "../types";
+
 import Hero from "./components/Main/Hero/Hero";
-import WhatWeDo from "./components/Main/WhatWeDo/WhatWeDo";
+import News from "./components/Main/News/News";
 import Projects from "./components/Main/Projects/Projects";
 import Reviews from "./components/Main/Reviews/Reviews";
-import News from "./components/Main/News/News";
-
-import { newsItem, projectsItem, reviewsItem } from "../types";
-import { getData } from "../../../libs/getData";
+import WhatWeDo from "./components/Main/WhatWeDo/WhatWeDo";
 
 import styles from "./main.module.scss";
 
-const Home = async () => {
+const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
+  // console.log(locale);
   const projects: projectsItem[] = await getData("projects");
   const reviews: reviewsItem[] = await getData("reviews");
   const news: newsItem[] = await getData("news");
@@ -18,9 +19,9 @@ const Home = async () => {
     <div className={styles.wrap}>
       <Hero />
       <WhatWeDo />
-      {projects && <Projects data={projects} />}
+      {projects && <Projects data={projects} locale={locale} />}
       {reviews && <Reviews data={reviews} />}
-      {news && <News data={news} />}
+      {news && <News data={news} locale={locale} />}
     </div>
   );
 };

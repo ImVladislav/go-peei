@@ -13,8 +13,10 @@ export type socialsItem = {
 export type projectsItem = {
   _id: string;
   title: string;
+  titleEn?: string;
   imageSrc: string;
   description: string;
+  descriptionEn?: string;
   total: number;
   fundsRaised: number;
 };
@@ -31,7 +33,9 @@ export type reviewsItem = {
 export type newsItem = {
   _id: string;
   title: string;
+  titleEn?: string;
   description: string;
+  descriptionEn?: string;
   imageSrc: string;
   createdAt: string;
   firstNew: boolean;

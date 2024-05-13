@@ -7,9 +7,14 @@ import Button from "@/app/[locale]/components/Button/Button";
 
 import styles from "../projects.module.scss";
 import Title from "@/app/[locale]/components/Title/Title";
+import Translator from "@/app/[locale]/components/translator/Translator";
 
-const ProjectDetails = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+const ProjectDetails = async ({
+  params,
+}: {
+  params: { id: string; locale: string };
+}) => {
+  const { id, locale } = params;
   const data: projectsItem = await getDataId("projects", id);
   return (
     <div className="container">
@@ -27,20 +32,22 @@ const ProjectDetails = async ({ params }: { params: { id: string } }) => {
             height={500}
           />
         </div>
-        <Title> {data.title}</Title>
-        <p className={styles.card__description}>{data.description}</p>
+        <Title>{locale === "uk" ? data.title : data.titleEn}</Title>
         <p className={styles.card__description}>
-          Загальна сума збору: <span> {data.total}</span>
+          {locale === "uk" ? data.description : data.descriptionEn}
         </p>
         <p className={styles.card__description}>
-          Зібрано: <span>{data.fundsRaised}</span>
+          <Translator>totalAmount</Translator>: <span> {data.total}</span>
+        </p>
+        <p className={styles.card__description}>
+          <Translator>collected</Translator>: <span>{data.fundsRaised}</span>
         </p>
         <Button
           newStyles={styles.item__btn}
           isLink
           href="https://payhub.com.ua/#/service/98840"
         >
-          Підтримати нас
+          <Translator>supportUs</Translator>
         </Button>
       </div>
     </div>

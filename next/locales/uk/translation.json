@@ -6,7 +6,8 @@
   "security": " безпека",
   "energy": "енергетична",
   "independence": " незалежність",
-
+  "charityEventsPageFirst": "Благодійні ",
+  "charityEventsPageSecond": "акції",
   "wePromoteSuchIdeas": "Просуваємо такі ",
   "wePromoteSuchIdeasAccent": "ідеї:",
   "preservingTheEnvironment": "Збереження довкілля",
@@ -16,6 +17,8 @@
   "recyclingOfSecondaryRawMaterials": "Переробка вторинної сировини",
   "recyclingOfSecondaryRawMaterialsDesc": "Сучасні технології дозволяють ефективно використовувати вторинну сировину для виробництва нових продуктів, що сприяє зменшенню негативного впливу на навколишнє середовище.",
 
+  "charityActionsFirst": "Благодійні ",
+  "charityActionsSecond": "акції",
   "helpRaiseFunds": "допоможіть зібрати ",
   "helpRaiseFundsAccent": "кошти",
   "collected": "Зібрано",

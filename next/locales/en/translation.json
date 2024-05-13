@@ -7,6 +7,8 @@
   "energy": "energy",
   "independence": " independence",
 
+  "charityEventsPageFirst": "Charity ",
+  "charityEventsPageSecond": "actions",
   "wePromoteSuchIdeas": "We promote such ",
   "wePromoteSuchIdeasAccent": "ideas:",
   "preservingTheEnvironment": "Preserving the environment",
@@ -16,6 +18,9 @@
   "recyclingOfSecondaryRawMaterials": "Recycling of secondary raw materials",
   "recyclingOfSecondaryRawMaterialsDesc": "Modern technologies make it possible to effectively use recycled materials to manufacture new products, which helps reduce the negative impact on the environment. ",
 
+  "charityActionsFirst": "charity ",
+  "charityActionsSecond": "actions",
+  
   "helpRaiseFunds": "help raise ",
   "helpRaiseFundsAccent": "funds",
   "collected": "Collected",

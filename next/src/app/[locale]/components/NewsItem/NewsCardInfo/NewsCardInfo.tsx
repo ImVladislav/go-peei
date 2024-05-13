@@ -9,7 +9,13 @@ import InputLinkNews from "./InputLinkNews/InputLinkNews";
 import SocialsNews from "./SocialsNews/SocialsNews";
 import styles from "./newsCardInfo.module.scss";
 
-const NewsCardInfo: React.FC<{ newsItem: newsItem }> = ({ newsItem }) => {
+const NewsCardInfo = ({
+  newsItem,
+  locale,
+}: {
+  newsItem: newsItem;
+  locale: string;
+}) => {
   const [pageLink, setPageLink] = useState(
     `http://localhost:3000/news/${newsItem._id}`
   );
@@ -28,8 +34,12 @@ const NewsCardInfo: React.FC<{ newsItem: newsItem }> = ({ newsItem }) => {
         </div>
         <div className="container">
           <div className={styles.card__wrapDescription}>
-            <h3 className={styles.card__title}>{newsItem.title}</h3>
-            <p className={styles.card__description}>{newsItem.description}</p>
+            <h3 className={styles.card__title}>
+              {locale === "uk" ? newsItem.title : newsItem.titleEn}
+            </h3>
+            <p className={styles.card__description}>
+              {locale === "uk" ? newsItem.description : newsItem.descriptionEn}
+            </p>
           </div>
           <div className={styles.bottomInfoWrap}>
             {/* box data */}

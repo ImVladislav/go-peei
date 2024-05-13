@@ -7,8 +7,10 @@ import styles from './readMore.module.scss'
 
 const ReadMore = async ({
 	currentNewsItemId,
+	locale,
 }: {
 	currentNewsItemId: string
+	locale: string
 }) => {
 	const data: newsItem[] = await getData('news')
 	const showItemsOnMob = data
@@ -39,7 +41,6 @@ const ReadMore = async ({
 						<SingleNewsItem key={item._id} newsItem={item} />
 					))}
 				</ul>
-
 				<div className={styles.more__box}>
 					<Link href='/news' className={styles.more__link}>
 						<Translator>allNews</Translator>

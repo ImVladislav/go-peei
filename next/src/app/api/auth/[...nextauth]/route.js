@@ -3,7 +3,7 @@ import NextAuth from "next-auth/next";
 import db from "../../../../../libs/db";
 import User from "../../../../../models/UserModel";
 import bcrypt from "bcrypt";
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 
 async function login(credentials) {
   try {
@@ -78,5 +78,8 @@ export const authOptions = {
     },
   },
 };
-const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
+// const handler = NextAuth(authOptions);
+// export { handler as GET, handler as POST };
+
+export const GET = NextAuth(authOptions);
+export const POST = NextAuth(authOptions);

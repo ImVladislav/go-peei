@@ -20,12 +20,13 @@
 
   "charityActionsFirst": "charity ",
   "charityActionsSecond": "actions",
-  
+
   "helpRaiseFunds": "help raise ",
   "helpRaiseFundsAccent": "funds",
   "collected": "Collected",
   "totalAmount": "Total amount",
   "allProjects": "All projects",
+  "projects": "Project ",
 
   "reviews": "Reviews",
   "leaveAReview": "Leave a review",

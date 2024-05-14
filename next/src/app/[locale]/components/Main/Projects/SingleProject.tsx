@@ -39,7 +39,8 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
         </div>
 
         <h3 className={styles.item__title}>
-          {locale === "uk" ? project.title : project.titleEn}
+          <Translator>projects</Translator>"
+          {locale === "uk" ? project.title : project.titleEn}"
         </h3>
 
         <p className={styles.item__desc}>

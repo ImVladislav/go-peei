@@ -31,8 +31,8 @@ COPY webpack.config.js .
 
 # Environment variables must be present at build time
 # https://github.com/vercel/next.js/discussions/14030
-# ARG NEXT_HOST
-# ENV NEXT_HOST=${NEXT_HOST}
+ARG NEXT_HOST
+ENV NEXT_HOST=${NEXT_HOST}
 ARG NEXT_TLS
 ENV NEXT_TLS=${NEXT_TLS}
 ARG DB_CONNECTION_STRING_AT_BUILD

@@ -43,8 +43,7 @@ export const authOptions = {
       async authorize(credentials) {
         try {
           const user = await login(credentials);
-          console.log({ credentials });
-          console.log("this is user=", user);
+
           return user;
         } catch (error) {
           throw new Error("Failed to login");
@@ -57,7 +56,7 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async jwt(token, user) {
+    async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
         token.email = user.email;

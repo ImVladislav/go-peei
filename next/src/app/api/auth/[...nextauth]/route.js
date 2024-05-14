@@ -3,7 +3,7 @@ import NextAuth from "next-auth/next";
 import db from "../../../../../libs/db";
 import User from "../../../../../models/UserModel";
 import bcrypt from "bcrypt";
-// import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 async function login(credentials) {
   try {
@@ -43,7 +43,8 @@ export const authOptions = {
       async authorize(credentials) {
         try {
           const user = await login(credentials);
-
+          // console.log({ credentials });
+          // console.log("this is user=", user);
           return user;
         } catch (error) {
           throw new Error("Failed to login");
@@ -56,7 +57,7 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt(token, user) {
       if (user) {
         token.id = user.id;
         token.email = user.email;
@@ -78,8 +79,7 @@ export const authOptions = {
     },
   },
 };
+export default NextAuth(authOptions);
+
 // const handler = NextAuth(authOptions);
 // export { handler as GET, handler as POST };
-
-export const GET = NextAuth(authOptions);
-export const POST = NextAuth(authOptions);

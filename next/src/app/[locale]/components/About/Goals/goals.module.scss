@@ -102,6 +102,12 @@
 			padding: 0 10px;
 		}
 	}
+	@media screen and (min-width: 1440px) {
+		.list,
+		.desc_wrap {
+			padding: 0 26px;
+		}
+	}
 }
 
 .item {
@@ -151,8 +157,14 @@
 			color: green;
 			transform: translateX(0);
 			transition: transform 0.3s ease;
-			@media screen and (min-width: 768px) and (max-width: 1023px) {
+			@media screen and (min-width: 768px) {
 				width: 632px;
+			}
+			@media screen and (min-width: 1024px) {
+				width: 386px;
+			}
+			@media screen and (min-width: 1440px) {
+				width: 495px;
 			}
 		}
 

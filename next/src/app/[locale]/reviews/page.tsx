@@ -12,6 +12,7 @@ import ButtonAdd from "../components/Button/ButtonAdd";
 // import ButtonDelete from "../components/Button/ButtonDelete";
 
 import styles from "./reviews.module.scss";
+import React from "react";
 
 const RewiewsPage = async () => {
   const data: reviewsItem[] = await getData("reviews");

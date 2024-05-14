@@ -1,9 +1,9 @@
-import CredentialsProvider from "next-auth/providers/credentials";
+// import CredentialsProvider from "next-auth/providers/credentials";
 import NextAuth from "next-auth/next";
 import db from "../../../../../libs/db";
 import User from "../../../../../models/UserModel";
 import bcrypt from "bcrypt";
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 import { authOptions } from "./authOptions";
 async function login(credentials) {
   try {

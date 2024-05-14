@@ -21,7 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -41,12 +40,13 @@
     "src/app/[locale]/officialDocuments/docs/page.jsx",
     "src/app/[locale]/supportVolonter/page.jsx",
     "src/app/[locale]/not-found.jsx",
-    "libs/db.js"
-<<<<<<< Updated upstream
-, "src/app/[locale]/components/Header/Navbar.jsx", ".next/types/app/api/auth/[...nextauth]/route.ts"  ],
-=======
-, "src/app/[locale]/components/Header/Navbar.jsx", "src/app/[locale]/admin/page.jsx", "src/app/SessionProvider.tsx", "src/middleware.js"  ],
->>>>>>> Stashed changes
-
+    "libs/db.js",
+    "src/app/[locale]/components/Header/Navbar.jsx",
+    ".next/types/app/api/auth/[...nextauth]/route.ts",
+    "src/app/[locale]/components/Header/Navbar.jsx",
+    "src/app/[locale]/admin/page.jsx", 
+    "src/app/SessionProvider.tsx", 
+    "src/middleware.js",
+  ],
   "exclude": ["node_modules"]
 }

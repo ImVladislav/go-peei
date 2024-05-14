@@ -110,4 +110,11 @@
 
 .swiper {
 	padding-top: 18px;
+
+	@media screen and (min-width: 768px) {
+		margin-right: -40px;
+	}
+	@media screen and (min-width: 1024px) and (max-width: 1439px) {
+		margin-right: -60px;
+	}
 }

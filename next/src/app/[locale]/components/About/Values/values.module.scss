@@ -13,6 +13,11 @@
 	}
 }
 
+.sectionWrapper {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
 .accentTitle {
 	color: $main-green;
 }
@@ -24,15 +29,13 @@
 	background-attachment: fixed;
 	background-position: center;
 	height: 140px;
+	margin-top: 58px;
 	@media screen and (min-width: 768px) {
 		height: 214px;
+		margin-top: 0;
 	}
 	@media screen and (min-width: 1024px) {
 		height: 286px;
-	}
-	@media screen and (min-width: 1440px) {
-		margin-left: 80px;
-		margin-right: 80px;
 	}
 }
 

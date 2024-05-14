@@ -1,7 +1,6 @@
 @import '../../../../styles/utils/variables';
 
 .section {
-	position: relative;
 	padding: 60px 0px 0px 0px;
 	@media screen and (min-width: 768px) {
 		padding-top: 80px;
@@ -12,6 +11,12 @@
 	@media screen and (min-width: 1440px) {
 		padding-bottom: 54px;
 	}
+}
+
+.sectionWrapper {
+	position: relative;
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
 .accentTitle {
@@ -44,12 +49,12 @@
 	}
 	@media screen and (min-width: 1024px) {
 		max-width: 557px;
+		text-align: start;
 	}
 	@media screen and (min-width: 1440px) {
 		padding-bottom: 24px;
 		max-width: 813px;
 		font-size: 18px;
-		text-align: justify;
 	}
 }
 
@@ -81,7 +86,7 @@
 		}
 	}
 	@media screen and (min-width: 1024px) {
-		top: 30%;
+		top: 32%;
 		min-width: 438px;
 		height: 517px;
 	}
@@ -94,6 +99,7 @@
 
 .bg_img {
 	object-fit: cover;
+	z-index: -1;
 }
 
 .list {
@@ -147,7 +153,6 @@
 		@media screen and (min-width: 1024px) {
 			margin-left: 16px;
 			font-size: 18px;
-			text-align: justify;
 		}
 	}
 }

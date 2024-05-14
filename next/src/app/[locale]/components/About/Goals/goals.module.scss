@@ -2,6 +2,8 @@
 
 .section {
 	position: relative;
+	max-width: 1440px;
+	margin: 0 auto;
 	&.desktop {
 		display: none;
 	}
@@ -91,6 +93,14 @@
 	@media screen and (min-width: 1024px) {
 		display: flex;
 		justify-content: space-between;
+
+		.list,
+		.desc_wrap {
+			flex: 1;
+			width: 50%;
+			box-sizing: border-box;
+			padding: 0 10px;
+		}
 	}
 }
 
@@ -141,6 +151,9 @@
 			color: green;
 			transform: translateX(0);
 			transition: transform 0.3s ease;
+			@media screen and (min-width: 768px) and (max-width: 1023px) {
+				width: 632px;
+			}
 		}
 
 		&:hover .item__title,
@@ -165,7 +178,7 @@
 		line-height: 1.5;
 		text-transform: uppercase;
 		@media screen and (min-width: 768px) {
-			width: 632px;
+			width: 100%;
 		}
 		@media screen and (min-width: 1024px) {
 			margin-bottom: 16px;

@@ -1,4 +1,21 @@
 import CredentialsProvider from "next-auth/providers/credentials";
+import db from "../../../../../libs/db";
+import User from "../../../../../models/UserModel";
+import bcrypt from "bcrypt";
+
+async function login(credentials) {
+  try {
+    await db.connect();
+    const user = await User.findOne({ email: credentials.email });
+    if (!user) throw new Error("No user found with this email");
+    const isCorrect = await bcrypt.compare(credentials.password, user.password);
+    if (!isCorrect) throw new Error("Password doesn't match");
+    return user;
+  } catch (error) {
+    console.log("Error while logging in:", error);
+  }
+}
+
 export const authOptions = {
   pages: {
     signIn: "/login",

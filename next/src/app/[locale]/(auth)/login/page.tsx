@@ -43,12 +43,12 @@ const Login = () => {
         redirect: false,
       });
 
-      // if (res && res.error) {
-      //   setError("Invalid credentials");
-      //   setPending(false);
+      if (res && res.error) {
+        setError("Invalid credentials");
+        setPending(false);
 
-      //   return;
-      // }
+        return;
+      }
       setPending(false);
 
       router.replace("/");

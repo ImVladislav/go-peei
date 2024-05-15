@@ -1,219 +1,224 @@
-@import '../../../../styles/utils/variables';
+@import "../../../../styles/utils/variables";
 
 .section {
-	position: relative;
-	max-width: 1440px;
-	margin: 0 auto;
-	&.desktop {
-		display: none;
-	}
-	&.mobile {
-		display: block;
-		&::before {
-			content: url('/about/bg-leaf-mob-1.png');
-			display: block;
-			position: absolute;
-			width: 83px;
-			height: 146px;
-			top: 10%;
-			left: 0;
-			z-index: -1;
-		}
-		&::after {
-			content: url('/about/bg-leaf-mob-2.png');
-			display: block;
-			position: absolute;
-			width: 83px;
-			height: 146px;
-			bottom: 10px;
-			right: 20px;
-			z-index: -1;
-		}
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+  &.desktop {
+    display: none;
+  }
+  &.mobile {
+    display: block;
+    &::before {
+      content: url("/about/bg-leaf-mob-1.png");
+      display: block;
+      position: absolute;
+      width: 83px;
+      height: 146px;
+      top: 10%;
+      left: 20px;
+      z-index: -1;
+    }
+    &::after {
+      content: url("/about/bg-leaf-mob-2.png");
+      display: block;
+      position: absolute;
+      width: 83px;
+      height: 146px;
+      bottom: 10px;
+      right: 20px;
+      z-index: -1;
+    }
 
-		@media screen and (min-width: 768px) {
-			&::before {
-				content: url('/about/bg-leaf-tab-1.png');
-				width: 228px;
-				height: 402px;
-			}
-			&::after {
-				content: url('/about/bg-leaf-tab-2.png');
-				width: 204px;
-				height: 359px;
-				bottom: -30%;
-				right: 80px;
-				z-index: -1;
-			}
-		}
-	}
+    @media screen and (min-width: 768px) {
+      overflow: visible;
+      &::before {
+        content: url("/about/bg-leaf-tab-1.png");
+        width: 228px;
+        height: 402px;
+        left: 0px;
+      }
+      &::after {
+        content: url("/about/bg-leaf-tab-2.png");
+        width: 204px;
+        height: 359px;
+        bottom: -30%;
+        right: 80px;
+        z-index: -1;
+      }
+    }
+  }
 
-	@media screen and (min-width: 1024px) {
-		&.mobile {
-			display: none;
-		}
-		&.desktop {
-			display: block;
-			&::before {
-				content: url('/about/bg-leaf-1.png');
-				display: block;
-				position: absolute;
-				width: 443px;
-				height: 412px;
-				top: 8%;
-				left: 0;
-				z-index: -1;
-			}
-			&::after {
-				content: url('/about/bg-leaf-2.png');
-				display: block;
-				position: absolute;
-				width: 443px;
-				height: 412px;
-				bottom: -25px;
-				right: 5px;
-				z-index: -1;
-			}
-		}
-		@media screen and (min-width: 1440px) {
-			&::before {
-				left: 0;
-			}
-			&::after {
-				right: 20px;
-			}
-		}
-	}
+  @media screen and (min-width: 1024px) {
+    // overflow: visible;
+    &.mobile {
+      display: none;
+    }
+    &.desktop {
+      display: block;
+      overflow: visible;
+      &::before {
+        content: url("/about/bg-leaf-1.png");
+        display: block;
+        position: absolute;
+        width: 443px;
+        height: 412px;
+        top: 8%;
+        left: 0;
+        z-index: -1;
+      }
+      &::after {
+        content: url("/about/bg-leaf-2.png");
+        display: block;
+        position: absolute;
+        width: 443px;
+        height: 412px;
+        bottom: -25px;
+        right: 5px;
+        z-index: -1;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      &::before {
+        left: 0;
+      }
+      &::after {
+        right: 20px;
+      }
+    }
+  }
 }
 
 .accentTitle {
-	color: $main-green;
+  color: $main-green;
 }
 
 .content {
-	@media screen and (min-width: 1024px) {
-		display: flex;
-		justify-content: space-between;
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
 
-		.list,
-		.desc_wrap {
-			flex: 1;
-			width: 50%;
-			box-sizing: border-box;
-			padding: 0 10px;
-		}
-	}
-	@media screen and (min-width: 1440px) {
-		.list,
-		.desc_wrap {
-			padding: 0 26px;
-		}
-	}
+    .list,
+    .desc_wrap {
+      flex: 1;
+      width: 50%;
+      box-sizing: border-box;
+      padding: 0 10px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    .list,
+    .desc_wrap {
+      padding: 0 26px;
+    }
+  }
 }
 
 .item {
-	&:not(:last-child) {
-		margin-bottom: 20px;
-	}
-	@media screen and (min-width: 768px) {
-		&:not(:last-child) {
-			margin-bottom: 24px;
-		}
-	}
-	@media screen and (min-width: 1024px) {
-		&:not(:last-child) {
-			margin-bottom: 16px;
-		}
-	}
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
 
-	&__title_wrap {
-		margin-bottom: 24px;
-		cursor: pointer;
-		@media screen and (min-width: 1440px) {
-			max-width: 619px;
-		}
-	}
+  &__title_wrap {
+    margin-bottom: 24px;
+    cursor: pointer;
+    @media screen and (min-width: 1440px) {
+      max-width: 619px;
+    }
+  }
 
-	&__iconWrapper {
-		display: flex;
-		align-items: flex-start;
-		gap: 8px;
-	}
+  &__iconWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
 
-	/* active */
-	&__title_wrap.active {
-		position: relative;
+  /* active */
+  &__title_wrap.active {
+    position: relative;
 
-		&::before {
-			content: url('/about/Arrow-2.svg');
-			display: inline-block;
-			position: absolute;
-			width: 48px;
-			height: 32px;
-			top: 0;
-			left: 0;
-		}
+    &::before {
+      content: url("/about/Arrow-2.svg");
+      display: inline-block;
+      position: absolute;
+      width: 48px;
+      height: 32px;
+      top: 0;
+      left: 0;
+    }
 
-		& .item__title {
-			color: green;
-			transform: translateX(0);
-			transition: transform 0.3s ease;
-			@media screen and (min-width: 768px) {
-				width: 632px;
-			}
-			@media screen and (min-width: 1024px) {
-				width: 386px;
-			}
-			@media screen and (min-width: 1440px) {
-				width: 495px;
-			}
-		}
+    & .item__title {
+      color: green;
+      transform: translateX(0);
+      transition: transform 0.3s ease;
+      @media screen and (min-width: 768px) {
+        width: 632px;
+      }
+      @media screen and (min-width: 1024px) {
+        width: 386px;
+      }
+      @media screen and (min-width: 1440px) {
+        width: 495px;
+      }
+    }
 
-		&:hover .item__title,
-		&:focus .item__title {
-			transform: translateX(56px);
-		}
+    &:hover .item__title,
+    &:focus .item__title {
+      transform: translateX(56px);
+    }
 
-		& .item__title {
-			transform: translateX(56px);
-		}
+    & .item__title {
+      transform: translateX(56px);
+    }
 
-		& .item__arrowSmall {
-			display: none;
-		}
-	}
+    & .item__arrowSmall {
+      display: none;
+    }
+  }
 
-	&__title {
-		width: 264px;
-		margin-bottom: 12px;
-		font-weight: 600;
-		font-size: 16px;
-		line-height: 1.5;
-		text-transform: uppercase;
-		@media screen and (min-width: 768px) {
-			width: 100%;
-		}
-		@media screen and (min-width: 1024px) {
-			margin-bottom: 16px;
-			font-size: 18px;
-		}
-	}
+  &__title {
+    width: 264px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    @media screen and (min-width: 768px) {
+      width: 100%;
+    }
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+  }
 }
 
 .desc_wrap {
-	position: relative;
-	width: 596px;
+  position: relative;
+  width: 596px;
 }
 
 .desc {
-	display: none;
-	&.active {
-		display: block;
-		font-weight: 300;
-		font-size: 16px;
-		line-height: 1.5;
-	}
-	@media screen and (min-width: 1024px) {
-		display: block;
-		font-size: 18px;
-	}
+  display: none;
+  &.active {
+    display: block;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  @media screen and (min-width: 1024px) {
+    display: block;
+    font-size: 18px;
+  }
 }

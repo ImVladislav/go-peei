@@ -1,158 +1,157 @@
-@import '../../../../styles/utils/variables';
+@import "../../../../styles/utils/variables";
 
 .section {
-	padding: 60px 0px 0px 0px;
-	@media screen and (min-width: 768px) {
-		padding-top: 80px;
-	}
-	@media screen and (min-width: 1024px) {
-		padding-top: 100px;
-	}
-	@media screen and (min-width: 1440px) {
-		padding-bottom: 54px;
-	}
+  padding: 60px 0px 0px 0px;
+  @media screen and (min-width: 768px) {
+    padding-top: 80px;
+  }
+  @media screen and (min-width: 1024px) {
+    padding-top: 100px;
+  }
 }
 
 .sectionWrapper {
-	position: relative;
-	max-width: 1440px;
-	margin: 0 auto;
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .accentTitle {
-	color: $main-green;
+  color: $main-green;
 }
 
 .accent_text {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 1.5;
-	@media screen and (min-width: 768px) {
-		font-weight: 600;
-	}
-	@media screen and (min-width: 1024px) {
-		font-weight: 600;
-		font-size: 18px;
-		text-transform: uppercase;
-		text-align: justify;
-	}
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  @media screen and (min-width: 768px) {
+    font-weight: 600;
+  }
+  @media screen and (min-width: 1024px) {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: justify;
+  }
 }
 
 .text {
-	font-weight: 300;
-	font-size: 16px;
-	line-height: 1.5;
-	color: $main-black;
-	padding-bottom: 16px;
-	@media screen and (min-width: 768px) {
-		padding-bottom: 20px;
-	}
-	@media screen and (min-width: 1024px) {
-		max-width: 557px;
-		text-align: start;
-	}
-	@media screen and (min-width: 1440px) {
-		padding-bottom: 24px;
-		max-width: 813px;
-		font-size: 18px;
-	}
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-black;
+  padding-bottom: 16px;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 20px;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 557px;
+    font-size: 18px;
+    text-align: start;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-bottom: 24px;
+    max-width: 813px;
+    font-size: 18px;
+  }
 }
 
 .imgWrapper {
-	position: relative;
-	margin: 0 auto;
-	overflow: hidden;
-	max-width: 360px;
-	height: 240px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 360px;
+  height: 240px;
 
-	&.mobile {
-		display: block;
-	}
-	&.desktop {
-		display: none;
-	}
+  &.mobile {
+    display: block;
+  }
+  &.desktop {
+    display: none;
+  }
 
-	@media screen and (min-width: 768px) {
-		position: absolute;
-		right: 0;
-		width: 349px;
-		height: 412px;
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    right: 0;
+    width: 349px;
+    height: 412px;
 
-		&.mobile {
-			display: none;
-		}
-		&.desktop {
-			display: block;
-		}
-	}
-	@media screen and (min-width: 1024px) {
-		top: 32%;
-		min-width: 438px;
-		height: 517px;
-	}
-	@media screen and (min-width: 1440px) {
-		top: 0;
-		min-width: 540px;
-		height: 638px;
-	}
+    &.mobile {
+      display: none;
+    }
+    &.desktop {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    top: 20%;
+    min-width: 438px;
+    height: 517px;
+  }
+  @media screen and (min-width: 1440px) {
+    top: -100px;
+    min-width: 540px;
+    height: 638px;
+  }
 }
 
 .bg_img {
-	object-fit: cover;
-	z-index: -1;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .list {
-	margin: 16px 0px 0px 0px;
-	@media screen and (min-width: 768px) {
-		margin: 0px 43px 13px 0px;
-		max-width: 336px;
-	}
-	@media screen and (min-width: 1024px) {
-		margin: 0px 0px 0px 121px;
-		max-width: 436px;
-	}
-	@media screen and (min-width: 1440px) {
-		margin: 0px 0px 54px 108px;
-		max-width: 740px;
-	}
+  margin: 16px 0px 0px 0px;
+  @media screen and (min-width: 768px) {
+    margin: 0px 43px 13px 0px;
+    max-width: 336px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0px 0px 0px 121px;
+    max-width: 436px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin: 0px 0px 54px 108px;
+    max-width: 740px;
+  }
 }
 
 .item {
-	display: flex;
-	align-items: flex-start;
-	&:not(:last-child) {
-		margin-bottom: 16px;
-	}
-	@media screen and (min-width: 768px) {
-		&:not(:last-child) {
-			margin-bottom: 20px;
-		}
-	}
-	@media screen and (min-width: 1440px) {
-		&:not(:last-child) {
-			margin-bottom: 24px;
-		}
-	}
+  display: flex;
+  align-items: flex-start;
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
 
-	&__icon {
-		width: 13px;
-		height: 22px;
-		@media screen and (min-width: 1024px) {
-			width: 18px;
-			height: 30px;
-		}
-	}
+  &__icon {
+    margin-top: 6px;
+    width: 13px;
+    height: 22px;
+    @media screen and (min-width: 1024px) {
+      width: 18px;
+      height: 30px;
+    }
+  }
 
-	&__desc {
-		margin-left: 12px;
-		font-weight: 300;
-		font-size: 16px;
-		line-height: 1.5;
-		color: $main-black;
-		@media screen and (min-width: 1024px) {
-			margin-left: 16px;
-			font-size: 18px;
-		}
-	}
+  &__desc {
+    margin-left: 12px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $main-black;
+    @media screen and (min-width: 1024px) {
+      margin-left: 16px;
+      font-size: 18px;
+    }
+  }
 }

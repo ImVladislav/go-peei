@@ -64,18 +64,11 @@
 			display: block;
 			margin-bottom: 20px;
 		}
-		&.tablet {
-			display: none;
-		}
 		&.desktop {
 			display: none;
 		}
 		@media screen and (min-width: 768px) {
 			&.mobile {
-				display: none;
-			}
-			&.tablet {
-				display: block;
 				display: flex;
 				gap: 16px;
 				margin-bottom: 32px;
@@ -85,12 +78,12 @@
 			}
 		}
 		@media screen and (min-width: 1024px) {
-			&.tablet {
+			&.mobile {
 				gap: 24px;
 			}
 		}
 		@media screen and (min-width: 1440px) {
-			&.tablet {
+			&.mobile {
 				display: none;
 			}
 			&.desktop {

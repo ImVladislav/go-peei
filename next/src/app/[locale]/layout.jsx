@@ -5,12 +5,16 @@ import { Exo_2 } from 'next/font/google'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
 
-import '@/app/styles/index.scss'
-// import ExampleClientComponent from "../../../components/ExampleClientComponent";
-import TranslationsProvider from '../../../components/TranslationsProvider'
-import initTranslations from '../i18n'
+
+import "@/app/styles/index.scss";
+import TranslationsProvider from "../../../components/TranslationsProvider";
+import initTranslations from "../i18n";
+
+import { getServerSession } from "next-auth";
+import SessionProvider from "../SessionProvider";
 import ButtonScrollTop from './components/Button/ButtonScrollTop'
 const exo = Exo_2({ subsets: ['latin'] })
+
 
 export const metadata = {
 	title: 'Peei',
@@ -24,7 +28,8 @@ export function generateStaticParams() {
 export default async function RootLayout({ children, params: { locale } }) {
 	const i18nNamespaces = ['home', 'navbar', 'financial', 'translation']
 
-	const { resources } = await initTranslations(locale, i18nNamespaces)
+  const { resources } = await initTranslations(locale, i18nNamespaces);
+  const session = await getServerSession();
 
 	return (
 		<TranslationsProvider
@@ -34,6 +39,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 		>
 			<html lang={locale} dir={dir(locale)}>
 				<body className={exo.className} suppressHydrationWarning={true}>
+          <SessionProvider session={session}>
 					<div className='wrapper'>
 						<Header locale={locale} />
 						<main>{children}</main>
@@ -47,6 +53,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 						<Footer locale={locale} />
 					</div>
 					<div id='modal-root'></div>
+</SessionProvider>
 				</body>
 			</html>
 		</TranslationsProvider>

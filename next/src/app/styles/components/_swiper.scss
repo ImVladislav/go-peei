@@ -3,3 +3,19 @@
     display: none;
   }
 }
+
+.mySwiper {
+  margin: 0 -20px !important;
+
+  padding: 0 12px 44px !important;
+  @media screen and (min-width: 768px) {
+    margin: 0 -40px !important;
+    padding: 0 !important;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0 -60px !important;
+  }
+  @media screen and (min-width: 1440px) {
+    margin: 0 -80px !important;
+  }
+}

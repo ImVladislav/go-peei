@@ -69,7 +69,7 @@ const SwiperContainer = ({ data }: { data: reviewsItem[] }) => {
           slidesPerView: 2.5,
         },
       }}
-      className={`mySwiper ${styles.swiper}`}
+      className={`mySwiper`}
     >
       {data?.map((item) => (
         <SwiperSlide className={styles.swiper_slide} key={item._id}>

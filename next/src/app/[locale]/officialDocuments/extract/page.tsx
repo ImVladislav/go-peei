@@ -16,8 +16,16 @@ const Extract = async () => {
         src={data.src}
         frameBorder="0"
         full-frame=""
-        allowFullScreen
       ></iframe>
+
+      {/* <embed
+        type="application/x-google-chrome-pdf"
+        src="chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/fab508df-a4ba-420c-9f81-7727d0840c8e"
+        original-url="https://www.uny.org.ua/wp-content/uploads/2023/03/statut-go-ty-potriben-ukrayini.pdf"
+        background-color="4283586137"
+        javascript="allow"
+        full-frame=""
+      ></embed> */}
     </div>
   );
 };

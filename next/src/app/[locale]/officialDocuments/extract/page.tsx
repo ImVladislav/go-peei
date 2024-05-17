@@ -16,6 +16,7 @@ const Extract = async () => {
         src={data.src}
         frameBorder="0"
         full-frame=""
+        allowFullScreen
       ></iframe>
 
       {/* <embed

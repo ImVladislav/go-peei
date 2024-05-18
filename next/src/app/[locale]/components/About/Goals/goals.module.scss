@@ -1,20 +1,91 @@
 @import "../../../../styles/utils/variables";
 
 .section {
-    padding-bottom: 60px;
-    &.desktop {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+  &.desktop {
+    display: none;
+  }
+  &.mobile {
+    display: block;
+    &::before {
+      content: url("/about/bg-leaf-mob-1.png");
+      display: block;
+      position: absolute;
+      width: 83px;
+      height: 146px;
+      top: 10%;
+      left: 20px;
+      z-index: -1;
+    }
+    &::after {
+      content: url("/about/bg-leaf-mob-2.png");
+      display: block;
+      position: absolute;
+      width: 83px;
+      height: 146px;
+      bottom: 10px;
+      right: 20px;
+      z-index: -1;
+    }
+
+    @media screen and (min-width: 768px) {
+      overflow: visible;
+      &::before {
+        content: url("/about/bg-leaf-tab-1.png");
+        width: 228px;
+        height: 402px;
+        left: 0px;
+      }
+      &::after {
+        content: url("/about/bg-leaf-tab-2.png");
+        width: 204px;
+        height: 359px;
+        bottom: -30%;
+        right: 80px;
+        z-index: -1;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    // overflow: visible;
+    &.mobile {
       display: none;
     }
-    &.mobile {
-      display: block;
-    }
-  @media screen and (min-width: 1440px) {
-    padding-bottom: 74px;
-    &.mobile {
-      display: none;
-    }
     &.desktop {
       display: block;
+      overflow: visible;
+      &::before {
+        content: url("/about/bg-leaf-1.png");
+        display: block;
+        position: absolute;
+        width: 443px;
+        height: 412px;
+        top: 8%;
+        left: 0;
+        z-index: -1;
+      }
+      &::after {
+        content: url("/about/bg-leaf-2.png");
+        display: block;
+        position: absolute;
+        width: 443px;
+        height: 412px;
+        bottom: -25px;
+        right: 5px;
+        z-index: -1;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      &::before {
+        left: 0;
+      }
+      &::after {
+        right: 20px;
+      }
     }
   }
 }
@@ -24,62 +95,39 @@
 }
 
 .content {
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     display: flex;
     justify-content: space-between;
-  }
-}
 
-.list {
-  position: relative;
-  &::before {
-    content: url('/about/bg-leaf-mob-1.png');
-    display: block;
-    position: absolute;
-    width: 83px;
-    height: 146px;
-    top: -20px;
-    left: 0;
-    z-index: -1;
-  }
-  &::after {
-    content: url('/about/bg-leaf-mob-2.png');
-    display: block;
-    position: absolute;
-    width: 83px;
-    height: 146px;
-    bottom: 10px;
-    right: 0;
-    z-index: -1;
-  }
-
-  @media screen and (min-width: 1440px) {
-    &::before {
-      content: url('/about/bg-leaf-1.png');
-      display: block;
-      position: absolute;
-      width: 443px;
-      height: 412px;
-      top: -102px;
-      left: -80px;
-      z-index: -1;
+    .list,
+    .desc_wrap {
+      flex: 1;
+      width: 50%;
+      box-sizing: border-box;
+      padding: 0 10px;
     }
-    &::after {
-      content: url('/about/bg-leaf-2.png');
-      display: block;
-      position: absolute;
-      width: 443px;
-      height: 412px;
-      bottom: -25px;
-      right: -119%;
-      z-index: -1;
+  }
+  @media screen and (min-width: 1440px) {
+    .list,
+    .desc_wrap {
+      padding: 0 26px;
     }
   }
 }
 
 .item {
   &:not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
   }
 
   &__title_wrap {
@@ -90,12 +138,18 @@
     }
   }
 
-/* active */
+  &__iconWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* active */
   &__title_wrap.active {
     position: relative;
 
     &::before {
-      content: url('/about/Arrow-2.svg');
+      content: url("/about/Arrow-2.svg");
       display: inline-block;
       position: absolute;
       width: 48px;
@@ -108,6 +162,15 @@
       color: green;
       transform: translateX(0);
       transition: transform 0.3s ease;
+      @media screen and (min-width: 768px) {
+        width: 632px;
+      }
+      @media screen and (min-width: 1024px) {
+        width: 386px;
+      }
+      @media screen and (min-width: 1440px) {
+        width: 495px;
+      }
     }
 
     &:hover .item__title,
@@ -118,15 +181,24 @@
     & .item__title {
       transform: translateX(56px);
     }
+
+    & .item__arrowSmall {
+      display: none;
+    }
   }
 
   &__title {
-    margin-bottom: 24px;
+    width: 264px;
+    margin-bottom: 12px;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
     text-transform: uppercase;
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
+      width: 100%;
+    }
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 16px;
       font-size: 18px;
     }
   }
@@ -145,8 +217,9 @@
     font-size: 16px;
     line-height: 1.5;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     display: block;
     font-size: 18px;
+    line-height: 1.5;
   }
 }

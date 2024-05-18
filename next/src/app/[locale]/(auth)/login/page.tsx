@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
 
-import Button from "../../components/Button/Button";
 import Title from "../../components/Title/Title";
 
 import styles from "../../contacts/contact.module.scss";
@@ -44,12 +43,12 @@ const Login = () => {
         redirect: false,
       });
 
-      // if (res && res.error) {
-      //   setError("Invalid credentials");
-      //   setPending(false);
+      if (res && res.error) {
+        setError("Invalid credentials");
+        setPending(false);
 
-      //   return;
-      // }
+        return;
+      }
       setPending(false);
 
       router.replace("/");
@@ -62,11 +61,10 @@ const Login = () => {
   return (
     <div className="container">
       <div className={styles.wrap}>
-        <Title>
-          <h1>Логін</h1>
-        </Title>
+        <Title>Логін</Title>
         <div className={styles.formContainer}>
           <form onSubmit={handleSubmit}>
+            <label>Пошта Email</label>
             <input
               className={styles.input}
               style={{ border: "1px solid black" }}
@@ -74,7 +72,7 @@ const Login = () => {
               name="email"
               onChange={(e) => handleInput(e)}
             />
-            <label>email</label>
+            <label>Пароль</label>
             <input
               className={styles.input}
               style={{ border: "1px solid black" }}
@@ -82,7 +80,7 @@ const Login = () => {
               name="password"
               onChange={(e) => handleInput(e)}
             />
-            <label>password</label>
+
             {error && <div>{error}</div>}
             <button disabled={pending ? true : false} type="submit">
               {pending ? "Logining" : "Login"}

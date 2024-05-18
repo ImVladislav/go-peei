@@ -1,5 +1,22 @@
 @import "../../../../styles/utils/_variables.scss";
 
+.section {
+  &.mobile {
+    display: block;
+  }
+  &.desktop {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    &.mobile {
+      display: none;
+    }
+    &.desktop {
+      display: block;
+    }
+  }
+}
+
 .accentTitle {
   color: $main-green;
 }
@@ -8,30 +25,48 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-width: 360px;
-  padding: 24px 48px;
+  margin-bottom: 40px;
+  width: 100%;
+  padding: 24px 26px;
+  border-radius: 18px;
   background: $green-30;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
-    width: 1056px;
     margin: 0 auto;
-    padding: 32px 74px;
+    padding: 24px;
+    margin-bottom: 52px;
     border-radius: 10px;
-    &__icon {
-      width: 95px;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 32px;
+    margin-bottom: 64px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 1087px;
+    padding: 36px;
+  }
+  &__iconWrap {
+    position: relative;
+    width: 52px;
+    height: 58px;
+    @media screen and (min-width: 768px) {
+      min-width: 95px;
+      max-width: 95px;
       height: 120px;
     }
   }
-  
+
   &__text {
-    margin-top: 20px;
+    margin: 20px 0px 0px 0px;
     font-weight: 300;
     font-size: 16px;
     line-height: 1.5;
-    @media screen and (min-width: 1440px) {
-      margin-left: 20px;
+    @media screen and (min-width: 768px) {
+      margin: 0px 0px 0px 16px;
+    }
+    @media screen and (min-width: 1024px) {
+      margin: 0px 0px 0px 20px;
       font-size: 18px;
-      text-align: justify;
     }
   }
 }
@@ -40,28 +75,26 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 24px;
-  @media screen and (min-width: 1440px) {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 52px;
-    margin-top: 63px;
-  }
+  gap: 32px;
 }
 
 .item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 8px 44px 8px;
+  width: 308px;
+  padding: 20px;
   border: 1px solid $focus-green;
-  border-radius: 18px;
-  @media screen and (min-width: 1440px) {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 18px -21px 0 0 $second-green;
+  border-radius: 10px;
+  box-shadow: 12px -12px 0 0 $second-green;
+  @media screen and (min-width: 768px) {
+    height: 370px;
+    box-shadow: 16px -16px 0 0 $second-green;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 392px;
+    height: 352px;
+    box-shadow: 18px -18px 0 0 $second-green;
   }
 
   &__desc {
@@ -70,9 +103,24 @@
     font-size: 16px;
     line-height: 1.5;
     color: $main-black;
-    @media screen and (min-width: 1440px) {
-      margin-top: 12px;
+    @media screen and (min-width: 1024px) {
       font-size: 18px;
     }
+  }
+}
+
+.swiper {
+  padding-top: 18px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: -40px;
+    margin-left: -40px;
+    padding-left: 40px;
+  }
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    margin-right: -60px;
+    margin-left: -60px;
+    padding-left: 60px;
+    padding-right: 20px;
   }
 }

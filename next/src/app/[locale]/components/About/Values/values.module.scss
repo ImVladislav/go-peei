@@ -1,53 +1,71 @@
 @import "../../../../styles/utils/variables";
 
 .section {
-  padding-bottom: 25px;
+  padding-bottom: 52px;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 67px;
+  }
+  @media screen and (min-width: 1024px) {
+    padding-bottom: 54px;
+  }
   @media screen and (min-width: 1440px) {
     padding-bottom: 53px;
   }
+}
+
+.sectionWrapper {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .accentTitle {
   color: $main-green;
 }
 
-
 .parallax {
   position: relative;
-  background: url('/about/aerial-view-green-forest.png');
+  background: url("/about/aerial-view-green-forest.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  height: 107px;
-  @media screen and (min-width: 1440px) {
-    position: relative;
-    /* padding: 60px 80px; */
-    background: url('/about/aerial-view-green-forest.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+  background-size: cover;
+  height: 140px;
+  margin-top: 58px;
+  @media screen and (min-width: 768px) {
+    height: 214px;
+    margin-top: 0;
+  }
+  @media screen and (min-width: 1024px) {
     height: 286px;
   }
 }
 
 .list {
   position: absolute;
-  top: -25px;
+  top: -50px;
   right: 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 177px;
-  height: 157px;
-  border-radius: 18px;
+  width: 240px;
+  height: 240px;
+  border-radius: 10px;
   background: $second-green;
   box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.25);
-  @media screen and (min-width: 1440px) {
-    flex-direction: row;
-    right: 80px;
-    width: 392px;
-    height: 394px;
+  @media screen and (min-width: 768px) {
+    right: 40px;
+    width: 320px;
+    height: 320px;
     border-radius: 10px;
+  }
+  @media screen and (min-width: 1024px) {
+    right: 60px;
+    width: 392px;
+    height: 392px;
+    border-radius: 10px;
+  }
+  @media screen and (min-width: 1440px) {
+    right: 80px;
   }
 }
 
@@ -56,28 +74,90 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 88.5px;
-  height: 78.5px;
-  @media screen and (min-width: 1440px) {
+  width: 120px;
+  height: 120px;
+  @media screen and (min-width: 768px) {
+    width: 160px;
+    height: 160px;
+  }
+  @media screen and (min-width: 1024px) {
     width: 196px;
-    height: 197px;
-    &__icon {
-      width: 80px;
-      height: 70px;
+    height: 196px;
+  }
+  &__iconWrap {
+    position: relative;
+    width: 49px;
+    height: 48px;
+    @media screen and (min-width: 768px) {
+      width: 53px;
+      height: 52px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 69px;
+      height: 68px;
     }
   }
 
-    &__desc {
-      margin-top: 4px;
-      font-weight: 500;
-      font-size: 12px;
-      color: $main-white;
-      @media screen and (min-width: 1440px) {
-        margin-top: 24px;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 1.5;
-        text-decoration: underline;
-      }
+  &__desc {
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $main-white;
+    @media screen and (min-width: 768px) {
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 16px;
     }
+    @media screen and (min-width: 1024px) {
+      margin-top: 24px;
+      font-size: 18px;
+      text-decoration: underline;
+    }
+  }
+}
+
+.item:nth-child(2) {
+  .item__iconWrap {
+    position: relative;
+    width: 55px;
+    height: 48px;
+    @media screen and (min-width: 768px) {
+      width: 60px;
+      height: 52px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 70px;
+      height: 61px;
+    }
+  }
+}
+.item:nth-child(3) {
+  .item__iconWrap {
+    position: relative;
+    width: 49px;
+    height: 48px;
+    @media screen and (min-width: 768px) {
+      width: 53px;
+      height: 52px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 79px;
+      height: 78px;
+    }
+  }
+}
+.item:nth-child(4) {
+  .item__iconWrap {
+    width: 64px;
+    height: 48px;
+    @media screen and (min-width: 768px) {
+      width: 70px;
+      height: 52px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 98px;
+      height: 73px;
+    }
+  }
 }

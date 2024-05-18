@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-
+import Title from "../../components/Title/Title";
+import styles from "../../contacts/contact.module.scss";
 const Register = () => {
   const router = useRouter();
   const [info, setInfo] = useState({
@@ -22,7 +23,8 @@ const Register = () => {
     }
     try {
       setPending(true);
-      // const res = await fetch("http://localhost:3000/api/register", {
+
+      // const res = await fetch("http://localhost:3000//api/register", {
 
       const res = await fetch("https://peei.org.ua/api/register", {
         method: "POST",
@@ -50,22 +52,33 @@ const Register = () => {
   }
   console.log({ info });
   return (
-    <div>
-      <h3>Register</h3>
+    <div className="container">
+      <Title>Реєстрація</Title>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="username" onChange={(e) => handleInput(e)} />
-        <label>UserName</label>
-        <input type="email" name="email" onChange={(e) => handleInput(e)} />
-        <label>email</label>
+        <label>Поганяло</label>
         <input
+          className={styles.input}
+          type="text"
+          name="username"
+          onChange={(e) => handleInput(e)}
+        />
+        <label>Пошта</label>
+        <input
+          className={styles.input}
+          type="email"
+          name="email"
+          onChange={(e) => handleInput(e)}
+        />
+        <label>Пароль</label>
+        <input
+          className={styles.input}
           type="password"
           name="password"
           onChange={(e) => handleInput(e)}
         />
-        <label>password</label>
         {error && <div>{error}</div>}
         <button disabled={pending ? true : false} type="submit">
-          {pending ? "Registering" : "Register"}
+          {pending ? "Реєстрація..." : "Зареєструватись"}
         </button>
       </form>
     </div>

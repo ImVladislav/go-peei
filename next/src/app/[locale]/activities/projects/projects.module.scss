@@ -236,6 +236,15 @@
   padding: 26px 20px;
   margin: 0 -20px;
   background: #f5f8f5;
+  @media screen and (min-width: 768px) {
+    margin: 0 -40px;
+    padding: 26px 40px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin: 0 -60px;
+    padding: 26px 60px;
+  }
+
   @media screen and (min-width: 1440px) {
     background: transparent;
     padding: 0;

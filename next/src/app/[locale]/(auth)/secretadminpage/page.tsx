@@ -25,6 +25,7 @@ const Register = () => {
       setPending(true);
 
       // const res = await fetch("http://localhost:3000//api/register", {
+
       const res = await fetch("https://peei.org.ua/api/register", {
         method: "POST",
         headers: {

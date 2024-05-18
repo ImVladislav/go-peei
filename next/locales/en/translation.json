@@ -1,5 +1,6 @@
 {
   "supportUs": "Support us",
+  "donate": "Donate",
 
   "environmentalSecurityEnergyIndependence": "Environmental security - energy independence",
   "environmental": "Environmental",
@@ -27,9 +28,14 @@
   "totalAmount": "Total amount",
   "allProjects": "All projects",
   "projects": "Project ",
+  "aboutTheProject": "About the project",
+  "projectReporting": "Project reporting",
+  "projectReport": "Project report",
+  "photoReport": "photo",
+  "backToProjects": "Back to projects",
 
   "reviews": "Reviews",
-  "leaveAReview": "Leave a review",
+  "leaveAReview": "Back to projects",
 
   "News": "news",
 

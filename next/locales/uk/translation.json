@@ -1,5 +1,6 @@
 {
   "supportUs": "Підтримати нас",
+  "donate": "Пожертвувати",
 
   "environmentalSecurityEnergyIndependence": "Екологічна безпека - енергетична незалежність",
   "environmental": "Екологічна",
@@ -25,6 +26,12 @@
   "totalAmount": "Загальна сума",
   "allProjects": "Усі проєкти",
   "projects": "Проєкт ",
+  "aboutTheProject": "Про проєкт",
+  "projectReporting": "Звітність по проєкту",
+  "projectReport": "Звіт по проєкту",
+
+  "photoReport": "фото",
+  "backToProjects": "Назад до проєктів",
 
   "reviews": "Відгуки",
   "leaveAReview": "Залишити відгук",

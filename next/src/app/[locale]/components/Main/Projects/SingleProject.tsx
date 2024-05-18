@@ -12,7 +12,7 @@ interface ProjectProps {
 
 const SingleProject = async ({ project, locale }: ProjectProps) => {
   const progress = (100 / project.total) * project.fundsRaised;
-  const maxLength = 100;
+  const maxLength = 95;
 
   const formatPrice = (price: number) => {
     if (price && typeof price === "number") {
@@ -63,7 +63,7 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
               <Translator>collected</Translator>
             </p>
             <p className={styles.item__progres_bar_money}>
-              {formatPrice(project.total)} грн
+              {formatPrice(project.fundsRaised)} грн
             </p>
           </div>
           <div className={styles.item__progres_bar_inner}>
@@ -71,7 +71,7 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
               <Translator>totalAmount</Translator>
             </p>
             <p className={styles.item__progres_bar_money}>
-              {formatPrice(project.fundsRaised)} грн
+              {formatPrice(project.total)} грн
             </p>
           </div>
         </div>
@@ -81,7 +81,7 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
         isLink
         href={`/activities/projects/${project._id}`}
       >
-        <Translator>supportUs</Translator>
+        <Translator>donate</Translator>
       </Button>
     </li>
   );

@@ -19,6 +19,8 @@ export type projectsItem = {
   descriptionEn?: string;
   total: number;
   fundsRaised: number;
+  photoReport?: string[];
+  report?: string;
 };
 
 export type reviewsItem = {

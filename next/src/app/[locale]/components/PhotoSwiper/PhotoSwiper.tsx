@@ -16,12 +16,14 @@ interface PhotoSwiperProps {
 const PhotoSwiper = ({ data }: PhotoSwiperProps) => {
   return (
     <Swiper
-      style={{
-        "--swiper-theme-color": "#0d490d",
-        "--swiper-pagination-bullet-size": "20px",
-        "--swiper-pagination-bottom": "0px",
-        // " --swiper-pagination-bullet-horizontal-gap": "16px",
-      }}
+      style={
+        {
+          "--swiper-theme-color": "#0d490d",
+          "--swiper-pagination-bullet-size": "20px",
+          "--swiper-pagination-bottom": "0px",
+          // "--swiper-pagination-bullet-horizontal-gap": "16px",
+        } as React.CSSProperties
+      }
       slidesPerView={"auto"}
       spaceBetween={10}
       grabCursor={true}

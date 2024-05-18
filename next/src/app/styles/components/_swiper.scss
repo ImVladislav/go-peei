@@ -1,7 +1,16 @@
-.mySwiper {
+.mySwiperReviews {
   margin: 0 -20px !important;
 
   padding: 0 12px 44px !important;
+  & .swiper-wrapper {
+    width: 320px;
+  }
+
+  & .swiper-pagination-bullet {
+    background: #0d490d;
+    width: 20px;
+    height: 20px;
+  }
   @media screen and (min-width: 768px) {
     margin: 0 -40px !important;
     padding: 0 !important;
@@ -22,6 +31,20 @@
   margin: 0 -20px !important;
 
   padding: 0 12px 44px !important;
+  & .swiper-wrapper {
+    width: 320px;
+
+    @media screen and (min-width: 1024px) {
+      width: 520px;
+    }
+  }
+
+  & .swiper-pagination-bullet {
+    background: #0d490d;
+    width: 20px;
+    height: 20px;
+  }
+
   @media screen and (min-width: 768px) {
     margin: 0 -40px !important;
   }

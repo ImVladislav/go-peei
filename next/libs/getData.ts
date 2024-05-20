@@ -5,8 +5,8 @@ import { notFound } from "next/navigation";
 
 // const url = tls === "true" ? `https://${host}` : `http://${host}`; // // important!!!
 
-const url = "http://localhost:3000"; // localhost
-// const url = "https://peei.org.ua";
+// const url = "http://localhost:3000"; // localhost
+const url = "https://peei.org.ua";
 
 // get all
 export async function getData(name: string) {

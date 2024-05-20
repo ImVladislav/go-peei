@@ -6,7 +6,7 @@ import { projectsItem } from "@/app/types";
 import SingleProject from "../Main/Projects/SingleProject";
 import Translator from "../translator/Translator";
 
-import styles from "./ProjectsList.module.scss";
+import styles from "./projectsList.module.scss";
 
 const ProjectsList = ({
   data,

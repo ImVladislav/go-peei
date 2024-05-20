@@ -6,6 +6,10 @@ export function middleware(request) {
   return i18nRouter(request, i18nConfig);
 }
 
+// export default auth((req) => {
+//   console.log("ROUTE:", req.nextUrl.pathname);
+// });
+
 export const config = {
-  matcher: ["/((?!api|static|.*\\..*|_next).*)", "/admin"],
+  matcher: ["/auth/login", "/admin", "/((?!api|static|.*\\..*|_next).*)"],
 };

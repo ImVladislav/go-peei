@@ -44,7 +44,7 @@
     "src/middleware.js",
     "src/**/*.jsx",
     "libs/**/*.js",
-    ".next/types/app/api/auth/[...nextauth]/route.ts"
+    ".next/types/app/api/auth/[...nextauth]/route.js"
   ],
 
   "exclude": ["node_modules"]

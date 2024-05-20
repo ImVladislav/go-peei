@@ -9,21 +9,16 @@ import styles from "../../contacts/contact.module.scss";
 
 const Login = () => {
   const router = useRouter();
-  const [info, setInfo] = useState({
-    email: "",
-    password: "",
-  });
+  const [info, setInfo] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [pending, setPending] = useState(false);
-  const session = useSession();
-  // const { data: sessionData } = useSession();
-  console.log(session);
+  const { data: session, status } = useSession();
 
   useEffect(() => {
-    if (session?.status === "authenticated") {
+    if (status === "authenticated") {
       router.replace("/admin");
     }
-  }, [session, router]);
+  }, [status, router]);
 
   function handleInput(e: any) {
     setInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -34,7 +29,6 @@ const Login = () => {
       setError("Must provide all the credentials.");
       return;
     }
-
     try {
       setPending(true);
       const res = await signIn("credentials", {
@@ -45,15 +39,12 @@ const Login = () => {
 
       if (res && res.error) {
         setError("Invalid credentials");
-        setPending(false);
-
-        return;
+      } else {
+        router.replace("/");
       }
-      setPending(false);
-
-      router.replace("/");
     } catch (error) {
       setError("Error occurred while logging in");
+    } finally {
       setPending(false);
     }
   }

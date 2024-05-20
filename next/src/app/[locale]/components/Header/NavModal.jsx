@@ -115,7 +115,7 @@ const NavModal = () => {
               <></>
             ) : (
               <>
-                {session.user?.email}
+                {/* {session.user?.email} */}
                 <button
                   className={s.nav__logoutMobile}
                   onClick={() => {

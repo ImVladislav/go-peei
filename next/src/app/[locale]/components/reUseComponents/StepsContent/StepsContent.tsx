@@ -1,11 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
+import { reUseContentItem } from "@/app/types";
 import Translator from "../../translator/Translator";
 
 import styles from "./stepsContent.module.scss";
-
-import { reUseContentItem } from "@/app/types";
-import Link from "next/link";
 
 const StepsContent = ({
   imgSrc,
@@ -36,13 +35,17 @@ const StepsContent = ({
             <ul className={styles.list}>
               {list.map((item, index) => (
                 <li className={styles.item} key={index}>
-                  <Image
-                    className={styles.icon}
-                    src="/about/leaf.svg"
-                    alt="img"
-                    width={13}
-                    height={22}
-                  />
+                  {subtitle ? (
+                    <span className={styles.counter}>{index + 1}.</span>
+                  ) : (
+                    <Image
+                      className={styles.icon}
+                      src="/about/leaf.svg"
+                      alt="img"
+                      width={13}
+                      height={22}
+                    />
+                  )}
                   <p className={styles.description}>
                     {item.title && (
                       <span className={styles.descTitle}>

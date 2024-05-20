@@ -262,3 +262,31 @@
 .error {
   border: 1px solid #f24040;
 }
+
+.wrapModalMessage {
+  display: flex;
+  gap: 5px;
+
+  padding: 10px;
+  .success {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #10880d;
+    width: max-content;
+  }
+  .warning {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ff493d;
+    width: max-content;
+  }
+  .default {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #141414;
+    width: max-content;
+  }
+}

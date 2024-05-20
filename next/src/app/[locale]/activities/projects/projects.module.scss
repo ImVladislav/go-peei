@@ -96,7 +96,7 @@
       border-radius: 24px;
       padding: 24px;
       width: 573px;
-      background: #fffefe;
+      background: $main-white;
       gap: 24px;
       align-items: center;
     }
@@ -155,7 +155,7 @@
     text-align: justify;
     color: $main-grey;
     @media screen and (min-width: 1440px) {
-      color: #141414;
+      color: $main-black;
       font-size: 18px;
     }
   }
@@ -216,7 +216,7 @@
   font-size: 16px;
   line-height: 1.5;
   text-transform: uppercase;
-  color: #141414;
+  color: $main-black;
   @media screen and (min-width: 1440px) {
     font-weight: 500;
     font-size: 24px;
@@ -226,7 +226,7 @@
   font-weight: 300;
   font-size: 16px;
   line-height: 1.5;
-  color: #141414;
+  color: $main-black;
   @media screen and (min-width: 1440px) {
     font-size: 18px;
   }
@@ -235,7 +235,7 @@
 .reportWrap {
   padding: 26px 20px;
   margin: 0 -20px;
-  background: #f5f8f5;
+  background: $green-30;
   @media screen and (min-width: 768px) {
     margin: 0 -40px;
     padding: 26px 40px;
@@ -257,7 +257,13 @@
   line-height: 1.5;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  color: #141414;
+  color: $main-black;
+  transition: all 200ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $green-hover;
+  }
   @media screen and (min-width: 1440px) {
     font-size: 18px;
   }
@@ -291,12 +297,26 @@
     line-height: 1;
     text-align: center;
     color: $main-black;
-    border-bottom: 1px solid $main-black;
-    padding: 14px 12px;
+    position: relative;
 
-    &:hover,
-    &:focus {
-      border-bottom: 2px solid $green-hover;
+    padding: 14px 12px;
+    transition: all 200ms ease-in-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $main-black;
+      transition: all 200ms ease-in-out;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      height: 2px;
+      background-color: $green-hover;
     }
     @media screen and (min-width: 1024px) {
       font-size: 20px;

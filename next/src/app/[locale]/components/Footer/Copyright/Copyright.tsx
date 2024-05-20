@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-import styles from "./copyright.module.scss";
 import Translator from "../../translator/Translator";
+
+import styles from "./copyright.module.scss";
 
 const Copyright = () => {
   return (
@@ -16,7 +17,7 @@ const Copyright = () => {
             <Link className={styles.link} href="/">
               <Translator>theWebsiteDevelopmentTeam</Translator>
             </Link>
-            <Link className={styles.link} href="/">
+            {/* <Link className={styles.link} href="/">
               Privacy Policy
             </Link>
           </div>
@@ -26,7 +27,7 @@ const Copyright = () => {
             </Link>
             <Link className={styles.link} href="/">
               Cookies Settings
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

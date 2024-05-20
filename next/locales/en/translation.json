@@ -55,9 +55,16 @@
   "email": "Email address",
   "message": "Message",
   "messageErrorName": "Enter your name",
+  "messageErrorNameInvalid": "The name should contain only letters",
+  "messageErrorNameTooShort": "The number of letters entered must be greater than 2",
+  "messageErrorNameTooLong": "The number of letters entered should be no more than 20",
   "messageErrorEmail": "Enter your email address",
   "emailAddressFormatIsIncorrect": "Email address format is incorrect",
+  "messageErrorEmailTooLong": "The number of characters entered should be no more than 30",
+
   "messagePlaceholder": "Please write your message here",
+  "messageErrorMessageTooShort": "Message length is not less than 20 characters",
+  "messageErrorMessageTooLong": "Message length is no more than 100 characters",
   "send": "Send",
 
   "PlatformForInitiatives": "\"Platform for eco-energy initiatives\"",

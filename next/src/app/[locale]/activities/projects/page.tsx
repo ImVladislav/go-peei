@@ -5,7 +5,7 @@ import Title from "../../components/Title/Title";
 import styles from "./projects.module.scss";
 import Translator from "../../components/translator/Translator";
 
-import SingleProject from "../../components/Main/Projects/SingleProject";
+import ProjectsList from "../../components/ProjectsList/ProjectsList";
 
 const ProjectsPage = async ({ params }: { params: { locale: string } }) => {
   const { locale } = params;
@@ -24,17 +24,7 @@ const ProjectsPage = async ({ params }: { params: { locale: string } }) => {
               </span>
             </Title>
 
-            <div className={styles.inner}>
-              <ul className={styles.list}>
-                {data.map((item) => (
-                  <SingleProject
-                    key={item._id}
-                    project={item}
-                    locale={locale}
-                  />
-                ))}
-              </ul>
-            </div>
+            <ProjectsList data={data} locale={locale} />
           </div>
         </div>
       </div>

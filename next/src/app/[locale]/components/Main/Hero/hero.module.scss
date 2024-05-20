@@ -169,7 +169,7 @@
   right: -20px;
   border-radius: 0 24px 24px 0;
   padding: 32px 8px;
-  background: #f5f8f5;
+  background: $green-30;
   font-weight: 300;
   font-size: 18px;
   line-height: 1.5;
@@ -178,6 +178,11 @@
   border: none;
   writing-mode: tb-rl;
   transform: rotate(180deg);
+  transition: all 200ms ease-in-out;
+  &:hover,
+  &:focus {
+    color: $green-hover;
+  }
   @media screen and (min-width: 768px) {
     top: -100px;
     right: -40px;

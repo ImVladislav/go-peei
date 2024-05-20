@@ -31,14 +31,18 @@ const ReadMore = async ({
           {showItemsOnMob?.map(
             (item) =>
               item._id !== currentNewsItemId && (
-                <SingleNewsItem key={item._id} newsItem={item} locale={""} />
+                <SingleNewsItem
+                  key={item._id}
+                  newsItem={item}
+                  locale={locale}
+                />
               )
           )}
         </ul>
         {/* desktop */}
         <ul className={`${styles.news__list} ${styles.desktop}`}>
           {showItemsOnDesktop?.map((item) => (
-            <SingleNewsItem key={item._id} newsItem={item} locale={""} />
+            <SingleNewsItem key={item._id} newsItem={item} locale={locale} />
           ))}
         </ul>
         <div className={styles.more__box}>

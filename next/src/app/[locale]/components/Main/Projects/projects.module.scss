@@ -164,7 +164,13 @@
   margin-top: 16px;
   text-align: center;
   margin-bottom: 4px;
+  @media screen and (min-width: 1024px) {
+    margin-top: 32px;
+  }
 
+  @media screen and (min-width: 1440px) {
+    margin-top: 48px;
+  }
   &__link {
     display: inline-block;
     font-weight: 300;
@@ -172,25 +178,27 @@
     line-height: 1;
     text-align: center;
     color: $main-black;
-    border-bottom: 1px solid $main-black;
+    position: relative;
     padding: 12px;
+    transition: all 200ms ease-in-out;
 
-    &:hover,
-    &:focus {
-      border-bottom: 2px solid $green-hover;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $main-black;
+      transition: all 200ms ease-in-out;
     }
-  }
-  @media screen and (min-width: 1024px) {
-    margin-top: 32px;
 
-    &__link {
-      font-size: 20px;
+    &:hover::after,
+    &:focus::after {
+      height: 2px;
+      background-color: $green-hover;
     }
-  }
-  @media screen and (min-width: 1440px) {
-    margin-top: 48px;
-
-    &__link {
+    @media screen and (min-width: 1024px) {
       font-size: 20px;
     }
   }

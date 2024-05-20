@@ -1,10 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Button from "../../Button/Button";
 import Translator from "../../translator/Translator";
 
 import styles from "./hero.module.scss";
-import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -52,7 +52,7 @@ const Hero = () => {
               <div className={styles.img_wrap}>
                 <Image
                   className={styles.img}
-                  src="/main/recycling-symbol-green-nature-isolated-white-background.jpg"
+                  src="/main/recycling-symbol-green-nature-isolated-white-background-1.png"
                   alt="піктограма повторної переробки"
                   fill
                 />
@@ -68,7 +68,12 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <Link href="/" className={styles.linkSecurity}>
+          <Link
+            href="https://dsns.gov.ua/uk/abetka-bezpeki/diyi-naselennya-v-umovax-nadzvicainix-situacii-vojennogo-xarakteru"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.linkSecurity}
+          >
             Правила безпеки під час воєнного стану
           </Link>
         </div>

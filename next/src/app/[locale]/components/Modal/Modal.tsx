@@ -8,9 +8,10 @@ interface ModalProps {
   show: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  message?: boolean;
 }
 
-const Modal = ({ show, onClose, children }: ModalProps) => {
+const Modal = ({ show, onClose, children, message }: ModalProps) => {
   const [isBrowser, setBrowser] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -49,18 +50,35 @@ const Modal = ({ show, onClose, children }: ModalProps) => {
   };
 
   const modalContent = show ? (
-    <div className={s.overlay}>
-      <div ref={modalRef} className={s.modal}>
-        <div className={s.header}>
-          <a href="#" onClick={handleClose}>
-            <button className="btn">
-              <Image src={colse} alt="close" />
-            </button>
-          </a>
+    <>
+      {!message ? (
+        <div className={s.overlay}>
+          <div ref={modalRef} className={s.modal}>
+            <div className={s.header}>
+              <a href="#" onClick={handleClose}>
+                <button className="btn">
+                  <Image src={colse} alt="close" />
+                </button>
+              </a>
+            </div>
+            <div className={s.body}>{children}</div>
+          </div>
         </div>
-        <div className={s.body}>{children}</div>
-      </div>
-    </div>
+      ) : (
+        <div className={s.overlayMessage}>
+          <div ref={modalRef} className={s.modalMessage}>
+            <div className={s.header}>
+              <a href="#" onClick={handleClose}>
+                <button className="btn">
+                  <Image src={colse} alt="close" width={20} height={20} />
+                </button>
+              </a>
+            </div>
+            <div className={s.body}>{children}</div>
+          </div>
+        </div>
+      )}
+    </>
   ) : null;
 
   if (isBrowser) {

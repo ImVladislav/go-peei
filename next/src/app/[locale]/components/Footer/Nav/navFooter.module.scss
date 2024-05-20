@@ -27,13 +27,13 @@
   display: grid;
   grid-auto-flow: column dense;
   grid-template-columns: repeat(2, 50%);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   justify-content: space-between;
   row-gap: 8px;
   @media screen and (min-width: 768px) {
     grid-auto-flow: column dense;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     row-gap: 8px;
     justify-content: space-between;
   }
@@ -55,6 +55,7 @@
 
 .link {
   color: $main-black;
+  transition: all 200ms ease-in-out;
   &:hover,
   &:focus {
     color: $green-hover;

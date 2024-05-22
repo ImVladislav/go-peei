@@ -27,6 +27,7 @@ const newsSchema = new Schema(
     firstNew: {
       type: Boolean,
       default: false,
+      required: false,
     },
   },
   { timestamps: true }

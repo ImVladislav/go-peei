@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useSession } from "next-auth/react";
+import NewsEditor from "./NewsEditor";
 
 const AdminPage = () => {
   const { data: status } = useSession();
@@ -19,7 +20,7 @@ const AdminPage = () => {
 
   return (
     <div>
-      <div>NewsEditor</div>
+      <NewsEditor />
       <div>ProjectEditor</div>
     </div>
   );

@@ -50,27 +50,42 @@ export const PUT = async (
 };
 
 // delete news
-export const DELETE = async (
-  request: Request,
-  { params }: { params: { id: string } }
-) => {
+// export const DELETE = async (
+//   request: Request,
+//   { params }: { params: { id: string } }
+// ) => {
+//   const id = new URL(request.url).searchParams.get('id');
+//   await db.connect();
+//   try {
+//     // const id = params.id;
+//     const data = await News.findById(id);
+//     if (!data) {
+//       return new NextResponse(`News with ID ${id} was not found`, {
+//         status: 404,
+//       });
+//     }
+
+//     await News.findByIdAndDelete(id);
+
+//     return NextResponse.json({
+//       message: `News ${id} has been successfully deleted`,
+//     });
+//   } catch (error) {
+//     return new NextResponse("News was not found" + error, {
+//       status: 500,
+//     });
+//   }
+// };
+export const DELETE = async (request: Request) => {
+  const id = new URL(request.url).searchParams.get('id');
   await db.connect();
   try {
-    const id = params.id;
-    const data = await News.findById(id);
-    if (!data) {
-      return new NextResponse(`News with ID ${id} was not found`, {
-        status: 404,
-      });
-    }
-
     await News.findByIdAndDelete(id);
-
-    return NextResponse.json({
-      message: `News ${id} has been successfully deleted`,
+    return new NextResponse("News deleted successfully", {
+      status: 200,
     });
   } catch (error) {
-    return new NextResponse("News was not found" + error, {
+    return new NextResponse("Error deleting news: " + error, {
       status: 500,
     });
   }

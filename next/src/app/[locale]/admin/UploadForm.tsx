@@ -21,6 +21,7 @@ export default function UploadForm() {
   const [titleEn, setTitleEn] = useState("");
   const [description, setDescription] = useState("");
   const [descriptionEn, setDescriptionEn] = useState("");
+  const [editId, setEditId] = useState<string | null>(null);
 
   const fetchNews = async () => {
     const response = await axios.get("/api/news");
@@ -30,60 +31,121 @@ export default function UploadForm() {
   const handleUpload = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!title || !titleEn || !description || !descriptionEn || !image) {
+    if (
+      !title ||
+      !titleEn ||
+      !description ||
+      !descriptionEn ||
+      (!image && !editId)
+    ) {
       alert("Заповніть вси поля");
       return;
     }
     // провьерка на подпихню типу зображення
     const allowedTypes = ["image/png", "image/jpg", "image/jpeg"];
-    if (!allowedTypes.includes(image.type)) {
+    if (image && !allowedTypes.includes(image.type)) {
       alert("Please upload an image in png, jpg, or jpeg format");
       return;
     }
-    const reader = new FileReader();
-    reader.onloadend = async () => {
-      const base64Image = reader.result;
 
-      if (base64Image) {
-        const newsData = {
-          title,
-          titleEn,
-          description,
-          descriptionEn,
-          image: {
-            name: image.name,
-            data: base64Image.toString().split(",")[1],
-          },
-        };
-
-        try {
-          const response = await axios.post("/api/news", newsData, {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-          console.log("News uploaded:", response.data);
-          fetchNews();
-        } catch (error) {
-          console.error("Error uploading news:", error);
-        }
-      }
+    const newsData: any = {
+      title,
+      titleEn,
+      description,
+      descriptionEn,
     };
 
-    reader.readAsDataURL(image);
+    if (image) {
+      const reader = new FileReader();
+      reader.onloadend = async () => {
+        const base64Image = reader.result;
+        if (base64Image) {
+          newsData.image = {
+            name: image.name,
+            data: base64Image.toString().split(",")[1],
+          };
+        }
+
+        if (editId) {
+          // Edit existing news
+          try {
+            const response = await axios.patch(
+              `/api/news?id=${editId}`,
+              newsData,
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            );
+            console.log("News updated:", response.data);
+          } catch (error) {
+            console.error("Error updating news:", error);
+          }
+        } else {
+          // Add new news
+          try {
+            const response = await axios.post("/api/news", newsData, {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+            console.log("News uploaded:", response.data);
+          } catch (error) {
+            console.error("Error uploading news:", error);
+          }
+        }
+        fetchNews();
+        resetForm();
+      };
+      reader.readAsDataURL(image);
+    } else {
+      if (editId) {
+        // Edit existing news without new image
+        try {
+          const response = await axios.patch(
+            `/api/news/[id]?id=${editId}`,
+            newsData,
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          console.log("News updated:", response.data);
+        } catch (error) {
+          console.error("Error updating news:", error);
+        }
+      }
+      fetchNews();
+      resetForm();
+    }
   };
 
   const handleDelete = async (id: string) => {
     try {
-      // await removeDataId(id, "news");
-
-      // console.log("News deleted:", id);
-
-      await axios.delete(`/api/news?id=${id}`);
+      await axios.delete(`/api/news/[id]?id=${id}`);
       fetchNews();
     } catch (error) {
       console.error("Error deleting news:", error);
     }
+  };
+
+  const handleEdit = (news: NewsItem) => {
+    setTitle(news.title);
+    setTitleEn(news.titleEn);
+    setDescription(news.description);
+    setDescriptionEn(news.descriptionEn);
+    setEditId(news._id);
+  };
+
+  const resetForm = () => {
+    setTitle("");
+    setTitleEn("");
+    setDescription("");
+    setDescriptionEn("");
+    setImage(null);
+    setEditId(null);
   };
 
   useEffect(() => {
@@ -138,7 +200,9 @@ export default function UploadForm() {
           />
         </div>
         <div>
-          <button type="submit">Завантажити Новину</button>
+          <button type="submit">
+            {editId ? "Оновити Новину" : "Завантажити Новину"}
+          </button>
         </div>
       </form>
       <div>
@@ -154,6 +218,7 @@ export default function UploadForm() {
               />
               <h3>{news.title}</h3>
               <p>{news.description}</p>
+              <button onClick={() => handleEdit(news)}>Редагувати</button>
               <ButtonDelete id={news._id} handleClick={handleDelete} />
             </div>
           ))}

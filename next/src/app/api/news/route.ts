@@ -50,41 +50,41 @@ export const POST = async (request: Request) => {
   }
 };
 
-export const DELETE = async (request: Request) => {
-  const id = new URL(request.url).searchParams.get('id');
-  await db.connect();
-  try {
-    const news = await News.findById(id);
-    if (!news) {
-      return new NextResponse("News not found", {
-        status: 404,
-      });
-    }
+// export const DELETE = async (request: Request) => {
+//   const id = new URL(request.url).searchParams.get('id');
+//   await db.connect();
+//   try {
+//     const news = await News.findById(id);
+//     if (!news) {
+//       return new NextResponse("News not found", {
+//         status: 404,
+//       });
+//     }
 
-    // Delete the image file
-   const imagePath = path.join(process.cwd(), "public", news.imageSrc);
-    try {
-      await unlink(imagePath);
-    } catch (error:any) {
-      if (error.code !== 'ENOENT') {
-        // If the error is not because the file was not found, rethrow the error
-        throw error;
-      }
-      // Log if the image was not found
-      console.warn(`Image not found: ${imagePath}`);
-    }
+//   // Видаляємо зображення
+//    const imagePath = path.join(process.cwd(), "public", news.imageSrc);
+//     try {
+//       await unlink(imagePath);
+//     } catch (error:any) {
+//       if (error.code !== 'ENOENT') {
 
-    await News.findByIdAndDelete(id);
-    return new NextResponse("News deleted successfully", {
-      status: 200,
-    });
-  } catch (error) {
-    console.error("Error deleting news:", error);
-    return new NextResponse("Error deleting news: " + error, {
-      status: 500,
-    });
-  }
-};
+//         throw error;
+//       }
+
+//       console.warn(`Image not found: ${imagePath}`);
+//     }
+
+//     await News.findByIdAndDelete(id);
+//     return new NextResponse("News deleted successfully", {
+//       status: 200,
+//     });
+//   } catch (error) {
+//     console.error("Error deleting news:", error);
+//     return new NextResponse("Error deleting news: " + error, {
+//       status: 500,
+//     });
+//   }
+// };
 
 // Delete news
 

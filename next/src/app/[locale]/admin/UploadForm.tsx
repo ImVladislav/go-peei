@@ -1,9 +1,7 @@
 "use client";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import React from "react";
-import { addData, removeDataId } from "../../../../libs/getData";
 import ButtonDelete from "../components/Button/ButtonDelete";
 
 interface NewsItem {
@@ -148,7 +146,7 @@ export default function UploadForm() {
           allNews.length > 0 &&
           allNews.map((news, i) => (
             <div key={news._id}>
-              <Image
+              <img
                 src={news.imageSrc}
                 alt={`image${i}`}
                 width={200}

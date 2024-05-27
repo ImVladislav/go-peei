@@ -1,10 +1,11 @@
 import React from "react";
 import UploadForm from "./UploadForm";
+import Title from "../components/Title/Title";
 
 const NewsEditor = () => {
   return (
     <div>
-      <p>NewsEditor</p>
+      <Title>Робота з новинами</Title>
       <UploadForm />
     </div>
   );

@@ -1,0 +1,85 @@
+.admin__btnContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 8px 0;
+  //   @media screen and (min-width: 765px) {
+
+  //   }
+  //   @media screen and (min-width: 1024px) {
+
+  //   }
+  //   @media screen and (min-width: 1440px) {
+  //   }
+}
+
+.admin__btn {
+  margin: 0 auto;
+  width: 317px;
+  height: 40px;
+  margin: 8px 0;
+  //   padding: 8px 12px;
+  @media screen and (min-width: 765px) {
+    width: 409px;
+    height: 48px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 259px;
+    height: 52px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 303px;
+    height: 52px;
+  }
+}
+
+// ================= upload form ========================
+.uploadForm__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+  //   @media screen and (min-width: 765px) {
+
+  //   }
+  //   @media screen and (min-width: 1024px) {
+
+  //   }
+}
+.uploadForm__input {
+  margin-top: 8px;
+  border: 1px solid #141414;
+  border-radius: 6px;
+  padding: 8px 16px;
+  width: 100%;
+  &::placeholder {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #adadad;
+  }
+}
+
+.uploadForm__textarea {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 8px;
+  border: 1px solid #141414;
+  border-radius: 6px;
+  padding: 8px 16px;
+  width: 100%;
+  height: 152px;
+  //   resize: none;
+  &::placeholder {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #adadad;
+  }
+}
+.editing {
+  background-color: #f5f8f5; /* Light yellow background */
+  border: 1px solid #e8f1e7; /* Yellow border */
+}

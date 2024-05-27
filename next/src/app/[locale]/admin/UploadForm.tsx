@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import React from "react";
 import ButtonDelete from "../components/Button/ButtonDelete";
+import s from "./admin.module.scss";
+import Button from "../components/Button/Button";
 
 interface NewsItem {
   _id: string;
@@ -38,10 +40,11 @@ export default function UploadForm() {
       !descriptionEn ||
       (!image && !editId)
     ) {
-      alert("Заповніть вси поля");
+      alert("Заповніть всі поля");
       return;
     }
-    // провьерка на подпихню типу зображення
+
+    // Перевірка на підтримку типу зображення
     const allowedTypes = ["image/png", "image/jpg", "image/jpeg"];
     if (image && !allowedTypes.includes(image.type)) {
       alert("Please upload an image in png, jpg, or jpeg format");
@@ -67,7 +70,7 @@ export default function UploadForm() {
         }
 
         if (editId) {
-          // Edit existing news
+          // Редагування існуючої новини
           try {
             const response = await axios.patch(
               `/api/news?id=${editId}`,
@@ -83,7 +86,7 @@ export default function UploadForm() {
             console.error("Error updating news:", error);
           }
         } else {
-          // Add new news
+          // Додавання нової новини
           try {
             const response = await axios.post("/api/news", newsData, {
               headers: {
@@ -101,7 +104,7 @@ export default function UploadForm() {
       reader.readAsDataURL(image);
     } else {
       if (editId) {
-        // Edit existing news without new image
+        // Редагування існуючої новини без нового зображення
         try {
           const response = await axios.patch(
             `/api/news/[id]?id=${editId}`,
@@ -167,6 +170,7 @@ export default function UploadForm() {
         </div>
         <div>
           <input
+            className={s.uploadForm__input}
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -176,6 +180,7 @@ export default function UploadForm() {
         </div>
         <div>
           <input
+            className={s.uploadForm__input}
             type="text"
             value={titleEn}
             onChange={(e) => setTitleEn(e.target.value)}
@@ -185,6 +190,7 @@ export default function UploadForm() {
         </div>
         <div>
           <textarea
+            className={s.uploadForm__textarea}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Текст Новини"
@@ -193,23 +199,36 @@ export default function UploadForm() {
         </div>
         <div>
           <textarea
+            className={s.uploadForm__textarea}
             value={descriptionEn}
             onChange={(e) => setDescriptionEn(e.target.value)}
             placeholder="Текст Новини (Англійською)"
             required
           />
         </div>
-        <div>
-          <button type="submit">
+        <div className={s.admin__btnContainer}>
+          <Button newStyles={s.admin__btn} typeBtn="submit">
             {editId ? "Оновити Новину" : "Завантажити Новину"}
-          </button>
+          </Button>
+          {editId && (
+            <Button
+              newStyles={`${s.admin__btn} ${s.cancel}`}
+              typeBtn="button"
+              onClick={resetForm}
+            >
+              Відмінити редагування
+            </Button>
+          )}
         </div>
       </form>
       <div>
         {allNews &&
           allNews.length > 0 &&
           allNews.map((news, i) => (
-            <div key={news._id}>
+            <div
+              key={news._id}
+              className={editId === news._id ? s.editing : ""}
+            >
               <img
                 src={news.imageSrc}
                 alt={`image${i}`}
@@ -218,7 +237,14 @@ export default function UploadForm() {
               />
               <h3>{news.title}</h3>
               <p>{news.description}</p>
-              <button onClick={() => handleEdit(news)}>Редагувати</button>
+              <Button
+                newStyles={s.admin__btn}
+                typeBtn="button"
+                onClick={() => handleEdit(news)}
+              >
+                Редагувати
+              </Button>
+
               <ButtonDelete id={news._id} handleClick={handleDelete} />
             </div>
           ))}

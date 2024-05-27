@@ -31,7 +31,7 @@ const NavModal = () => {
   return (
     <>
       <button className={s.menuBtn} onClick={() => setIsModalOpen(true)}>
-        <Image width={40} src={menuBtnSvg} alt="menu" />
+        <Image width={70} src={menuBtnSvg} alt="menu" />
       </button>
       <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className={s.navMobile__wraper}>

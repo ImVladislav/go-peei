@@ -3,12 +3,7 @@
 import Link from "next/link";
 import { navItems } from "./navItems";
 import s from "./Header.module.scss";
-// import LanguageChanger from "../../../../../components/LanguageChanger";
 import { useTranslation } from "react-i18next";
-// import Modal from "../Modal/Modal";
-// import { useState } from "react";
-// import menuBtnSvg from "../../../../../public/MobileMenuButton.svg";
-// import Image from "next/image";
 import NavModal from "./NavModal";
 export default function Navbar() {
   const { t } = useTranslation();

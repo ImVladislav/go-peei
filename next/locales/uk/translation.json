@@ -198,5 +198,17 @@
 
   "publishedBy": "Опубліковано",
   "toShare": "Поділитися",
-  "readAlso": "Читайте також"
+  "readAlso": "Читайте також",
+
+    "officialDocuments": "Офіційні документи",
+    "extract": "Виписка",
+    "charter": "Статут",
+    "volunteerRegulations": "Положення ГО ПЕЕІ про залучення волонтерів 2023",
+    "offerAgreement": "Договір оферти",
+    "lawsOfUkraineRelatedToVolunteering": "ЗАКОНИ УКРАЇНИ ПОВ’ЯЗАНІ З ВОЛОНТЕРСТВОМ",
+    "volunteeringLaw": "Закон України “Про волонтерську діяльність”",
+    "charitableActivitiesLaw": "Закон України “Про благодійну діяльність та благодійні організації”",
+
+    "safetyRulesDuringMartialLaw": "Правила безпеки під час воєнного стану"
+  
 }

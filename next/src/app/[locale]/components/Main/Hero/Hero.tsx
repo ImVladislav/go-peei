@@ -74,7 +74,7 @@ const Hero = () => {
             rel="noreferrer"
             className={styles.linkSecurity}
           >
-            Правила безпеки під час воєнного стану
+            <Translator>safetyRulesDuringMartialLaw</Translator>
           </Link>
         </div>
       </div>

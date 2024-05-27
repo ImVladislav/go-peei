@@ -199,5 +199,16 @@
 
   "publishedBy": "Published by",
   "toShare": "To share",
-  "readAlso": "Read also"
+  "readAlso": "Read also",
+
+  "officialDocuments": "Official Documents",
+  "extract": "Extract",
+  "charter": "Charter",
+  "volunteerRegulations": "Volunteer Regulations of NGO PEEI 2023",
+  "offerAgreement": "Offer Agreement",
+  "lawsOfUkraineRelatedToVolunteering": "Laws of Ukraine Related to Volunteering",
+  "volunteeringLaw": "Law of Ukraine 'On Volunteering'",
+  "charitableActivitiesLaw": "Law of Ukraine 'On Charitable Activities and Charitable Organizations'",
+  
+  "safetyRulesDuringMartialLaw": "Safety Rules During Martial Law"
 }

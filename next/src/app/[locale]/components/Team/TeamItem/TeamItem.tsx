@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Translator from '../../translator/Translator'
 import styles from './teamItem.module.scss'
 
 interface itemProps {
@@ -25,16 +26,22 @@ const TeamItem = ({ item }: itemProps, key: string) => {
 						/>
 					</div>
 					<div className={styles.item__infoWrapper}>
-						<h3 className={styles.item__title}>{item.name}</h3>
-						<p className={styles.item__position}>{item.position}</p>
+						<h3 className={styles.item__title}>
+							<Translator>{item.name}</Translator>
+						</h3>
+						<p className={styles.item__position}>
+							<Translator>{item.position}</Translator>
+						</p>
 						<div className={styles.item__emailWrapper}>
-							<Image src='team/Email.svg' alt='email' width={24} height={24} />
+							<Image src='/team/Email.svg' alt='email' width={24} height={24} />
 							<p className={styles.item__email}>{item.email}</p>
 						</div>
 					</div>
 				</div>
 
-				<p className={styles.item__about}>{item.about}</p>
+				<p className={styles.item__about}>
+					<Translator>{item.about}</Translator>
+				</p>
 			</li>
 		</>
 	)

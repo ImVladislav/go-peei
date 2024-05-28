@@ -1,42 +1,37 @@
 export const TEAM = [
 	{
 		image: '/team/Glagyshko_S.jpg',
-		name: 'Сергій Гладишко',
-		position: 'Засновник та голова організації',
+		name: 'serhiiHladyshko',
+		position: 'founderOfTheOrganization',
 		email: 'copeeiua@gmail.com',
-		about:
-			'Lorem ipsum dolor sit amet consectetur. Quis tempor amet magna donec volutpat tempus arcu. Vitae pretium mi maecenas volutpat rhoncus mattis. Turpis in egestas lobortis ac faucibus volutpat.',
+		about: 'aboutSerhiiHladyshko',
 	},
 	{
-		image: '/team/Glagyshko_S.jpg',
-		name: 'Сергій Гладишко',
-		position: 'Засновник та голова організації',
+		image: '/team/Bezkorovainy_Y.jpg',
+		name: 'yevgenyBezkorovainy',
+		position: 'deputyChairman',
 		email: 'copeeiua@gmail.com',
-		about:
-			'Lorem ipsum dolor sit amet consectetur. Quis tempor amet magna donec volutpat tempus arcu. Vitae pretium mi maecenas volutpat rhoncus mattis. Turpis in egestas lobortis ac faucibus volutpat.',
+		about: 'aboutYevgenyBezkorovainy',
 	},
 	{
-		image: '/team/Glagyshko_S.jpg',
-		name: 'Сергій Гладишко',
-		position: 'Засновник та голова організації',
+		image: '/team/Gordienko_I.jpg',
+		name: 'ilonaGordienko',
+		position: 'memberOfTheBoard',
 		email: 'copeeiua@gmail.com',
-		about:
-			'Lorem ipsum dolor sit amet consectetur. Quis tempor amet magna donec volutpat tempus arcu. Vitae pretium mi maecenas volutpat rhoncus mattis. Turpis in egestas lobortis ac faucibus volutpat.',
+		about: 'aboutIlonaGordienko',
 	},
 	{
-		image: '/team/Glagyshko_S.jpg',
-		name: 'Сергій Гладишко',
-		position: 'Засновник та голова організації',
+		image: '/team/Bezkorovaina_T.jpg',
+		name: 'tatianaBezkorovaina',
+		position: 'memberOfTheBoard',
 		email: 'copeeiua@gmail.com',
-		about:
-			'Lorem ipsum dolor sit amet consectetur. Quis tempor amet magna donec volutpat tempus arcu. Vitae pretium mi maecenas volutpat rhoncus mattis. Turpis in egestas lobortis ac faucibus volutpat.',
+		about: 'aboutTatianaBezkorovaina',
 	},
 	{
-		image: '/team/Glagyshko_S.jpg',
-		name: 'Сергій Гладишко',
-		position: 'Засновник та голова організації',
+		image: '/team/Gordienko_M.jpg',
+		name: 'mykolaGordienko',
+		position: 'projectManager',
 		email: 'copeeiua@gmail.com',
-		about:
-			'Lorem ipsum dolor sit amet consectetur. Quis tempor amet magna donec volutpat tempus arcu. Vitae pretium mi maecenas volutpat rhoncus mattis. Turpis in egestas lobortis ac faucibus volutpat.',
+		about: 'aboutMykolaGordienko',
 	},
 ]

@@ -1,13 +1,14 @@
-@import '../../../../styles/utils/_variables.scss';
+@import "../../../../styles/utils/_variables.scss";
 
 .list {
-	display: flex;
-	flex-direction: column;
-	gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
 
-	@media screen and (min-width: 1440px) {
-		flex-wrap: wrap;
-		flex-direction: row;
-		gap: 40px;
-	}
+  @media screen and (min-width: 1440px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 40px;
+  }
 }

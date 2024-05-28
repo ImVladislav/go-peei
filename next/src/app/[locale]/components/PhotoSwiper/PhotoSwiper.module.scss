@@ -1,0 +1,20 @@
+.photo_swiper_slide {
+  width: 320px;
+  @media screen and (min-width: 1024px) {
+    width: 520px;
+  }
+}
+.photo_imgWrap {
+  position: relative;
+  width: 320px;
+  height: 169px;
+  overflow: hidden;
+  @media screen and (min-width: 1024px) {
+    width: 520px;
+    height: 264px;
+    border-radius: 18px;
+  }
+}
+.photo_img {
+  object-fit: cover;
+}

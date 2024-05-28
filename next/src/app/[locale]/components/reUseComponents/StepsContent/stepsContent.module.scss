@@ -93,7 +93,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
-  color: #141414;
+  color: $main-black;
 }
 .description {
   font-weight: 300;
@@ -109,5 +109,18 @@
   font-weight: 600;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  color: #0d490d;
+  color: $main-green;
+  transition: all 200ms ease-in-out;
+  &:hover,
+  &:focus {
+    color: $green-hover;
+  }
+}
+
+.counter {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: $main-green;
 }

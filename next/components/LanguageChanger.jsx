@@ -71,7 +71,6 @@ export default function LanguageChanger() {
             {currentLocale === "en" ? "Eng" : "Укр"}
           </div>
           <svg
-            // id={`svg-${item.title.label}`}
             width="25px"
             height="25px"
             viewBox="0 0 24 24"

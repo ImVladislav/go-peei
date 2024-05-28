@@ -59,9 +59,9 @@
   justify-content: space-between;
   max-width: 1440px;
   width: 100%;
-  margin: 0px, auto;
-  margin-right: auto;
-  margin-left: auto;
+
+  margin: 0 auto;
+  align-items: center;
 }
 .header {
   display: flex;
@@ -128,7 +128,6 @@
 
   stroke: green;
 }
-
 
 .nav__item {
   display: flex;

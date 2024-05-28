@@ -1,5 +1,6 @@
 {
 	"supportUs": "Підтримати нас",
+	"donate": "Пожертвувати",
 
 	"environmentalSecurityEnergyIndependence": "Екологічна безпека - енергетична незалежність",
 	"environmental": "Екологічна",
@@ -24,6 +25,13 @@
 	"collected": "Зібрано",
 	"totalAmount": "Загальна сума",
 	"allProjects": "Усі проєкти",
+	"projects": "Проєкт ",
+	"aboutTheProject": "Про проєкт",
+	"projectReporting": "Звітність по проєкту",
+	"projectReport": "Звіт по проєкту",
+
+	"photoReport": "фото",
+	"backToProjects": "Назад до проєктів",
 
 	"reviews": "Відгуки",
 	"leaveAReview": "Залишити відгук",
@@ -46,8 +54,14 @@
 	"email": "Електронна пошта",
 	"message": "Повідомлення",
 	"messageErrorName": "Вкажіть ім’я",
+	"messageErrorNameInvalid": "Ім'я повинно містити тільки букви",
+	"messageErrorNameTooShort": "Кількість введених букв має бути більше 2",
+	"messageErrorNameTooLong": "Кількість введених букв має бути не більше 20",
 	"messageErrorEmail": "Вкажіть електронну адресу",
 	"emailAddressFormatIsIncorrect": "Невірний формат електронної адреси",
+	"messageErrorEmailTooLong": "Кількість введених символів має бути не більше 30",
+	"messageErrorMessageTooShort": "Довдина повідомлення не менша 20 символів",
+	"messageErrorMessageTooLong": "Довдина повідомлення не більша 100 символів",
 	"messagePlaceholder": "Будь ласка, напишіть сюди своє повідомлення",
 	"send": "Надіслати",
 
@@ -81,7 +95,7 @@
 	"titleProfessionalism": "професіоналізм",
 	"textProfessionalism": "Постійне вдосконалення професійних навичок та знань у відповідності до сучасних стандартів.",
 	"titleInnovation": "новаторство",
-	"textInnovation": "Постійне вдосконалення професійних навичок та знань у відповідності до сучасних стандартів.",
+	"textInnovation": "Активне впровадження інноваційних ідей та технологій у роботу.",
 	"titleResponsibility": "відповідальність",
 	"textResponsibility": "Турбота про наслідки власних дій на рівні громадської та екологічної відповідальності.",
 	"titleObjectivity": "об’єктивність",
@@ -206,5 +220,16 @@
 
 	"mykolaGordienko": "Микола Гордієнко",
 	"projectManager": "Керівник проєкту",
-	"aboutMykolaGordienko": "Має не повну вищу юридичну освіту, вміє працювати у команді, має досвід по роботі з клієнтами, брав участь у фандрейзинговому проекті, займається волонтерством."
+	"aboutMykolaGordienko": "Має не повну вищу юридичну освіту, вміє працювати у команді, має досвід по роботі з клієнтами, брав участь у фандрейзинговому проекті, займається волонтерством.",
+
+	"officialDocuments": "Офіційні документи",
+	"extract": "Виписка",
+	"charter": "Статут",
+	"volunteerRegulations": "Положення ГО ПЕЕІ про залучення волонтерів 2023",
+	"offerAgreement": "Договір оферти",
+	"lawsOfUkraineRelatedToVolunteering": "ЗАКОНИ УКРАЇНИ ПОВ’ЯЗАНІ З ВОЛОНТЕРСТВОМ",
+	"volunteeringLaw": "Закон України “Про волонтерську діяльність”",
+	"charitableActivitiesLaw": "Закон України “Про благодійну діяльність та благодійні організації”",
+
+	"safetyRulesDuringMartialLaw": "Правила безпеки під час воєнного стану"
 }

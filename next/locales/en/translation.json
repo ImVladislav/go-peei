@@ -1,5 +1,6 @@
 {
 	"supportUs": "Support us",
+	"donate": "Donate",
 
 	"environmentalSecurityEnergyIndependence": "Environmental security - energy independence",
 	"environmental": "Environmental",
@@ -26,9 +27,15 @@
 	"collected": "Collected",
 	"totalAmount": "Total amount",
 	"allProjects": "All projects",
+	"projects": "Project ",
+	"aboutTheProject": "About the project",
+	"projectReporting": "Project reporting",
+	"projectReport": "Project report",
+	"photoReport": "photo",
+	"backToProjects": "Back to projects",
 
 	"reviews": "Reviews",
-	"leaveAReview": "Leave a review",
+	"leaveAReview": "Back to projects",
 
 	"News": "news",
 
@@ -48,9 +55,16 @@
 	"email": "Email address",
 	"message": "Message",
 	"messageErrorName": "Enter your name",
+	"messageErrorNameInvalid": "The name should contain only letters",
+	"messageErrorNameTooShort": "The number of letters entered must be greater than 2",
+	"messageErrorNameTooLong": "The number of letters entered should be no more than 20",
 	"messageErrorEmail": "Enter your email address",
 	"emailAddressFormatIsIncorrect": "Email address format is incorrect",
+	"messageErrorEmailTooLong": "The number of characters entered should be no more than 30",
+
 	"messagePlaceholder": "Please write your message here",
+	"messageErrorMessageTooShort": "Message length is not less than 20 characters",
+	"messageErrorMessageTooLong": "Message length is no more than 100 characters",
 	"send": "Send",
 
 	"PlatformForInitiatives": "\"Platform for eco-energy initiatives\"",
@@ -83,7 +97,7 @@
 	"titleProfessionalism": "professionalism",
 	"textProfessionalism": "Continuous improvement of professional skills and knowledge in accordance with modern standards.",
 	"titleInnovation": "innovation",
-	"textInnovation": "Continuous improvement of professional skills and knowledge in accordance with modern standards.",
+	"textInnovation": "Active implementation of innovative ideas and technologies in our work.",
 	"titleResponsibility": "responsibility",
 	"textResponsibility": "Caring about the consequences of one's actions at the level of social and environmental responsibility.",
 	"titleObjectivity": "objectivity",
@@ -207,5 +221,16 @@
 
 	"mykolaGordienko": "Mykola Gordienko",
 	"projectManager": "Project manager",
-	"aboutMykolaGordienko": "Has an incomplete higher legal education, knows how to work in a team, has experience in working with clients, participated in a fundraising project, and volunteers."
+	"aboutMykolaGordienko": "Has an incomplete higher legal education, knows how to work in a team, has experience in working with clients, participated in a fundraising project, and volunteers.",
+
+	"officialDocuments": "Official Documents",
+	"extract": "Extract",
+	"charter": "Charter",
+	"volunteerRegulations": "Volunteer Regulations of NGO PEEI 2023",
+	"offerAgreement": "Offer Agreement",
+	"lawsOfUkraineRelatedToVolunteering": "Laws of Ukraine Related to Volunteering",
+	"volunteeringLaw": "Law of Ukraine 'On Volunteering'",
+	"charitableActivitiesLaw": "Law of Ukraine 'On Charitable Activities and Charitable Organizations'",
+
+	"safetyRulesDuringMartialLaw": "Safety Rules During Martial Law"
 }

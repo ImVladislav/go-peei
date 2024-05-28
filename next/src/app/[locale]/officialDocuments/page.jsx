@@ -3,13 +3,15 @@ import Title from "../components/Title/Title";
 import Link from "next/link";
 import s from "./officialDocuments.module.scss";
 import style from "../../styles/utils/Container.module.scss";
+import Translator from "../components/translator/Translator";
 
 const OfficialDocuments = () => {
   return (
     <div className={style.container}>
       <section className={s.officialDocuments__section}>
-        {/* <div className={s.officialDocuments__titleThumb}> */}
-        <Title>Офіційні документи</Title>
+        <Title>
+          <Translator>officialDocuments</Translator>
+        </Title>
         {/* </div> */}
         <ul>
           <li className={s.officialDocuments__li_item_link}>
@@ -17,7 +19,7 @@ const OfficialDocuments = () => {
               className={s.officialDocuments__link}
               href="/officialDocuments/extract"
             >
-              Виписка
+              <Translator>extract</Translator>
             </Link>
           </li>
           <li className={s.officialDocuments__li_item_link}>
@@ -25,7 +27,7 @@ const OfficialDocuments = () => {
               className={s.officialDocuments__link}
               href="/officialDocuments/statut"
             >
-              Статут
+              <Translator>charter</Translator>
             </Link>
           </li>
           <li className={s.officialDocuments__li_item_link}>
@@ -33,7 +35,7 @@ const OfficialDocuments = () => {
               className={s.officialDocuments__link}
               href="/officialDocuments/volunteerEngagement"
             >
-              Положення ГО ПЕЕІ про залучення волонтерів 2023
+              <Translator>volunteerRegulations</Translator>
             </Link>
           </li>
           <li className={s.officialDocuments__li_item_link}>
@@ -41,14 +43,16 @@ const OfficialDocuments = () => {
               className={s.officialDocuments__link}
               href="/officialDocuments/offert_contract"
             >
-              Договір оферти
+              <Translator>offerAgreement</Translator>
             </Link>
           </li>
         </ul>
       </section>
       <section className={s.officialDocuments__section}>
         {/* <div className={s.officialDocuments__titleThumb}> */}
-        <Title>Закони України пов’язані з волонтерством</Title>
+        <Title>
+          <Translator>lawsOfUkraineRelatedToVolunteering</Translator>
+        </Title>
         {/* </div> */}
         <ul>
           <li className={s.officialDocuments__li_item_link}>
@@ -56,7 +60,7 @@ const OfficialDocuments = () => {
               className={s.officialDocuments__link}
               href="https://zakon.rada.gov.ua/laws/main/3236-17#Text"
             >
-              Закон України “Про волонтерську діяльність”
+              <Translator>volunteeringLaw</Translator>
             </Link>
           </li>
           <li className={s.officialDocuments__li_item_link}>
@@ -64,8 +68,7 @@ const OfficialDocuments = () => {
               className={s.officialDocuments__link}
               href="https://zakon.rada.gov.ua/laws/main/5073-17#Text"
             >
-              Закон України “Про благодійну діяльність та благодійні
-              організації”
+              <Translator>charitableActivitiesLaw</Translator>
             </Link>
           </li>
         </ul>

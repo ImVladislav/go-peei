@@ -10,9 +10,17 @@ async function login(credentials) {
     if (!user) throw new Error("No user found with this email");
     const isCorrect = await bcrypt.compare(credentials.password, user.password);
     if (!isCorrect) throw new Error("Password doesn't match");
-    return user;
+
+    return {
+      id: user._id.toString(),
+      email: user.email,
+      username: user.username,
+    };
   } catch (error) {
     console.log("Error while logging in:", error);
+    throw error;
+  } finally {
+    await db.disconnect();
   }
 }
 
@@ -27,42 +35,41 @@ export const authOptions = {
         email: { label: "Email", type: "text", placeholder: "jsmith" },
         password: { label: "Password", type: "password" },
       },
-
       async authorize(credentials) {
         try {
           const user = await login(credentials);
-          // console.log({ credentials });
-          // console.log("this is user=", user);
-          return user;
+          if (user) {
+            console.log("User in authorize:", user);
+            return user;
+          } else {
+            return null;
+          }
         } catch (error) {
+          console.log("Authorize error:", error);
           throw new Error("Failed to login");
         }
-        // const user = await User.findOne({ email: credentials?.email });
-        // if (!user) {
-        //   throw new Error("No such user found!");
-        // }
       },
     }),
   ],
   callbacks: {
-    async jwt(token, user) {
+    async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
         token.email = user.email;
         token.username = user.username;
       }
-      console.log("token=", token);
+      console.log("JWT token:", token);
       return token;
     },
-    async session(session, token) {
+    async session({ session, token }) {
       if (token) {
         session.user.id = token.id;
         session.user.email = token.email;
         session.user.username = token.username;
       } else {
-        console.log("token проєбали");
+        console.log("Token missing in session callback");
       }
-      console.log("session=", session);
+      console.log("Session:", session);
       return session;
     },
   },

@@ -11,17 +11,18 @@ import {
 export const navFooter: navLinks[] = [
   { href: "/about", key: "aboutUs", label: "aboutUs" },
   { href: "/ourTeam", key: "ourTeam", label: "ourTeam" },
-  {
-    href: "/ourPartners",
-    key: "ourPartners",
-    label: "ourPartners",
-  },
+  { key: "news", label: "news", href: "/news" },
+  // {
+  //   href: "/ourPartners",
+  //   key: "ourPartners",
+  //   label: "ourPartners",
+  // },
   {
     href: "/officialDocuments",
     key: "officialDocuments",
     label: "officialDocuments",
   },
-  { href: "/rule", key: "rule", label: "boardOfManagement" },
+  // { href: "/rule", key: "rule", label: "boardOfManagement" },
   {
     key: "workWithChildren",
     label: "workWithChildren",
@@ -42,7 +43,7 @@ export const navFooter: navLinks[] = [
     label: "environmentalProtection",
     href: "/activities/environmental-protection",
   },
-  { key: "news", label: "news", href: "/news" },
+
   {
     key: "financially",
     label: "supportWithADonation",
@@ -58,7 +59,7 @@ export const navFooter: navLinks[] = [
     label: "becomeAVolunteer",
     href: "/support/volonter",
   },
-  { href: "/reports", key: "reports", label: "reports" },
+  // { href: "/reports", key: "reports", label: "reports" },
   { href: "/contacts", key: "contacts", label: "contacts" },
 ];
 
@@ -70,11 +71,11 @@ export const headerContacts: contactItem[] = [
 
 // Socials
 export const initialSocials: socialsItem[] = [
+  { href: "https://web.whatsapp.com/", name: "WhatsUp" },
+  { href: "https://www.instagram.com/", name: "Instagram" },
   { href: "https://linkedin.com/", name: "Linkedin" },
   { href: "https://www.facebook.com/", name: "Facebook" },
-  { href: "https://www.instagram.com/", name: "Instagram" },
   { href: "https://www.youtube.com/", name: "YouTube" },
-  { href: "/whatsup", name: "WhatsUp" },
   { href: "https://web.telegram.org/", name: "Telegram" },
 ];
 

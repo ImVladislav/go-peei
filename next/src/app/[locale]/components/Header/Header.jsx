@@ -52,7 +52,7 @@ export default function Header({ locale }) {
             <></>
           ) : (
             <>
-              {session.user?.email}
+              {/* {session.user?.email} */}
               <button
                 className={s.header__logout}
                 onClick={() => {

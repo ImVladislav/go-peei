@@ -63,8 +63,13 @@
     padding: 8px;
     justify-content: center;
   }
+  &.active .svgIcon {
+    transform: rotate(180deg);
+  }
 }
-
+.svgIcon {
+  transition: transform 0.5s ease;
+}
 // .languageListItem {
 // }
 

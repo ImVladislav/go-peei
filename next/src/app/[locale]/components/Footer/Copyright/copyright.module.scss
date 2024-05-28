@@ -4,6 +4,10 @@
   flex-direction: column-reverse;
   padding: 24px 0;
   @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
+
+    justify-content: space-between;
+
     border-top: 1px solid $main-green;
   }
   @media screen and (min-width: 1024px) {
@@ -22,7 +26,7 @@
   @media screen and (min-width: 768px) {
     text-align: start;
     font-size: 14px;
-    margin-top: 16px;
+    margin-top: 0px;
   }
   @media screen and (min-width: 1024px) {
     margin: 0;
@@ -54,6 +58,7 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: $main-black;
+  transition: all 200ms ease-in-out;
   &:hover,
   &:focus {
     color: $green-hover;

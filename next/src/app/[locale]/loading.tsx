@@ -3,7 +3,7 @@ import styles from './main.module.scss'
 
 const Loading = () => {
 	return (
-		<div className={styles.section}>
+		<div className={styles.wrap}>
 			<Loader width={103} height={103} />
 		</div>
 	)

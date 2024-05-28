@@ -97,7 +97,7 @@
   "titleProfessionalism": "professionalism",
   "textProfessionalism": "Continuous improvement of professional skills and knowledge in accordance with modern standards.",
   "titleInnovation": "innovation",
-  "textInnovation": "Continuous improvement of professional skills and knowledge in accordance with modern standards.",
+  "textInnovation": "Active implementation of innovative ideas and technologies in our work.",
   "titleResponsibility": "responsibility",
   "textResponsibility": "Caring about the consequences of one's actions at the level of social and environmental responsibility.",
   "titleObjectivity": "objectivity",
@@ -212,5 +212,6 @@
 
   "safetyRulesDuringMartialLaw": "Safety Rules During Martial Law",
 
-  "notFound": "Something has gone wrong!"
+  "notFound": "Something has gone wrong!",
+  "notFoundBtn": "To the main page"
 }

@@ -22,7 +22,7 @@ export default function NotFound() {
         </p>
 
         <Button newStyles={styles.btn} href="/" isLink>
-          На головну
+          <Translator>notFoundBtn</Translator>
         </Button>
       </div>
     </div>

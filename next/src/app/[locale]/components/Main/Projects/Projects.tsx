@@ -26,9 +26,12 @@ const Projects = ({
         </Title>
 
         <ul className={styles.list}>
-          {data.slice(0, 3).map((item) => (
-            <SingleProject key={item._id} project={item} locale={locale} />
-          ))}
+          {data
+            .filter((item) => item.fundsRaised < item.total)
+            .slice(0, 3)
+            .map((item) => (
+              <SingleProject key={item._id} project={item} locale={locale} />
+            ))}
         </ul>
 
         <div className={styles.box}>

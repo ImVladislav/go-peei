@@ -68,16 +68,16 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <Link
-            href="https://dsns.gov.ua/uk/abetka-bezpeki/diyi-naselennya-v-umovax-nadzvicainix-situacii-vojennogo-xarakteru"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.linkSecurity}
-          >
-            <Translator>safetyRulesDuringMartialLaw</Translator>
-          </Link>
         </div>
       </div>
+      <Link
+        href="https://dsns.gov.ua/uk/abetka-bezpeki/diyi-naselennya-v-umovax-nadzvicainix-situacii-vojennogo-xarakteru"
+        target="_blank"
+        rel="noreferrer"
+        className={styles.linkSecurity}
+      >
+        <Translator>safetyRulesDuringMartialLaw</Translator>
+      </Link>
     </section>
   );
 };

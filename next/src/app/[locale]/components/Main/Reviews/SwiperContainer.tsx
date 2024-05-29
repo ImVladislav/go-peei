@@ -21,12 +21,12 @@ const SwiperContainer = ({ data }: { data: reviewsItem[] }) => {
         dynamicBullets: true,
       }}
       autoplay={{
-        delay: 500,
+        delay: 1600,
         pauseOnMouseEnter: true,
         disableOnInteraction: true,
         waitForTransition: true,
       }}
-      speed={500}
+      speed={1600}
       modules={[Autoplay, Pagination]}
       breakpoints={{
         425: {

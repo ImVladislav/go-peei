@@ -46,17 +46,17 @@ export const navFooter: navLinks[] = [
 
   {
     key: "financially",
-    label: "supportWithADonation",
+    label: "financially",
     href: "https://payhub.com.ua/#/service/98840",
   },
   {
     key: "partnership",
-    label: "becomeAPartner",
+    label: "partnership",
     href: "/support/partnership",
   },
   {
     key: "volunteering",
-    label: "becomeAVolunteer",
+    label: "volunteering",
     href: "/support/volonter",
   },
   // { href: "/reports", key: "reports", label: "reports" },

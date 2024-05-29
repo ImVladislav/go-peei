@@ -11,7 +11,8 @@ interface SocialLinksProps {
   name: string;
   iconsData: SvgProps[];
   newStyles?: string;
-  isVisible: boolean;
+  isVisible?: boolean;
+  iconName?: string;
 }
 
 const LinkComponent = ({
@@ -20,6 +21,7 @@ const LinkComponent = ({
   iconsData,
   newStyles,
   isVisible = false,
+  iconName,
 }: SocialLinksProps) => {
   const [isHovered, setIsHovered] = useState("");
 
@@ -41,6 +43,7 @@ const LinkComponent = ({
             />
           )
       )}
+      {iconName && <p>{iconName}</p>}
       {isVisible && <span>{name}</span>}
     </Link>
   );

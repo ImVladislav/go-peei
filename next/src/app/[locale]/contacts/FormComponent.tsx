@@ -20,9 +20,42 @@ interface FormValues {
   message: string;
 }
 
+const CustomErrorMessage = ({ message }: { message: string }) => {
+  return (
+    <div className={styles.messageContainer}>
+      <Image
+        src="/message/Warning.svg"
+        alt="Error Icon"
+        width={20}
+        height={20}
+      />
+      <span className={styles.errorMessage}>{message}</span>
+    </div>
+  );
+};
+
+const CustomSuccessMessage = ({ message }: { message: string }) => {
+  return (
+    <div className={styles.messageContainer}>
+      <Image
+        src="/message/Success.svg"
+        alt="Success Icon"
+        width={20}
+        height={20}
+      />
+      <span className={styles.successMessage}>{message}</span>
+    </div>
+  );
+};
+
 const FormComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const [successMessages, setSuccessMessages] = useState<FormValues>({
+    name: "",
+    email: "",
+    message: "",
+  });
   const { t } = useTranslation();
 
   const formValues: FormValues = {
@@ -34,12 +67,12 @@ const FormComponent = () => {
   const validationSchema = Yup.object({
     name: Yup.string()
       .matches(
-        /^[A-Za-zА-Яа-яЇїІіЄєҐґ\s-]+$/,
+        /^[A-Za-zА-Яа-яЇїІіЄєҐґ\s'-]+$/,
         `${t("messageErrorNameInvalid")}`
       )
       .trim()
       .min(2, `${t("messageErrorNameTooShort")}`)
-      .max(20, `${t("messageErrorNameTooLong")}`)
+      .max(60, `${t("messageErrorNameTooLong")}`)
       .required(`${t("messageErrorName")}`),
     email: Yup.string()
       .matches(
@@ -48,12 +81,17 @@ const FormComponent = () => {
       )
       .trim()
       .email(`${t("emailAddressFormatIsIncorrect")}`)
-      .max(30, `${t("messageErrorEmailTooLong")}`)
-      .required(`${t("messageErrorEmail")}`),
+      .max(128, `${t("messageErrorEmailTooLong")}`)
+      .required(`${t("messageErrorEmail")}`)
+      .test(
+        "no-leading-dot",
+        `${t("emailAddressFormatIsIncorrect")}`,
+        (value) => (value ? !/^\./.test(value.split("@")[0]) : true)
+      ),
     message: Yup.string()
       .trim()
-      .min(20, `${t("messageErrorMessageTooShort")}`)
-      .max(100, `${t("messageErrorMessageTooLong")}`)
+      .min(7, `${t("messageErrorMessageTooShort")}`)
+      .max(500, `${t("messageErrorMessageTooLong")}`)
       .required(`${t("messagePlaceholder")}`),
   });
 
@@ -90,7 +128,7 @@ const FormComponent = () => {
         validationSchema={validationSchema}
         onSubmit={handleFormSubmit}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, values }) => (
           <Form className={styles.form}>
             <label className={styles.label}>
               <Translator>fullName</Translator>
@@ -102,11 +140,17 @@ const FormComponent = () => {
                 name="name"
                 placeholder={t("fullName")}
               />
-              <ErrorMessage
+              <ErrorMessage name="name">
+                {(msg) => <CustomErrorMessage message={msg} />}
+              </ErrorMessage>
+              {!errors.name && touched.name && values.name && (
+                <CustomSuccessMessage message={t("messageSuccessName")} />
+              )}
+              {/* <ErrorMessage
                 className={styles.errorMessage}
                 name="name"
                 component="div"
-              />
+              /> */}
             </label>
             <label className={styles.label}>
               <Translator>email</Translator>
@@ -118,11 +162,12 @@ const FormComponent = () => {
                 name="email"
                 placeholder={t("email")}
               />
-              <ErrorMessage
-                className={styles.errorMessage}
-                name="email"
-                component="div"
-              />
+              <ErrorMessage name="email">
+                {(msg) => <CustomErrorMessage message={msg} />}
+              </ErrorMessage>
+              {!errors.email && touched.email && values.email && (
+                <CustomSuccessMessage message={t("messageSuccessEmail")} />
+              )}
             </label>
             <label className={styles.label}>
               <Translator>message</Translator>
@@ -136,11 +181,13 @@ const FormComponent = () => {
                 rows={10}
                 placeholder={t("messagePlaceholder")}
               />
-              <ErrorMessage
-                className={styles.errorMessage}
-                name="message"
-                component="div"
-              />
+
+              <ErrorMessage name="message">
+                {(msg) => <CustomErrorMessage message={msg} />}
+              </ErrorMessage>
+              {!errors.message && touched.message && values.message && (
+                <CustomSuccessMessage message={t("messageSuccessMessage")} />
+              )}
             </label>
             <div className={styles.btnContainer}>
               <Button typeBtn="submit" newStyles={styles.btn}>

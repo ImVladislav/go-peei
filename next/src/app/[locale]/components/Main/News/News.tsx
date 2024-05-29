@@ -24,31 +24,31 @@ const News = ({ data, locale }: { data: newsItem[]; locale: string }) => {
           <ul className={styles.firstList}>
             {data.slice(0, 2).map((item) => (
               <li className={styles.first_card} key={item._id}>
-                <div className={styles.first_card__img_wrap}>
-                  <Image
-                    className={styles.first_card__img}
-                    src={item.imageSrc}
-                    alt={item.title}
-                    fill
-                  />
-                </div>
                 <Link
                   className={styles.first_card__title_link}
                   href={`/news/${item._id}`}
                 >
+                  <div className={styles.first_card__img_wrap}>
+                    <Image
+                      className={styles.first_card__img}
+                      src={item.imageSrc}
+                      alt={item.title}
+                      fill
+                    />
+                  </div>
                   <h2 className={styles.first_card__title}>
                     {locale === "uk" ? item.title : item.titleEn}
                   </h2>
+                  <p className={styles.first_card__desc}>
+                    {locale === "uk"
+                      ? item.description.slice(0, maxLength)
+                      : item.descriptionEn?.slice(0, maxLength)}
+                    ...
+                  </p>
+                  <p className={styles.first_card__data}>
+                    {formatDate(item.createdAt)}
+                  </p>
                 </Link>
-                <p className={styles.first_card__desc}>
-                  {locale === "uk"
-                    ? item.description.slice(0, maxLength)
-                    : item.descriptionEn?.slice(0, maxLength)}
-                  ...
-                </p>
-                <p className={styles.first_card__data}>
-                  {formatDate(item.createdAt)}
-                </p>
               </li>
             ))}
           </ul>
@@ -57,27 +57,27 @@ const News = ({ data, locale }: { data: newsItem[]; locale: string }) => {
             <ul className={styles.list}>
               {data.slice(1, 3).map((item) => (
                 <li className={styles.item} key={item._id}>
-                  <div className={styles.item__inner}>
-                    <div className={styles.item__wrap_img}>
-                      <Image
-                        className={styles.item__img}
-                        src={item.imageSrc}
-                        alt={item.title}
-                        fill
-                      />
-                    </div>
-                    <Link
-                      className={styles.item__title_link}
-                      href={`/news/${item._id}`}
-                    >
+                  <Link
+                    className={styles.item__title_link}
+                    href={`/news/${item._id}`}
+                  >
+                    <div className={styles.item__inner}>
+                      <div className={styles.item__wrap_img}>
+                        <Image
+                          className={styles.item__img}
+                          src={item.imageSrc}
+                          alt={item.title}
+                          fill
+                        />
+                      </div>
                       <h2 className={styles.item__title}>
                         {locale === "uk" ? item.title : item.titleEn}
                       </h2>
-                    </Link>
-                  </div>
-                  <p className={styles.item__data}>
-                    {formatDate(item.createdAt)}
-                  </p>
+                    </div>
+                    <p className={styles.item__data}>
+                      {formatDate(item.createdAt)}
+                    </p>
+                  </Link>
                 </li>
               ))}
             </ul>

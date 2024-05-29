@@ -11,7 +11,8 @@ interface ProjectProps {
 }
 
 const SingleProject = async ({ project, locale }: ProjectProps) => {
-  const progress = (100 / project.total) * project.fundsRaised;
+  let progress = (100 / project.total) * project.fundsRaised;
+
   const maxLength = 95;
 
   const formatPrice = (price: number) => {

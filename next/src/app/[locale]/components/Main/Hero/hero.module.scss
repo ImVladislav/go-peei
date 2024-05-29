@@ -1,6 +1,7 @@
 @import "../../../../styles/utils/variables";
 
 .section {
+  position: relative;
   padding-top: 81px;
   @media screen and (min-width: 768px) {
     padding-top: 132px;
@@ -118,7 +119,7 @@
   position: relative;
   width: 320px;
   height: 302px;
-  margin-bottom: 7px;
+  margin-bottom: 48px;
   overflow: hidden;
 
   @media screen and (min-width: 768px) {
@@ -166,33 +167,34 @@
 }
 .linkSecurity {
   position: absolute;
-  right: -20px;
+  right: 0px;
   border-radius: 0 24px 24px 0;
   padding: 32px 8px;
   background: $green-30;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   text-align: center;
-  top: 30px;
+
+  top: 185px;
   border: none;
   writing-mode: tb-rl;
   transform: rotate(180deg);
   transition: all 200ms ease-in-out;
   &:hover,
   &:focus {
-    color: $green-hover;
+    color: $main-white;
+    background: $main-green;
   }
   @media screen and (min-width: 768px) {
-    top: -100px;
-    right: -40px;
+    top: 0px;
+
+    font-size: 18px;
   }
   @media screen and (min-width: 1024px) {
     top: 20px;
-    right: -60px;
   }
   @media screen and (min-width: 1440px) {
     top: 20px;
-    right: -80px;
   }
 }

@@ -21,6 +21,7 @@ export const GET = async (
     });
   }
 };
+
 // put id
 export const PUT = async (
   request: Request,

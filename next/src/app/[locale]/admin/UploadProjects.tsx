@@ -47,6 +47,11 @@ export default function ProjectForm() {
       return;
     }
 
+    if (fundsRaised > total) {
+      alert("Зібрано коштів не може перевищувати загальну суму");
+      return;
+    }
+
     const allowedTypes = ["image/png", "image/jpg", "image/jpeg"];
     for (const image of images) {
       if (!allowedTypes.includes(image.type)) {
@@ -84,14 +89,16 @@ export default function ProjectForm() {
     });
 
     Promise.all(promises)
-      .then(async (images) => {
+      .then(async (images: any) => {
         projectData.images = images;
-        projectData.imageSrc = images[0].data; // Зберігання основного зображення
+        if (!editId) {
+          projectData.imageSrc = images[0].data; // Зберігання основного зображення
+        }
 
         if (editId) {
           try {
             const response = await axios.put(
-              `/api/projects/[id]/${editId}`,
+              `/api/projects/${editId}`,
               projectData,
               {
                 headers: {
@@ -123,7 +130,7 @@ export default function ProjectForm() {
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`/api/projects/[id]/${id}`);
+      await axios.delete(`/api/projects/${id}`);
       fetchProjects();
     } catch (error) {
       console.error("Error deleting project:", error);
@@ -208,16 +215,7 @@ export default function ProjectForm() {
           />
         </div>
         <div>
-          <input
-            className={s.uploadForm__input}
-            type="number"
-            value={total}
-            onChange={(e) => setTotal(Number(e.target.value))}
-            placeholder="Загальна сума"
-            required
-          />
-        </div>
-        <div>
+          <p>Зібрано коштів</p>
           <input
             className={s.uploadForm__input}
             type="number"
@@ -228,7 +226,18 @@ export default function ProjectForm() {
           />
         </div>
         <div>
-          <Button typeBtn="submit">
+          <p>Загальна сума</p>
+          <input
+            className={s.uploadForm__input}
+            type="number"
+            value={total}
+            onChange={(e) => setTotal(Number(e.target.value))}
+            placeholder="Загальна сума"
+            required
+          />
+        </div>
+        <div>
+          <Button newStyles={s.admin__btn} typeBtn="submit">
             {editId ? "Оновити проект" : "Додати проект"}
           </Button>
         </div>
@@ -240,7 +249,12 @@ export default function ProjectForm() {
             <li key={project._id}>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              <Button onClick={() => handleEdit(project)}>Редагувати</Button>
+              <Button
+                newStyles={s.admin__btn}
+                onClick={() => handleEdit(project)}
+              >
+                Редагувати
+              </Button>
               <ButtonDelete id={project._id} handleClick={handleDelete} />
             </li>
           ))}

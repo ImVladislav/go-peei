@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-
+import path from "path";
+import { unlink } from "fs/promises";
 import db from "../../../../../libs/db";
 import Project from "../../../../../models/Project";
 
@@ -64,16 +65,18 @@ export const DELETE = async (
       });
     }
 
-    await Project.findByIdAndDelete(id);
+    // Видалення фотографії з файлової системи
+    const imagePath = path.join(process.cwd(), "public", project.imageSrc);
+    await unlink(imagePath);
 
-    //  перехід на головну при видаленні
-    //   redirect("/");
+    // Видалення проекту з бази даних
+    await Project.findByIdAndDelete(id);
 
     return NextResponse.json({
       message: `Project ${id} has been successfully deleted`,
     });
   } catch (error) {
-    return new NextResponse("Error delete project" + error, {
+    return new NextResponse("Error delete project: " + error, {
       status: 500,
     });
   }

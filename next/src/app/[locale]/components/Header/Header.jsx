@@ -16,6 +16,7 @@ import logoUA from "../../../../../public/logo/logoUA.svg";
 import logoENG from "../../../../../public/logo/logoENG.svg";
 import { signOut, useSession } from "next-auth/react";
 import logoutSVG from "../../../../../public/logout.svg";
+
 export default function Header({ locale }) {
   const { data: session } = useSession();
   return (

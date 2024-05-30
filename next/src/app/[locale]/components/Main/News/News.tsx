@@ -41,9 +41,13 @@ const News = ({ data, locale }: { data: newsItem[]; locale: string }) => {
                   </h2>
                   <p className={styles.first_card__desc}>
                     {locale === "uk"
-                      ? item.description.slice(0, maxLength)
-                      : item.descriptionEn?.slice(0, maxLength)}
-                    ...
+                      ? item.description.length > maxLength
+                        ? `${item.description.slice(0, maxLength)}...`
+                        : item.description
+                      : item.descriptionEn &&
+                        item.descriptionEn?.length > maxLength
+                      ? `${item.descriptionEn.slice(0, maxLength)}...`
+                      : item.descriptionEn}
                   </p>
                   <p className={styles.first_card__data}>
                     {formatDate(item.createdAt)}

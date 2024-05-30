@@ -25,8 +25,9 @@ const SingleReview = ({ review }: ReviewProps) => {
         <h3 className={styles.item__name}>{review.name}</h3>
       </div>
       <p className={styles.item__desc}>
-        {review.message.slice(0, 180)}
-        ...
+        {review.message.length > 180
+          ? `${review.message.slice(0, 180)}...`
+          : review.message}
       </p>
     </div>
   );

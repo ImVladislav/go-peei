@@ -62,12 +62,14 @@
   "messageErrorEmail": "Enter your email address",
   "messageSuccessEmail": "Your email address is correct!",
   "emailAddressFormatIsIncorrect": "Email address format is incorrect",
+  "messageErrorEmaileTooShort": "The number of characters entered must be greater than 9",
   "messageErrorEmailTooLong": "The number of characters entered should be no more than 128",
-
   "messagePlaceholder": "Please write your message here",
   "messageErrorMessageTooShort": "Message length is not less than 7 characters",
   "messageErrorMessageTooLong": "Message length is no more than 500 characters",
   "messageSuccessMessage": "The message was entered correctly!",
+  "successMessage": "Message sent successfully!",
+  "warningMessage": "There was an error, please try again!",
   "send": "Send",
 
   "PlatformForInitiatives": "\"Platform for eco-energy initiatives\"",

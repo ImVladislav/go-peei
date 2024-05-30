@@ -252,52 +252,35 @@
   height: 44px;
 }
 
-.messageContainer {
-  display: flex;
-  align-items: flex-start;
-  gap: 5px;
-  margin-top: 8px;
-}
-.errorMessage {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #ff493d;
-}
-.successMessage {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #10880d;
-}
 .error {
   border: 1px solid #f24040;
 }
 
 .wrapModalMessage {
   display: flex;
-  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 
-  padding: 10px;
   .success {
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 1.5;
-    color: #10880d;
-    width: max-content;
+    text-align: center;
+    color: #141414;
   }
   .warning {
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 1.5;
-    color: #ff493d;
-    width: max-content;
+    text-align: center;
+    color: #141414;
   }
   .default {
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 1.5;
+    text-align: center;
     color: #141414;
-    width: max-content;
   }
 }

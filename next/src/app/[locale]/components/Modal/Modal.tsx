@@ -70,7 +70,12 @@ const Modal = ({ show, onClose, children, message }: ModalProps) => {
             <div className={s.header}>
               <a href="#" onClick={handleClose}>
                 <button className="btn">
-                  <Image src={colse} alt="close" width={20} height={20} />
+                  <Image
+                    src="/message/Close.svg"
+                    alt="close"
+                    width={24}
+                    height={24}
+                  />
                 </button>
               </a>
             </div>

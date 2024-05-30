@@ -1,0 +1,18 @@
+.messageContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin-top: 8px;
+}
+.errorMessage {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ff493d;
+}
+.successMessage {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #10880d;
+}

@@ -13,6 +13,10 @@ import Button from "../components/Button/Button";
 import Modal from "../components/Modal/Modal";
 
 import styles from "./contact.module.scss";
+import {
+  CustomErrorMessage,
+  CustomSuccessMessage,
+} from "../components/CustomMessage/CustomMessage";
 
 interface FormValues {
   name: string;
@@ -20,42 +24,9 @@ interface FormValues {
   message: string;
 }
 
-const CustomErrorMessage = ({ message }: { message: string }) => {
-  return (
-    <div className={styles.messageContainer}>
-      <Image
-        src="/message/Warning.svg"
-        alt="Error Icon"
-        width={20}
-        height={20}
-      />
-      <span className={styles.errorMessage}>{message}</span>
-    </div>
-  );
-};
-
-const CustomSuccessMessage = ({ message }: { message: string }) => {
-  return (
-    <div className={styles.messageContainer}>
-      <Image
-        src="/message/Success.svg"
-        alt="Success Icon"
-        width={20}
-        height={20}
-      />
-      <span className={styles.successMessage}>{message}</span>
-    </div>
-  );
-};
-
 const FormComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
-  const [successMessages, setSuccessMessages] = useState<FormValues>({
-    name: "",
-    email: "",
-    message: "",
-  });
   const { t } = useTranslation();
 
   const formValues: FormValues = {
@@ -81,6 +52,7 @@ const FormComponent = () => {
       )
       .trim()
       .email(`${t("emailAddressFormatIsIncorrect")}`)
+      .min(9, `${t("messageErrorEmaileTooShort")}`)
       .max(128, `${t("messageErrorEmailTooLong")}`)
       .required(`${t("messageErrorEmail")}`)
       .test(
@@ -111,9 +83,9 @@ const FormComponent = () => {
         email: email.trim(),
         message: message.trim(),
       });
-      setModalMessage("Success message");
+      setModalMessage(`${t("successMessage")}`);
     } catch (error) {
-      setModalMessage("Warning message");
+      setModalMessage(`${t("warningMessage")}`);
     } finally {
       setIsModalOpen(true);
       setSubmitting(false);
@@ -146,11 +118,6 @@ const FormComponent = () => {
               {!errors.name && touched.name && values.name && (
                 <CustomSuccessMessage message={t("messageSuccessName")} />
               )}
-              {/* <ErrorMessage
-                className={styles.errorMessage}
-                name="name"
-                component="div"
-              /> */}
             </label>
             <label className={styles.label}>
               <Translator>email</Translator>
@@ -201,12 +168,12 @@ const FormComponent = () => {
       {/* modal */}
       <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)} message>
         <div className={styles.wrapModalMessage}>
-          {modalMessage === "Success message" ? (
+          {modalMessage === `${t("successMessage")}` ? (
             <>
               <Image
-                src="/message/Success.svg"
-                width={20}
-                height={20}
+                src="/message/success-message.svg"
+                width={60}
+                height={60}
                 alt="message"
               />
               <p className={styles.success}>{modalMessage}</p>
@@ -214,9 +181,9 @@ const FormComponent = () => {
           ) : (
             <>
               <Image
-                src="/message/Warning.svg"
-                width={20}
-                height={20}
+                src="/message/warning-message.svg"
+                width={60}
+                height={60}
                 alt="message"
               />
               <p className={styles.warning}>{modalMessage}</p>

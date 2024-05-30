@@ -3,9 +3,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 50%;
+  margin-bottom: 50%;
   gap: 48px;
+  @media screen and (min-width: 1024px) {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
 }
 
 .imgContainer {

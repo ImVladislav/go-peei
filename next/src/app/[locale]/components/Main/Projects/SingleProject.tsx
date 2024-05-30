@@ -46,9 +46,12 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
 
         <p className={styles.item__desc}>
           {locale === "uk"
-            ? project.description.slice(0, maxLength)
-            : project.descriptionEn?.slice(0, maxLength)}
-          ...
+            ? project.description.length > maxLength
+              ? `${project.description.slice(0, maxLength)}...`
+              : project.description
+            : project.descriptionEn && project.descriptionEn?.length > maxLength
+            ? `${project.descriptionEn.slice(0, maxLength)}...`
+            : project.descriptionEn}
         </p>
       </div>
       <div className={styles.item__box}>

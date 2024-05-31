@@ -50,7 +50,7 @@ export default function LanguageChanger() {
           }`}
           onClick={() => setShowLanguages(!showLanguages)}
         >
-          <div style={{ display: "flex" }}>
+          <div className={s.flags__container}>
             {currentLocale === "en" ? (
               <Image
                 className={s.flag__image}
@@ -102,7 +102,7 @@ export default function LanguageChanger() {
                     width={38}
                     height={25}
                   />
-                  Eng
+                  <p className={s.text}>Eng</p>
                 </button>
               </li>
             )}
@@ -119,7 +119,7 @@ export default function LanguageChanger() {
                     width={38}
                     height={25}
                   />
-                  Укр
+                  <p className={s.text}>Укр</p>
                 </button>
               </li>
             )}

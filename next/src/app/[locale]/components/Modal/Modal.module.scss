@@ -19,13 +19,29 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тінь */
   //   padding: 20px;
-  max-width: 80%;
-  min-width: 50%;
+  width: 100%;
 
   //   @media screen and (min-width: 768px) {
   //   display: none;
   // }
+  @media screen and (min-width: 480px) {
+    max-width: 363px;
+    // min-width: 40%;
+  }
+  // @media screen and (min-width: 580px) {
+  //   max-width: 70%;
+  // }
+  // @media screen and (min-width: 640px) {
+  //   max-width: 60%;
+  // }
+  // @media screen and (min-width: 720px) {
+  //   max-width: 50%;
+  // }
+  // @media screen and (min-width: 1024px) {
+  //   max-width: 40%;
+  // }
 }
+
 // .modal-open {
 //   overflow: hidden;
 // }
@@ -43,10 +59,24 @@
   font-size: 16px;
   color: #333;
 }
-.close-icon:hover {
-  fill: red; /* Змінюємо колір fill на червоний при ховері */
-  cursor: pointer; /* Змінюємо курсор на pointer при наведенні */
+
+.header button:hover {
+  border-radius: 4px;
+  background-color: #e8f1e7;
+  color: #333; /* Змінюється колір тексту при ховері */
 }
+// .close-icon:hover {
+//   fill: red; /* Змінюємо колір fill на червоний при ховері */
+//   cursor: pointer; /* Змінюємо курсор на pointer при наведенні */
+// }
+
+// .closeIcon {
+//   fill: #333; /* Початковий колір іконки */
+// }
+
+// .header button:hover .closeIcon {
+//   fill: green; /* Колір іконки при ховері */
+// }
 
 .overlayMessage {
   position: fixed;

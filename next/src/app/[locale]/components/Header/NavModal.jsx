@@ -11,6 +11,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 import logoutSVG from "../../../../../public/logout.svg";
+import SocialLinks from "./SocialLinks";
+
+import {
+  initialSocials,
+  headerContacts,
+  iconsData,
+  headerIconsData,
+} from "@/app/constants/index";
+
 const NavModal = () => {
   const { t } = useTranslation();
   const { data: session } = useSession();
@@ -42,18 +51,7 @@ const NavModal = () => {
               onClick={() => handleToggleDropdown(index)}
             >
               <div className={s.nav__item}>
-                <p>
-                  <span
-                    className={s.link}
-                    style={{
-                      fontSize: "20px",
-                      cursor: "pointer",
-                      color: "black",
-                    }}
-                  >
-                    {t(item.title.key)}
-                  </span>
-                </p>
+                <p className={s.text}>{t(item.title.key)}</p>
                 <svg
                   id={`svg-${item.title.label}`}
                   width="25px"
@@ -61,7 +59,9 @@ const NavModal = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={s.svgIcon}
+                  className={
+                    dropdownStates[index] ? s.svgIcon__rotateOnClick : s.svgIcon
+                  }
                 >
                   <path
                     d="M6 9L12 15L18 9"
@@ -81,9 +81,9 @@ const NavModal = () => {
                   <li className={s.dropdownMobile__item} key={link.label}>
                     <Link
                       onClick={() => setIsModalOpen(false)}
-                      style={{ fontSize: "18px" }}
                       href={link.href}
-                      className={`${s.link} ${s.dropdownLink}`}
+                      className={s.dropdownLink}
+                      // className={`${s.link} ${s.dropdownLink}`}
                     >
                       {t(link.key)}
                     </Link>
@@ -96,7 +96,7 @@ const NavModal = () => {
             <Link
               onClick={() => setIsModalOpen(false)}
               href="/news"
-              className={s.contactLink}
+              className={s.text}
             >
               {t("news")}
             </Link>
@@ -105,7 +105,7 @@ const NavModal = () => {
             <Link
               onClick={() => setIsModalOpen(false)}
               href="/contacts"
-              className={s.contactLink}
+              className={s.text}
             >
               {t("contacts")}
             </Link>
@@ -128,6 +128,21 @@ const NavModal = () => {
             )}
             <LanguageChanger />
           </div>
+          {/* <div className={s.socialLinks__container}> */}
+          <SocialLinks
+            customClassNameUl={s.socialLinks__containerMobile}
+            socialName="off"
+            initialSocials={initialSocials}
+            iconsData={iconsData}
+          />
+          {/* </div> */}
+          <SocialLinks
+            customClassNameUl={s.contact__containerMobile}
+            customClassNameLi={s.contact__ListMobile}
+            socialName="on"
+            initialSocials={headerContacts}
+            iconsData={headerIconsData}
+          />
         </div>
       </Modal>
     </>

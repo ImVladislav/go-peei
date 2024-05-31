@@ -3,7 +3,7 @@ import s from "./Modal.module.scss";
 import ReactDOM from "react-dom";
 import colse from "../../../../../public/financial/closeIcon.svg";
 import Image from "next/image";
-
+// import CloseIcon from "../../../../../public/financial/closeIcon.svg";
 interface ModalProps {
   show: boolean;
   onClose: () => void;
@@ -56,8 +56,9 @@ const Modal = ({ show, onClose, children, message }: ModalProps) => {
           <div ref={modalRef} className={s.modal}>
             <div className={s.header}>
               <a href="#" onClick={handleClose}>
-                <button className="btn">
+                <button className={s.btn}>
                   <Image src={colse} alt="close" />
+                  {/* <CloseIcon className={s.closeIcon} /> */}
                 </button>
               </a>
             </div>
@@ -69,7 +70,7 @@ const Modal = ({ show, onClose, children, message }: ModalProps) => {
           <div ref={modalRef} className={s.modalMessage}>
             <div className={s.header}>
               <a href="#" onClick={handleClose}>
-                <button className="btn">
+                <button className={s.btn}>
                   <Image
                     src="/message/Close.svg"
                     alt="close"

@@ -5,6 +5,7 @@
   //   border: 1px solid black;
   position: relative;
   margin-left: auto;
+
   @media screen and (min-width: 1240px) {
     flex-direction: row-reverse;
   }
@@ -77,4 +78,23 @@
   border-radius: 8px;
   width: 136px;
   height: 40px;
+}
+
+.flags__container {
+  display: flex;
+
+  font-family: "Exo 2", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #141414;
+}
+.text {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #141414;
 }

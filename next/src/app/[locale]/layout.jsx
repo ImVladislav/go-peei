@@ -4,6 +4,7 @@ import { dir } from "i18next";
 import { Exo_2 } from "next/font/google";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import Head from "next/head";
 
 import "@/app/styles/index.scss";
 import TranslationsProvider from "../../../components/TranslationsProvider";
@@ -39,6 +40,12 @@ export default async function RootLayout({ children, params: { locale } }) {
       resources={resources}
     >
       <html lang={locale} dir={dir(locale)}>
+        <Head>
+          <meta
+            name="google-site-verification"
+            content="googlefdb50d9844bfe733"
+          />
+        </Head>
         <body className={exo.className} suppressHydrationWarning={true}>
           <SessionProvider session={session}>
             <AuthManager />

@@ -253,6 +253,10 @@
   text-transform: uppercase;
   color: #141414;
   margin-left: 43px;
+  @media screen and (min-width: 1240px) {
+    margin: 0;
+    text-transform: none;
+  }
 }
 .dropdownMobile__item {
   padding: 8px 0;

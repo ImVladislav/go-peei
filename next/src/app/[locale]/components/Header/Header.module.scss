@@ -10,17 +10,22 @@
 //   // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 // }
 .header__container {
-  //   @extend .container;
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
+}
+.header__thumb {
+  width: 100%;
   position: -webkit-sticky; /* For Safari */
   position: sticky;
+  margin: 0 auto;
   top: 0;
   z-index: 10;
-  background-color: #fff;
   box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
 }
+
 .header__contact {
   display: none;
   // max-width: 1440px;

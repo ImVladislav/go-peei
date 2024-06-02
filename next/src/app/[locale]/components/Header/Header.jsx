@@ -38,6 +38,8 @@ export default function Header({ locale }) {
           />
         </div>
       </div>
+
+      <div className={s.header__thumb}>
       <div className={s.header__container}>
         <div className={s.header}>
           <Link className={s.header__logoLink} href="/">
@@ -68,6 +70,7 @@ export default function Header({ locale }) {
             <LanguageChanger />
           </div>
         </div>
+      </div>
       </div>
     </>
   );

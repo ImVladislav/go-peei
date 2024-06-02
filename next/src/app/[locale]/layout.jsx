@@ -43,7 +43,7 @@ export default async function RootLayout({ children, params: { locale } }) {
         <Head>
           <meta
             name="google-site-verification"
-            content="googlefdb50d9844bfe733"
+            content="3fjcZy_xpuWteahNsjhd2ZR1_5G71223Oi21X-Z74_8"
           />
         </Head>
         <body className={exo.className} suppressHydrationWarning={true}>

@@ -40,12 +40,12 @@ export default async function RootLayout({ children, params: { locale } }) {
       resources={resources}
     >
       <html lang={locale} dir={dir(locale)}>
-        <Head>
+        <head>
           <meta
             name="google-site-verification"
             content="3fjcZy_xpuWteahNsjhd2ZR1_5G71223Oi21X-Z74_8"
           />
-        </Head>
+        </head>
         <body className={exo.className} suppressHydrationWarning={true}>
           <SessionProvider session={session}>
             <AuthManager />

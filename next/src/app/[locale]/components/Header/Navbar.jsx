@@ -8,29 +8,13 @@ import NavModal from "./NavModal";
 export default function Navbar() {
   const { t } = useTranslation();
 
-  const handleToggleDropdown = (index) => {
-    // Оновлюємо стан, використовуючи функцію оновлення стану
-    setDropdownStates((prevState) => {
-      // Спочатку закриваємо всі дропдауни, крім того, на який зроблено клік
-      const updatedDropdownStates = prevState.map((state, i) =>
-        i === index ? !state : false
-      );
-      return updatedDropdownStates;
-    });
-  };
-
   return (
     <>
       <nav className={s.nav}>
         {navItems.map((item) => (
           <div key={item.title.label} className={s.nav__itemContainer}>
             <p>
-              <span
-                className={s.link}
-                style={{ fontSize: "20px", cursor: "pointer", color: "black" }}
-              >
-                {t(item.title.key)}
-              </span>
+              <span className={s.nav__item}>{t(item.title.key)}</span>
             </p>
             <svg
               id={`svg-${item.title.label}`}
@@ -53,7 +37,6 @@ export default function Navbar() {
               {item.links.map((link) => (
                 <li className={s.dropdown__item} key={link.label}>
                   <Link
-                    style={{ fontSize: "18px" }}
                     href={link.href}
                     className={`${s.link} ${s.dropdownLink}`}
                   >
@@ -65,11 +48,11 @@ export default function Navbar() {
           </div>
         ))}
         <div style={{ marginRight: "20px" }}>
-          <Link href="/news" className={s.contactLink}>
+          <Link href="/news" className={s.nav__item}>
             {t("news")}
           </Link>
         </div>
-        <Link href="/contacts" className={`${s.link} ${s.contactLink}`}>
+        <Link href="/contacts" className={`${s.link} ${s.nav__item}`}>
           {t("contacts")}
         </Link>
       </nav>

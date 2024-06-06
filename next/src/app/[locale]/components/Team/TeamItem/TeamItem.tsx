@@ -1,8 +1,8 @@
-import { iconsData } from "@/app/constants"
-import Image from "next/image"
-import LinkComponent from "../../LinkComponent/LinkComponent"
-import Translator from "../../translator/Translator"
-import styles from "./teamItem.module.scss"
+import { iconsData } from "@/app/constants";
+import Image from "next/image";
+import LinkComponent from "../../LinkComponent/LinkComponent";
+import Translator from "../../translator/Translator";
+import styles from "./teamItem.module.scss";
 
 interface itemProps {
   item: {
@@ -36,15 +36,15 @@ const TeamItem = ({ item }: itemProps, key: string) => {
             </p>
           </div>
         </div>
-
-        <LinkComponent
-              iconsData={iconsData}
-              iconName={item.email}
-              href={`mailto:${item.email}`}
-              name="Email"
-              newStyles={styles.item__email}
-            />
-
+        <div style={{ marginBottom: "16px" }}>
+          <LinkComponent
+            iconsData={iconsData}
+            iconName={item.email}
+            href={`mailto:${item.email}`}
+            name="Email"
+            newStyles={styles.item__email}
+          />
+        </div>
         <p className={styles.item__about}>
           <Translator>{item.about}</Translator>
         </p>

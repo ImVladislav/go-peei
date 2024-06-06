@@ -74,7 +74,7 @@ export const initialSocials: socialsItem[] = [
   { href: "https://web.whatsapp.com/", name: "WhatsUp" },
   { href: "https://www.instagram.com/", name: "Instagram" },
   { href: "https://linkedin.com/", name: "Linkedin" },
-  { href: "https://www.facebook.com/", name: "Facebook" },
+  { href: "https://www.facebook.com/PLATFORMECOENERGY", name: "Facebook" },
   { href: "https://www.youtube.com/", name: "YouTube" },
   { href: "https://web.telegram.org/", name: "Telegram" },
 ];

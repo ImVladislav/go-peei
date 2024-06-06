@@ -206,17 +206,18 @@
   font-weight: bold;
 }
 // s.contactLink {
-// border-bottom: 1px solid #f5f8f5;
-// font-family: "Exo 2", sans-serif;
-// font-weight: 600;
-// font-size: 16px;
-// line-height: 1.5;
-// text-transform: uppercase;
-// color: #141414;
-// @media screen and (min-width: 1240px) {
-//   margin-right: 20px;
-//   display: flex;
-// }
+//   border-bottom: 1px solid #f5f8f5;
+//   font-family: "Exo 2", sans-serif;
+//   font-weight: 600;
+//   font-size: 16px;
+//   line-height: 1.5;
+//   text-transform: uppercase;
+//   color: #141414;
+//   @media screen and (min-width: 1240px) {
+//     margin-right: 20px;
+//     display: flex;
+
+//   }
 // }
 
 //=====================================NavbarMobile=====================================
@@ -254,8 +255,10 @@
   color: #141414;
   margin-left: 43px;
   @media screen and (min-width: 1240px) {
-    margin: 0;
-    text-transform: none;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    margin-left: 0;
   }
 }
 .dropdownMobile__item {

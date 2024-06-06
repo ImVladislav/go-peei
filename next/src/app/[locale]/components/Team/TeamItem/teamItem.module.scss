@@ -5,22 +5,27 @@
   padding: 10px;
   min-width: 320px;
   background: $green-30;
-
-  @media screen and (min-width: 1440px) {
-    width: calc((100% - 80px) / 3);
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 24px) / 2);
+    height: 386px;
+  }
+  @media screen and (min-width: 1024px) {
     border-radius: 18px;
+    padding: 16px;
+    height: 466px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: calc((100% - 52px) / 3);
     padding: 18px;
   }
 
   &__container {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
-
-    @media screen and (min-width: 1440px) {
-      margin-bottom: 24px;
-      align-items: flex-start;
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 16px;
     }
   }
 
@@ -28,12 +33,12 @@
     overflow: hidden;
     position: relative;
     border-radius: 8px;
-    width: 90px;
+    min-width: 90px;
     height: 106px;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1024px) {
       border-radius: 10px;
-      width: 135px;
+      min-width: 135px;
       height: 159px;
     }
   }
@@ -43,18 +48,13 @@
     object-position: center top;
   }
 
-  &__infoWrapper {
-  }
-
   &__title {
     margin-bottom: 4px;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
     color: $main-black;
-
-    @media screen and (min-width: 1440px) {
-      width: 227px;
+    @media screen and (min-width: 1024px) {
       margin-bottom: 8px;
       font-size: 18px;
       text-transform: uppercase;
@@ -62,13 +62,10 @@
   }
 
   &__position {
-    margin-bottom: 4px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.5;
-
-    @media screen and (min-width: 1440px) {
-      margin-bottom: 8px;
+    @media screen and (min-width: 1024px) {
       font-weight: 300;
       font-size: 16px;
     }
@@ -78,9 +75,11 @@
     display: flex;
     align-items: flex-end;
     gap: 8px;
+    margin-bottom: 10px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
+    text-decoration: underline;
     & img {
       width: 24px;
       height: 24px;
@@ -90,6 +89,13 @@
       &:focus {
         color: #10880d;
       }
+    }
+    @media screen and (min-width: 768px) {
+      font-weight: 300;
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: 14px;
+      margin-bottom: 16px;
     }
     @media screen and (min-width: 1440px) {
       font-weight: 300;
@@ -101,10 +107,8 @@
     font-weight: 300;
     font-size: 16px;
     line-height: 1.5;
-
-    @media screen and (min-width: 1440px) {
-      font-weight: 300;
-      font-size: 16px;
+    @media screen and (min-width: 1024px) {
+      font-size: 18px;
     }
   }
 }

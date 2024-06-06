@@ -7,7 +7,7 @@ import "swiper/scss/pagination";
 import "swiper/scss/navigation";
 
 import styles from "./PhotoSwiper.module.scss";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 interface PhotoSwiperProps {
@@ -17,7 +17,21 @@ interface PhotoSwiperProps {
 const PhotoSwiper = ({ data }: PhotoSwiperProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const modalRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("keydown", handleKeyDown);
+      document.addEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
   const handleImageClick = (index: number) => {
     setCurrentImageIndex(index);
     setIsOpen(true);
@@ -28,7 +42,12 @@ const PhotoSwiper = ({ data }: PhotoSwiperProps) => {
   };
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
-      setIsOpen(false);
+      closeModal();
+    }
+  };
+  const handleClickOutside = (e: MouseEvent) => {
+    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+      closeModal();
     }
   };
 
@@ -72,50 +91,50 @@ const PhotoSwiper = ({ data }: PhotoSwiperProps) => {
             onClick={() => handleImageClick(index)}
           >
             <div className={styles.photo_imgWrap}>
-              <img
-                className={styles.photo_img}
-                src={item}
-                alt="photo"
-                loading="lazy"
-              />
+              <Image className={styles.photo_img} src={item} alt="photo" fill />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
       {isOpen && (
-        <div className={styles.modal}>
-          <div className={styles.modalHeader}>
-            <button className={styles.closeBtn} onClick={closeModal}>
-              <Image
-                src="/message/Close.svg"
-                alt="close"
-                width={24}
-                height={24}
-              />
-            </button>
-          </div>
-          <div className={styles.modalContent}>
-            <button className={styles.prevBtn} onClick={prevImage}>
-              <Image
-                src="/main/icon-next.svg"
-                alt="close"
-                width={16}
-                height={16}
-              />
-            </button>
-            <img
-              className={styles.modalImg}
-              src={data[currentImageIndex]}
-              alt="modal"
-            />
-            <button className={styles.nextBtn} onClick={nextImage}>
-              <Image
-                src="/main/icon-prev.svg"
-                alt="close"
-                width={16}
-                height={16}
-              />
-            </button>
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal} ref={modalRef}>
+            <div className={styles.modalHeader}>
+              <button className={styles.closeBtn} onClick={closeModal}>
+                <Image
+                  src="/message/Close.svg"
+                  alt="close"
+                  width={24}
+                  height={24}
+                />
+              </button>
+            </div>
+            <div className={styles.modalContent}>
+              <button className={styles.prevBtn} onClick={prevImage}>
+                <Image
+                  src="/main/icon-next.svg"
+                  alt="close"
+                  width={14}
+                  height={14}
+                />
+              </button>
+              <div className={styles.modalWrapImg}>
+                <img
+                  className={styles.modalImg}
+                  src={data[currentImageIndex]}
+                  alt="modal"
+                  loading="lazy"
+                />
+              </div>
+              <button className={styles.nextBtn} onClick={nextImage}>
+                <Image
+                  src="/main/icon-prev.svg"
+                  alt="close"
+                  width={14}
+                  height={14}
+                />
+              </button>
+            </div>
           </div>
         </div>
       )}

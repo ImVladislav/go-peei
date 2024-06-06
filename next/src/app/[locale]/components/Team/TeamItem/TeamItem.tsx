@@ -34,15 +34,16 @@ const TeamItem = ({ item }: itemProps, key: string) => {
             <p className={styles.item__position}>
               <Translator>{item.position}</Translator>
             </p>
-
-            <LinkComponent
-              iconsData={iconsData}
-              iconName={item.email}
-              href={`mailto:${item.email}`}
-              name="Email"
-              newStyles={styles.item__email}
-            />
           </div>
+        </div>
+        <div style={{ marginBottom: "16px" }}>
+          <LinkComponent
+            iconsData={iconsData}
+            iconName={item.email}
+            href={`mailto:${item.email}`}
+            name="Email"
+            newStyles={styles.item__email}
+          />
         </div>
 
         <p className={styles.item__about}>

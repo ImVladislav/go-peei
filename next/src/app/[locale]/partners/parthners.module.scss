@@ -1,0 +1,74 @@
+.container {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 6px 6px;
+  justify-content: space-around;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: max-content max-content max-content max-content;
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: max-content max-content max-content;
+  }
+  @media screen and (min-width: 1440px) {
+    grid-template-columns: max-content max-content max-content max-content;
+  }
+}
+.title {
+  margin-top: 60px;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #141414;
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+  }
+}
+.partnerItem {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    padding: 16px 20px;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 16px 38px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding: 16px 54px;
+  }
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+  @media screen and (min-width: 1024px) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.button {
+  padding: 16px 79px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 60px;
+  @media screen and (min-width: 768px) {
+    margin-top: 58px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-top: 16px;
+    margin-bottom: 88px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: 48px;
+    margin-bottom: 120px;
+  }
+}
+.partnerName {
+  text-align: center;
+}

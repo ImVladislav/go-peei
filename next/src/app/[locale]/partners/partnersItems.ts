@@ -1,20 +1,40 @@
-const navItems = [
+import defaultLogo from "../../../../public/partners/partnersLogo/defaultPartnersLogo.png";
+import steadyLogo from "../../../../public/partners/partnersLogo/steady.png";
+
+const partnerItems = [
   {
-    partner: "Назва партнера 1",
-    // src відсутній
+    partner: "Steady",
+    src: steadyLogo,
   },
   {
-    partner: "Назва партнера 2",
-    src: "partner2-image.jpg",
+    partner: "ФОП",
+  },
+    {
+    partner: "ФОП",
+  },
+      {
+    partner: "ФОП",
+  },
+        {
+    partner: "ФОП",
+  },
+          {
+    partner: "ФОП",
+  },
+            {
+    partner: "ФОП",
+  },
+              {
+    partner: "ФОП",
   },
   // Додайте більше об'єктів за необхідності
 ];
 
-const defaultImageSrc = "default-image-src.jpg";
+const defaultImageSrc = defaultLogo;
 
-const formattedNavItems = navItems.map(item => ({
+const formattedPartnerItems = partnerItems.map(item => ({
   partner: item.partner,
   src: item.src || defaultImageSrc,
 }));
 
-export { formattedNavItems };
+export { formattedPartnerItems };

@@ -9,6 +9,7 @@ interface ButtonProps {
   onClick?: () => void;
   isLink?: boolean;
   href?: string;
+  closed?: boolean;
 }
 
 const Button = ({
@@ -19,6 +20,7 @@ const Button = ({
   isLink = false,
   href = "#",
   children,
+  closed,
 }: ButtonProps) => {
   const buttonClass = newStyles
     ? `${styles.button} ${newStyles}`
@@ -28,7 +30,7 @@ const Button = ({
     <button
       type={typeBtn}
       disabled={disabled}
-      className={buttonClass}
+      className={closed ? ` ${buttonClass} ${styles.closed}` : buttonClass}
       onClick={onClick}
     >
       {children}

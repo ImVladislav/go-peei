@@ -21,6 +21,8 @@ export type projectsItem = {
   fundsRaised: number;
   photoReport?: string[];
   report?: string;
+  closed: boolean;
+  link: string;
 };
 
 export type reviewsItem = {

@@ -15,6 +15,10 @@ const Projects = ({
   data: projectsItem[];
   locale: string;
 }) => {
+  const sortedData: projectsItem[] = [...data].sort((a, b) => {
+    if (a.closed === b.closed) return 0;
+    return a.closed ? 1 : -1;
+  });
   return (
     <section className={styles.section}>
       <div className="container">
@@ -26,12 +30,9 @@ const Projects = ({
         </Title>
 
         <ul className={styles.list}>
-          {data
-            .filter((item) => item.fundsRaised < item.total)
-            .slice(0, 3)
-            .map((item) => (
-              <SingleProject key={item._id} project={item} locale={locale} />
-            ))}
+          {sortedData.slice(0, 3).map((item) => (
+            <SingleProject key={item._id} project={item} locale={locale} />
+          ))}
         </ul>
 
         <div className={styles.box}>

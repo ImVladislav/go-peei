@@ -1,6 +1,7 @@
 {
   "supportUs": "Підтримати нас",
   "donate": "Пожертвувати",
+  "donateСlosed": "Збір закрито",
 
   "environmentalSecurityEnergyIndependence": "Екологічна безпека - енергетична незалежність",
   "environmental": "Екологічна",
@@ -23,7 +24,7 @@
   "helpRaiseFunds": "допоможіть зібрати ",
   "helpRaiseFundsAccent": "кошти",
   "collected": "Зібрано",
-  "totalAmount": "Загальна сума",
+  "totalAmount": "Наша ціль",
   "allProjects": "Усі проєкти",
   "projects": "Проєкт ",
   "aboutTheProject": "Про проєкт",
@@ -116,6 +117,7 @@
   "textSustainableDevelopment": "Зобов’язання до постійного розвитку та адаптації до нових викликів.",
   "buttonShowMore": "Показати більше",
   "buttonHide": "Приховати",
+  "buttonAllProjects": "Усі проєкти",
 
   "work": "Робота",
   "withChildren": " з дітьми",

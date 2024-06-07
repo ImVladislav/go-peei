@@ -1,6 +1,7 @@
 {
   "supportUs": "Support us",
   "donate": "Donate",
+  "donateСlosed": "Collection is closed",
 
   "environmentalSecurityEnergyIndependence": "Environmental security - energy independence",
   "environmental": "Environmental",
@@ -25,7 +26,7 @@
   "helpRaiseFunds": "help raise ",
   "helpRaiseFundsAccent": "funds",
   "collected": "Collected",
-  "totalAmount": "Total amount",
+  "totalAmount": "Our goal",
   "allProjects": "All projects",
   "projects": "Project ",
   "aboutTheProject": "About the project",
@@ -117,6 +118,7 @@
   "textSustainableDevelopment": "Commitment to continuous development and adaptation to new challenges.",
   "buttonShowMore": "Show more",
   "buttonHide": "Hide",
+  "buttonAllProjects": "All projects",
 
   "work": "Work",
   "withChildren": " with children",

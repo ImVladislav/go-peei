@@ -11,6 +11,10 @@ const ProjectsPage = async ({ params }: { params: { locale: string } }) => {
   const { locale } = params;
 
   const data: projectsItem[] = await getData("projects");
+  const sortedData: projectsItem[] = [...data].sort((a, b) => {
+    if (a.closed === b.closed) return 0;
+    return a.closed ? 1 : -1;
+  });
 
   return (
     <section className={styles.section}>
@@ -24,7 +28,7 @@ const ProjectsPage = async ({ params }: { params: { locale: string } }) => {
               </span>
             </Title>
 
-            <ProjectsList data={data} locale={locale} />
+            <ProjectsList data={sortedData} locale={locale} />
           </div>
         </div>
       </div>

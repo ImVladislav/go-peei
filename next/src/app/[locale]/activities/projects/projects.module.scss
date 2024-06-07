@@ -17,6 +17,7 @@
   }
   @media screen and (min-width: 1440px) {
     margin: 120px 0;
+
     gap: 120px;
   }
 }
@@ -47,14 +48,20 @@
   }
 }
 
-.containerDonate {
+.containerCard {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  @media screen and (min-width: 1440px) {
-    gap: 60px;
-  }
+  gap: 32px;
+}
+.containerDonate {
+  // position: relative;
+  // display: flex;
+  // flex-direction: column;
+  // gap: 40px;
+  // @media screen and (min-width: 1440px) {
+  //   gap: 60px;
+  // }
   .imgContainer {
     margin: 0 -20px;
     @media screen and (min-width: 768px) {
@@ -90,15 +97,27 @@
     flex-direction: column;
     gap: 18px;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 768px) {
       position: absolute;
-      top: 50%;
-      border-radius: 24px;
-      padding: 24px;
-      width: 573px;
-      background: $main-white;
-      gap: 24px;
+      top: 20px;
+      border-radius: 18px;
+      padding: 16px;
+      width: 320px;
+      background: rgba(255, 255, 255, 0.5);
+      gap: 16px;
       align-items: center;
+    }
+    @media screen and (min-width: 1024px) {
+      top: 32px;
+      border-radius: 24px;
+      padding: 20px;
+      width: 480px;
+    }
+    @media screen and (min-width: 1440px) {
+      top: 40px;
+      padding: 24px;
+      width: 540px;
+      gap: 20px;
     }
   }
 }
@@ -120,6 +139,10 @@
     border: 1px solid rgba(0, 0, 0, 0.12);
     background: $main-white;
     margin-bottom: 4px;
+    @media screen and (min-width: 1024px) {
+      border-radius: 4px;
+      height: 12px;
+    }
     @media screen and (min-width: 1440px) {
       border-radius: 4px;
       height: 18px;
@@ -155,8 +178,8 @@
     line-height: 1.5;
     text-align: justify;
     color: $main-grey;
-    @media screen and (min-width: 1440px) {
-      color: $main-black;
+    @media screen and (min-width: 1024px) {
+      // color: $main-black;
       font-size: 18px;
     }
   }
@@ -168,7 +191,7 @@
     text-align: justify;
     color: $main-black;
     margin-top: 2px;
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1024px) {
       font-size: 18px;
     }
   }
@@ -179,32 +202,44 @@
   padding: 14px 36px;
   width: 100%;
   max-width: 525px;
-
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
+    width: 288px;
+  }
+  @media screen and (min-width: 1024px) {
     padding: 16px 40px;
     font-size: 20px;
-
-    width: 525px;
-    height: 52px;
+    width: 440px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 492px;
   }
 }
 .containerCol {
   display: flex;
   flex-direction: column;
   gap: 60px;
-  @media screen and (min-width: 1440px) {
-    flex-direction: row;
-    .container:first-child {
-      // text-align: start;
-      flex: 2;
-    }
-    .container:nth-child(2) {
-      text-align: end;
-      flex: 1;
-    }
-  }
+  // @media screen and (min-width: 1440px) {
+  //   flex-direction: row;
+  //   .container:first-child {
+  //     // text-align: start;
+  //     flex: 2;
+  //   }
+  //   .container:nth-child(2) {
+  //     text-align: end;
+  //     flex: 1;
+  //   }
+  // }
 }
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @media screen and (min-width: 1440px) {
+    gap: 60px;
+    padding: 0 320px;
+  }
+}
+.containerPhoto {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -218,7 +253,7 @@
   line-height: 1.5;
   text-transform: uppercase;
   color: $main-black;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     font-weight: 500;
     font-size: 24px;
   }
@@ -228,28 +263,31 @@
   font-size: 16px;
   line-height: 1.5;
   color: $main-black;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     font-size: 18px;
   }
 }
 
 .reportWrap {
-  padding: 26px 20px;
+  padding: 24px 20px;
   margin: 0 -20px;
   background: $green-30;
+  display: flex;
+  flex-direction: column;
+  // gap: 20px;
   @media screen and (min-width: 768px) {
     margin: 0 -40px;
     padding: 26px 40px;
   }
   @media screen and (min-width: 1024px) {
     margin: 0 -60px;
-    padding: 26px 60px;
+    padding: 48px 60px;
+    // gap: 24px;
   }
 
   @media screen and (min-width: 1440px) {
-    background: transparent;
-    padding: 0;
-    margin: 0;
+    // background: transparent;
+    margin: 0 -400px;
   }
 }
 .report {
@@ -260,6 +298,11 @@
   text-decoration-skip-ink: none;
   color: $main-black;
   transition: all 200ms ease-in-out;
+  padding-top: 20px;
+  @media screen and (min-width: 1024px) {
+    font-size: 18px;
+    padding-top: 24px;
+  }
 
   &:hover,
   &:focus {
@@ -270,8 +313,20 @@
   }
 }
 
+.containerBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @media screen and (min-width: 768px) {
+    gap: 40px;
+  }
+  @media screen and (min-width: 1440px) {
+    gap: 48px;
+  }
+}
 .photo_imgWrap {
   position: relative;
+  border-radius: 18px;
   width: 320px;
   height: 169px;
   overflow: hidden;

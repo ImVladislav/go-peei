@@ -22,7 +22,9 @@ const ProjectsList = ({
     const handleResize = () => {
       if (window.innerWidth >= 1440) {
         setVisibleCount(6);
-      } else {
+      } else if (window.innerWidth >= 768) {
+        setVisibleCount(4);
+      } else if (window.innerWidth >= 360) {
         setVisibleCount(2);
       }
     };
@@ -52,7 +54,9 @@ const ProjectsList = ({
           type="button"
           onClick={handleToggleShowMore}
         >
-          <Translator>{showMore ? "buttonHide" : "buttonShowMore"}</Translator>
+          <Translator>
+            {showMore ? "buttonHide" : "buttonAllProjects"}
+          </Translator>
         </button>
       )}
     </div>

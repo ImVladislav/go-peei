@@ -85,7 +85,7 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
         isLink
         href={`/activities/projects/${project._id}`}
       >
-        <Translator>donate</Translator>
+        <Translator>{project.closed ? "donateСlosed" : "donate"}</Translator>
       </Button>
     </li>
   );

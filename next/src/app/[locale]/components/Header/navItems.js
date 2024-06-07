@@ -4,7 +4,7 @@ export const navItems = [
     links: [
       { key: "aboutUs", label: "Про нас", href: "/about" },
       { key: "ourTeam", label: "Наша команда", href: "/team" },
-      { key: "ourPartners", label: "Наші партнери", href: "/about/4" },
+      { key: "ourPartners", label: "Наші партнери", href: "/partners" },
       {
         key: "officialDocuments",
         label: "Офіційні документи",

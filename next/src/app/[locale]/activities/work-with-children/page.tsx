@@ -19,40 +19,43 @@ const WorkWithChildrenPage = () => {
             <Translator>withChildren</Translator>
           </span>
         </Title>
-        <ul className={styles.list}>
-          {workWithChildrenData.map((item) => (
-            <li className={styles.item}>
-              <div className={styles.imgContent}>
-                <div className={styles.wrapImg}>
-                  <Image
-                    className={styles.img}
-                    src={item.imageSrc}
-                    alt={item.title}
-                    fill
-                  />
-                </div>
-              </div>
-              <div className={styles.textContent}>
-                <div className={styles.titleWrap}>
-                  <div className={styles.wrapIcon}>
+        <div className={styles.backgroundWrap}>
+          <ul className={styles.list}>
+            {workWithChildrenData.map((item) => (
+              <li className={styles.item} key={item.title}>
+                <div className={styles.imgContent}>
+                  <div className={styles.wrapImg}>
                     <Image
-                      src="/about/leaf.svg"
+                      className={styles.img}
+                      src={item.imageSrc}
                       alt={item.title}
-                      width={13}
-                      height={22}
+                      fill
+                      sizes="max-width: 632px"
                     />
                   </div>
-                  <h2 className={styles.title}>
-                    <Translator>{item.title}</Translator>
-                  </h2>
                 </div>
-                <p className={styles.description}>
-                  <Translator>{item.description}</Translator>
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
+                <div className={styles.textContent}>
+                  <div className={styles.titleWrap}>
+                    <div className={styles.wrapIcon}>
+                      <Image
+                        src="/about/leaf.svg"
+                        alt={item.title}
+                        width={13}
+                        height={22}
+                      />
+                    </div>
+                    <h2 className={styles.title}>
+                      <Translator>{item.title}</Translator>
+                    </h2>
+                  </div>
+                  <p className={styles.description}>
+                    <Translator>{item.description}</Translator>
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

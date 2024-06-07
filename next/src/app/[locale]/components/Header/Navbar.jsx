@@ -14,7 +14,9 @@ export default function Navbar() {
         {navItems.map((item) => (
           <div key={item.title.label} className={s.nav__itemContainer}>
             <p>
-              <span className={s.nav__item}>{t(item.title.key)}</span>
+              <span className={`${s.text} ${s.nav__item}`}>
+                {t(item.title.key)}
+              </span>
             </p>
             <svg
               id={`svg-${item.title.label}`}
@@ -38,7 +40,7 @@ export default function Navbar() {
                 <li className={s.dropdown__item} key={link.label}>
                   <Link
                     href={link.href}
-                    className={`${s.link} ${s.dropdownLink}`}
+                    className={`${s.link}  ${s.dropdownLink}`}
                   >
                     {t(link.key)}
                   </Link>
@@ -48,11 +50,11 @@ export default function Navbar() {
           </div>
         ))}
         <div style={{ marginRight: "20px" }}>
-          <Link href="/news" className={s.nav__item}>
+          <Link href="/news" className={s.text}>
             {t("news")}
           </Link>
         </div>
-        <Link href="/contacts" className={`${s.link} ${s.nav__item}`}>
+        <Link href="/contacts" className={s.text}>
           {t("contacts")}
         </Link>
       </nav>

@@ -7,25 +7,25 @@ const partnerItems = [
     src: steadyLogo,
   },
   {
-    partner: "ФОП",
+    partner: "fop",
   },
     {
-    partner: "ФОП",
+    partner: "fop",
   },
       {
-    partner: "ФОП",
+    partner: "fop",
   },
         {
-    partner: "ФОП",
+    partner: "fop",
   },
           {
-    partner: "ФОП",
+    partner: "fop",
   },
             {
-    partner: "ФОП",
+    partner: "fop",
   },
               {
-    partner: "ФОП",
+    partner: "fop",
   },
   // Додайте більше об'єктів за необхідності
 ];

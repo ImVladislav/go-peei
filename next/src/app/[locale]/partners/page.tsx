@@ -17,13 +17,15 @@ const OurPartners = () => {
           formattedPartnerItems.map((item, index) => (
             <div key={index} className={s.partnerItem}>
               <Image className={s.image} src={item.src} alt={item.partner} />
-              <h3 className={s.partnerName}>{item.partner}</h3>
+              <h3 className={s.partnerName}>
+                <Translator>{item.partner}</Translator>
+              </h3>
             </div>
           ))}
       </div>
       <div className={s.buttonContainer}>
         <Button isLink={true} href={"/"} newStyles={s.button}>
-          Стати партнером
+          <Translator>becomeAPartner</Translator>
         </Button>
       </div>
     </div>

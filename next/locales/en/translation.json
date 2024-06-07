@@ -243,6 +243,8 @@
   "notFound": "Something has gone wrong!",
   "notFoundBtn": "To the main page",
 
-  "ourPartners": "Our partners"
-
+  "ourPartners": "Our partners",
+  "becomeAPartner": "Become a partner",
+  "fop":"FOP"
+  
 }

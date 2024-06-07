@@ -314,7 +314,12 @@
   line-height: 1.5;
   text-transform: uppercase;
   color: #141414;
+  &:hover {
+    transition: 500ms;
+    color: #0d490d;
+  }
 }
+
 //=======================SocialLinks========================
 .socials__List {
   display: flex;

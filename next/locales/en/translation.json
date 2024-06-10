@@ -161,12 +161,12 @@
   "stepsDescFirstLink": "Charter of the NGO «Platform of Eco-Energy Initiatives»",
   "stepsDescSecondBefore": "Fill in the ",
   "stepsDescSecondLink": "Application form",
-  "stepsDescSecondAfter": ", which will be considered at the meeting of the Board of the NGO «Platform of Eco-Energy Initiatives».",
+  "stepsDescSecondAfter": ", which will be considered at the meeting of the Board of the NGO «Platform of Eco-Energy Initiatives»",
   "stepsDescThirdBefore": "Give ",
   "stepsDescThirdLink": "consent",
   "stepsDescThirdAfter": " to the processing of personal information",
   "stepsDescFourthLink": "questionnaire",
-  "stepsDescFifth": "Pass the interview.",
+  "stepsDescFifth": "Pass the interview",
 
   "partnering": "partnerships",
   "partners": "Partners!",
@@ -187,9 +187,7 @@
   "raisingReputation": "Improving our reputation.",
   "raisingReputationContinued": " We strive to become leaders in important eco-energy projects, recycling initiatives and waste reduction. We believe that our active involvement in educating and promoting the idea of separate waste collection as a way of life will enhance our reputation and contribute to our sustainability goals.",
   "memorandumFirst": "We believe in the power of collective action and are open to anyone who wants to join our movement. Together we can change the world, making it cleaner and more sustainable for future generations.",
-  "memorandumSecond": "Thank you for your interest and consideration of our invitation to partnership. Please do not hesitate to contact us and together we will make a meaningful contribution to the preservation of our planet. Link to the ",
-  "memorandum": "memorandum",
-  "memorandumAfter": " here",
+  "memorandumSecond": "Thank you for your interest and consideration of our invitation to partnership. Please do not hesitate to contact us and together we will make a meaningful contribution to the preservation of our planet.",
 
   "volunteerings": "volunteering",
   "volunteers": "Volunteers!",
@@ -200,7 +198,7 @@
   "volunteersStepFourth": "Have an interview with the head of the volunteer department",
   "volunteersStepFifthBefore": "Sign a ",
   "volunteersStepFifthLink": "contract",
-  "volunteersStepSixth": "Obtain a standardised volunteer certificate.",
+  "volunteersStepSixth": "Obtain a standardised volunteer certificate",
   "treesDescFirst": "Join us today and become part of this inspiring community! ",
   "treesDescSecond": "Together we can make a real difference to the future of our planet.",
 
@@ -245,6 +243,5 @@
 
   "ourPartners": "Our partners",
   "becomeAPartner": "Become a partner",
-  "fop":"FOP"
-  
+  "fop": "FOP"
 }

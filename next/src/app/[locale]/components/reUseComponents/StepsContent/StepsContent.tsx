@@ -58,7 +58,6 @@ const StepsContent = ({
                     {item.description && (
                       <Translator>{item.description}</Translator>
                     )}
-
                     {item.href && (
                       <Link className={styles.link} href={item.href}>
                         {item.link && <Translator>{item.link}</Translator>}
@@ -67,6 +66,7 @@ const StepsContent = ({
                     {item.descriptionAfter && (
                       <Translator>{item.descriptionAfter}</Translator>
                     )}
+                    .
                   </p>
                 </li>
               ))}

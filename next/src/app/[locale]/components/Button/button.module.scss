@@ -37,6 +37,9 @@
   &.active {
     background: $green-hover;
   }
+  &:disabled {
+    cursor: no-drop;
+  }
 }
 
 /* Button scroll top */
@@ -79,6 +82,13 @@
 }
 
 .closed {
+  &:hover,
+  &:focus {
+    background: #adadad;
+  }
+  &.active {
+    background: #adadad;
+  }
   @media screen and (min-width: 768px) {
     font-weight: 300;
 
@@ -90,14 +100,5 @@
     background: $main-white;
     border: none;
     transition: all 250ms ease-in-out;
-    &:hover,
-    &:focus {
-      background: $green-hover;
-      color: $main-white;
-    }
-    &.active {
-      background: $green-hover;
-      color: $main-white;
-    }
   }
 }

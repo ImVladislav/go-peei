@@ -1,9 +1,15 @@
 @import "../../../styles/utils/variables";
 
 .section {
-  padding: 60px 0 75px;
+  padding: 60px 0;
+  @media screen and (min-width: 768px) {
+    padding: 80px 0;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 100px 0;
+  }
   @media screen and (min-width: 1440px) {
-    padding: 60px 0 120px;
+    padding: 120px 0;
   }
 }
 .accentTitle {
@@ -12,31 +18,40 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  @media screen and (min-width: 1440px) {
+  gap: 32px;
+
+  @media screen and (min-width: 768px) {
     background: $green-30;
-    gap: 0;
+    gap: 28px;
+  }
+  @media screen and (min-width: 1024px) {
+    gap: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+    gap: 0px;
   }
 }
 .item {
   width: 100%;
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: 1440px) {
+  justify-content: space-between;
+  @media screen and (min-width: 768px) {
     width: 100%;
     display: flex;
     flex-direction: row;
+    gap: 16px;
+  }
+  @media screen and (min-width: 1024px) {
+    gap: 20px;
+  }
+  @media screen and (min-width: 1440px) {
+    gap: 0px;
   }
   .imgContent {
     margin-left: -20px;
     margin-bottom: 16px;
     @media screen and (min-width: 768px) {
-      margin-left: -40px;
-    }
-    @media screen and (min-width: 1024px) {
-      margin-left: -60px;
-    }
-    @media screen and (min-width: 1440px) {
       flex: 1;
       margin: 0;
     }
@@ -46,8 +61,16 @@
     border-radius: 0 24px 24px 0;
 
     width: 100%;
-    height: 145px;
+    height: 218px;
     overflow: hidden;
+    @media screen and (min-width: 768px) {
+      width: 336px;
+      height: 218px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 442px;
+      height: 286px;
+    }
     @media screen and (min-width: 1440px) {
       width: 632px;
       height: 409px;
@@ -57,25 +80,36 @@
     object-fit: cover;
   }
 }
+.item:nth-child(4) {
+  .img {
+    object-position: left;
+  }
+}
 .item:nth-child(even) {
   width: 100%;
   display: flex;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .textContent {
+    @media screen and (min-width: 768px) {
+      padding: 12px 0px 0px 12px;
+    }
+    @media screen and (min-width: 1024px) {
+      padding: 16px 0px 0px 16px;
+    }
+    @media screen and (min-width: 1440px) {
+      padding: 68px 80px;
+    }
   }
   .imgContent {
     margin-right: -20px;
     margin-left: 0px;
     @media screen and (min-width: 768px) {
-      margin-right: -40px;
-    }
-    @media screen and (min-width: 1024px) {
-      margin-right: -60px;
-    }
-    @media screen and (min-width: 1440px) {
       flex: 1;
       margin: 0;
     }
@@ -84,8 +118,16 @@
     position: relative;
     border-radius: 24px 0 0 24px;
     width: 100%;
-    height: 145px;
+    height: 218px;
     overflow: hidden;
+    @media screen and (min-width: 768px) {
+      width: 336px;
+      height: 218px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 442px;
+      height: 286px;
+    }
     @media screen and (min-width: 1440px) {
       width: 632px;
       height: 409px;
@@ -94,10 +136,14 @@
 }
 
 .textContent {
+  @media screen and (min-width: 768px) {
+    padding: 12px 12px 0 0;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 16px 16px 0 0;
+  }
   @media screen and (min-width: 1440px) {
-    padding: 60px;
-    width: 648px;
-    height: 409px;
+    padding: 68px 80px;
   }
 }
 .titleWrap {
@@ -105,10 +151,14 @@
   gap: 8px;
   justify-content: flex-start;
   margin-bottom: 12px;
+  @media screen and (min-width: 768px) {
+    gap: 12px;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 8px 0;
+  }
   @media screen and (min-width: 1440px) {
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 }
 .wrapIcon {
@@ -123,9 +173,9 @@
   font-size: 16px;
   line-height: 1.5;
   color: $main-black;
+  text-transform: uppercase;
   @media screen and (min-width: 1440px) {
     font-size: 18px;
-    text-transform: uppercase;
   }
 }
 .description {

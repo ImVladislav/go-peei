@@ -51,6 +51,7 @@ const ProjectDetails = async ({
                       src={data.imageSrc}
                       alt={data.title}
                       fill
+                      sizes="max-width: 360px"
                     />
                   </div>
                 </div>
@@ -88,6 +89,7 @@ const ProjectDetails = async ({
                     isLink
                     href={data.link}
                     closed={data.closed}
+                    disabled={data.closed}
                   >
                     <Translator>
                       {data.closed ? "donateСlosed" : "donate"}
@@ -135,18 +137,8 @@ const ProjectDetails = async ({
                     <Translator>photoReport</Translator>
                   </h3>
                 </div>
-                {data.photoReport?.length === 1 ? (
-                  <div className={styles.photo_imgWrap}>
-                    <Image
-                      className={styles.photo_img}
-                      src={data.photoReport[0]}
-                      alt="photo"
-                      fill
-                    />
-                  </div>
-                ) : (
-                  data.photoReport && <PhotoSwiper data={data.photoReport} />
-                )}
+
+                {data.photoReport && <PhotoSwiper data={data.photoReport} />}
               </div>
             )}
 

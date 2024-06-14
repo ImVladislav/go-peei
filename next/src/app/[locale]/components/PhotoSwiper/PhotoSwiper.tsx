@@ -111,12 +111,14 @@ const PhotoSwiper = ({ data }: PhotoSwiperProps) => {
             </div>
             <div className={styles.modalContent}>
               <button className={styles.prevBtn} onClick={prevImage}>
-                <Image
-                  src="/main/icon-next.svg"
-                  alt="close"
-                  width={14}
-                  height={14}
-                />
+                {data.length > 1 && (
+                  <Image
+                    src="/projects/icon-next.svg"
+                    alt="close"
+                    width={14}
+                    height={14}
+                  />
+                )}
               </button>
               <div className={styles.modalWrapImg}>
                 <img
@@ -127,12 +129,14 @@ const PhotoSwiper = ({ data }: PhotoSwiperProps) => {
                 />
               </div>
               <button className={styles.nextBtn} onClick={nextImage}>
-                <Image
-                  src="/main/icon-prev.svg"
-                  alt="close"
-                  width={14}
-                  height={14}
-                />
+                {data.length > 1 && (
+                  <Image
+                    src="/projects/icon-prev.svg"
+                    alt="close"
+                    width={14}
+                    height={14}
+                  />
+                )}
               </button>
             </div>
           </div>

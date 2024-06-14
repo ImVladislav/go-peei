@@ -55,9 +55,6 @@ const contactUsContentData: contactUsContentItem = {
     },
     {
       description: "memorandumSecond",
-      link: "memorandum",
-      href: "/",
-      descAfter: "memorandumAfter",
     },
   ],
 };

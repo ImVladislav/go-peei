@@ -56,24 +56,24 @@ const stepsContentData: reUseContentItem = {
     {
       descriptionBefore: "stepsDescFirstBefore",
       link: "stepsDescFirstLink",
-      href: "/",
+      href: "/officialDocuments/statut",
     },
     {
       descriptionBefore: "stepsDescSecondBefore",
       link: "stepsDescSecondLink",
-      href: "/",
+      href: "#",
       descriptionAfter: "stepsDescSecondAfter",
     },
     {
       descriptionBefore: "stepsDescThirdBefore",
       link: "stepsDescThirdLink",
-      href: "/",
+      href: "#",
       descriptionAfter: "stepsDescThirdAfter",
     },
     {
       descriptionBefore: "stepsDescSecondBefore",
       link: "stepsDescFourthLink",
-      href: "/",
+      href: "#",
     },
     { description: "stepsDescFifth" },
   ],

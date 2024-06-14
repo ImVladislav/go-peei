@@ -52,9 +52,10 @@ const Hero = () => {
               <div className={styles.img_wrap}>
                 <Image
                   className={styles.img}
-                  src="/main/recycling-symbol-green-nature-isolated-white-background-1.png"
+                  src="/main/recycling-symbol-green-nature-isolated-white-background-1.webp"
                   alt="піктограма повторної переробки"
                   fill
+                  sizes="max-width: 562px"
                 />
               </div>
               <div className={styles.btn_lastWrap}>

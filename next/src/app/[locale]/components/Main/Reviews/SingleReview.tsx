@@ -20,6 +20,7 @@ const SingleReview = ({ review }: ReviewProps) => {
             src={review.imageSrc}
             alt={review.name}
             fill
+            sizes="max-width: 72px"
           />
         </div>
         <h3 className={styles.item__name}>{review.name}</h3>

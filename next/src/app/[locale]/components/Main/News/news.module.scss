@@ -22,12 +22,10 @@
 }
 .first_card {
   background: $main-white;
-  display: flex;
-  flex-direction: column;
+
   border-radius: 16px;
   padding: 12px;
   width: 320px;
-  gap: 12px;
 
   @media screen and (min-width: 768px) {
     border-radius: 10px;
@@ -48,7 +46,11 @@
 
     width: 766px;
   }
-
+  &__link {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
   &__img_wrap {
     position: relative;
     width: 100%;
@@ -163,18 +165,16 @@
     object-fit: cover;
   }
   &__title_link {
-    color: $main-black;
-    &:hover,
-    &:focus {
-      color: $focus-green;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
   &__title {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.5;
 
-    width: 209px;
+    min-width: 209px;
     margin-bottom: 12px;
 
     @media screen and (min-width: 1440px) {
@@ -203,12 +203,10 @@
     margin-top: 32px;
   }
   @media screen and (min-width: 1024px) {
-    margin-bottom: 20px;
   }
   @media screen and (min-width: 1440px) {
     margin-top: 48px;
     text-align: center;
-    marin-bottom: 4px;
   }
   &__link {
     display: inline-block;

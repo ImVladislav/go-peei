@@ -1,26 +1,25 @@
 @import "../../../../styles/utils/variables";
 
 .container {
-  margin: -20px;
+  border: 1px solid #0d490d;
+  border-radius: 18px;
+  padding: 24px;
   background: $green-30;
   @media screen and (min-width: 768px) {
-    margin: 0 -40px;
+    border-radius: 24px;
+    padding: 36px 60px;
   }
-  @media screen and (min-width: 1024px) {
-    margin: 0 -60px;
-  }
+
   @media screen and (min-width: 1440px) {
-    margin: 0;
+    padding: 48px 60px;
   }
 }
 .inner {
-  padding: 24px 48px;
   display: flex;
   flex-direction: column;
 
   gap: 20px;
-  @media screen and (min-width: 1440px) {
-    padding: 24px 370px;
+  @media screen and (min-width: 1024px) {
     gap: 24px;
   }
 }
@@ -30,7 +29,7 @@
   margin-right: auto;
   width: 36px;
   height: 52px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     width: 61px;
     height: 88px;
   }
@@ -39,6 +38,10 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  margin: 0 auto;
+  @media screen and (min-width: 1024px) {
+    width: 540px;
+  }
 }
 
 .description {
@@ -47,7 +50,7 @@
   line-height: 1.5;
   color: $main-black;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     font-size: 18px;
   }
 }
@@ -67,7 +70,8 @@
   max-width: 308px;
   font-size: 16px;
   padding: 12px 40px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
+    width: 308px;
     padding: 16px 40px;
     font-size: 20px;
   }

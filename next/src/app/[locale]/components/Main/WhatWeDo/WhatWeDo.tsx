@@ -21,9 +21,10 @@ const WhatWeDo = () => {
               <div className={styles.img_container}>
                 <Image
                   className={styles.img}
-                  src="/main/front-view-wind-turbines-with-copy-space.jpg"
+                  src="/main/front-view-wind-turbines-with-copy-space.webp"
                   alt="line"
                   fill
+                  sizes="max-width: 849px"
                 />
               </div>
             </div>
@@ -33,7 +34,12 @@ const WhatWeDo = () => {
               <li className={styles.item}>
                 <div className={styles.subtitle_wrap}>
                   <div className={styles.icon_first}>
-                    <Image src="/main/one.svg" alt="icon" fill />
+                    <Image
+                      src="/main/svg/one.svg"
+                      alt="icon"
+                      fill
+                      sizes="max-width: 92px"
+                    />
                   </div>
                   <h3 className={styles.subtitle}>
                     <Translator>preservingTheEnvironment</Translator>
@@ -51,7 +57,12 @@ const WhatWeDo = () => {
               <li className={styles.item}>
                 <div className={styles.subtitle_wrap}>
                   <div className={styles.icon_second}>
-                    <Image src="/main/two.svg" alt="вітряк" fill />
+                    <Image
+                      src="/main/svg/two.svg"
+                      alt="вітряк"
+                      fill
+                      sizes="max-width: 92px"
+                    />
                   </div>
                   <h3 className={styles.subtitle}>
                     <Translator>
@@ -76,9 +87,10 @@ const WhatWeDo = () => {
                 <div className={styles.subtitle_wrap}>
                   <div className={styles.icon_third}>
                     <Image
-                      src="/main/three.svg"
+                      src="/main/svg/three.svg"
                       alt="переробка вторинної сировини"
                       fill
+                      sizes="max-width: 92px"
                     />
                   </div>
                   <h3 className={styles.subtitle}>

@@ -25,7 +25,7 @@ const News = ({ data, locale }: { data: newsItem[]; locale: string }) => {
             {data.slice(0, 2).map((item) => (
               <li className={styles.first_card} key={item._id}>
                 <Link
-                  className={styles.first_card__title_link}
+                  className={styles.first_card__link}
                   href={`/news/${item._id}`}
                 >
                   <div className={styles.first_card__img_wrap}>
@@ -34,6 +34,7 @@ const News = ({ data, locale }: { data: newsItem[]; locale: string }) => {
                       src={item.imageSrc}
                       alt={item.title}
                       fill
+                      sizes="max-width: 742px"
                     />
                   </div>
                   <h2 className={styles.first_card__title}>
@@ -72,6 +73,7 @@ const News = ({ data, locale }: { data: newsItem[]; locale: string }) => {
                           src={item.imageSrc}
                           alt={item.title}
                           fill
+                          sizes="max-width: 458px"
                         />
                       </div>
                       <h2 className={styles.item__title}>

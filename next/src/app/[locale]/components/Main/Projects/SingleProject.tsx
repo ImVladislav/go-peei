@@ -5,6 +5,7 @@ import Button from "../../Button/Button";
 
 import styles from "./projects.module.scss";
 import Translator from "../../translator/Translator";
+import Link from "next/link";
 interface ProjectProps {
   project: projectsItem;
   locale: string;
@@ -27,7 +28,10 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
 
   return (
     <li className={styles.item}>
-      <div className={styles.item__inner}>
+      <Link
+        className={styles.item__inner}
+        href={`/activities/projects/${project._id}`}
+      >
         <div className={styles.item__image}>
           <Image
             style={{
@@ -36,6 +40,7 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
             src={project.imageSrc}
             alt={project.title}
             fill
+            sizes="max-width: 360px"
           />
         </div>
 
@@ -53,7 +58,7 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
             ? `${project.descriptionEn.slice(0, maxLength)}...`
             : project.descriptionEn}
         </p>
-      </div>
+      </Link>
       <div className={styles.item__box}>
         <div className={styles.item__progres_bar}>
           <div
@@ -80,6 +85,7 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
           </div>
         </div>
       </div>
+
       <Button
         newStyles={styles.item__btn}
         isLink

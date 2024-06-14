@@ -92,6 +92,7 @@ const PartnershipPage = () => {
             imgStyle={firstContentData.imgStyle}
             title={firstContentData.title}
             list={firstContentData.list}
+            btn
           />
           <div className={styles.contentSecond}>
             <ListContent

@@ -6,7 +6,13 @@ import Button from "../../Button/Button";
 import styles from "./firstContent.module.scss";
 import { reUseContentItem } from "@/app/types";
 
-const FirstContent = ({ imgSrc, imgStyle, title, list }: reUseContentItem) => {
+const FirstContent = ({
+  imgSrc,
+  imgStyle,
+  title,
+  list,
+  btn,
+}: reUseContentItem) => {
   const iconClass = imgStyle ? `${styles.img} ${imgStyle}` : styles.img;
   return (
     <div>
@@ -30,13 +36,15 @@ const FirstContent = ({ imgSrc, imgStyle, title, list }: reUseContentItem) => {
                 </p>
               </li>
             ))}
-            <Button
-              newStyles={styles.btn}
-              isLink
-              href="/support/volonter/newVolonter"
-            >
-              <Translator>joinTheTeam</Translator>
-            </Button>
+            {!btn && (
+              <Button
+                newStyles={styles.btn}
+                isLink
+                href="/support/volonter/newVolonter"
+              >
+                <Translator>joinTheTeam</Translator>
+              </Button>
+            )}
           </ul>
         </div>
       </div>

@@ -159,12 +159,11 @@
   "steps": "Кроки",
   "stepsDescFirstBefore": "Ознайомитись зі ",
   "stepsDescFirstLink": "Статутом Громадської організації «Платформа еко-енергетичних ініціатив»",
-  "stepsDescSecondBefore": "Заповнити ",
-  "stepsDescSecondLink": "заяву",
-  "stepsDescSecondAfter": ", що буде розглянута на засіданні Правління Громадської організації «Платформа еко-енергетичних ініціатив»",
-  "stepsDescThirdBefore": "Надати ",
-  "stepsDescThirdLink": "згоду",
-  "stepsDescThirdAfter": " на обробку особистої інформації",
+  "stepsDescSecondBefore": "Заповнити заяву, що буде розглянута на засіданні Правління Громадської організації «Платформа еко-енергетичних ініціатив»",
+
+  "stepsDescThirdBefore": "Надати згоду на обробку особистої інформації",
+
+  "stepsDescFourthBefore": "Заповнити ",
   "stepsDescFourthLink": "анкету",
   "stepsDescFifth": "Пройти співбесіду",
 

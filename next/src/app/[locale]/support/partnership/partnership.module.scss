@@ -23,7 +23,9 @@
   transform: scale(1);
 
   object-position: bottom;
-
+  @media screen and (min-width: 768px) {
+    object-position: center;
+  }
   @media screen and (min-width: 1440px) {
     transform: scale(1.2);
     object-position: 0px -280px;
@@ -33,6 +35,9 @@
 .imgListContentFirst {
   object-position: -75px -40px;
   transform: scale(1.6);
+  @media screen and (min-width: 1024px) {
+    object-position: -100px -50px;
+  }
   @media screen and (min-width: 1440px) {
     object-position: -135px -75px;
     transform: scale(1.6);
@@ -63,7 +68,7 @@
   margin-right: auto;
   width: 52px;
   height: 58px;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     width: 95px;
     height: 120px;
   }

@@ -28,7 +28,7 @@ const StepsContent = ({
         <div className={styles.textContainer}>
           <div className={styles.textInner}>
             {subtitle && (
-              <h2 className={styles.title}>
+              <h2 className={styles.subtitle}>
                 <Translator>{subtitle}</Translator>
               </h2>
             )}

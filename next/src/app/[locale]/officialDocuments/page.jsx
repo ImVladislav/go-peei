@@ -9,10 +9,11 @@ const OfficialDocuments = () => {
   return (
     <div className={style.container}>
       <section className={s.officialDocuments__section}>
-        <Title>
-          <Translator>officialDocuments</Translator>
-        </Title>
-        {/* </div> */}
+        <div>
+          <Title>
+            <Translator>officialDocuments</Translator>
+          </Title>
+        </div>
         <ul>
           <li className={s.officialDocuments__li_item_link}>
             <Link
@@ -49,11 +50,11 @@ const OfficialDocuments = () => {
         </ul>
       </section>
       <section className={s.officialDocuments__section}>
-        {/* <div className={s.officialDocuments__titleThumb}> */}
-        <Title>
-          <Translator>lawsOfUkraineRelatedToVolunteering</Translator>
-        </Title>
-        {/* </div> */}
+        <div>
+          <Title>
+            <Translator>lawsOfUkraineRelatedToVolunteering</Translator>
+          </Title>
+        </div>
         <ul>
           <li className={s.officialDocuments__li_item_link}>
             <Link

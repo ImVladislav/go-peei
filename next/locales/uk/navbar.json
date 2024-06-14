@@ -9,7 +9,10 @@
   "activities": "Напрямки діяльності",
   "workWithYouth": "Робота з дітьми та молоддю",
   "directions": "Направлення діяльності",
-  "charityActions": "Благодійні акції",
+  "charityActions": "Наші проекти",
+
+
+
   "environmentalProtection": "Охорона довкілля",
   "news": "Новини",
   "support": "Підтримати",
@@ -20,5 +23,5 @@
   "workWithChildren": "Робота з дітьми",
   "workWithTeenagers": "Робота з молоддю",
   "logo": "/_next/static/media/LogoUA.cc410740.svg"
-  
+
 }

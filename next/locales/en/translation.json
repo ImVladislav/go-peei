@@ -20,11 +20,11 @@
   "recyclingOfSecondaryRawMaterials": "Recycling of secondary raw materials",
   "recyclingOfSecondaryRawMaterialsDesc": "Modern technologies make it possible to effectively use recycled materials to manufacture new products, which helps reduce the negative impact on the environment. ",
 
-  "charityActionsFirst": "charity ",
-  "charityActionsSecond": "actions",
+  "charityActionsFirst": "Our ",
+  "charityActionsSecond": "projects",
 
-  "helpRaiseFunds": "help raise ",
-  "helpRaiseFundsAccent": "funds",
+  "helpRaiseFunds": "Open fundraising for our ",
+  "helpRaiseFundsAccent": "projects",
   "collected": "Collected",
   "totalAmount": "Our goal",
   "allProjects": "All projects",

@@ -1,6 +1,6 @@
 {
   "supportUs": "Підтримати нас",
-  "donate": "Пожертвувати",
+  "donate": "Зробити внесок",
   "donateСlosed": "Збір закрито",
 
   "environmentalSecurityEnergyIndependence": "Екологічна безпека - енергетична незалежність",
@@ -8,8 +8,8 @@
   "security": " безпека",
   "energy": "енергетична",
   "independence": " незалежність",
-  "charityEventsPageFirst": "Благодійні ",
-  "charityEventsPageSecond": "акції",
+  "charityEventsPageFirst": "Нащі ",
+  "charityEventsPageSecond": "проекти",
   "wePromoteSuchIdeas": "Просуваємо такі ",
   "wePromoteSuchIdeasAccent": "ідеї:",
   "preservingTheEnvironment": "Збереження довкілля",
@@ -19,10 +19,10 @@
   "recyclingOfSecondaryRawMaterials": "Переробка вторинної сировини",
   "recyclingOfSecondaryRawMaterialsDesc": "Сучасні технології дозволяють ефективно використовувати вторинну сировину для виробництва нових продуктів, що сприяє зменшенню негативного впливу на навколишнє середовище.",
 
-  "charityActionsFirst": "Благодійні ",
-  "charityActionsSecond": "акції",
-  "helpRaiseFunds": "допоможіть зібрати ",
-  "helpRaiseFundsAccent": "кошти",
+  "charityActionsFirst": "Наші ",
+  "charityActionsSecond": "проекти",
+  "helpRaiseFunds": "Відкритий збір коштів на наші ",
+  "helpRaiseFundsAccent": "проекти",
   "collected": "Зібрано",
   "totalAmount": "Наша ціль",
   "allProjects": "Усі проєкти",

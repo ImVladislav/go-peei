@@ -5,7 +5,7 @@ import { Exo_2 } from "next/font/google";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Head from "next/head";
-
+import styles from "./components/Main/Hero/hero.module.scss";
 import "@/app/styles/index.scss";
 import TranslationsProvider from "../../../components/TranslationsProvider";
 import initTranslations from "../i18n";
@@ -15,6 +15,8 @@ import SessionProvider from "../SessionProvider";
 import ButtonScrollTop from "./components/Button/ButtonScrollTop";
 
 import AuthManager from "../AuthManager";
+import Link from "next/link";
+import Translator from "./components/translator/Translator";
 
 const exo = Exo_2({ subsets: ["latin"] });
 
@@ -53,6 +55,14 @@ export default async function RootLayout({ children, params: { locale } }) {
               <Header locale={locale} />
               <main>{children}</main>
               {/* Button scroll top */}
+              <Link
+                href="https://dsns.gov.ua/uk/abetka-bezpeki/diyi-naselennya-v-umovax-nadzvicainix-situacii-vojennogo-xarakteru"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.linkSecurity}
+              >
+                <Translator>safetyRulesDuringMartialLaw</Translator>
+              </Link>
               <ButtonScrollTop
                 nameSvg="UpArrow"
                 fill="#0d490d"

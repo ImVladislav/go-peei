@@ -89,8 +89,6 @@ const SocialLinks = ({
 
   return (
     <ul className={customClassNameUl || s.socials__List}>
-      {" "}
-      {/* Оновлено для використання кастомного класу */}
       {initialSocials.map(({ href, name }) => (
         <li className={customClassNameLi || s.socials__List_item} key={name}>
           <Link
@@ -110,7 +108,9 @@ const SocialLinks = ({
                   />
                 )
             )}
-            {tumbler === "on" && <span>{name}</span>}
+            {tumbler === "on" && (
+              <span className={s.social__link_span}>{name}</span>
+            )}
           </Link>
         </li>
       ))}

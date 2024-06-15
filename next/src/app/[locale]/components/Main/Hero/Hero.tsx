@@ -71,14 +71,14 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <Link
+      {/* <Link
         href="https://dsns.gov.ua/uk/abetka-bezpeki/diyi-naselennya-v-umovax-nadzvicainix-situacii-vojennogo-xarakteru"
         target="_blank"
         rel="noreferrer"
         className={styles.linkSecurity}
       >
         <Translator>safetyRulesDuringMartialLaw</Translator>
-      </Link>
+      </Link> */}
     </section>
   );
 };

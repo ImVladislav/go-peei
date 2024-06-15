@@ -40,6 +40,16 @@
     display: flex;
   }
 }
+.social__link_span {
+  &:hover,
+  &:focus {
+    color: $focus-green;
+    // background-color: aqua;
+  }
+}
+// .social__link_span:hover {
+//   color: red;
+// }
 
 .header__svgLink {
   width: 24px;

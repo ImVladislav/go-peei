@@ -23,18 +23,15 @@ const stepsContentData: reUseContentItem = {
     {
       descriptionBefore: "volunteersStepFirstBefore",
       link: "volunteersStepFirstLink",
-      href: "/officialDocuments/statut",
+      href: "/officialDocuments/volunteerEngagement",
     },
     {
-      descriptionBefore: "stepsDescSecondBefore",
+      descriptionBefore: "stepsDescFourthBefore",
       link: "stepsDescFourthLink",
       href: "/support/volonter/newVolonter",
     },
     {
       descriptionBefore: "stepsDescThirdBefore",
-      link: "stepsDescThirdLink",
-      href: "/",
-      descriptionAfter: "stepsDescThirdAfter",
     },
 
     { description: "volunteersStepFourth" },

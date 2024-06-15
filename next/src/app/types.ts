@@ -89,6 +89,7 @@ export type reUseContentItem = {
     link?: string;
     href?: string;
   }[];
+  btn?: boolean;
 };
 
 export type listContentItem = {

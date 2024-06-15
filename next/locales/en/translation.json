@@ -159,12 +159,11 @@
   "steps": "Steps",
   "stepsDescFirstBefore": "Read the ",
   "stepsDescFirstLink": "Charter of the NGO «Platform of Eco-Energy Initiatives»",
-  "stepsDescSecondBefore": "Fill in the ",
-  "stepsDescSecondLink": "Application form",
-  "stepsDescSecondAfter": ", which will be considered at the meeting of the Board of the NGO «Platform of Eco-Energy Initiatives»",
-  "stepsDescThirdBefore": "Give ",
-  "stepsDescThirdLink": "consent",
-  "stepsDescThirdAfter": " to the processing of personal information",
+  "stepsDescSecondBefore": "Fill in the application form, which will be considered at the meeting of the Board of the NGO «Platform of Eco-Energy Initiatives»",
+
+  "stepsDescThirdBefore": "Provide consent to the processing of personal information",
+
+  "stepsDescFourthBefore": "Fill in the ",
   "stepsDescFourthLink": "questionnaire",
   "stepsDescFifth": "Pass the interview",
 
@@ -236,7 +235,7 @@
   "volunteeringLaw": "Law of Ukraine 'On Volunteering'",
   "charitableActivitiesLaw": "Law of Ukraine 'On Charitable Activities and Charitable Organizations'",
 
-  "safetyRulesDuringMartialLaw": "Safety Rules During Martial Law",
+  "safetyRulesDuringMartialLaw": "Safety rules during martial law",
 
   "notFound": "Something has gone wrong!",
   "notFoundBtn": "To the main page",

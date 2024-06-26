@@ -6,6 +6,8 @@ import Translator from "../../translator/Translator";
 
 import styles from "./hero.module.scss";
 
+import SupportUSBtnModal from "../../supportUSbtnModal/supportUSbtnModal";
+
 const Hero = () => {
   return (
     <section className={styles.section}>
@@ -40,13 +42,14 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className={styles.btnWrap}>
-                  <Button
+                {/* <Button
                     newStyles={styles.btn}
                     isLink
                     href="https://payhub.com.ua/#/service/98840"
                   >
                     <Translator>supportUs</Translator>
-                  </Button>
+                  </Button> */}
+                <SupportUSBtnModal/>
                 </div>
               </div>
               <div className={styles.img_wrap}>

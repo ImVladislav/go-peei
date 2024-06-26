@@ -9,9 +9,16 @@ interface ModalProps {
   onClose: () => void;
   children: React.ReactNode;
   message?: boolean;
+  modalPosition: any;
 }
 
-const Modal = ({ show, onClose, children, message }: ModalProps) => {
+const Modal = ({
+  show,
+  onClose,
+  children,
+  message,
+  modalPosition,
+}: ModalProps) => {
   const [isBrowser, setBrowser] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -53,7 +60,7 @@ const Modal = ({ show, onClose, children, message }: ModalProps) => {
     <>
       {!message ? (
         <div className={s.overlay}>
-          <div ref={modalRef} className={s.modal}>
+          <div ref={modalRef} className={modalPosition || s.modal}>
             <div className={s.header}>
               <a href="#" onClick={handleClose}>
                 <button className={s.btn}>

@@ -11,6 +11,7 @@ import Copyright from "./Copyright/Copyright";
 
 import styles from "./footer.module.scss";
 import Socials from "./Socials/Socials";
+import SupportUSBtnModal from "../supportUSbtnModal/supportUSbtnModal";
 
 const Footer = ({ locale }: { locale: string }) => {
   const router = useRouter();
@@ -20,14 +21,15 @@ const Footer = ({ locale }: { locale: string }) => {
         <div className={styles.wrap}>
           <div className={styles.logo}>
             <Logo locale={locale} />
-            <Button
+            {/* <Button
               newStyles={styles.btn}
               onClick={() =>
                 router.push("https://payhub.com.ua/#/service/98840")
               }
             >
               <Translator>supportUs</Translator>
-            </Button>
+            </Button> */}
+            <SupportUSBtnModal />
           </div>
           <NavFooter />
         </div>

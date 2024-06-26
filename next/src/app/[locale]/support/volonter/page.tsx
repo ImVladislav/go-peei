@@ -46,7 +46,7 @@ const stepsContentData: reUseContentItem = {
 const contactUsContentData: contactUsContentItem = {
   imgSrc: "/partners/tree.svg",
   imgAlt: "question",
-  imgStyle: styles.imgStyle,
+  imgStyle: styles.imgContactUs,
   list: [
     {
       description: "treesDescFirst",

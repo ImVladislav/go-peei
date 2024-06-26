@@ -54,7 +54,7 @@ export default async function RootLayout({ children, params: { locale } }) {
             <div className="wrapper">
               <Header locale={locale} />
               <main>{children}</main>
-              {/* Button scroll top */}
+              {/* Button safety rules during martial law */}
               <Link
                 href="https://dsns.gov.ua/uk/abetka-bezpeki/diyi-naselennya-v-umovax-nadzvicainix-situacii-vojennogo-xarakteru"
                 target="_blank"
@@ -63,6 +63,7 @@ export default async function RootLayout({ children, params: { locale } }) {
               >
                 <Translator>safetyRulesDuringMartialLaw</Translator>
               </Link>
+              {/* Button scroll top */}
               <ButtonScrollTop
                 nameSvg="UpArrow"
                 fill="#0d490d"

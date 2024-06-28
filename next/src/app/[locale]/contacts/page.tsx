@@ -5,7 +5,7 @@ import Title from "../components/Title/Title";
 import LinkComponent from "../components/LinkComponent/LinkComponent";
 import FormComponent from "./FormComponent";
 
-import styles from "./contact.module.scss";
+imfixport styles from "./contact.module.scss";
 
 const ContactPage = () => {
   return (

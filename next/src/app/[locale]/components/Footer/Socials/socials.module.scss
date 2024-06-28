@@ -1,16 +1,13 @@
 @import "../../../../styles/utils/variables";
 
-.wrap {
+.list {
   margin-top: 24px;
   display: flex;
-  // flex-direction: column;
-  flex-wrap: wrap;
-  gap: 16px;
+  justify-content: space-between;
 
   @media screen and (min-width: 768px) {
     margin-top: 28px;
-    gap: 0;
-    justify-content: space-between;
+
     margin-bottom: 28px;
   }
 }

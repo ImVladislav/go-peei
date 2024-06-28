@@ -29,10 +29,14 @@ const Footer = ({ locale }: { locale: string }) => {
             >
               <Translator>supportUs</Translator>
             </Button> */}
-            <SupportUSBtnModal />
+            <SupportUSBtnModal
+              stylesBtnWrap={styles.btnWrap}
+              stylesBtn={styles.btn}
+            />
           </div>
           <NavFooter />
         </div>
+
         <Socials />
         <Copyright />
       </div>

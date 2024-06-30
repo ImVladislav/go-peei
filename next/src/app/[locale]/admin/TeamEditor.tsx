@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TEAM as initialTeam } from "../components/Team/TeamList/team-list.data";
-import s from "./team-editor.module.scss";
+import s from "./admin.module.scss";
+import Translator from "../components/translator/Translator";
 
 type TeamMember = {
   image: string;
@@ -62,6 +63,7 @@ const TeamEditor = () => {
             {editingIndex === index ? (
               <div>
                 <input
+                  className={s.input}
                   type="text"
                   name="name"
                   value={editingMember?.name || ""}
@@ -101,8 +103,14 @@ const TeamEditor = () => {
                     )
                   }
                 />
-                <button onClick={() => handleEditMember(index)}>Save</button>
                 <button
+                  className={s.button}
+                  onClick={() => handleEditMember(index)}
+                >
+                  Save
+                </button>
+                <button
+                  className={s.button}
                   onClick={() => {
                     setEditingMember(null);
                     setEditingIndex(null);
@@ -114,10 +122,19 @@ const TeamEditor = () => {
             ) : (
               <div>
                 <img src={member.image} alt={member.name} className={s.image} />
-                <h3>{member.name}</h3>
-                <p>{member.position}</p>
-                <p>{member.email}</p>
-                <p>{member.about}</p>
+
+                <h3>
+                  <Translator>{member.name}</Translator>
+                </h3>
+                <p>
+                  <Translator>{member.position}</Translator>
+                </p>
+                <p>
+                  <Translator>{member.email}</Translator>
+                </p>
+                <p>
+                  <Translator>{member.about}</Translator>
+                </p>
                 <button
                   onClick={() => {
                     setEditingMember(member);

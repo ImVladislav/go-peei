@@ -1,21 +1,28 @@
 import React, { useState } from "react";
 import { TEAM as initialTeam } from "../components/Team/TeamList/team-list.data";
-import s from "./admin.module.scss";
+import s from "./team-editor.module.scss";
+
+type TeamMember = {
+  image: string;
+  name: string;
+  position: string;
+  email: string;
+  about: string;
+};
 
 const TeamEditor = () => {
-  console.log(initialTeam);
-
-  const [team, setTeam] = useState(initialTeam);
-  const [newMember, setNewMember] = useState({
+  const [team, setTeam] = useState<TeamMember[]>(initialTeam);
+  const [newMember, setNewMember] = useState<TeamMember>({
     image: "",
     name: "",
     position: "",
     email: "",
     about: "",
   });
-  const [editingMember, setEditingMember] = useState(null);
+  const [editingMember, setEditingMember] = useState<TeamMember | null>(null);
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
 
-  const handleInputChange = (e: { target: { name: any; value: any } }) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setNewMember((prev) => ({ ...prev, [name]: value }));
   };
@@ -32,10 +39,13 @@ const TeamEditor = () => {
   };
 
   const handleEditMember = (index: number) => {
-    const updatedTeam = [...team];
-    updatedTeam[index] = editingMember;
-    setTeam(updatedTeam);
-    setEditingMember(null);
+    if (editingMember) {
+      const updatedTeam = [...team];
+      updatedTeam[index] = editingMember;
+      setTeam(updatedTeam);
+      setEditingMember(null);
+      setEditingIndex(null);
+    }
   };
 
   const handleDeleteMember = (index: number) => {
@@ -49,54 +59,57 @@ const TeamEditor = () => {
       <ul>
         {team.map((member, index) => (
           <li key={index} className={s.member}>
-            {editingMember && editingMember.index === index ? (
+            {editingIndex === index ? (
               <div>
                 <input
                   type="text"
                   name="name"
-                  value={editingMember.name}
+                  value={editingMember?.name || ""}
                   onChange={(e) =>
-                    setEditingMember((prev) => ({
-                      ...prev,
-                      name: e.target.value,
-                    }))
+                    setEditingMember((prev) =>
+                      prev ? { ...prev, name: e.target.value } : null
+                    )
                   }
                 />
                 <input
                   type="text"
                   name="position"
-                  value={editingMember.position}
+                  value={editingMember?.position || ""}
                   onChange={(e) =>
-                    setEditingMember((prev) => ({
-                      ...prev,
-                      position: e.target.value,
-                    }))
+                    setEditingMember((prev) =>
+                      prev ? { ...prev, position: e.target.value } : null
+                    )
                   }
                 />
                 <input
                   type="text"
                   name="email"
-                  value={editingMember.email}
+                  value={editingMember?.email || ""}
                   onChange={(e) =>
-                    setEditingMember((prev) => ({
-                      ...prev,
-                      email: e.target.value,
-                    }))
+                    setEditingMember((prev) =>
+                      prev ? { ...prev, email: e.target.value } : null
+                    )
                   }
                 />
                 <input
                   type="text"
                   name="about"
-                  value={editingMember.about}
+                  value={editingMember?.about || ""}
                   onChange={(e) =>
-                    setEditingMember((prev) => ({
-                      ...prev,
-                      about: e.target.value,
-                    }))
+                    setEditingMember((prev) =>
+                      prev ? { ...prev, about: e.target.value } : null
+                    )
                   }
                 />
                 <button onClick={() => handleEditMember(index)}>Save</button>
-                <button onClick={() => setEditingMember(null)}>Cancel</button>
+                <button
+                  onClick={() => {
+                    setEditingMember(null);
+                    setEditingIndex(null);
+                  }}
+                >
+                  Cancel
+                </button>
               </div>
             ) : (
               <div>
@@ -105,7 +118,12 @@ const TeamEditor = () => {
                 <p>{member.position}</p>
                 <p>{member.email}</p>
                 <p>{member.about}</p>
-                <button onClick={() => setEditingMember({ ...member, index })}>
+                <button
+                  onClick={() => {
+                    setEditingMember(member);
+                    setEditingIndex(index);
+                  }}
+                >
                   Edit
                 </button>
                 <button onClick={() => handleDeleteMember(index)}>

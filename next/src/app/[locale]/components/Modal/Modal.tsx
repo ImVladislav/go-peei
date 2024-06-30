@@ -9,7 +9,7 @@ interface ModalProps {
   onClose: () => void;
   children: React.ReactNode;
   message?: boolean;
-  modalPosition: any;
+  modalPosition?: any;
 }
 
 const Modal = ({

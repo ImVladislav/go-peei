@@ -30,12 +30,38 @@ const listContentData: listContentItem = {
     {
       imgSrc:
         "/workWithTeenagers/group-businesspeople-stacking-their-hands-desk.jpg",
+      title: "whatWeOfferFirstTitle",
       description: "whatWeOfferFirst",
     },
     {
       imgSrc: "/workWithTeenagers/recycle-all-it-s-worth-poster.jpg",
       imgStyle: styles.imgSecond,
+      title: "whatWeOfferSecondTitle",
       description: "whatWeOfferSecond",
+    },
+
+    {
+      imgSrc:
+        "/workWithTeenagers/earth-day-environment-concept-eco-concept.jpg",
+      title: "whatWeOfferThirdTitle",
+      description: "whatWeOfferThird",
+    },
+  ],
+};
+
+const stepsContentDataFirst: reUseContentItem = {
+  imgSrc: "/workWithTeenagers/eco-meet.jpg",
+  imgStyle: styles.imgStepContent,
+  title: "contactUsStepTitle",
+  list: [
+    {
+      description: "contactUsStepFirst",
+    },
+    {
+      description: "contactUsStepSecond",
+    },
+    {
+      description: "contactUsStepThird",
     },
   ],
 };
@@ -43,7 +69,8 @@ const listContentData: listContentItem = {
 const contactUsContentData: contactUsContentItem = {
   imgSrc: "/workWithTeenagers/question.svg",
   imgAlt: "question",
-  list: [{ description: "whatWeOfferThird" }],
+  imgStyle: styles.imgContactUs,
+  list: [{ description: "contactUsDesc" }],
 };
 
 const stepsContentData: reUseContentItem = {
@@ -92,19 +119,25 @@ const WorkWithTeenagersPage = () => {
               list={firstContentData.list}
             />
           </div>
-          <div className={styles.contentSecond}>
-            <ListContent
-              title={listContentData.title}
-              list={listContentData.list}
-            />
-
-            <ContactUsContent
-              imgSrc={contactUsContentData.imgSrc}
-              imgAlt={contactUsContentData.imgAlt}
-              imgStyle={contactUsContentData.imgStyle}
-              list={contactUsContentData.list}
-            />
-          </div>
+          {/* <div className={styles.contentSecond}> */}
+          <ListContent
+            title={listContentData.title}
+            list={listContentData.list}
+          />
+          <StepsContent
+            imgSrc={stepsContentDataFirst.imgSrc}
+            imgStyle={stepsContentDataFirst.imgStyle}
+            title={stepsContentDataFirst.title}
+            subtitle={stepsContentDataFirst.subtitle}
+            list={stepsContentDataFirst.list}
+          />
+          <ContactUsContent
+            imgSrc={contactUsContentData.imgSrc}
+            imgAlt={contactUsContentData.imgAlt}
+            imgStyle={contactUsContentData.imgStyle}
+            list={contactUsContentData.list}
+          />
+          {/* </div> */}
           <StepsContent
             imgSrc={stepsContentData.imgSrc}
             imgStyle={stepsContentData.imgStyle}

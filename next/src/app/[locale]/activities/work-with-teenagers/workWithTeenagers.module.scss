@@ -55,7 +55,7 @@
 }
 
 .imgSecond {
-  object-position: left;
+  object-position: left top;
 }
 
 .contentSecond {
@@ -70,6 +70,23 @@
   }
   @media screen and (min-width: 1440px) {
     gap: 60px;
+  }
+}
+.imgContactUs {
+  width: 36px;
+  height: 52px;
+  @media screen and (min-width: 768px) {
+    width: 61px;
+    height: 88px;
+  }
+}
+.imgStepContent {
+  object-position: -35px bottom;
+  @media screen and (min-width: 500px) {
+    object-position: 0px bottom;
+  }
+  @media screen and (min-width: 768px) {
+    object-position: 0px bottom;
   }
 }
 

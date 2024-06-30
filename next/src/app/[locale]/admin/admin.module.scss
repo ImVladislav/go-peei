@@ -83,3 +83,175 @@
   background-color: #f5f8f5; /* Light yellow background */
   border: 1px solid #e8f1e7; /* Yellow border */
 }
+// ======================== rewiews ===============================
+@import "../../styles/utils/variables";
+.section {
+  background: #fff;
+
+  @media screen and (min-width: 1440px) {
+    background: #f5f6f3;
+    padding: 60px 0;
+  }
+}
+
+.item {
+  position: relative;
+  border: 1px solid $main-grey;
+  border-radius: 16px;
+  padding: 10px 12px;
+  // width: 320px;
+  // height: 214px;
+  background: $main-white;
+  margin-bottom: 20px;
+  @media screen and (min-width: 1440px) {
+    border: 1px solid $main-grey;
+    border-radius: 18px;
+    padding: 28px 24px;
+    // width: 520px;
+    // height: 264px;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 1440px) {
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+  }
+  &__img {
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    @media screen and (min-width: 1440px) {
+      width: 72px;
+      height: 72px;
+    }
+  }
+  &__name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-align: justify;
+    color: $main-black;
+    @media screen and (min-width: 1440px) {
+      font-size: 18px;
+    }
+  }
+  &__desc {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    color: $main-black;
+  }
+}
+
+.box {
+  margin-top: 24px;
+  text-align: center;
+
+  &__link {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+    color: $main-black;
+    border-bottom: 1px solid $main-black;
+    padding: 12px;
+
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $green-hover;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: 48px;
+    text-align: center;
+
+    &__link {
+      font-size: 20px;
+      padding: 12px;
+    }
+  }
+}
+
+.swiper {
+  margin: 0 -20px;
+  background: #e8f1e7;
+  padding: 24px 12px;
+  @media screen and (min-width: 768px) {
+    margin: 0 -32px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding: 0;
+    margin: 0 -80px;
+    background: transparent;
+  }
+}
+
+.buttons__thumb {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.checkbox {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: #fff;
+}
+
+.checkbox:checked {
+  background-color: black;
+}
+
+.checkbox:checked::before {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #fff;
+}
+
+// ===============team-editor.module.scss ===================================
+
+.container {
+  padding: 20px;
+}
+
+.member {
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.newMemberForm input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.newMemberForm button {
+  display: block;
+  margin-top: 10px;
+}

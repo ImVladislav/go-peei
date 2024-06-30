@@ -5,7 +5,7 @@ import { Exo_2 } from "next/font/google";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Head from "next/head";
-import styles from "./components/Main/Hero/hero.module.scss";
+// import styles from "./components/Main/Hero/hero.module.scss";
 import "@/app/styles/index.scss";
 import TranslationsProvider from "../../../components/TranslationsProvider";
 import initTranslations from "../i18n";
@@ -17,6 +17,7 @@ import ButtonScrollTop from "./components/Button/ButtonScrollTop";
 import AuthManager from "../AuthManager";
 import Link from "next/link";
 import Translator from "./components/translator/Translator";
+import SafeRules from "./components/safeRulers/SafeRules";
 
 const exo = Exo_2({ subsets: ["latin"] });
 
@@ -54,22 +55,14 @@ export default async function RootLayout({ children, params: { locale } }) {
             <div className="wrapper">
               <Header locale={locale} />
               <main>{children}</main>
-              {/* Button safety rules during martial law */}
-              <Link
-                href="https://dsns.gov.ua/uk/abetka-bezpeki/diyi-naselennya-v-umovax-nadzvicainix-situacii-vojennogo-xarakteru"
-                target="_blank"
-                rel="noreferrer"
-                className={styles.linkSecurity}
-              >
-                <Translator>safetyRulesDuringMartialLaw</Translator>
-              </Link>
-              {/* Button scroll top */}
+
+              <SafeRules />
+
               <ButtonScrollTop
                 nameSvg="UpArrow"
                 fill="#0d490d"
                 fillHovered="#fffefe"
               />
-
               <Footer locale={locale} />
             </div>
             <div id="modal-root"></div>

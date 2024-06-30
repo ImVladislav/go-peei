@@ -10,13 +10,17 @@ import styles from "./reviews.module.scss";
 import Translator from "../../translator/Translator";
 
 const Reviews = ({ data }: { data: reviewsItem[] }) => {
+  const rewiwes = data.filter(
+    (filtreditems: any) => filtreditems.verify === true
+  );
+
   return (
     <section className={styles.section}>
       <div className="container">
         <Title>
           <Translator>reviews</Translator>
         </Title>
-        <SwiperContainer data={data} />
+        <SwiperContainer data={rewiwes} />
       </div>
     </section>
   );

@@ -52,7 +52,7 @@ const NavModal = () => {
             >
               <div className={s.nav__item}>
                 <p className={s.text}>{t(item.title.key)}</p>
-                <svg
+                {/* <svg
                   id={`svg-${item.title.label}`}
                   width="25px"
                   height="25px"
@@ -70,7 +70,23 @@ const NavModal = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                </svg>
+                </svg> */}
+                <div style={{ width: "24px", height: "24px" }}>
+                  <svg
+                    width="11"
+                    height="6"
+                    viewBox="0 0 11 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={
+                      dropdownStates[index]
+                        ? s.svgIcon__rotateOnClick
+                        : s.svgIcon
+                    }
+                  >
+                    <path d="M5.5 5.5L0.5 0.5H10.5L5.5 5.5Z" fill="#1C1B1F" />
+                  </svg>
+                </div>
               </div>
               <ul
                 className={`${s.dropdownMobile} ${

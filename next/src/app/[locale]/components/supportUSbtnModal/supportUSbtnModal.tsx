@@ -21,8 +21,6 @@ const SupportUSBtnModal = ({
   const [showWarning, setShowWarning] = useState(false);
 
   const allChecked = checkbox1 && checkbox2;
-  console.log(allChecked);
-  console.log(showWarning);
 
   const handleConfirmClick = () => {
     console.log("Button clicked");

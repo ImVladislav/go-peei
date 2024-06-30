@@ -1,0 +1,69 @@
+@import '../../../../styles/utils/_variables.scss';
+
+.item {
+	border-radius: 10px;
+	padding: 10px;
+	/* min-width: 320px; */
+	background: $green-30;
+	@media screen and (min-width: 768px) {
+		width: calc((100% - 24px) / 2);
+		/* height: 386px; */
+	}
+	@media screen and (min-width: 1024px) {
+		border-radius: 18px;
+		padding: 16px;
+	}
+	@media screen and (min-width: 1440px) {
+		width: calc((100% - 44px) / 3);
+	}
+
+	&__container {
+		/* margin-bottom: 10px; */
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__imgWrapper {
+		overflow: hidden;
+		position: relative;
+		border-radius: 8px;
+		min-width: 90px;
+		height: 106px;
+
+		@media screen and (min-width: 1024px) {
+			border-radius: 10px;
+			min-width: 135px;
+			height: 159px;
+		}
+	}
+
+	&__img {
+		object-fit: cover;
+		object-position: center top;
+	}
+
+	&__title {
+		margin-bottom: 4px;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 1.5;
+		color: $main-black;
+		@media screen and (min-width: 1024px) {
+			margin-bottom: 8px;
+			font-size: 18px;
+			text-transform: uppercase;
+		}
+	}
+
+	&__position {
+		padding-bottom: 10px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 1.5;
+		@media screen and (min-width: 1024px) {
+			font-weight: 300;
+			font-size: 16px;
+		}
+	}
+}

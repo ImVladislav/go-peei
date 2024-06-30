@@ -171,6 +171,7 @@
   "stepsDescSecondBefore": "Заповнити заяву, що буде розглянута на засіданні Правління Громадської організації «Платформа еко-енергетичних ініціатив»",
 
   "stepsDescThirdBefore": "Надати згоду на обробку особистої інформації",
+
   "stepsDescFourthBefore": "Заповнити ",
   "stepsDescFourthLink": "анкету",
   "stepsDescFifth": "Пройти співбесіду",
@@ -249,5 +250,14 @@
 
   "ourPartners": "Наші партнери",
   "becomeAPartner": "Cтати партнером",
-  "fop": "ФОП"
+  "fop": "ФОП",
+
+  "teamDev": "Команда",
+  "devTeam": "Розробки",
+
+  "lidiaTarovita": "Лідія Таровита",
+
+  "designer": "UI/UX дизайнер",
+  "qa": "QA Інженер-тестувальник",
+  "developer": "Розробник"
 }

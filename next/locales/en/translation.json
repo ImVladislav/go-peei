@@ -251,5 +251,14 @@
 
   "ourPartners": "Our partners",
   "becomeAPartner": "Become a partner",
-  "fop": "FOP"
+  "fop": "FOP",
+
+  "teamDev": "Development",
+  "devTeam": "Team",
+
+  "lidiaTarovita": "Lidia Tarovita",
+
+  "designer": "UI/UX designer",
+  "qa": "QA Engineer",
+  "developer": "Developer"
 }

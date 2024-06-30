@@ -36,10 +36,14 @@
   @media screen and (min-width: 1440px) {
   }
 }
+.btnWrap {
+  display: inline-block;
+}
 .btn {
   margin: 0 auto;
   width: 317px;
   height: 40px;
+  font-size: 16px;
   @media screen and (min-width: 765px) {
     width: 409px;
     height: 48px;

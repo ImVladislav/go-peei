@@ -38,10 +38,10 @@
 
 // "use client";
 
-import React from "react";
+// import React from "react";
 
-const SafetyRules = () => {
-  return <div></div>;
-};
+// const SafetyRules = () => {
+//   return <div></div>;
+// };
 
-export default SafetyRules;
+// export default SafetyRules;

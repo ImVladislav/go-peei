@@ -11,7 +11,7 @@
   @media screen and (min-width: 1024px) {
     display: flex;
     justify-content: space-between;
-    gap: 33px;
+    gap: 50px;
     margin-bottom: 24px;
   }
   @media screen and (min-width: 1440px) {
@@ -54,9 +54,7 @@
 }
 .btnWrap {
   display: inline-block;
-  @media screen and (min-width: 768px) {
-    text-align: center;
-  }
+  text-align: center;
 }
 .btn {
   margin: 0 auto;

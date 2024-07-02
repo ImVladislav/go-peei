@@ -5,9 +5,25 @@ import { navItems } from "./navItems";
 import s from "./Header.module.scss";
 import { useTranslation } from "react-i18next";
 import NavModal from "./NavModal";
+import { useState } from "react";
+import Modal from "../Modal/Modal";
+import ModalContent from "../supportUSbtnModal/ModalContent";
+
 export default function Navbar() {
   const { t } = useTranslation();
+  const [modalVisible, setModalVisible] = useState(false);
+  const handleClick = (e, key) => {
+    console.log(e);
+    console.log("key", key);
+    if (key === "financially") {
+      e.preventDefault();
+      setModalVisible(true);
+    }
+  };
 
+  const handleConfirm = () => {
+    setModalVisible(false);
+  };
   return (
     <>
       <nav className={s.nav}>
@@ -53,6 +69,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={`${s.link}  ${s.dropdownLink}`}
+                    onClick={(e) => handleClick(e, link.key)}
                   >
                     {t(link.key)}
                   </Link>
@@ -74,6 +91,14 @@ export default function Navbar() {
       <nav className={s.navMobile}>
         <NavModal />
       </nav>
+      {modalVisible && (
+        <Modal
+          show={modalVisible}
+          onClose={() => setModalVisible(false)}
+          children={<ModalContent onConfirm={handleConfirm} />}
+          modalPosition={s.modal}
+        />
+      )}
     </>
   );
 }

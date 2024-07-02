@@ -39,6 +39,7 @@
   }
   &:disabled {
     cursor: no-drop;
+    background: #adadad;
   }
 }
 
@@ -82,6 +83,7 @@
 }
 
 .closed {
+  background: #adadad;
   &:hover,
   &:focus {
     background: #adadad;

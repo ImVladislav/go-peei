@@ -7,7 +7,7 @@ import Translator from "../translator/Translator";
 
 import s from "./modalStyle.module.scss";
 
-const ModalContent = ({ onConfirm }) => {
+const ModalContent = ({ onConfirm }: { onConfirm: any }) => {
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
@@ -69,7 +69,8 @@ const ModalContent = ({ onConfirm }) => {
       <div onClick={handleConfirmClick} className={s.btnThumb}>
         <Button
           disabled={!allChecked}
-          newStyles={allChecked ? s.btn : s.btnDisabled}
+          // newStyles={allChecked ? s.btn : s.btnDisabled}
+          newStyles={s.btn}
           isLink={allChecked} // Використання isLink лише якщо всі чекбокси обрані
           href={
             allChecked ? "https://payhub.com.ua/#/service/98840" : undefined

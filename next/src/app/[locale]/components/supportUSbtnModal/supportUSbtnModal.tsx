@@ -21,8 +21,6 @@ const SupportUSBtnModal = ({
   const [showWarning, setShowWarning] = useState(false);
 
   const allChecked = checkbox1 && checkbox2;
-  console.log(allChecked);
-  console.log(showWarning);
 
   const handleConfirmClick = () => {
     console.log("Button clicked");
@@ -40,8 +38,8 @@ const SupportUSBtnModal = ({
         <Title>Зверніть увагу:</Title>
       </div>
       <p className={s.modalText}>
-        Здійснивши благодійний внесок, ви підтримуєте проєкт Екоклубу “Сонячна
-        допомога Україні”. Його мета – забезпечити об’єкти критичної
+        Здійснивши благодійний внесок, ви підтримуєте проєкт Громадської
+        організації “Пееі”. Його мета – забезпечити об’єкти критичної
         інфраструктури відновлюваними джерелами енергії – сонячними
         електростанціями.
       </p>

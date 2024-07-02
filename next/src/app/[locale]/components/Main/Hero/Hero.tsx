@@ -41,7 +41,7 @@ const Hero = () => {
                     </p>
                   </div>
                 </div>
-                <div className={styles.btnWrap}>
+                {/* <div className={styles.btnWrap}> */}
                 {/* <Button
                     newStyles={styles.btn}
                     isLink
@@ -49,8 +49,11 @@ const Hero = () => {
                   >
                     <Translator>supportUs</Translator>
                   </Button> */}
-                <SupportUSBtnModal/>
-                </div>
+                <SupportUSBtnModal
+                  stylesBtn={styles.btn}
+                  stylesBtnWrap={styles.btnWrap}
+                />
+                {/* </div> */}
               </div>
               <div className={styles.img_wrap}>
                 <Image
@@ -61,15 +64,19 @@ const Hero = () => {
                   sizes="max-width: 562px"
                 />
               </div>
-              <div className={styles.btn_lastWrap}>
-                <Button
+              {/* <div className={styles.btn_lastWrap}> */}
+              {/* <Button
                   newStyles={styles.btn_last}
                   isLink
                   href="https://payhub.com.ua/#/service/98840"
                 >
                   <Translator>supportUs</Translator>
-                </Button>
-              </div>
+                </Button> */}
+              <SupportUSBtnModal
+                stylesBtn={styles.btn_last}
+                stylesBtnWrap={styles.btn_lastWrap}
+              />
+              {/* </div> */}
             </div>
           </div>
         </div>

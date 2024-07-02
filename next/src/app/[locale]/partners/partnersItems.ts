@@ -7,26 +7,26 @@ const partnerItems = [
     src: steadyLogo,
   },
   {
-    partner: "fop",
+    partner: "ФОП “ТАРОВИТА ЛІДІЯ СЕРГІЇВНА”",
   },
-    {
-    partner: "fop",
-  },
-      {
-    partner: "fop",
-  },
-        {
-    partner: "fop",
-  },
-          {
-    partner: "fop",
-  },
-            {
-    partner: "fop",
-  },
-              {
-    partner: "fop",
-  },
+  //   {
+  //   partner: "fop",
+  // },
+  //     {
+  //   partner: "fop",
+  // },
+  //       {
+  //   partner: "fop",
+  // },
+  //         {
+  //   partner: "fop",
+  // },
+  //           {
+  //   partner: "fop",
+  // },
+  //             {
+  //   partner: "fop",
+  // },
   // Додайте більше об'єктів за необхідності
 ];
 

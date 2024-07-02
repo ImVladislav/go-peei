@@ -20,7 +20,7 @@ const Footer = ({ locale }: { locale: string }) => {
       <div className="container">
         <div className={styles.wrap}>
           <div className={styles.logo}>
-            <Logo locale={locale} />
+            <Logo locale={locale} newStyleWrap={styles.imgWrap} />
             {/* <Button
               newStyles={styles.btn}
               onClick={() =>
@@ -33,11 +33,16 @@ const Footer = ({ locale }: { locale: string }) => {
               stylesBtnWrap={styles.btnWrap}
               stylesBtn={styles.btn}
             />
+            <div className={styles.socialsWrap}>
+              <Socials />
+            </div>
           </div>
           <NavFooter />
         </div>
 
-        <Socials />
+        <div className={styles.socialsWrapMobile}>
+          <Socials />
+        </div>
         <Copyright />
       </div>
     </div>

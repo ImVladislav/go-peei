@@ -1,12 +1,13 @@
 @import "../../../../styles/utils/variables";
 
 .container {
-  margin-top: 24px;
+  margin: 24px 0;
   @media screen and (min-width: 768px) {
-    margin-top: 28px;
+    margin: 28px 0;
   }
   @media screen and (min-width: 1024px) {
-    margin-top: 0;
+    margin: 0;
+    width: 100%;
   }
 }
 .wrap {
@@ -26,13 +27,13 @@
 .list {
   display: grid;
   grid-auto-flow: column dense;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(6, 1fr);
   justify-content: space-between;
   row-gap: 8px;
   @media screen and (min-width: 768px) {
     grid-auto-flow: column dense;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(4, 1fr);
     row-gap: 8px;
     justify-content: space-between;
@@ -43,24 +44,108 @@
 }
 .item {
   padding: 8px 0;
-  font-weight: 300;
   font-size: 14px;
   line-height: 1;
-  @media screen and (min-width: 768px) {
+  text-transform: uppercase;
+
+  @media screen and (min-width: 1024px) {
+    padding: 12px 8px;
+  }
+  @media screen and (min-width: 1440px) {
     padding: 8px;
-    font-size: 18px;
+
     line-height: 1.5;
   }
 }
+///////////////////////пригає текст
+// .link {
+//   color: $main-black;
+//   font-weight: 300;
+//   transition: all 200ms ease-in-out;
+//   &:hover,
+//   &:focus {
+//     font-weight: 600;
+//     color: $green-hover;
+//   }
+// }
+
+// .active {
+//   // font-weight: 600;
+//   color: $green-hover;
+//   &::after {
+//     width: 100%;
+//   }
+// }
 
 .link {
   color: $main-black;
-  transition: all 200ms ease-in-out;
+  font-weight: 300;
+  position: relative;
+  transition: color 200ms ease-in-out;
+
   &:hover,
   &:focus {
     color: $green-hover;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $green-hover;
+    transition: width 200ms ease-in-out;
   }
 }
 .active {
+  // font-weight: 600;
   color: $green-hover;
+  &::after {
+    width: 100%;
+  }
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тінь */
+  //   padding: 20px;
+  width: 80%;
+  //   height: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  //   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+
+  //   justify-content: center;
+  //   align-items: center;
+  // @media screen and (max-width: 767px) {
+  //   max-width: 90%;
+  // }
+
+  // @media screen and (min-width: 768px) {
+  //   display: none;
+  // }
+
+  // @media screen and (min-width: 580px) {
+  //   max-width: 70%;
+  // }
+  @media screen and (min-width: 640px) {
+    width: 90%;
+  }
+  // @media screen and (min-width: 720px) {
+  //   max-width: 50%;
+  // }
+  // @media screen and (min-width: 1024px) {
+  //   max-width: 40%;
+  // }
 }

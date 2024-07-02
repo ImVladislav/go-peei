@@ -1,40 +1,28 @@
 "use client";
+
 import React, { useState } from "react";
-import Modal from "../Modal/Modal";
+import Title from "../Title/Title";
 import Button from "../Button/Button";
 import Translator from "../translator/Translator";
 
 import s from "./modalStyle.module.scss";
-import Title from "../Title/Title";
-import { bool, boolean } from "yup";
 
-const SupportUSBtnModal = ({
-  stylesBtn,
-  stylesBtnWrap,
-}: {
-  stylesBtn: string;
-  stylesBtnWrap: string;
-}) => {
-  const [modalVisible, setModalVisible] = useState(false);
+const ModalContent = ({ onConfirm }) => {
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
 
   const allChecked = checkbox1 && checkbox2;
-  console.log(allChecked);
-  console.log(showWarning);
 
   const handleConfirmClick = () => {
-    console.log("Button clicked");
     if (!allChecked) {
       setShowWarning(true);
     } else {
       setShowWarning(false);
-      // Перехід до посилання виконується через вбудоване посилання в Button
+      onConfirm();
     }
   };
-
-  const modalContent = (
+  return (
     <div className={s.modalContent}>
       <div className={s.titleThumb}>
         <Title>Зверніть увагу:</Title>
@@ -92,20 +80,6 @@ const SupportUSBtnModal = ({
       </div>
     </div>
   );
-
-  return (
-    <div className={stylesBtnWrap}>
-      <Button newStyles={stylesBtn} onClick={() => setModalVisible(true)}>
-        <Translator>supportUs</Translator>
-      </Button>
-      <Modal
-        show={modalVisible}
-        onClose={() => setModalVisible(false)}
-        children={modalContent}
-        modalPosition={s.modal}
-      />
-    </div>
-  );
 };
 
-export default SupportUSBtnModal;
+export default ModalContent;

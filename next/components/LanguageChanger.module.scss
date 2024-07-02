@@ -60,13 +60,23 @@
   padding-bottom: 8px;
   width: 100%;
 
-  @media screen and (min-width: 1240px) {
-    padding: 8px;
-    justify-content: center;
-  }
   &.active .svgIcon {
     transform: rotate(180deg);
   }
+  @media screen and (min-width: 1240px) {
+    padding: 8px;
+    justify-content: center;
+    &.hover .svgIcon {
+      transform: rotate(180deg);
+    }
+  }
+}
+.svgIcon__thumb {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .svgIcon {
   transition: transform 0.5s ease;

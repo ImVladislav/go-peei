@@ -9,6 +9,7 @@ import ukrFlag from "../public/flags/FlagsUkr.svg";
 import engFlag from "../public/flags/FlagsEng.svg";
 import Image from "next/image";
 import { useState } from "react";
+import RotationArrow from "@/app/[locale]/components/RotationArrow/RotationArrow";
 
 export default function LanguageChanger() {
   const { i18n } = useTranslation();
@@ -70,7 +71,7 @@ export default function LanguageChanger() {
             )}
             {currentLocale === "en" ? "Eng" : "Укр"}
           </div>
-          <svg
+          {/* <svg
             width="25px"
             height="25px"
             viewBox="0 0 24 24"
@@ -85,7 +86,20 @@ export default function LanguageChanger() {
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-          </svg>
+          </svg> */}
+          <div className={s.svgIcon__thumb}>
+            <svg
+              width="11"
+              height="6"
+              viewBox="0 0 11 6"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className={s.svgIcon}
+            >
+              <path d="M5.5 5.5L0.5 0.5H10.5L5.5 5.5Z" fill="#1C1B1F" />
+            </svg>
+          </div>
+          {/* <RotationArrow svgIconStyles={s.svgIcon} /> */}
         </button>
         {showLanguages && (
           <ul className={s.languageList}>

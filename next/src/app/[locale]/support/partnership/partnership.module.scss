@@ -47,11 +47,13 @@
 .imgListContentSecond {
   object-position: right;
 }
-.imgThird {
-}
 
 .imgStepContent {
-  object-position: -5px 0px;
+  object-position: 0px 0px;
+
+  @media screen and (min-width: 1024px) {
+    object-position: 0px -50px;
+  }
   @media screen and (min-width: 1440px) {
     object-position: 0px -70px;
   }

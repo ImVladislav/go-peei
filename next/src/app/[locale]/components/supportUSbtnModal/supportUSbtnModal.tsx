@@ -6,16 +6,21 @@ import Translator from "../translator/Translator";
 import styles from "../Main/Hero/hero.module.scss";
 import s from "./modalStyle.module.scss";
 import Title from "../Title/Title";
+import { bool, boolean } from "yup";
 
-const SupportUSBtnModal = () => {
+const SupportUSBtnModal = ({
+  stylesBtn,
+  stylesBtnWrap,
+}: {
+  stylesBtn: string;
+  stylesBtnWrap: string;
+}) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
 
   const allChecked = checkbox1 && checkbox2;
-  console.log(allChecked);
-  console.log(showWarning);
 
   const handleConfirmClick = () => {
     console.log("Button clicked");
@@ -33,8 +38,8 @@ const SupportUSBtnModal = () => {
         <Title>Зверніть увагу:</Title>
       </div>
       <p className={s.modalText}>
-        Здійснивши благодійний внесок, ви підтримуєте проєкт Екоклубу “Сонячна
-        допомога Україні”. Його мета – забезпечити об’єкти критичної
+        Здійснивши благодійний внесок, ви підтримуєте проєкт Громадської
+        організації “Пееі”. Його мета – забезпечити об’єкти критичної
         інфраструктури відновлюваними джерелами енергії – сонячними
         електростанціями.
       </p>
@@ -87,8 +92,8 @@ const SupportUSBtnModal = () => {
   );
 
   return (
-    <div className={styles.btnWrap}>
-      <Button newStyles={styles.btn} onClick={() => setModalVisible(true)}>
+    <div className={stylesBtnWrap}>
+      <Button newStyles={stylesBtn} onClick={() => setModalVisible(true)}>
         <Translator>supportUs</Translator>
       </Button>
       <Modal

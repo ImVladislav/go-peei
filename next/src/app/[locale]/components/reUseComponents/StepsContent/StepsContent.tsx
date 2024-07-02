@@ -20,11 +20,14 @@ const StepsContent = ({
         <Translator>{title}</Translator>
       </h2>
       <div>
-        <div className={styles.imgContainer}>
-          <div className={styles.imgInner}>
-            <Image className={iconClass} src={imgSrc} alt={title} fill />
+        {imgSrc && (
+          <div className={styles.imgContainer}>
+            <div className={styles.imgInner}>
+              <Image className={iconClass} src={imgSrc} alt={title} fill />
+            </div>
           </div>
-        </div>
+        )}
+
         <div className={styles.textContainer}>
           <div className={styles.textInner}>
             {subtitle && (

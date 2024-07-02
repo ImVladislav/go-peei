@@ -1,0 +1,65 @@
+@import "../../../styles/utils/variables";
+
+.linkSecurityThumb {
+  position: absolute;
+  height: 360px;
+  width: 30px;
+  top: 185px;
+  right: 0px;
+  @media screen and (min-width: 768px) {
+    // top: 0px;
+    top: 120px;
+    font-size: 18px;
+  }
+  @media screen and (min-width: 1024px) {
+    // top: 20px;
+    top: 180px;
+  }
+  @media screen and (min-width: 1440px) {
+    // top: 20px;
+    top: 200px;
+  }
+}
+
+.linkSecurity {
+  position: absolute;
+  right: 0px;
+  border-radius: 0 24px 24px 0;
+  padding: 32px 8px;
+  background: $green-30;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  z-index: 5;
+  height: max-content;
+  top: 185px;
+  //   top: 305px;
+
+  border: none;
+  writing-mode: tb-rl;
+  transform: rotate(180deg);
+  transition: all 200ms ease-in-out;
+  &:hover,
+  &:focus {
+    color: $main-white;
+    background: $main-green;
+  }
+  @media screen and (min-width: 768px) {
+    // top: 0px;
+    top: 120px;
+    font-size: 18px;
+  }
+  @media screen and (min-width: 1024px) {
+    // top: 20px;
+    top: 180px;
+  }
+  @media screen and (min-width: 1440px) {
+    // top: 20px;
+    top: 200px;
+  }
+}
+.linkSecurityHidden {
+  right: -100px;
+  position: fixed;
+}

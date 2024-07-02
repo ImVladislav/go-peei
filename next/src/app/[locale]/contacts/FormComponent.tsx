@@ -192,29 +192,6 @@ const FormComponent = () => {
         </div>
       </Modal>
     </>
-    // <form action="" className={styles.form}>
-    //   <label>
-    //     <Translator>fullName</Translator>
-    //     <input type="text" name="name" placeholder={t("fullName")} />
-    //   </label>
-    //   <label>
-    //     <Translator>email</Translator>
-    //     <input type="email" name="email" placeholder={t("email")} />
-    //   </label>
-    //   <label htmlFor="message">
-    //     <Translator>message</Translator>
-    //     <textarea
-    //       name="message"
-    //       id="message"
-    //       placeholder={t("messagePlaceholder")}
-    //       //   cols="10"
-    //       //   rows="6"
-    //     ></textarea>
-    //   </label>
-    //   <Button typeBtn="submit" newStyles={styles.btn}>
-    //     <Translator>send</Translator>
-    //   </Button>
-    // </form>
   );
 };
 

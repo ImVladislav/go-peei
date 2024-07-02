@@ -9,7 +9,7 @@ import Translator from "../../translator/Translator";
 import styles from "./navFooter.module.scss";
 import Modal from "../../Modal/Modal";
 import { useState } from "react";
-import ModalContent from "../../supportUSbtnModal/modalContent";
+import ModalContent from "../../supportUSbtnModal/ModalContent";
 
 const NavLink = ({ item }: { item: navLinks }) => {
   const [modalVisible, setModalVisible] = useState(false);

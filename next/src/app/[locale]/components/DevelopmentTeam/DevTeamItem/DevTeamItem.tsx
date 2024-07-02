@@ -33,7 +33,7 @@ const DevTeamItem = ({ item }: itemProps, key: string) => {
 						<p className={styles.item__position}>
 							<Translator>{item.position}</Translator>
 						</p>
-						<DevSocials position={item.position} />
+						<DevSocials links={item.links} />
 					</div>
 				</div>
 			</li>

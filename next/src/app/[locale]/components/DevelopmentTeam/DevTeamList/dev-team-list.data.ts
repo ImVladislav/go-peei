@@ -1,40 +1,47 @@
-import { devTeamSocials } from '@/app/constants'
+import {
+	BodnaryukSocials,
+	GladyshkoSocials,
+	OlgaSocials,
+	PrunenkoSocials,
+	TarovitaSocials,
+	ZavertayloSocials,
+} from '@/app/constants'
 
 export const DEV_TEAM = [
 	{
 		image: '/devTeam/Tarovita_L.jpg',
 		name: 'lidiaTarovita',
 		position: 'designer',
-		links: devTeamSocials,
+		links: TarovitaSocials,
 	},
 	{
 		image: '/devTeam/Tarovita_L.jpg',
-		name: 'lidiaTarovita',
+		name: 'olgaL',
 		position: 'designer',
-		links: devTeamSocials,
+		links: OlgaSocials,
 	},
 	{
-		image: '/devTeam/Tarovita_L.jpg',
-		name: 'lidiaTarovita',
+		image: '/devTeam/Prunenko_I.jpg',
+		name: 'irynaPrunenko',
 		position: 'qa',
-		links: devTeamSocials,
+		links: PrunenkoSocials,
 	},
 	{
-		image: '/devTeam/Tarovita_L.jpg',
-		name: 'lidiaTarovita',
+		image: '/devTeam/Bodnaryuk_I.jpg',
+		name: 'irynaВodnariuk',
 		position: 'developer',
-		links: devTeamSocials,
+		links: BodnaryukSocials,
 	},
 	{
-		image: '/devTeam/Tarovita_L.jpg',
-		name: 'lidiaTarovita',
+		image: '/devTeam/Gladyshko_V.jpg',
+		name: 'vladislavGladyshko',
 		position: 'developer',
-		links: devTeamSocials,
+		links: GladyshkoSocials,
 	},
 	{
-		image: '/devTeam/Tarovita_L.jpg',
-		name: 'lidiaTarovita',
+		image: '/devTeam/Zavertaylo_V.jpg',
+		name: 'vladislavZavertaylo',
 		position: 'developer',
-		links: devTeamSocials,
+		links: ZavertayloSocials,
 	},
 ]

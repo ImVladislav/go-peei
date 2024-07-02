@@ -1,31 +1,17 @@
 'use client'
-import { devTeamSocials, iconsData } from '@/app/constants/index'
+import { iconsData } from '@/app/constants/index'
+import { socialsItem } from '@/app/types'
 import Link from 'next/link'
 import { useState } from 'react'
 import SvgComponent from '../../SvgComponent/SvgComponent'
 import styles from './devSocials.module.scss'
 
-const DevSocials = ({ position }: { position: string }) => {
+const DevSocials = ({ links }: { links: socialsItem[] }) => {
 	const [isHovered, setIsHovered] = useState('')
-
-	let socialsToRender = devTeamSocials
-	if (position === 'designer') {
-		socialsToRender = [
-			devTeamSocials[0], // Linkedin
-			devTeamSocials[1], // Telegram
-			devTeamSocials[2], // Behance
-		]
-	} else {
-		socialsToRender = [
-			devTeamSocials[0], // Linkedin
-			devTeamSocials[1], // Telegram
-			devTeamSocials[3], // Github (instead of Behance)
-		]
-	}
 
 	return (
 		<ul className={styles.wrap}>
-			{socialsToRender.map(({ href, name }) => (
+			{links.map(({ href, name }) => (
 				<li className={styles.item} key={name}>
 					<Link
 						className={styles.link}

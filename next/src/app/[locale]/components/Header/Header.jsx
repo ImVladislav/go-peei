@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Navbar from "./Navbar";
-import Link from "next/link";
+// import Link from "next/link";
 import s from "./Header.module.scss";
 import Image from "next/image";
 import LanguageChanger from "../../../../../components/LanguageChanger";
@@ -12,10 +12,11 @@ import {
   iconsData,
   headerIconsData,
 } from "@/app/constants/index";
-import logoUA from "../../../../../public/logo/logoUA.svg";
-import logoENG from "../../../../../public/logo/logoENG.svg";
+// import logoUA from "../../../../../public/logo/logoUA.svg";
+// import logoENG from "../../../../../public/logo/logoENG.svg";
 import { signOut, useSession } from "next-auth/react";
 import logoutSVG from "../../../../../public/logout.svg";
+import Logo from "../Logo/Logo";
 
 export default function Header({ locale }) {
   const { data: session } = useSession();
@@ -40,37 +41,38 @@ export default function Header({ locale }) {
       </div>
 
       <div className={s.header__thumb}>
-      <div className={s.header__container}>
-        <div className={s.header}>
-          <Link className={s.header__logoLink} href="/">
+        <div className={s.header__container}>
+          <div className={s.header}>
+            <Logo locale={locale} newStyleWrap={s.imgWrap} />
+            {/* <Link className={s.header__logoLink} href="/">
             <Image
               src={locale === "uk" ? logoUA : logoENG}
               width={200}
               height={60}
               alt="Logo"
             />
-          </Link>
-          <Navbar />
-          {!session ? (
-            <></>
-          ) : (
-            <>
-              {/* {session.user?.email} */}
-              <button
-                className={s.header__logout}
-                onClick={() => {
-                  signOut();
-                }}
-              >
-                <Image src={logoutSVG} width={20} height={20} alt="Logout" />
-              </button>
-            </>
-          )}
-          <div className={s.header__langChangContainer}>
-            <LanguageChanger />
+          </Link> */}
+            <Navbar />
+            {!session ? (
+              <></>
+            ) : (
+              <>
+                {/* {session.user?.email} */}
+                <button
+                  className={s.header__logout}
+                  onClick={() => {
+                    signOut();
+                  }}
+                >
+                  <Image src={logoutSVG} width={20} height={20} alt="Logout" />
+                </button>
+              </>
+            )}
+            <div className={s.header__langChangContainer}>
+              <LanguageChanger />
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   );

@@ -89,7 +89,7 @@
 .btnDisabled {
   display: inline-block;
   position: relative;
-  z-index: -2;
+  // z-index: -2;
   width: 230px;
   height: 52px;
   font-size: 20px;
@@ -103,9 +103,9 @@
   }
 }
 .modalText {
-  font-size: 18px;
+  font-size: 14px;
   @media screen and (min-width: 640px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .warningText {
@@ -123,9 +123,9 @@
   bottom: 4px; /* Відступ від нижнього краю модального вікна */
   left: 10px; /* Відступ від лівого краю модального вікна */
   color: red;
-  font-size: 14px;
+  font-size: 12px;
   @media screen and (min-width: 640px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 

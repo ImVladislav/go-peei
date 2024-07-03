@@ -20,10 +20,13 @@ import {
   headerIconsData,
 } from "@/app/constants/index";
 
+import ModalContent from "../supportUSbtnModal/ModalContent";
+
 const NavModal = () => {
   const { t } = useTranslation();
   const { data: session } = useSession();
-  console.log(session);
+  const [modalVisible, setModalVisible] = useState(false);
+  // console.log(session);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dropdownStates, setDropdownStates] = useState(
     navItems.map(() => false)
@@ -37,10 +40,22 @@ const NavModal = () => {
     });
   };
 
+  const handleClick = (e, key) => {
+    if (key === "financially") {
+      e.preventDefault();
+      setIsModalOpen(false);
+      setModalVisible(true);
+    }
+  };
+
+  const handleConfirm = () => {
+    setModalVisible(false);
+  };
+
   return (
     <>
       <button className={s.menuBtn} onClick={() => setIsModalOpen(true)}>
-        <Image width={70} src={menuBtnSvg} alt="menu" />
+        <Image width={40} src={menuBtnSvg} alt="menu" />
       </button>
       <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className={s.navMobile__wraper}>
@@ -96,7 +111,7 @@ const NavModal = () => {
                 {item.links.map((link) => (
                   <li className={s.dropdownMobile__item} key={link.label}>
                     <Link
-                      onClick={() => setIsModalOpen(false)}
+                      onClick={(e) => handleClick(e, link.key)}
                       href={link.href}
                       className={s.dropdownLink}
                       // className={`${s.link} ${s.dropdownLink}`}
@@ -161,6 +176,14 @@ const NavModal = () => {
           />
         </div>
       </Modal>
+      {modalVisible && (
+        <Modal
+          show={modalVisible}
+          onClose={() => setModalVisible(false)}
+          children={<ModalContent onConfirm={handleConfirm} />}
+          modalPosition={s.modal}
+        />
+      )}
     </>
   );
 };

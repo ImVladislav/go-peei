@@ -1,21 +1,13 @@
 "use client";
+
 import React, { useState } from "react";
-import Modal from "../Modal/Modal";
+import Title from "../Title/Title";
 import Button from "../Button/Button";
 import Translator from "../translator/Translator";
 
 import s from "./modalStyle.module.scss";
-import Title from "../Title/Title";
-import { bool, boolean } from "yup";
 
-const SupportUSBtnModal = ({
-  stylesBtn,
-  stylesBtnWrap,
-}: {
-  stylesBtn: string;
-  stylesBtnWrap: string;
-}) => {
-  const [modalVisible, setModalVisible] = useState(false);
+const ModalContent = ({ onConfirm }: { onConfirm: any }) => {
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
@@ -23,23 +15,21 @@ const SupportUSBtnModal = ({
   const allChecked = checkbox1 && checkbox2;
 
   const handleConfirmClick = () => {
-    console.log("Button clicked");
     if (!allChecked) {
       setShowWarning(true);
     } else {
       setShowWarning(false);
-      // Перехід до посилання виконується через вбудоване посилання в Button
+      onConfirm();
     }
   };
-
-  const modalContent = (
+  return (
     <div className={s.modalContent}>
       <div className={s.titleThumb}>
         <Title>Зверніть увагу:</Title>
       </div>
       <p className={s.modalText}>
-        Здійснивши благодійний внесок, ви підтримуєте проєкт Громадської
-        організації “Пееі”. Його мета – забезпечити об’єкти критичної
+        Здійснивши благодійний внесок, ви підтримуєте проєкт Екоклубу “Сонячна
+        допомога Україні”. Його мета – забезпечити об’єкти критичної
         інфраструктури відновлюваними джерелами енергії – сонячними
         електростанціями.
       </p>
@@ -79,7 +69,8 @@ const SupportUSBtnModal = ({
       <div onClick={handleConfirmClick} className={s.btnThumb}>
         <Button
           disabled={!allChecked}
-          newStyles={allChecked ? s.btn : s.btnDisabled}
+          // newStyles={allChecked ? s.btn : s.btnDisabled}
+          newStyles={s.btn}
           isLink={allChecked} // Використання isLink лише якщо всі чекбокси обрані
           href={
             allChecked ? "https://payhub.com.ua/#/service/98840" : undefined
@@ -90,20 +81,6 @@ const SupportUSBtnModal = ({
       </div>
     </div>
   );
-
-  return (
-    <div className={stylesBtnWrap}>
-      <Button newStyles={stylesBtn} onClick={() => setModalVisible(true)}>
-        <Translator>supportUs</Translator>
-      </Button>
-      <Modal
-        show={modalVisible}
-        onClose={() => setModalVisible(false)}
-        children={modalContent}
-        modalPosition={s.modal}
-      />
-    </div>
-  );
 };
 
-export default SupportUSBtnModal;
+export default ModalContent;

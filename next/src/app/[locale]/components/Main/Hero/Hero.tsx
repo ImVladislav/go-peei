@@ -59,9 +59,10 @@ const Hero = () => {
                 <Image
                   className={styles.img}
                   src="/main/recycling-symbol-green-nature-isolated-white-background-1.webp"
-                  alt="піктограма повторної переробки"
+                  alt="recycling"
                   fill
                   sizes="max-width: 562px"
+                  priority={true}
                 />
               </div>
               {/* <div className={styles.btn_lastWrap}> */}

@@ -10,7 +10,7 @@ import WhatWeDo from "./components/Main/WhatWeDo/WhatWeDo";
 import styles from "./main.module.scss";
 
 const Home = async ({ params: { locale } }: { params: { locale: string } }) => {
-  // console.log(locale);
+
   const projects: projectsItem[] = await getData("projects");
   const reviews: reviewsItem[] = await getData("reviews");
   const news: newsItem[] = await getData("news");

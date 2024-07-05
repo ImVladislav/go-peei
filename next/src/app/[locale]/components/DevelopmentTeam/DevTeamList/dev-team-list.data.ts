@@ -15,8 +15,8 @@ export const DEV_TEAM = [
 		links: TarovitaSocials,
 	},
 	{
-		image: '/devTeam/Tarovita_L.jpg',
-		name: 'olgaL',
+		image: '/devTeam/Lypetska_O.jpg',
+		name: 'olhaLypetska',
 		position: 'designer',
 		links: OlgaSocials,
 	},

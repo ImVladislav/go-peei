@@ -1,0 +1,159 @@
+"use client";
+import React, { useState } from "react";
+import LiqPayButton from "./LiqPayButton";
+import s from "./Financial.module.scss";
+
+import { useTranslation } from "react-i18next";
+import Translator from "../components/translator/Translator";
+import Link from "next/link";
+import Title from "../components/Title/Title";
+
+import CopySvg from "../../../../public/financial/copy.svg";
+
+import Image from "next/image";
+
+const FinancialPage: React.FC = () => {
+  const [donationAmount, setDonationAmount] = useState(0.0);
+  const { t } = useTranslation();
+
+  const handleAmountButtonClick = (amount: number) => {
+    setDonationAmount(amount);
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setDonationAmount(parseFloat(event.target.value));
+  };
+
+  const [fields] = useState([
+    {
+      key: "accountNumberFormat",
+      label: "Номер рахунку в форматі",
+      value: "ГО 'Платформа еко-енергетичних ініціатив'",
+      id: "account",
+    },
+    {
+      key: "recipient",
+      label: "Отримувач",
+      value: "Громадська Організація 'Платформа еко-енергетичних ініціатив'",
+      id: "client",
+    },
+    {
+      key: "iban",
+      label: "IBAN",
+      value: "UA893348510000000026002234362",
+      id: "iban",
+    },
+    { key: "edrpou", label: "ЄДРПОУ", value: "45068741", id: "edrpou" },
+    {
+      key: "purposeOfPayment",
+      label: "Призначення платежу",
+      value: "Благодійна пожертва на статутні цілі",
+
+      id: "purpose",
+    },
+  ]);
+
+  const copyToClipboard = (value: string) => {
+    navigator.clipboard
+      .writeText(value)
+      .then(() => {
+        console.log("Value copied to clipboard:", value);
+      })
+      .catch((error) => {
+        console.error("Failed to copy value to clipboard:", error);
+      });
+  };
+
+  const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY ?? "";
+  const privateKey = process.env.NEXT_PUBLIC_PRIVATE_KEY ?? "";
+
+  return (
+    <div className={s.financial__bg}>
+      <div className={s.financial__container_mainBlock}>
+        <section className={s.financial__container}>
+          <Title>
+            <Translator>financialSupport</Translator>
+          </Title>
+          <div className={s.financial__container_mainBlock}>
+            <div className={s.financial__container_leftBlock}>
+              <h2 className={s.financial__subTitle}>
+                <Translator>selectContributionAmount</Translator>
+              </h2>
+              <div className="buttons">
+                <button
+                  className={s.financial__fixedAmountDonatBtn}
+                  onClick={() => handleAmountButtonClick(100.0)}
+                >
+                  100
+                </button>
+                <button
+                  className={s.financial__fixedAmountDonatBtn}
+                  onClick={() => handleAmountButtonClick(200.0)}
+                >
+                  200
+                </button>
+                <button
+                  className={s.financial__fixedAmountDonatBtn}
+                  onClick={() => handleAmountButtonClick(300.0)}
+                >
+                  300
+                </button>
+              </div>
+              <input
+                className={`${s.financial__fixedAmountDonatBtn} ${s.financial__fixedAmountDonatInput}`}
+                type="text"
+                placeholder={t("amount")}
+                value={donationAmount.toString()}
+                onChange={handleInputChange}
+              />
+              <h2 className={s.financial__subTitle}>
+                {t("choosePaymentSystem")}
+              </h2>
+
+              <div id="liqpay_checkout">
+                <LiqPayButton
+                  public_key={publicKey}
+                  private_key={privateKey}
+                  amount={donationAmount}
+                  description="Благодійна пожертва на статутні цілі"
+                />
+              </div>
+
+              <Link
+                className={`${s.financial__subTitle} ${s.financial__link}`}
+                href="/financial/offert_contract"
+              >
+                {t("termsOfOffer")}
+              </Link>
+            </div>
+            <div className={s.financial__container_rightBlock}>
+              <h4 className={s.financial__subTitle}>
+                Банківські реквізити в межах України
+              </h4>
+              <div className={s.financial__infoBlock}>
+                {fields.map((field) => (
+                  <div key={field.key} className={s.financial__infoField}>
+                    <h4 className={s.financial__subTitle}>{field.label}:</h4>
+                    <div className={s.financial__infoField__insideBlock}>
+                      <span className={s.financial__infoValue}>
+                        {field.value}
+                      </span>
+                      <button
+                        className={s.financial__copyButton}
+                        onClick={() => copyToClipboard(field.value)}
+                      >
+                        <Image src={CopySvg} alt={"Copy"}></Image>
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default FinancialPage;

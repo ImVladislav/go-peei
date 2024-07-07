@@ -12,6 +12,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "types": ["node", "jest"],
     "plugins": [{ "name": "next" }],
     "paths": {
       "@/*": ["./src/*"]
@@ -29,7 +30,7 @@
     "src/app/[locale]/components/About/AboutUs.jsx",
     "src/app/[locale]/about/page.tsx",
     "src/app/[locale]/components/Header/Header.jsx",
-    "src/app/[locale]/financial/page.jsx",
+    "src/app/[locale]/financial/page.tsx",
     "src/app/[locale]/layout.jsx",
     "src/app/[locale]/environmentalProtection/page.jsx",
     "src/app/[locale]/components/Main/SafetyRules.tsx",

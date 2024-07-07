@@ -64,8 +64,9 @@ const FinancialPage: React.FC = () => {
       });
   };
 
-  const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY ?? "";
-  const privateKey = process.env.NEXT_PUBLIC_PRIVATE_KEY ?? "";
+  const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+  const privateKey = process.env.NEXT_PUBLIC_PRIVATE_KEY;
+  console.log(publicKey);
 
   return (
     <div className={s.financial__bg}>

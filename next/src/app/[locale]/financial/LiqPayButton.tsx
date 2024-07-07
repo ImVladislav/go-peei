@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 import LiqpayButtonImage from "../../../../public/financial/liqpayLogo.png";
 
 interface LiqPayButtonProps {
-  public_key: string;
-  private_key: string;
+  public_key: any;
+  private_key: any;
   amount: number;
   description: string;
 }

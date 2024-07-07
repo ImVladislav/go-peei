@@ -51,6 +51,7 @@ const LiqPayButton: React.FC<LiqPayButtonProps> = ({
     currency: "UAH",
     description,
     order_id: `order_id_${Date.now()}`,
+    paytypes: "apay,gpay,card,privat24,invoice,qr",
   };
 
   const { data, signature } = generateLiqPayData(params);

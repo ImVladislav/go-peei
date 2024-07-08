@@ -12,23 +12,32 @@
 }
 
 .financial__container {
-  width: 790px;
-  height: 609px;
+  // width: 790px;
+  // height: 609px;
   background-color: white;
-  padding: 22px 30px;
+  padding: 22px 30px 50px 30px;
   margin-right: 80px;
   margin-left: auto;
+  border-radius: 12px;
 }
 .financial__container_mainBlock {
   display: flex;
 }
 .financial__container_leftBlock {
-  max-height: 440px;
-  max-width: 406px;
+  // max-height: 440px;
+  // max-width: 406px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
+
+s.amoontBlock {
+  display: flex;
+}
+
 .financial__container_rightBlock {
   //   max-height: 282px;
-  max-width: 405px;
+  // max-width: 405px;
   margin-left: 42px;
 }
 
@@ -43,7 +52,7 @@
 
   &.financial__fixedAmountDonatInput {
     margin: 6px;
-    width: 282px;
+    width: 175px;
     text-align: center;
   }
 }
@@ -64,6 +73,7 @@
   color: #141414;
   &.financial__link {
     text-decoration: underline;
+    display: contents;
   }
   &.financial__subTitle_leftBlock {
     font-weight: 700;
@@ -74,14 +84,13 @@
   border: 1px solid #141414;
   border-radius: 8px;
   padding: 17px 0px 15px 0px;
-  width: 282px;
+  width: 284px;
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
   object-fit: contain;
 }
-
 // .financial__btnImage {
 //   width: auto;
 //   height: 100%;
@@ -99,6 +108,13 @@
 .financial__copyButton {
   border: none;
   background-color: transparent;
+}
+
+.option {
+  background-color: #fff;
+  color: #333;
+  // padding: 8px;
+  font-size: 20px;
 }
 //====================Modal===============================
 .modal__content {

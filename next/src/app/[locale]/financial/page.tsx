@@ -9,11 +9,11 @@ import Link from "next/link";
 import Title from "../components/Title/Title";
 
 import CopySvg from "../../../../public/financial/copy.svg";
-
 import Image from "next/image";
 
 const FinancialPage: React.FC = () => {
-  const [donationAmount, setDonationAmount] = useState(0.0);
+  const [donationAmount, setDonationAmount] = useState(20);
+  const [currency, setCurrency] = useState("UAH");
   const { t } = useTranslation();
 
   const handleAmountButtonClick = (amount: number) => {
@@ -21,7 +21,20 @@ const FinancialPage: React.FC = () => {
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setDonationAmount(parseFloat(event.target.value));
+    const value = event.target.value;
+    const parsedValue = parseFloat(value);
+
+    if (!isNaN(parsedValue) && parsedValue >= 20) {
+      setDonationAmount(parsedValue);
+    } else if (parsedValue < 20) {
+      setDonationAmount(20);
+    }
+  };
+
+  const handleCurrencyChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setCurrency(event.target.value);
   };
 
   const [fields] = useState([
@@ -48,7 +61,6 @@ const FinancialPage: React.FC = () => {
       key: "purposeOfPayment",
       label: "Призначення платежу",
       value: "Благодійна пожертва на статутні цілі",
-
       id: "purpose",
     },
   ]);
@@ -66,7 +78,6 @@ const FinancialPage: React.FC = () => {
 
   const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
   const privateKey = process.env.NEXT_PUBLIC_PRIVATE_KEY;
-  console.log(publicKey);
 
   return (
     <div className={s.financial__bg}>
@@ -100,29 +111,44 @@ const FinancialPage: React.FC = () => {
                   300
                 </button>
               </div>
-              <input
-                className={`${s.financial__fixedAmountDonatBtn} ${s.financial__fixedAmountDonatInput}`}
-                type="text"
-                placeholder={t("amount")}
-                value={donationAmount.toString()}
-                onChange={handleInputChange}
-              />
-              <h2 className={s.financial__subTitle}>
-                {t("choosePaymentSystem")}
-              </h2>
-
+              <div className={s.amoontBlock}>
+                <input
+                  className={`${s.financial__fixedAmountDonatBtn} ${s.financial__fixedAmountDonatInput}`}
+                  type="text"
+                  pattern="\d*"
+                  placeholder={t("amount")}
+                  value={donationAmount.toString()}
+                  onChange={handleInputChange}
+                />
+                <select
+                  className={`${s.financial__fixedAmountDonatBtn} ${s.financial__fixedAmountDonatInput}`}
+                  style={{ width: "97px" }}
+                  value={currency}
+                  onChange={handleCurrencyChange}
+                >
+                  <option className={s.option} value="UAH">
+                    UAH
+                  </option>
+                  <option className={s.option} value="USD">
+                    USD
+                  </option>
+                  <option className={s.option} value="EUR">
+                    EUR
+                  </option>
+                </select>
+              </div>
               <div id="liqpay_checkout">
                 <LiqPayButton
+                  currency={currency}
                   public_key={publicKey}
                   private_key={privateKey}
                   amount={donationAmount}
                   description="Благодійна пожертва на статутні цілі"
                 />
               </div>
-
               <Link
                 className={`${s.financial__subTitle} ${s.financial__link}`}
-                href="/financial/offert_contract"
+                href="/officialDocuments/offert_contract"
               >
                 {t("termsOfOffer")}
               </Link>

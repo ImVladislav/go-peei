@@ -81,9 +81,7 @@ const SupportUSBtnModal = ({
           disabled={!allChecked}
           newStyles={allChecked ? s.btn : s.btnDisabled}
           isLink={allChecked} // Використання isLink лише якщо всі чекбокси обрані
-          href={
-            allChecked ? "https://payhub.com.ua/#/service/98840" : undefined
-          }
+          href={allChecked ? "/financial" : undefined}
         >
           <Translator>confirm</Translator>
         </Button>

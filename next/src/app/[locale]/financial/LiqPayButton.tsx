@@ -10,6 +10,7 @@ interface LiqPayButtonProps {
   private_key: any;
   amount: number;
   description: string;
+  currency: string;
 }
 
 const LiqPayButton: React.FC<LiqPayButtonProps> = ({
@@ -17,6 +18,7 @@ const LiqPayButton: React.FC<LiqPayButtonProps> = ({
   private_key,
   amount,
   description,
+  currency,
 }) => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
@@ -48,7 +50,7 @@ const LiqPayButton: React.FC<LiqPayButtonProps> = ({
     public_key,
     action: "pay",
     amount,
-    currency: "UAH",
+    currency: `${currency}`,
     description,
     order_id: `order_id_${Date.now()}`,
     paytypes: "apay,gpay,card,privat24,invoice,qr",

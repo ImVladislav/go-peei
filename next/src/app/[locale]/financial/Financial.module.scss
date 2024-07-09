@@ -16,12 +16,15 @@
   // height: 609px;
   background-color: white;
   padding: 22px 30px 50px 30px;
-  margin-right: 80px;
+  margin-right: 10%;
   margin-left: auto;
   border-radius: 12px;
 }
 .financial__container_mainBlock {
   display: flex;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
 }
 .financial__container_leftBlock {
   // max-height: 440px;
@@ -38,7 +41,14 @@ s.amoontBlock {
 .financial__container_rightBlock {
   //   max-height: 282px;
   // max-width: 405px;
-  margin-left: 42px;
+  // display: none;
+  // margin-left: 42px;
+  @media screen and (min-width: 1024px) {
+    margin-left: 42px;
+  }
+  @media screen and (max-width: 1240px) {
+    max-width: 405px;
+  }
 }
 
 .financial__fixedAmountDonatBtn {
@@ -52,7 +62,7 @@ s.amoontBlock {
 
   &.financial__fixedAmountDonatInput {
     margin: 6px;
-    width: 175px;
+    width: 170px;
     text-align: center;
   }
 }
@@ -115,6 +125,9 @@ s.amoontBlock {
   color: #333;
   // padding: 8px;
   font-size: 20px;
+}
+.financial__copyButton {
+  margin-left: 8px;
 }
 //====================Modal===============================
 .modal__content {

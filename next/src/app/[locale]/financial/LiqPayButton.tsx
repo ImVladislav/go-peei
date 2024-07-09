@@ -23,7 +23,11 @@ const LiqPayButton: React.FC<LiqPayButtonProps> = ({
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation(); // Destructure the i18n object from useTranslation
+
+  // Get the current language
+  const currentLanguage = i18n.language;
+  console.log("Current language:", currentLanguage);
 
   const generateLiqPayData = (params: Record<string, any>) => {
     const jsonString = JSON.stringify(params);
@@ -48,12 +52,13 @@ const LiqPayButton: React.FC<LiqPayButtonProps> = ({
   const params = {
     version: 3,
     public_key,
-    action: "pay",
+    action: "paydonate",
     amount,
     currency: `${currency}`,
     description,
     order_id: `order_id_${Date.now()}`,
     paytypes: "apay,gpay,card,privat24,invoice,qr",
+    language: `${currentLanguage}`,
   };
 
   const { data, signature } = generateLiqPayData(params);

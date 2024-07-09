@@ -122,7 +122,7 @@ const FinancialPage: React.FC = () => {
                 />
                 <select
                   className={`${s.financial__fixedAmountDonatBtn} ${s.financial__fixedAmountDonatInput}`}
-                  style={{ width: "97px" }}
+                  style={{ width: "100px" }}
                   value={currency}
                   onChange={handleCurrencyChange}
                 >

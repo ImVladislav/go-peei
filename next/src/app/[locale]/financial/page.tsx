@@ -40,27 +40,32 @@ const FinancialPage: React.FC = () => {
   const [fields] = useState([
     {
       key: "accountNumberFormat",
-      label: "Номер рахунку в форматі",
-      value: "ГО 'Платформа еко-енергетичних ініціатив'",
+      label: t("accountNumberFormat"),
+      value: t("platformEcoEnergyInitiatives"),
       id: "account",
     },
     {
       key: "recipient",
-      label: "Отримувач",
-      value: "Громадська Організація 'Платформа еко-енергетичних ініціатив'",
+      label: t("recipient"),
+      value: t("publicOrganizationPlatformEcoEnergy"),
       id: "client",
     },
     {
       key: "iban",
-      label: "IBAN",
-      value: "UA893348510000000026002234362",
+      label: t("iban"),
+      value: t("ibanNumber"),
       id: "iban",
     },
-    { key: "edrpou", label: "ЄДРПОУ", value: "45068741", id: "edrpou" },
+    {
+      key: "edrpou",
+      label: t("edrpou"),
+      value: t("edrpouNumber"),
+      id: "edrpou",
+    },
     {
       key: "purposeOfPayment",
-      label: "Призначення платежу",
-      value: "Благодійна пожертва на статутні цілі",
+      label: t("purposeOfPayment"),
+      value: t("charitableDonationForStatutoryPurposes"),
       id: "purpose",
     },
   ]);
@@ -155,7 +160,7 @@ const FinancialPage: React.FC = () => {
             </div>
             <div className={s.financial__container_rightBlock}>
               <h4 className={s.financial__subTitle}>
-                Банківські реквізити в межах України
+                <Translator>BankDetails</Translator>
               </h4>
               <div className={s.financial__infoBlock}>
                 {fields.map((field) => (

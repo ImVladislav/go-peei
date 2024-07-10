@@ -28,20 +28,18 @@ const SupportUSBtnModal = ({
       setShowWarning(true);
     } else {
       setShowWarning(false);
-      // Перехід до посилання виконується через вбудоване посилання в Button
     }
   };
 
   const modalContent = (
     <div className={s.modalContent}>
       <div className={s.titleThumb}>
-        <Title>Зверніть увагу:</Title>
+        <Title>
+          <Translator>payAttention</Translator>
+        </Title>
       </div>
       <p className={s.modalText}>
-        Здійснивши благодійний внесок, ви підтримуєте проєкт Громадської
-        організації “Пееі”. Його мета – забезпечити об’єкти критичної
-        інфраструктури відновлюваними джерелами енергії – сонячними
-        електростанціями.
+        <Translator>agreement</Translator>
       </p>
 
       <section className={s.section}>
@@ -55,8 +53,7 @@ const SupportUSBtnModal = ({
               setShowWarning(false); // Скинути попередження при зміні чекбоксу
             }}
           />
-          Я даю згоду про перерозподіл коштів на використання в інших проєктах,
-          передбачених стратегією організації
+          <Translator>firstAgree</Translator>
         </label>
         <label className={`${s.labelBlock} ${s.modalText}`}>
           <input
@@ -68,12 +65,13 @@ const SupportUSBtnModal = ({
               setShowWarning(false); // Скинути попередження при зміні чекбоксу
             }}
           />
-          Я даю згоду, що сума пожертвування не підлягає поверненню
+
+          <Translator>secoundAgree</Translator>
         </label>
       </section>
       {showWarning && (
         <p className={s.warningText}>
-          Будь ласка, погодьтеся з умовами перед продовженням.
+          <Translator>purposeToAgree</Translator>
         </p>
       )}
       <div onClick={handleConfirmClick} className={s.btnThumb}>

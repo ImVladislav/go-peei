@@ -270,11 +270,7 @@
 	
 "financialSupport": "Financial Support",
 "selectContributionAmount": "Input the contribution amount",
-"oneHundred": "100",
-"twoHundred": "200",
-"threeHundred": "300",
-"choosePaymentSystem": "Choose Payment System",
-"applePay": "Apple Pay",
+
 "termsOfOffer": "Terms of Offer",
 "bankDetailsWithinUkraine": "Bank Details Within Ukraine",
 "accountNumberFormat": "Account Number Format",
@@ -291,6 +287,14 @@
 "copyEdrpou": "Copy EDRPOU",
 "purposeOfPayment": "Purpose of Payment",
 "charitableDonationForStatutoryPurposes": "Charitable Donation for Statutory Purposes",
-"amount": "Amount"
+"amount": "Amount",
+"BankDetails": "Bank details within Ukraine",
+
+"agreement": "By making a charitable contribution, you support the activities of the Public Organization \"Peei\"",
+"firstAgree": "I agree to the redistribution of funds for use in other projects, provided by the organization's strategy",
+"secoundAgree":"I agree that the donation amount is non-refundable",
+"purposeToAgree":"Please agree to the terms before continuing.",
+"payAttention":"PAY ATTENTION:"
+
 
 }

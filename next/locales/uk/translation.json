@@ -268,11 +268,7 @@
 
   "financialSupport": "Підтримати нас фінансово",
 "selectContributionAmount": "Вкажіть суму внеску",
-"oneHundred": "100",
-"twoHundred": "200",
-"threeHundred": "300",
-"choosePaymentSystem": "Оберіть платіжну систему",
-"applePay": "Apple Pay",
+
 "termsOfOffer": "Договір оферти",
 "bankDetailsWithinUkraine": "Банківські реквізити в межах України",
 "accountNumberFormat": "Номер рахунку в форматі",
@@ -289,5 +285,14 @@
 "copyEdrpou": "Копіювати ЄДРПОУ",
 "purposeOfPayment": "Призначення платежу",
 "charitableDonationForStatutoryPurposes": "Благодійна пожертва на статутні цілі",
-"amount": "Сума"
+"amount": "Сума",
+"BankDetails": "Банківські реквізити в межах України",
+
+"agreement": "Здійснивши благодійний внесок, ви підтримуєте діяльність Громадської організації “Пееі”",
+"firstAgree": "Я даю згоду про перерозподіл коштів на використання в інших проєктах, передбачених стратегією організації",
+"secoundAgree": "Я даю згоду, що сума пожертвування не підлягає поверненню",
+"purposeToAgree":"Будь ласка, погодьтеся з умовами перед продовженням.",
+"payAttention":"ЗВЕРНІТЬ УВАГУ:"
 }
+
+

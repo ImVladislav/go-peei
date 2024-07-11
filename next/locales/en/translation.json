@@ -73,6 +73,9 @@
 	"successMessage": "Message sent successfully!",
 	"warningMessage": "There was an error, please try again!",
 	"send": "Send",
+	"legalAddress": "Legal address",
+	"address": "07406 Kyiv region, Brovary, st. Simona Petlyura 23b, flat. 170",
+
 
 	"PlatformForInitiatives": "\"Platform for eco-energy initiatives\"",
 	"aboutUsPrimaryText": "unites the efforts of activists to promote a sustainable and environmentally friendly future. Through innovative technologies and collaboration with experts in resource recovery, we strive to reduce the negative impact of waste on our environment.",
@@ -290,7 +293,7 @@
 "amount": "Amount",
 "BankDetails": "Bank details within Ukraine",
 
-"agreement": "By making a charitable contribution, you support the activities of the Public Organization \"Peei\"",
+"agreement": "By making a charitable contribution, you support the activities of the Public Organization \"Peei\".Its purpose is to provide critical infrastructure facilities with renewable energy sources - solar power plants. The fee is announced before the completion of the project",
 "firstAgree": "I agree to the redistribution of funds for use in other projects, provided by the organization's strategy",
 "secoundAgree":"I agree that the donation amount is non-refundable",
 "purposeToAgree":"Please agree to the terms before continuing.",

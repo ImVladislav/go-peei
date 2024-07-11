@@ -31,6 +31,14 @@ const ContactPage = () => {
                   />
                 </li>
               ))}
+              <li>
+                <h4>
+                  <Translator>legalAddress</Translator>
+                </h4>
+                <p>
+                  <Translator>address</Translator>
+                </p>
+              </li>
             </ul>
           </div>
           <div className={styles.formContainer}>

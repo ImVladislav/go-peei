@@ -99,10 +99,10 @@ export const OlgaSocials: socialsItem[] = [
 ]
 
 export const PrunenkoSocials: socialsItem[] = [
-	{
-		href: 'https://www.linkedin.com/',
-		name: 'Linkedin',
-	},
+	// {
+	// 	href: 'https://www.linkedin.com/',
+	// 	name: 'Linkedin',
+	// },
 	{ href: 'https://t.me/IrynaPrunenko', name: 'Telegram' },
 	{ href: 'https://github.com/IrynaPrn/Personal', name: 'Github' },
 ]

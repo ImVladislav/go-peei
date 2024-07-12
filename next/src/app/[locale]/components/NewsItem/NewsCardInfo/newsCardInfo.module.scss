@@ -83,6 +83,17 @@
 	}
 }
 
+/* photo slider */
+.boxPhoto {
+	margin-top: 32px;
+	@media screen and (min-width: 768px) {
+		margin-top: 40px;
+	}
+	@media screen and (min-width: 1024pxpx) {
+		margin-top: 48px;
+	}
+}
+
 .bottomInfoWrap {
 	margin: 0px 20px 0px 20px;
 	@media screen and (min-width: 768px) {

@@ -1,7 +1,6 @@
 'use client'
 import { iconsData } from '@/app/constants/index'
 import { socialsItem } from '@/app/types'
-import Link from 'next/link'
 import { useState } from 'react'
 import SvgComponent from '../../SvgComponent/SvgComponent'
 import styles from './devSocials.module.scss'
@@ -13,9 +12,11 @@ const DevSocials = ({ links }: { links: socialsItem[] }) => {
 		<ul className={styles.wrap}>
 			{links.map(({ href, name }) => (
 				<li className={styles.item} key={name}>
-					<Link
-						className={styles.link}
+					<a
 						href={href}
+						className={styles.link}
+						target='_blank'
+						rel='noreferrer'
 						onMouseEnter={() => setIsHovered(name)}
 						onMouseLeave={() => setIsHovered('')}
 					>
@@ -30,7 +31,7 @@ const DevSocials = ({ links }: { links: socialsItem[] }) => {
 									/>
 								)
 						)}
-					</Link>
+					</a>
 				</li>
 			))}
 		</ul>

@@ -28,7 +28,7 @@ const ModalContent = ({ onConfirm }: { onConfirm: any }) => {
         <Title>Зверніть увагу:</Title>
       </div>
       <p className={s.modalText}>
-        <Translator>agrement</Translator>
+        <Translator>agreement</Translator>
       </p>
 
       <section className={s.section}>

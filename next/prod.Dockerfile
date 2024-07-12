@@ -37,6 +37,10 @@ ARG NEXT_TLS
 ENV NEXT_TLS=${NEXT_TLS}
 ARG DB_CONNECTION_STRING_AT_BUILD
 ENV DB_CONNECTION_STRING_AT_BUILD=${DB_CONNECTION_STRING_AT_BUILD}
+ARG NEXT_PUBLIC_PUBLIC_KEY
+ENV NEXT_PUBLIC_PUBLIC_KEY=${NEXT_PUBLIC_PUBLIC_KEY}
+ARG NEXT_PUBLIC_PRIVATE_KEY
+ENV NEXT_PUBLIC_PRIVATE_KEY=${NEXT_PUBLIC_PRIVATE_KEY}
 
 # Next.js collects completely anonymous telemetry data about general usage. Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line to disable telemetry at build time

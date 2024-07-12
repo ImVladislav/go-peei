@@ -8,6 +8,8 @@ services:
       dockerfile: prod.Dockerfile
       network: host
       args:
+        NEXT_PUBLIC_PUBLIC_KEY: ${NEXT_PUBLIC_PUBLIC_KEY}
+        NEXT_PUBLIC_PRIVATE_KEY: ${NEXT_PUBLIC_PRIVATE_KEY}
         NEXT_HOST: ${NEXT_HOST}
         NEXT_TLS: ${NEXT_TLS}
         DB_CONNECTION_STRING_AT_BUILD: ${DB_CONNECTION_STRING_AT_BUILD}

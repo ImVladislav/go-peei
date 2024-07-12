@@ -28,10 +28,7 @@ const ModalContent = ({ onConfirm }: { onConfirm: any }) => {
         <Title>Зверніть увагу:</Title>
       </div>
       <p className={s.modalText}>
-        Здійснивши благодійний внесок, ви підтримуєте проєкт Екоклубу “Сонячна
-        допомога Україні”. Його мета – забезпечити об’єкти критичної
-        інфраструктури відновлюваними джерелами енергії – сонячними
-        електростанціями.
+        <Translator>agrement</Translator>
       </p>
 
       <section className={s.section}>
@@ -45,8 +42,7 @@ const ModalContent = ({ onConfirm }: { onConfirm: any }) => {
               setShowWarning(false); // Скинути попередження при зміні чекбоксу
             }}
           />
-          Я даю згоду про перерозподіл коштів на використання в інших проєктах,
-          передбачених стратегією організації
+          <Translator>firstAgree</Translator>
         </label>
         <label className={`${s.labelBlock} ${s.modalText}`}>
           <input
@@ -58,7 +54,7 @@ const ModalContent = ({ onConfirm }: { onConfirm: any }) => {
               setShowWarning(false); // Скинути попередження при зміні чекбоксу
             }}
           />
-          Я даю згоду, що сума пожертвування не підлягає поверненню
+          <Translator>secoundAgree</Translator>
         </label>
       </section>
       {showWarning && (

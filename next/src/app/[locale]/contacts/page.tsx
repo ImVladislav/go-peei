@@ -36,7 +36,13 @@ const ContactPage = () => {
                   <Translator>legalAddress</Translator>
                 </h4>
                 <p>
-                  <Translator>address</Translator>
+                  <Translator>addressIndex</Translator>
+                </p>
+                <p>
+                  <Translator>addressCity</Translator>
+                </p>
+                <p>
+                  <Translator>addressFlat</Translator>
                 </p>
               </li>
             </ul>

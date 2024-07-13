@@ -74,7 +74,9 @@
 	"warningMessage": "There was an error, please try again!",
 	"send": "Send",
 	"legalAddress": "Legal address",
-	"address": "07406 Kyiv region, Brovary, st. Simona Petlyura 23b, flat. 170",
+	"addressIndex": "07406 Ukraine" ,
+	"addressCity": "Kyiv Region, Brovary,",
+ 	"addressFlat": "Symona Petlyura St. 23b, flat 170",
 
 
 	"PlatformForInitiatives": "\"Platform for eco-energy initiatives\"",

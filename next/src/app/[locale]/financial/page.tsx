@@ -148,7 +148,7 @@ const FinancialPage: React.FC = () => {
                   public_key={publicKey}
                   private_key={privateKey}
                   amount={donationAmount}
-                  description="Благодійна пожертва на статутні цілі"
+                  description={t("charitableDonationForStatutoryPurposes")}
                 />
               </div>
               <Link

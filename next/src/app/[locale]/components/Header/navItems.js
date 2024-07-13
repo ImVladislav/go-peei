@@ -53,7 +53,7 @@ export const navItems = [
       {
         key: "financially",
         label: "supportWithADonation",
-        href: "https://payhub.com.ua/#/service/98840",
+        href: "/financial",
       },
       {
         key: "partnership",

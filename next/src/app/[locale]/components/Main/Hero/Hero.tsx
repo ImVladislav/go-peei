@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,8 +8,10 @@ import Translator from "../../translator/Translator";
 import styles from "./hero.module.scss";
 
 import SupportUSBtnModal from "../../supportUSbtnModal/supportUSbtnModal";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <section className={styles.section}>
       <div className="container">
@@ -52,6 +55,7 @@ const Hero = () => {
                 <SupportUSBtnModal
                   stylesBtn={styles.btn}
                   stylesBtnWrap={styles.btnWrap}
+                  btnText={t("supportUs")}
                 />
                 {/* </div> */}
               </div>
@@ -76,6 +80,7 @@ const Hero = () => {
               <SupportUSBtnModal
                 stylesBtn={styles.btn_last}
                 stylesBtnWrap={styles.btn_lastWrap}
+                btnText={t("supportUs")}
               />
               {/* </div> */}
             </div>

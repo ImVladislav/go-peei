@@ -11,9 +11,13 @@ import { bool, boolean } from "yup";
 const SupportUSBtnModal = ({
   stylesBtn,
   stylesBtnWrap,
+  btnText = <Translator>supportUs</Translator>,
+  agreement = <Translator>agreement</Translator>,
 }: {
   stylesBtn: string;
   stylesBtnWrap: string;
+  btnText?: React.ReactNode;
+  agreement?: React.ReactNode;
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [checkbox1, setCheckbox1] = useState(false);
@@ -38,9 +42,7 @@ const SupportUSBtnModal = ({
           <Translator>payAttention</Translator>
         </Title>
       </div>
-      <p className={s.modalText}>
-        <Translator>agreement</Translator>
-      </p>
+      <p className={s.modalText}>{agreement}</p>
 
       <section className={s.section}>
         <label className={`${s.labelBlock} ${s.modalText}`}>
@@ -90,7 +92,8 @@ const SupportUSBtnModal = ({
   return (
     <div className={stylesBtnWrap}>
       <Button newStyles={stylesBtn} onClick={() => setModalVisible(true)}>
-        <Translator>supportUs</Translator>
+        {/* <Translator>supportUs</Translator> */}
+        {btnText}
       </Button>
       <Modal
         show={modalVisible}

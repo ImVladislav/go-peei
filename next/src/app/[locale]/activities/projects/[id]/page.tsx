@@ -10,6 +10,7 @@ import Title from "@/app/[locale]/components/Title/Title";
 import Translator from "@/app/[locale]/components/translator/Translator";
 import Link from "next/link";
 import PhotoSwiper from "@/app/[locale]/components/PhotoSwiper/PhotoSwiper";
+import SupportUSBtnModal from "@/app/[locale]/components/supportUSbtnModal/supportUSbtnModal";
 
 const ProjectDetails = async ({
   params,
@@ -84,7 +85,7 @@ const ProjectDetails = async ({
                       </div>
                     </div>
                   </div>
-                  <Button
+                  {/* <Button
                     newStyles={styles.btn}
                     isLink
                     href={data.link}
@@ -94,7 +95,17 @@ const ProjectDetails = async ({
                     <Translator>
                       {data.closed ? "donateСlosed" : "donate"}
                     </Translator>
-                  </Button>
+                  </Button> */}
+                  <SupportUSBtnModal
+                    stylesBtn={styles.btn}
+                    stylesBtnWrap={""}
+                    btnText={
+                      <Translator>
+                        {data.closed ? "donateСlosed" : "donate"}
+                      </Translator>
+                    }
+                    agreement={<Translator>agreementLite</Translator>}
+                  />
                 </div>
               </div>
             </div>

@@ -65,7 +65,7 @@ const FinancialPage: React.FC = () => {
     {
       key: "purposeOfPayment",
       label: t("purposeOfPayment"),
-      value: t("charitableDonationForStatutoryPurposes"),
+      value: t("charitydonation"),
       id: "purpose",
     },
   ]);

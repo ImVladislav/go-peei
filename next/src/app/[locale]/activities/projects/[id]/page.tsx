@@ -124,7 +124,7 @@ const ProjectDetails = async ({
               <div className={styles.reportWrap}>
                 {/* {data.report && ( */}
 
-                <div className={styles.container}>
+                {/* <div className={styles.container}>
                   <h3 className={styles.title}>
                     <Translator>projectReporting</Translator>
                   </h3>
@@ -133,7 +133,7 @@ const ProjectDetails = async ({
                   <Link href={data.report} className={styles.report}>
                     <Translator>projectReport</Translator>
                   </Link>
-                </div>
+                </div> */}
                 {/* )} */}
               </div>
             </div>

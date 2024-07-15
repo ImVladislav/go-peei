@@ -138,10 +138,9 @@ const ProjectDetails = async ({
               </div>
             </div>
           )}
-          {/* </div> */}
 
           <div className={styles.containerBottom}>
-            {data.photoReport?.length !== 0 && (
+            {/* {data.photoReport?.length !== 0 && (
               <div className={styles.containerPhoto}>
                 <div className={styles.container}>
                   <h3 className={styles.title}>
@@ -151,7 +150,7 @@ const ProjectDetails = async ({
 
                 {data.photoReport && <PhotoSwiper data={data.photoReport} />}
               </div>
-            )}
+            )} */}
 
             <div className={styles.box}>
               <Link className={styles.box__link} href="/activities/projects">

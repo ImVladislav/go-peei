@@ -104,3 +104,25 @@
     transition: all 250ms ease-in-out;
   }
 }
+
+.checked {
+  background: #adadad;
+  &:hover,
+  &:focus {
+    background: #adadad;
+  }
+  &.active {
+    background: #adadad;
+  }
+  @media screen and (min-width: 768px) {
+    font-weight: 300;
+
+    line-height: 1;
+    text-align: center;
+    color: $main-black;
+    border-radius: 40px 0;
+
+    border: none;
+    transition: all 250ms ease-in-out;
+  }
+}

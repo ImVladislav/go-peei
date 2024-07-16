@@ -76,7 +76,8 @@ const SupportUSBtnModal = ({
       )}
       <div onClick={handleConfirmClick} className={s.btnThumb}>
         <Button
-          disabled={!allChecked}
+          checked={!allChecked}
+          // disabled={!allChecked}
           newStyles={allChecked ? s.btn : s.btnDisabled}
           isLink={allChecked} // Використання isLink лише якщо всі чекбокси обрані
           href={allChecked ? "/financial" : undefined}

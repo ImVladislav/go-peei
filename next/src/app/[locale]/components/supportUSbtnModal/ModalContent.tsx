@@ -28,7 +28,7 @@ const ModalContent = ({ onConfirm }: { onConfirm: any }) => {
         <Title>Зверніть увагу:</Title>
       </div>
       <p className={s.modalText}>
-        <Translator>agrement</Translator>
+        <Translator>agreement</Translator>
       </p>
 
       <section className={s.section}>
@@ -64,7 +64,7 @@ const ModalContent = ({ onConfirm }: { onConfirm: any }) => {
       )}
       <div onClick={handleConfirmClick} className={s.btnThumb}>
         <Button
-          disabled={!allChecked}
+          checked={!allChecked}
           // newStyles={allChecked ? s.btn : s.btnDisabled}
           newStyles={s.btn}
           isLink={allChecked} // Використання isLink лише якщо всі чекбокси обрані

@@ -24,7 +24,7 @@
   @media screen and (min-width: 1440px) {
     gap: 40px;
   }
-  .item:last-child {
+  .item:nth-child(3n) {
     display: none;
     @media screen and (min-width: 1440px) {
       display: flex;

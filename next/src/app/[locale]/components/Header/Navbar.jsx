@@ -8,10 +8,16 @@ import NavModal from "./NavModal";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import ModalContent from "../supportUSbtnModal/ModalContent";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const { t } = useTranslation();
   const [modalVisible, setModalVisible] = useState(false);
+
+  const pathname = usePathname();
+  console.log(pathname);
+  // const activeStyle = pathname === `/uk${item.href}` || pathname === item.href;
+
   const handleClick = (e, key) => {
     console.log(e);
     console.log("key", key);
@@ -65,7 +71,15 @@ export default function Navbar() {
             </div>
             <ul className={s.dropdown}>
               {item.links.map((link) => (
-                <li className={s.dropdown__item} key={link.label}>
+                <li
+                  // className={s.dropdown__item}
+                  className={`${s.dropdown__item}  ${
+                    (pathname === `/uk${link.href}` ||
+                      pathname === link.href) &&
+                    s.dropdown__active
+                  }`}
+                  key={link.label}
+                >
                   <Link
                     href={link.href}
                     className={`${s.link}  ${s.dropdownLink}`}
@@ -79,11 +93,24 @@ export default function Navbar() {
           </div>
         ))}
         <div style={{ marginRight: "20px" }}>
-          <Link href="/news" className={s.text}>
+          <Link
+            href="/news"
+            // className={s.text}
+            className={`${s.text}  ${
+              (pathname === `/uk/news` || pathname === `/news`) &&
+              s.dropdown__active
+            }`}
+          >
             {t("news")}
           </Link>
         </div>
-        <Link href="/contacts" className={s.text}>
+        <Link
+          href="/contacts"
+          className={`${s.text}  ${
+            (pathname === `/uk/contacts` || pathname === `/contacts`) &&
+            s.dropdown__active
+          }`}
+        >
           {t("contacts")}
         </Link>
       </nav>

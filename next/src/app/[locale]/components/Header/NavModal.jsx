@@ -21,6 +21,7 @@ import {
 } from "@/app/constants/index";
 
 import ModalContent from "../supportUSbtnModal/ModalContent";
+import { usePathname } from "next/navigation";
 
 const NavModal = () => {
   const { t } = useTranslation();
@@ -31,6 +32,9 @@ const NavModal = () => {
   const [dropdownStates, setDropdownStates] = useState(
     navItems.map(() => false)
   );
+
+  const pathname = usePathname();
+
   const handleToggleDropdown = (index) => {
     setDropdownStates((prevState) => {
       const updatedDropdownStates = prevState.map((state, i) =>
@@ -46,6 +50,7 @@ const NavModal = () => {
       setIsModalOpen(false);
       setModalVisible(true);
     }
+    setIsModalOpen(false);
   };
 
   const handleConfirm = () => {
@@ -109,7 +114,15 @@ const NavModal = () => {
                 }`}
               >
                 {item.links.map((link) => (
-                  <li className={s.dropdownMobile__item} key={link.label}>
+                  <li
+                    // className={s.dropdownMobile__item}
+                    className={`${s.dropdownMobile__item}  ${
+                      (pathname === `/uk${link.href}` ||
+                        pathname === link.href) &&
+                      s.dropdown__active
+                    }`}
+                    key={link.label}
+                  >
                     <Link
                       onClick={(e) => handleClick(e, link.key)}
                       href={link.href}
@@ -127,7 +140,11 @@ const NavModal = () => {
             <Link
               onClick={() => setIsModalOpen(false)}
               href="/news"
-              className={s.text}
+              // className={s.text}
+              className={`${s.text}  ${
+                (pathname === `/uk/news` || pathname === `/news`) &&
+                s.dropdown__active
+              }`}
             >
               {t("news")}
             </Link>
@@ -136,7 +153,11 @@ const NavModal = () => {
             <Link
               onClick={() => setIsModalOpen(false)}
               href="/contacts"
-              className={s.text}
+              // className={s.text}
+              className={`${s.text}  ${
+                (pathname === `/uk/contacts` || pathname === `/contacts`) &&
+                s.dropdown__active
+              }`}
             >
               {t("contacts")}
             </Link>

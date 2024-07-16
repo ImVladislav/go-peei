@@ -168,13 +168,9 @@
   flex-direction: column-reverse;
   gap: 16px;
 }
-.item:last-child {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 
 .link {
+  font-style: normal;
   display: flex;
   align-items: center;
   gap: 12px;

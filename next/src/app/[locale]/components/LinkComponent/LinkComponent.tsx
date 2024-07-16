@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 import { SvgProps } from "@/app/types";
 
@@ -12,7 +12,7 @@ interface SocialLinksProps {
   iconsData: SvgProps[];
   newStyles?: string;
   isVisible?: boolean;
-  iconName?: string;
+  iconName?: ReactNode;
 }
 
 const LinkComponent = ({
@@ -31,6 +31,7 @@ const LinkComponent = ({
       onMouseEnter={() => setIsHovered(name)}
       onMouseLeave={() => setIsHovered("")}
       className={newStyles}
+      target="_blank"
     >
       {iconsData.map(
         (icon) =>
@@ -43,7 +44,7 @@ const LinkComponent = ({
             />
           )
       )}
-      {iconName && <p>{iconName}</p>}
+      {iconName && <div>{iconName}</div>}
       {isVisible && <span>{name}</span>}
     </Link>
   );

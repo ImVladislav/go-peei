@@ -6,6 +6,8 @@ import Button from "../../Button/Button";
 import styles from "./projects.module.scss";
 import Translator from "../../translator/Translator";
 import Link from "next/link";
+// import SupportUSBtnModal from "../../supportUSbtnModal/supportUSbtnModal";
+// import { useTranslation } from "react-i18next";
 interface ProjectProps {
   project: projectsItem;
   locale: string;
@@ -13,7 +15,7 @@ interface ProjectProps {
 
 const SingleProject = async ({ project, locale }: ProjectProps) => {
   let progress = (100 / project.total) * project.fundsRaised;
-
+  // const { t } = useTranslation();
   const maxLength = 95;
 
   const formatPrice = (price: number) => {
@@ -85,7 +87,14 @@ const SingleProject = async ({ project, locale }: ProjectProps) => {
           </div>
         </div>
       </div>
-
+      {/* <SupportUSBtnModal
+        stylesBtn={styles.item__btn}
+        stylesBtnWrap={""}
+        btnText={
+          <Translator>{project.closed ? "donateСlosed" : "donate"}</Translator>
+        }
+        agreement={<Translator>agreementLite</Translator>}
+      /> */}
       <Button
         newStyles={styles.item__btn}
         isLink

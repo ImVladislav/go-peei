@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import LiqPayButton from "./LiqPayButton";
-import s from "./Financial.module.scss";
+import LiqPayButton from "../LiqPayButton";
+import s from "../Financial.module.scss";
 
 import { useTranslation } from "react-i18next";
-import Translator from "../components/translator/Translator";
+import Translator from "../../components/translator/Translator";
 import Link from "next/link";
-import Title from "../components/Title/Title";
+import Title from "../../components/Title/Title";
 
-import CopySvg from "../../../../public/financial/copy.svg";
+import CopySvg from "../../../../../public/financial/copy.svg";
 import Image from "next/image";
 
 const FinancialPage: React.FC = () => {
@@ -65,7 +65,7 @@ const FinancialPage: React.FC = () => {
     {
       key: "purposeOfPayment",
       label: t("purposeOfPayment"),
-      value: t("charitableDonationForStatutoryPurposes"),
+      value: t("charitydonation"),
       id: "purpose",
     },
   ]);
@@ -148,7 +148,7 @@ const FinancialPage: React.FC = () => {
                   public_key={publicKey}
                   private_key={privateKey}
                   amount={donationAmount}
-                  description={t("charitableDonationForStatutoryPurposes")}
+                  description={t("charitydonation")}
                 />
               </div>
               <Link

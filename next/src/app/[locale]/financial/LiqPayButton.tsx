@@ -20,9 +20,9 @@ const LiqPayButton: React.FC<LiqPayButtonProps> = ({
   description,
   currency,
 }) => {
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const [showErrorModal, setShowErrorModal] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  // const [showSuccessModal, setShowSuccessModal] = useState(false);
+  // const [showErrorModal, setShowErrorModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   const { t, i18n } = useTranslation(); // Destructure the i18n object from useTranslation
 
   // Get the current language
@@ -38,16 +38,16 @@ const LiqPayButton: React.FC<LiqPayButtonProps> = ({
     return { data: base64Data, signature };
   };
 
-  const handlePaymentSuccess = () => {
-    setShowSuccessModal(true);
-    setShowModal(true);
-    console.log("success");
-  };
+  // const handlePaymentSuccess = () => {
+  //   setShowSuccessModal(true);
+  //   setShowModal(true);
+  //   console.log("success");
+  // };
 
-  const handlePaymentError = () => {
-    setShowErrorModal(true);
-    console.log("error");
-  };
+  // const handlePaymentError = () => {
+  //   setShowErrorModal(true);
+  //   console.log("error");
+  // };
 
   const params = {
     version: 3,
@@ -58,6 +58,7 @@ const LiqPayButton: React.FC<LiqPayButtonProps> = ({
     description,
     order_id: `order_id_${Date.now()}`,
     paytypes: "apay,gpay,card,privat24,invoice,qr",
+    format: "json",
     language: `${currentLanguage}`,
   };
 

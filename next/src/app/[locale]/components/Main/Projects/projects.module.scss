@@ -24,7 +24,7 @@
   @media screen and (min-width: 1440px) {
     gap: 40px;
   }
-  .item:last-child {
+  .item:nth-child(3n) {
     display: none;
     @media screen and (min-width: 1440px) {
       display: flex;
@@ -82,6 +82,7 @@
     text-transform: uppercase;
     text-align: left;
     color: $main-black;
+    min-height: 54px;
     @media screen and (min-width: 1024px) {
       font-size: 18px;
     }

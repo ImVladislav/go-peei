@@ -10,6 +10,7 @@ interface ButtonProps {
   isLink?: boolean;
   href?: string;
   closed?: boolean;
+  checked?: boolean;
 }
 
 const Button = ({
@@ -21,6 +22,7 @@ const Button = ({
   href = "#",
   children,
   closed,
+  checked,
 }: ButtonProps) => {
   const buttonClass = newStyles
     ? `${styles.button} ${newStyles}`
@@ -30,7 +32,13 @@ const Button = ({
     <button
       type={typeBtn}
       disabled={disabled}
-      className={closed ? ` ${buttonClass} ${styles.closed}` : buttonClass}
+      className={
+        closed
+          ? `${buttonClass} ${styles.closed}`
+          : checked
+          ? `${buttonClass} ${styles.checked}`
+          : buttonClass
+      }
       onClick={onClick}
     >
       {children}

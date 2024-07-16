@@ -1,4 +1,4 @@
-import { headerContacts, headerIconsData } from "@/app/constants";
+import { headerContacts, headerIconsData, iconsData } from "@/app/constants";
 
 import Translator from "../components/translator/Translator";
 import Title from "../components/Title/Title";
@@ -19,33 +19,46 @@ const ContactPage = () => {
                 <Translator>contactUsSecond</Translator>
               </span>
             </Title>
-            <ul className={styles.list}>
-              {headerContacts.map((item) => (
-                <li className={styles.item} key={item.name}>
+            <address>
+              <ul className={styles.list}>
+                {headerContacts.map((item) => (
+                  <li className={styles.item} key={item.name}>
+                    <LinkComponent
+                      iconsData={headerIconsData}
+                      isVisible
+                      href={item.href}
+                      name={item.name}
+                      newStyles={styles.link}
+                    />
+                  </li>
+                ))}
+
+                <li className={styles.item}>
                   <LinkComponent
-                    iconsData={headerIconsData}
-                    isVisible
-                    href={item.href}
-                    name={item.name}
+                    iconsData={iconsData}
+                    href="https://maps.app.goo.gl/AqVAhWamrSrFVBbo9"
+                    name="Aadress"
+                    iconName={
+                      <>
+                        <h4>
+                          <Translator>legalAddress</Translator>
+                        </h4>
+                        <p>
+                          <Translator>addressIndex</Translator>
+                        </p>
+                        <p>
+                          <Translator>addressCity</Translator>
+                        </p>
+                        <p>
+                          <Translator>addressFlat</Translator>
+                        </p>
+                      </>
+                    }
                     newStyles={styles.link}
-                  />
+                  ></LinkComponent>
                 </li>
-              ))}
-              <li>
-                <h4>
-                  <Translator>legalAddress</Translator>
-                </h4>
-                <p>
-                  <Translator>addressIndex</Translator>
-                </p>
-                <p>
-                  <Translator>addressCity</Translator>
-                </p>
-                <p>
-                  <Translator>addressFlat</Translator>
-                </p>
-              </li>
-            </ul>
+              </ul>
+            </address>
           </div>
           <div className={styles.formContainer}>
             <Title>

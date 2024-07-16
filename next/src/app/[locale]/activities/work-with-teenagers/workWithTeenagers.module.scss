@@ -81,13 +81,7 @@
   }
 }
 .imgStepContent {
-  object-position: -35px bottom;
-  @media screen and (min-width: 500px) {
-    object-position: 0px bottom;
-  }
-  @media screen and (min-width: 768px) {
-    object-position: 0px bottom;
-  }
+  object-position: 0px bottom;
 }
 
 .imgStep {

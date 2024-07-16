@@ -50,7 +50,7 @@ const listContentData: listContentItem = {
 };
 
 const stepsContentDataFirst: reUseContentItem = {
-  imgSrc: "/workWithTeenagers/eco-meet.jpg",
+  imgSrc: "/workWithTeenagers/group-friends-holding-sapling-light-bulb.jpg",
   imgStyle: styles.imgStepContent,
   title: "contactUsStepTitle",
   list: [

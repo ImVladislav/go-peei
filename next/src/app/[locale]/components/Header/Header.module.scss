@@ -153,6 +153,7 @@
     margin-right: 20px;
     flex-direction: row;
     border-bottom: none;
+    align-items: center;
   }
 }
 .nav__itemContainer:hover .svgIcon {
@@ -230,6 +231,10 @@
   background: #e8f1e7;
 }
 
+.dropdown__active {
+  border-radius: 8px;
+  background: #e8f1e7;
+}
 .active {
   font-weight: bold;
 }
@@ -343,6 +348,7 @@
   line-height: 1.5;
   text-transform: uppercase;
   color: #141414;
+  padding: 8px;
   &:hover {
     transition: 500ms;
     // color: #0d490d;

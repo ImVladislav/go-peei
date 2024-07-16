@@ -85,27 +85,30 @@ const ProjectDetails = async ({
                       </div>
                     </div>
                   </div>
-                  {/* <Button
-                    newStyles={styles.btn}
-                    isLink
-                    href={data.link}
-                    closed={data.closed}
-                    disabled={data.closed}
-                  >
-                    <Translator>
-                      {data.closed ? "donateСlosed" : "donate"}
-                    </Translator>
-                  </Button> */}
-                  <SupportUSBtnModal
-                    stylesBtn={styles.btn}
-                    stylesBtnWrap={""}
-                    btnText={
+                  {data.closed ? (
+                    <Button
+                      newStyles={styles.btn}
+                      isLink
+                      href={data.link}
+                      closed={data.closed}
+                      disabled={data.closed}
+                    >
                       <Translator>
                         {data.closed ? "donateСlosed" : "donate"}
                       </Translator>
-                    }
-                    agreement={<Translator>agreementLite</Translator>}
-                  />
+                    </Button>
+                  ) : (
+                    <SupportUSBtnModal
+                      stylesBtn={styles.btn}
+                      stylesBtnWrap={""}
+                      btnText={
+                        <Translator>
+                          {data.closed ? "donateСlosed" : "donate"}
+                        </Translator>
+                      }
+                      agreement={<Translator>agreementLite</Translator>}
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -122,9 +125,7 @@ const ProjectDetails = async ({
           {data.report && (
             <div className={styles.container}>
               <div className={styles.reportWrap}>
-                {/* {data.report && ( */}
-
-                {/* <div className={styles.container}>
+                <div className={styles.container}>
                   <h3 className={styles.title}>
                     <Translator>projectReporting</Translator>
                   </h3>
@@ -133,14 +134,13 @@ const ProjectDetails = async ({
                   <Link href={data.report} className={styles.report}>
                     <Translator>projectReport</Translator>
                   </Link>
-                </div> */}
-                {/* )} */}
+                </div>
               </div>
             </div>
           )}
 
           <div className={styles.containerBottom}>
-            {/* {data.photoReport?.length !== 0 && (
+            {data.photoReport?.length !== 0 && (
               <div className={styles.containerPhoto}>
                 <div className={styles.container}>
                   <h3 className={styles.title}>
@@ -150,7 +150,7 @@ const ProjectDetails = async ({
 
                 {data.photoReport && <PhotoSwiper data={data.photoReport} />}
               </div>
-            )} */}
+            )}
 
             <div className={styles.box}>
               <Link className={styles.box__link} href="/activities/projects">

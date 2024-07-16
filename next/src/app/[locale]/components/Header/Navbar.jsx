@@ -15,12 +15,10 @@ export default function Navbar() {
   const [modalVisible, setModalVisible] = useState(false);
 
   const pathname = usePathname();
-  console.log(pathname);
+
   // const activeStyle = pathname === `/uk${item.href}` || pathname === item.href;
 
   const handleClick = (e, key) => {
-    console.log(e);
-    console.log("key", key);
     if (key === "financially") {
       e.preventDefault();
       setModalVisible(true);

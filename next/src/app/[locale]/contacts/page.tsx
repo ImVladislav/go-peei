@@ -6,6 +6,7 @@ import LinkComponent from "../components/LinkComponent/LinkComponent";
 import FormComponent from "./FormComponent";
 
 import styles from "./contact.module.scss";
+import Image from "next/image";
 
 const ContactPage = () => {
   return (
@@ -31,19 +32,28 @@ const ContactPage = () => {
                   />
                 </li>
               ))}
-              <li>
-                <h4>
-                  <Translator>legalAddress</Translator>
-                </h4>
-                <p>
-                  <Translator>addressIndex</Translator>
-                </p>
-                <p>
-                  <Translator>addressCity</Translator>
-                </p>
-                <p>
-                  <Translator>addressFlat</Translator>
-                </p>
+              <li className={styles.item}>
+                <Image
+                  className={styles.icon}
+                  src="/contacts/Subtract.svg"
+                  alt="icon location"
+                  width={18}
+                  height={20}
+                />
+                <div>
+                  <h4>
+                    <Translator>legalAddress</Translator>
+                  </h4>
+                  <p>
+                    <Translator>addressIndex</Translator>
+                  </p>
+                  <p>
+                    <Translator>addressCity</Translator>
+                  </p>
+                  <p>
+                    <Translator>addressFlat</Translator>
+                  </p>
+                </div>
               </li>
             </ul>
           </div>

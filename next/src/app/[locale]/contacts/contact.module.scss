@@ -168,8 +168,11 @@
   flex-direction: column-reverse;
   gap: 16px;
 }
-// .item {
-// }
+.item:last-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
 .link {
   display: flex;

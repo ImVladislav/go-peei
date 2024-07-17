@@ -14,7 +14,11 @@ import Image from "next/image";
 const FinancialPage: React.FC = () => {
   const [donationAmount, setDonationAmount] = useState(20);
   const [currency, setCurrency] = useState("UAH");
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  const [selectedCurrency, setSelectedCurrency] = useState(
+    currentLanguage === "uk" ? "UAH" : "USD"
+  );
 
   const handleAmountButtonClick = (amount: number) => {
     setDonationAmount(amount);
@@ -34,7 +38,7 @@ const FinancialPage: React.FC = () => {
   const handleCurrencyChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
-    setCurrency(event.target.value);
+    setSelectedCurrency(event.target.value);
   };
 
   const [fields] = useState([
@@ -128,7 +132,7 @@ const FinancialPage: React.FC = () => {
                 <select
                   className={`${s.financial__fixedAmountDonatBtn} ${s.financial__fixedAmountDonatInput}`}
                   style={{ width: "100px" }}
-                  value={currency}
+                  value={selectedCurrency}
                   onChange={handleCurrencyChange}
                 >
                   <option className={s.option} value="UAH">
@@ -144,7 +148,7 @@ const FinancialPage: React.FC = () => {
               </div>
               <div id="liqpay_checkout">
                 <LiqPayButton
-                  currency={currency}
+                  currency={selectedCurrency}
                   public_key={publicKey}
                   private_key={privateKey}
                   amount={donationAmount}

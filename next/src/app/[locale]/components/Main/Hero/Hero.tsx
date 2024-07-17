@@ -56,6 +56,7 @@ const Hero = () => {
                   stylesBtn={styles.btn}
                   stylesBtnWrap={styles.btnWrap}
                   btnText={t("supportUs")}
+                  href={"/financial"}
                 />
                 {/* </div> */}
               </div>
@@ -81,6 +82,7 @@ const Hero = () => {
                 stylesBtn={styles.btn_last}
                 stylesBtnWrap={styles.btn_lastWrap}
                 btnText={t("supportUs")}
+                href={"/financial"}
               />
               {/* </div> */}
             </div>

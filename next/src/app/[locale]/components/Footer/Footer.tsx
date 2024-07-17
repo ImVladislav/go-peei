@@ -32,6 +32,7 @@ const Footer = ({ locale }: { locale: string }) => {
             <SupportUSBtnModal
               stylesBtnWrap={styles.btnWrap}
               stylesBtn={styles.btn}
+              href={"/financial"}
             />
             <div className={styles.socialsWrap}>
               <Socials />

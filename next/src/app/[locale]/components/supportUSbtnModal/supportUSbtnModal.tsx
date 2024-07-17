@@ -13,11 +13,13 @@ const SupportUSBtnModal = ({
   stylesBtnWrap,
   btnText = <Translator>supportUs</Translator>,
   agreement = <Translator>agreement</Translator>,
+  href,
 }: {
   stylesBtn: string;
   stylesBtnWrap: string;
   btnText?: React.ReactNode;
   agreement?: React.ReactNode;
+  href: string;
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [checkbox1, setCheckbox1] = useState(false);
@@ -82,7 +84,8 @@ const SupportUSBtnModal = ({
           // disabled={!allChecked}
           newStyles={allChecked ? s.btn : s.btnDisabled}
           isLink={allChecked} // Використання isLink лише якщо всі чекбокси обрані
-          href={allChecked ? "/financial" : undefined}
+          href={allChecked ? href : undefined}
+          // href={allChecked ? "/financial" : undefined}
         >
           <Translator>confirm</Translator>
         </Button>

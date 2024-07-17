@@ -106,6 +106,7 @@ const ProjectDetails = async ({
                           {data.closed ? "donateСlosed" : "donate"}
                         </Translator>
                       }
+                      href={"/financial/schoolEnergy"}
                       agreement={<Translator>agreementLite</Translator>}
                     />
                   )}

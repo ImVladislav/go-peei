@@ -92,71 +92,75 @@ const FinancialPage: React.FC = () => {
 		<div className='container'>
 			<section className={s.section}>
 				<div className={s.section__content}>
-					<div className={s.section__title}>
-						<Title>
+					<div className={s.section__titleWrapper}>
+						<Title newStyles={s.section__title}>
 							<Translator>financialSupport</Translator>
 						</Title>
 					</div>
 					<div className={s.container_mainBlock}>
 						{/* left block; financial operations */}
 						<div className={s.container_leftBlock}>
-							<h2 className={s.title}>
-								<Translator>selectContributionAmount</Translator>
-							</h2>
 							<div className={s.amoontBlock}>
-								<div className={s.ammontBlock__inputWrapper}>
-									<input
-										className={s.fixedAmountDonatInput}
-										type='text'
-										pattern='\d*'
-										placeholder={t('amount')}
-										value={donationAmount.toString()}
-										onChange={handleInputChange}
-									/>
-									<p className={s.amoontBlock__recomendationText}>
-										Мінімальна сума внеску 20 грн
-									</p>
+								<h2 className={s.title}>
+									<Translator>selectContributionAmount</Translator>
+								</h2>
+								<div className={`${s.amoontBlock} ${s.donateBtnWrapper}`}>
+									<div className={s.amoontBlock__inputWrapper}>
+										<input
+											className={s.fixedAmountDonatInput}
+											type='text'
+											pattern='\d*'
+											placeholder={t('amount')}
+											value={donationAmount.toString()}
+											onChange={handleInputChange}
+										/>
+										<p className={s.amoontBlock__recomendationText}>
+											Мінімальна сума внеску 20 грн
+										</p>
+									</div>
+									<select
+										className={`${s.fixedAmountDonatBtn} ${s.donatInputBtn}`}
+										value={selectedCurrency}
+										onChange={handleCurrencyChange}
+									>
+										<option className={s.amoontBlock__option} value='UAH'>
+											UAH
+										</option>
+										<option className={s.amoontBlock__option} value='USD'>
+											USD
+										</option>
+										<option className={s.amoontBlock__option} value='EUR'>
+											EUR
+										</option>
+									</select>
 								</div>
-								<select
-									className={`${s.fixedAmountDonatBtn} ${s.donatInputBtn}`}
-									value={selectedCurrency}
-									onChange={handleCurrencyChange}
-								>
-									<option className={s.amoontBlock__option} value='UAH'>
-										UAH
-									</option>
-									<option className={s.amoontBlock__option} value='USD'>
-										USD
-									</option>
-									<option className={s.amoontBlock__option} value='EUR'>
-										EUR
-									</option>
-								</select>
 							</div>
 							{/* ammount donate buttons */}
 							<div className='buttons'>
 								<h2 className={s.title}>Оберіть суму внеску</h2>
-								<button
-									className={`${s.fixedAmountDonatBtn} ${s.marginNone}`}
-									onClick={() => handleAmountButtonClick(100.0)}
-								>
-									100
-								</button>
-								<button
-									className={s.fixedAmountDonatBtn}
-									onClick={() => handleAmountButtonClick(200.0)}
-								>
-									200
-								</button>
-								<button
-									className={s.fixedAmountDonatBtn}
-									onClick={() => handleAmountButtonClick(300.0)}
-								>
-									300
-								</button>
+								<div className={s.donateBtnWrapper}>
+									<button
+										className={`${s.fixedAmountDonatBtn} ${s.marginNone}`}
+										onClick={() => handleAmountButtonClick(100.0)}
+									>
+										100
+									</button>
+									<button
+										className={s.fixedAmountDonatBtn}
+										onClick={() => handleAmountButtonClick(200.0)}
+									>
+										200
+									</button>
+									<button
+										className={s.fixedAmountDonatBtn}
+										onClick={() => handleAmountButtonClick(300.0)}
+									>
+										300
+									</button>
+								</div>
 							</div>
 							{/* liqpay button */}
-							<div id='liqpay_checkout'>
+							<div className={s.payBtn} id='liqpay_checkout'>
 								<LiqPayButton
 									currency={selectedCurrency}
 									public_key={publicKey}
@@ -175,10 +179,10 @@ const FinancialPage: React.FC = () => {
 						</div>
 						{/* right block; bank details */}
 						<div className={s.container_rightBlock}>
-							<h2 className={s.headTitle}>
-								<Translator>BankDetails</Translator>
-							</h2>
 							<div className={s.bankDetailsBlock}>
+								<h2 className={s.headTitle}>
+									<Translator>BankDetails</Translator>
+								</h2>
 								{fields.map(field => (
 									<div
 										key={field.key}

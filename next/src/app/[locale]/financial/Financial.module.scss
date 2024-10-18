@@ -3,7 +3,7 @@
 .section {
 	padding: 60px 0px 60px 0px;
 	@media screen and (min-width: 768px) {
-		padding: 80px 0px 80px 0px;
+		padding: 80px 78px 80px 78px;
 	}
 	@media screen and (min-width: 1024px) {
 		padding: 100px 0px 100px 0px;
@@ -12,13 +12,29 @@
 		padding: 100px 0px 120px 0px;
 	}
 	&__content {
-		min-width: 320px;
+		margin: 0 auto;
 		padding: 24px 0px;
 		border-radius: 18px;
 		box-shadow: 0 0 36px 4px rgba(45, 93, 55, 0.2);
+		@media screen and (max-width: 767px) {
+			max-width: 532px;
+		}
+		@media screen and (min-width: 768px) {
+			min-width: 532px;
+			padding: 48px 0px;
+		}
+		@media screen and (min-width: 1024px) {
+			margin: 0;
+			min-width: 904px;
+		}
+	}
+	&__titleWrapper {
+		text-align: center;
 	}
 	&__title {
-		text-align: center;
+		@media screen and (min-width: 768px) and (max-width: 1023px) {
+			font-size: 24px !important;
+		}
 	}
 }
 
@@ -34,32 +50,48 @@
 	text-transform: uppercase;
 	line-height: 1.5;
 	margin-bottom: 8px;
+	@media screen and (min-width: 768px) {
+		font-size: 18px;
+	}
 }
 
 .container_mainBlock {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 32px;
 	padding: 0px 24px 0px 24px;
-	@media screen and (min-width: 1023px) {
+	width: 100%;
+	@media screen and (min-width: 768px) {
+		padding: 0px 32px 0px 32px;
+	}
+	@media screen and (min-width: 1024px) {
+		padding: 0px 36px 0px 36px;
 		flex-direction: row;
+		gap: 24px;
 	}
 }
 
+/* left block */
 .container_leftBlock {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
-	min-width: 272px;
+	width: 100%;
+	/* min-width: 272px; */
 	@media screen and (min-width: 768px) {
-		min-width: 468px;
+		width: 100%;
+	}
+	@media screen and (min-width: 1024px) {
+		width: 282px;
 	}
 }
 
 .amoontBlock {
-	display: flex;
 	margin-bottom: 16px;
 
+	&__inputWrapper {
+		width: 100%;
+	}
 	&__option {
 		background-color: #fff;
 		color: #333;
@@ -71,26 +103,39 @@
 		font-size: 12px;
 		color: $main-grey;
 	}
+	&.donateBtnWrapper {
+		display: flex;
+		justify-content: space-between;
+		gap: 8px;
+		@media screen and (min-width: 768px) {
+			gap: 12px;
+		}
+	}
 }
 
 .fixedAmountDonatInput {
 	border: 1px solid $main-green;
 	border-radius: 8px;
 	padding: 4px 16px;
-	width: 178px;
+	width: 100%;
 	height: 48px;
 	background-color: white;
 	text-align: center;
 	font-weight: 300;
 	font-size: 16px;
+	@media screen and (min-width: 768px) {
+		width: 308px;
+	}
+	@media screen and (min-width: 1024px) {
+		width: 184px;
+	}
 }
 
 .fixedAmountDonatBtn {
 	border: 1px solid $main-green;
 	border-radius: 8px;
 	padding: 4px 16px;
-	margin-left: 8px;
-	width: 85px;
+	width: 100%;
 	height: 48px;
 	background-color: white;
 	font-weight: 300;
@@ -98,18 +143,35 @@
 	&.donatInputBtn {
 		padding: 4px 11px;
 		width: 86px;
+		@media screen and (min-width: 768px) {
+			width: 148px;
+		}
 	}
 	&.marginNone {
 		margin: 0;
 	}
 }
 
+.donateBtnWrapper {
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	@media screen and (min-width: 768px) {
+		gap: 12px;
+	}
+}
+
+.payBtn {
+	text-align: center;
+}
+
+/* right block */
 .container_rightBlock {
+	flex-grow: 1;
 	@media screen and (min-width: 1024px) {
-		margin-left: 42px;
 	}
 	@media screen and (max-width: 1240px) {
-		max-width: 405px;
+		width: 100%;
 	}
 }
 
@@ -175,6 +237,7 @@
 		display: flex;
 		justify-content: space-between;
 		&__text {
+			min-width: 244px;
 			font-weight: 300;
 			font-size: 16px;
 			line-height: 1.5;

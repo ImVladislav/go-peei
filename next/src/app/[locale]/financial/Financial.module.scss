@@ -1,143 +1,285 @@
-.financial__bg {
-  background-image: url("../../../../public/financial/financialBg.png");
-  background-size: cover;
-  // background-position: center;
-  background-repeat: no-repeat;
-  padding: 110px 0px 140px;
-  //   padding-bottom: 10%;
-  height: 100vh; // 100% висоти видимого екрану
-  display: flex;
-  flex-direction: column; // Дозволяє розміщувати контент вертикально
-  justify-content: center; // Вертикальне вирівнювання по центру
+@import '../../styles/utils/_variables.scss';
+
+.section {
+	padding: 60px 0px 60px 0px;
+	@media screen and (min-width: 768px) {
+		padding: 80px 78px 80px 78px;
+	}
+	@media screen and (min-width: 1024px) {
+		padding: 100px 0px 100px 0px;
+	}
+	@media screen and (min-width: 1440px) {
+		padding: 100px 0px 120px 0px;
+	}
+	&__content {
+		margin: 0 auto;
+		padding: 24px 0px;
+		border-radius: 18px;
+		box-shadow: 0 0 36px 4px rgba(45, 93, 55, 0.2);
+		@media screen and (max-width: 767px) {
+			max-width: 532px;
+		}
+		@media screen and (min-width: 768px) {
+			min-width: 532px;
+			padding: 48px 0px;
+		}
+		@media screen and (min-width: 1024px) {
+			min-width: 904px;
+		}
+		@media screen and (min-width: 1440px) {
+			width: 937px;
+		}
+	}
+	&__titleWrapper {
+		text-align: center;
+	}
+	&__title {
+		@media screen and (min-width: 768px) and (max-width: 1023px) {
+			font-size: 24px !important;
+		}
+	}
 }
 
-.financial__container {
-  // width: 790px;
-  // height: 609px;
-  background-color: white;
-  padding: 22px 30px 50px 30px;
-  margin-right: 10%;
-  margin-left: auto;
-  border-radius: 12px;
-}
-.financial__container_mainBlock {
-  display: flex;
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
-  }
-}
-.financial__container_leftBlock {
-  // max-height: 440px;
-  // max-width: 406px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+.title {
+	margin-bottom: 4px;
+	font-weight: 300;
+	font-size: 16px;
 }
 
-s.amoontBlock {
-  display: flex;
+.headTitle {
+	font-weight: 600;
+	font-size: 16px;
+	text-transform: uppercase;
+	line-height: 1.5;
+	margin-bottom: 8px;
+	@media screen and (min-width: 768px) {
+		font-size: 18px;
+	}
 }
 
-.financial__container_rightBlock {
-  //   max-height: 282px;
-  // max-width: 405px;
-  // display: none;
-  // margin-left: 42px;
-  @media screen and (min-width: 1024px) {
-    margin-left: 42px;
-  }
-  @media screen and (max-width: 1240px) {
-    max-width: 405px;
-  }
+.container_mainBlock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 32px;
+	padding: 0px 24px 0px 24px;
+	width: 100%;
+	@media screen and (min-width: 768px) {
+		padding: 0px 32px 0px 32px;
+	}
+	@media screen and (min-width: 1024px) {
+		padding: 0px 36px 0px 36px;
+		flex-direction: row;
+		gap: 24px;
+	}
+	@media screen and (min-width: 1440px) {
+		padding: 0px 48px 0px 48px;
+		gap: 32px;
+	}
 }
 
-.financial__fixedAmountDonatBtn {
-  border: 1px solid #0d490d;
-  border-radius: 8px;
-  padding: 4px 16px;
-  width: 86px;
-  height: 43px;
-  margin: 6px;
-  background-color: white;
-
-  &.financial__fixedAmountDonatInput {
-    margin: 6px;
-    width: 170px;
-    text-align: center;
-  }
+/* left block */
+.container_leftBlock {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	/* min-width: 272px; */
+	@media screen and (min-width: 768px) {
+		width: 100%;
+	}
+	@media screen and (min-width: 1024px) {
+		width: 282px;
+	}
 }
+
+.amoontBlock {
+	margin-bottom: 16px;
+
+	&__inputWrapper {
+		width: 100%;
+	}
+	&__option {
+		background-color: #fff;
+		color: #333;
+		font-size: 20px;
+	}
+	&__recomendationText {
+		margin-top: 4px;
+		font-size: 12px;
+		color: $main-grey;
+	}
+	&.donateBtnWrapper {
+		display: flex;
+		justify-content: space-between;
+		gap: 8px;
+		@media screen and (min-width: 768px) {
+			gap: 12px;
+		}
+	}
+}
+
+.fixedAmountDonatInput {
+	border: 1px solid $main-green;
+	border-radius: 8px;
+	padding: 4px 16px;
+	width: 100%;
+	height: 48px;
+	background-color: white;
+	text-align: center;
+	font-weight: 300;
+	font-size: 16px;
+	@media screen and (min-width: 768px) {
+		width: 308px;
+	}
+	@media screen and (min-width: 1024px) {
+		width: 184px;
+	}
+}
+
+.fixedAmountDonatBtn {
+	border: 1px solid $main-green;
+	border-radius: 8px;
+	padding: 4px 16px;
+	width: 100%;
+	height: 48px;
+	background-color: white;
+	font-weight: 300;
+	font-size: 16px;
+	&.donatInputBtn {
+		appearance: none; /* Убираем стандартную стрелку */
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		padding: 4px 11px;
+		width: 86px;
+		@media screen and (min-width: 768px) {
+			width: 148px;
+		}
+	}
+	&.marginNone {
+		margin: 0;
+	}
+}
+
+.selectBtnWrapper {
+	position: relative;
+	display: inline-block;
+	width: 86px; /* Ширина select */
+	&::after {
+		content: '';
+		position: absolute;
+		top: 30%;
+		right: 20px;
+		width: 24px;
+		height: 24px;
+		background-image: url('../../../../public/financial/arrow_drop_down.svg'); /* Путь к SVG */
+		background-size: contain;
+		background-repeat: no-repeat;
+		pointer-events: none;
+		transition: transform 0.3s ease;
+	}
+	&.active::after {
+		transform: rotate(180deg);
+	}
+}
+
+.donateBtnWrapper {
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	@media screen and (min-width: 768px) {
+		gap: 12px;
+	}
+}
+
+.payBtn {
+	text-align: center;
+}
+
+/* right block */
+.container_rightBlock {
+	flex-grow: 1;
+	@media screen and (min-width: 1024px) {
+	}
+	@media screen and (max-width: 1240px) {
+		width: 100%;
+	}
+}
+
 .financial__title {
-  font-family: "Exo 2", sans-serif;
-  font-weight: 500;
-  font-size: 32px;
-  text-transform: uppercase;
-  color: #141414;
-  text-align: center;
-  margin-bottom: 48px;
-}
-.financial__subTitle {
-  font-family: "Exo 2", sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #141414;
-  &.financial__link {
-    text-decoration: underline;
-    display: contents;
-  }
-  &.financial__subTitle_leftBlock {
-    font-weight: 700;
-  }
-}
-.financial__btnBlock {
-  margin: 16px 6px;
-  border: 1px solid #141414;
-  border-radius: 8px;
-  padding: 17px 0px 15px 0px;
-  width: 284px;
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  object-fit: contain;
-}
-// .financial__btnImage {
-//   width: auto;
-//   height: 100%;
-//   object-fit: contain; /* Ensures the image maintains its aspect ratio */
-// }
-.financial__infoField {
-  display: flex;
-  flex-direction: column;
-  //   justify-content: space-between;
-}
-.financial__infoField__insideBlock {
-  display: flex;
-  justify-content: space-between;
-}
-.financial__copyButton {
-  border: none;
-  background-color: transparent;
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 500;
+	font-size: 32px;
+	text-transform: uppercase;
+	color: #141414;
+	text-align: center;
+	margin-bottom: 48px;
 }
 
-.option {
-  background-color: #fff;
-  color: #333;
-  // padding: 8px;
-  font-size: 20px;
+.offerLink {
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.5;
+	text-decoration: underline;
 }
-.financial__copyButton {
-  margin-left: 8px;
+
+.btnPay {
+	margin: 16px 0px;
+	border: none;
+	border-radius: 40px 0;
+	padding: 16px 40px;
+	width: 272px;
+	height: 52px;
+	background: $main-green;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 1;
+	text-align: center;
+	color: $main-white;
+	transition: all 250ms ease-in-out;
+	&:hover,
+	&:focus {
+		background: $green-hover;
+	}
+}
+
+.bankDetailsBlock {
+	&__infoField {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	&__subTitle {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+	&__descriptionBlock {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		&__text {
+			min-width: 244px;
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 1.5;
+			overflow-wrap: break-word;
+		}
+		&__copyBtn {
+			border: none;
+			background-color: transparent;
+			margin-left: 4px;
+		}
+	}
 }
 //====================Modal===============================
 .modal__content {
-  padding: 30px 55px 50px;
+	padding: 30px 55px 50px;
 }
 .modal__paymentIcomThumb {
-  width: 146px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 24px;
+	width: 146px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 24px;
 }
 //====================Modal Sucsess===============================
 // .Modal__content {

@@ -24,8 +24,10 @@
 			padding: 48px 0px;
 		}
 		@media screen and (min-width: 1024px) {
-			margin: 0;
 			min-width: 904px;
+		}
+		@media screen and (min-width: 1440px) {
+			width: 937px;
 		}
 	}
 	&__titleWrapper {
@@ -70,6 +72,10 @@
 		flex-direction: row;
 		gap: 24px;
 	}
+	@media screen and (min-width: 1440px) {
+		padding: 0px 48px 0px 48px;
+		gap: 32px;
+	}
 }
 
 /* left block */
@@ -95,7 +101,6 @@
 	&__option {
 		background-color: #fff;
 		color: #333;
-		// padding: 8px;
 		font-size: 20px;
 	}
 	&__recomendationText {
@@ -141,6 +146,9 @@
 	font-weight: 300;
 	font-size: 16px;
 	&.donatInputBtn {
+		appearance: none; /* Убираем стандартную стрелку */
+		-webkit-appearance: none;
+		-moz-appearance: none;
 		padding: 4px 11px;
 		width: 86px;
 		@media screen and (min-width: 768px) {
@@ -149,6 +157,28 @@
 	}
 	&.marginNone {
 		margin: 0;
+	}
+}
+
+.selectBtnWrapper {
+	position: relative;
+	display: inline-block;
+	width: 86px; /* Ширина select */
+	&::after {
+		content: '';
+		position: absolute;
+		top: 30%;
+		right: 20px;
+		width: 24px;
+		height: 24px;
+		background-image: url('../../../../public/financial/arrow_drop_down.svg'); /* Путь к SVG */
+		background-size: contain;
+		background-repeat: no-repeat;
+		pointer-events: none;
+		transition: transform 0.3s ease;
+	}
+	&.active::after {
+		transform: rotate(180deg);
 	}
 }
 
@@ -184,16 +214,6 @@
 	text-align: center;
 	margin-bottom: 48px;
 }
-/* .financial__subTitle {
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 1.5;
-	color: #141414;
-	&.financial__subTitle_leftBlock {
-		font-weight: 700;
-	}
-} */
 
 .offerLink {
 	font-weight: 300;
@@ -236,11 +256,13 @@
 	&__descriptionBlock {
 		display: flex;
 		justify-content: space-between;
+		align-items: flex-start;
 		&__text {
 			min-width: 244px;
 			font-weight: 300;
 			font-size: 16px;
 			line-height: 1.5;
+			overflow-wrap: break-word;
 		}
 		&__copyBtn {
 			border: none;

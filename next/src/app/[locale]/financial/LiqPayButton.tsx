@@ -2,13 +2,14 @@
 import CryptoJS from 'crypto-js'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import Translator from '../components/translator/Translator'
 import s from './Financial.module.scss'
 
 interface LiqPayButtonProps {
 	public_key: any
 	private_key: any
 	amount: number
-	description: string
+	description?: string
 	currency: string
 }
 
@@ -70,7 +71,9 @@ const LiqPayButton: React.FC<LiqPayButtonProps> = ({
 		>
 			<input type='hidden' name='data' value={data} />
 			<input type='hidden' name='signature' value={signature} />
-			<button className={s.btnPay}>Підтримати</button>
+			<button className={s.btnPay}>
+				<Translator>support</Translator>
+			</button>
 		</form>
 	)
 }

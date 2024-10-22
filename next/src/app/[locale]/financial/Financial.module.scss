@@ -136,6 +136,7 @@
 	}
 }
 
+/* порадитись з Ірою. Якщо що, зробити кастомний select */
 .fixedAmountDonatBtn {
 	border: 1px solid $main-green;
 	border-radius: 8px;
@@ -146,13 +147,11 @@
 	font-weight: 300;
 	font-size: 16px;
 	&.donatInputBtn {
-		appearance: none; /* Убираем стандартную стрелку */
+		appearance: none;
 		-webkit-appearance: none;
 		-moz-appearance: none;
-		padding: 4px 11px;
-		width: 86px;
-		@media screen and (min-width: 768px) {
-			width: 148px;
+		@media screen and (min-width: 768px) and (max-width: 1023px) {
+			text-align: center;
 		}
 	}
 	&.marginNone {
@@ -163,19 +162,25 @@
 .selectBtnWrapper {
 	position: relative;
 	display: inline-block;
-	width: 86px; /* Ширина select */
+	min-width: 86px;
+	@media screen and (min-width: 768px) and (max-width: 1023px) {
+		min-width: 148px;
+	}
 	&::after {
 		content: '';
 		position: absolute;
-		top: 30%;
-		right: 20px;
+		top: 16%;
+		right: 14px;
 		width: 24px;
 		height: 24px;
-		background-image: url('../../../../public/financial/arrow_drop_down.svg'); /* Путь к SVG */
+		background-image: url('../../../../public/financial/arrow_drop_down.svg');
 		background-size: contain;
 		background-repeat: no-repeat;
 		pointer-events: none;
 		transition: transform 0.3s ease;
+		@media screen and (min-width: 768px) and (max-width: 1023px) {
+			right: 34px;
+		}
 	}
 	&.active::after {
 		transform: rotate(180deg);

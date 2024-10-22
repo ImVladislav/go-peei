@@ -1,7 +1,7 @@
 'use client'
 import { projectsItem } from '@/app/types'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styles from '../../financial/financial.module.scss'
 import LiqPayButton from '../../financial/LiqPayButton'
@@ -22,6 +22,8 @@ const FinancialComponent = ({ project, locale }: financialComponentProps) => {
 		currentLanguage === 'uk' ? 'UAH' : 'USD'
 	)
 	const [selectedInputBtn, setSelectedInputBtn] = useState(false)
+	const selectWrapperRef = useRef<HTMLDivElement>(null)
+
 	/* bank details fields data */
 	const BANK_DETAILS_FIELDS = [
 		{
@@ -66,10 +68,26 @@ const FinancialComponent = ({ project, locale }: financialComponentProps) => {
 			setDonationAmount(currency === 'UAH' ? 20 : 5)
 		}
 	}
-
+	/* натиснута кнопка select, чи ні */
 	const handleSelectInputBtn = () => {
 		setSelectedInputBtn(!selectedInputBtn)
 	}
+	/* обробник кліка по документу */
+	useEffect(() => {
+		const handleClickOutside = (evt: MouseEvent) => {
+			if (
+				selectWrapperRef.current &&
+				!selectWrapperRef.current.contains(evt.target as Node)
+			) {
+				setSelectedInputBtn(false)
+			}
+		}
+		document.addEventListener('mousedown', handleClickOutside)
+		/* видаляє слухача при розмонтуванні компоненту */
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside)
+		}
+	}, [selectWrapperRef])
 
 	const handleCurrencyChange = (
 		event: React.ChangeEvent<HTMLSelectElement>
@@ -106,7 +124,10 @@ const FinancialComponent = ({ project, locale }: financialComponentProps) => {
 					<h2 className={styles.title}>
 						<Translator>specifyContributionAmount</Translator>
 					</h2>
-					<div className={`${styles.amoontBlock} ${styles.donateBtnWrapper}`}>
+					<div
+						ref={selectWrapperRef}
+						className={`${styles.amoontBlock} ${styles.donateBtnWrapper}`}
+					>
 						<div className={styles.amoontBlock__inputWrapper}>
 							<input
 								className={styles.fixedAmountDonatInput}
@@ -128,6 +149,7 @@ const FinancialComponent = ({ project, locale }: financialComponentProps) => {
 								}
 							</p>
 						</div>
+						{/* порадитись з Ірою. Якщо що, зробити кастомний select */}
 						<div
 							className={`${styles.selectBtnWrapper} ${
 								selectedInputBtn ? styles.active : ''

@@ -1,0 +1,68 @@
+.linkSecurityThumb {
+  position: absolute;
+  height: 360px;
+  width: 30px;
+  top: 185px;
+  right: 0px;
+}
+@media screen and (min-width: 768px) {
+  .linkSecurityThumb {
+    top: 120px;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .linkSecurityThumb {
+    top: 180px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .linkSecurityThumb {
+    top: 200px;
+  }
+}
+
+.linkSecurity {
+  position: absolute;
+  right: 0px;
+  border-radius: 0 24px 24px 0;
+  padding: 32px 8px;
+  background: #f5f8f5;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  z-index: 5;
+  height: -moz-max-content;
+  height: max-content;
+  top: 185px;
+  border: none;
+  writing-mode: tb-rl;
+  transform: rotate(180deg);
+  transition: all 200ms ease-in-out;
+}
+.linkSecurity:hover, .linkSecurity:focus {
+  color: #fffefe;
+  background: #0d490d;
+}
+@media screen and (min-width: 768px) {
+  .linkSecurity {
+    top: 120px;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .linkSecurity {
+    top: 180px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .linkSecurity {
+    top: 200px;
+  }
+}
+
+.linkSecurityHidden {
+  right: -100px;
+  position: fixed;
+}/*# sourceMappingURL=rulers.module.css.map */

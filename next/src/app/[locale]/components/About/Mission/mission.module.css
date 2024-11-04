@@ -1,0 +1,141 @@
+.section.mobile {
+  display: block;
+}
+.section.desktop {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .section.mobile {
+    display: none;
+  }
+  .section.desktop {
+    display: block;
+  }
+}
+
+.accentTitle {
+  color: #0d490d;
+}
+
+.top_content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+  width: 100%;
+  padding: 24px 26px;
+  border-radius: 18px;
+  background: #f5f8f5;
+}
+@media screen and (min-width: 768px) {
+  .top_content {
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 24px;
+    margin-bottom: 52px;
+    border-radius: 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .top_content {
+    padding: 32px;
+    margin-bottom: 64px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .top_content {
+    width: 1087px;
+    padding: 36px;
+  }
+}
+.top_content__iconWrap {
+  position: relative;
+  width: 52px;
+  height: 58px;
+}
+@media screen and (min-width: 768px) {
+  .top_content__iconWrap {
+    min-width: 95px;
+    max-width: 95px;
+    height: 120px;
+  }
+}
+.top_content__text {
+  margin: 20px 0px 0px 0px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+  .top_content__text {
+    margin: 0px 0px 0px 16px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .top_content__text {
+    margin: 0px 0px 0px 20px;
+    font-size: 18px;
+  }
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 308px;
+  padding: 20px;
+  border: 1px solid #173614;
+  border-radius: 10px;
+  box-shadow: 12px -12px 0 0 #2d5d37;
+}
+@media screen and (min-width: 768px) {
+  .item {
+    height: 370px;
+    box-shadow: 16px -16px 0 0 #2d5d37;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .item {
+    width: 392px;
+    height: 352px;
+    box-shadow: 18px -18px 0 0 #2d5d37;
+  }
+}
+.item__desc {
+  margin-top: 8px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #141414;
+}
+@media screen and (min-width: 1024px) {
+  .item__desc {
+    font-size: 18px;
+  }
+}
+
+.swiper {
+  padding-top: 18px;
+}
+@media screen and (min-width: 768px) {
+  .swiper {
+    margin-right: -40px;
+    margin-left: -40px;
+    padding-left: 40px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .swiper {
+    margin-right: -60px;
+    margin-left: -60px;
+    padding-left: 60px;
+    padding-right: 20px;
+  }
+}/*# sourceMappingURL=mission.module.css.map */

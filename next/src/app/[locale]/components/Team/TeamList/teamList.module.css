@@ -1,0 +1,18 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media screen and (min-width: 768px) {
+  .list {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .list {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 26px;
+  }
+}/*# sourceMappingURL=teamList.module.css.map */

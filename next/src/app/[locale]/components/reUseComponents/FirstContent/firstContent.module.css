@@ -1,0 +1,183 @@
+.container {
+  margin: 0 -20px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    margin: 0 -40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    margin: 0 -60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    margin: 0 -80px;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  height: 192px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .imgContainer {
+    height: 247px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .imgContainer {
+    height: 330px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .imgContainer {
+    height: 463px;
+  }
+}
+
+.img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.textContainer {
+  position: relative;
+  border: 1px solid #e8f1e7;
+  border-radius: 18px;
+  padding: 20px 16px;
+  max-width: 676px;
+  background: #fffefe;
+  margin-top: -32px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+.textContainer::after {
+  content: url("/workWithTeenagers/bg-leaf.png");
+  display: block;
+  position: absolute;
+  width: 72px;
+  height: 126px;
+  bottom: 100px;
+  right: 30px;
+  z-index: -1;
+}
+@media screen and (min-width: 768px) {
+  .textContainer::after {
+    width: 92px;
+    height: 82px;
+    top: 15px;
+    right: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .textContainer::after {
+    top: 40px;
+    right: 30px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .textContainer::after {
+    top: 48px;
+    right: 50px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .textContainer {
+    border-radius: 40px;
+    padding: 40px;
+    max-width: 560px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .textContainer {
+    border-radius: 40px;
+    padding: 48px;
+    max-width: 676px;
+    margin-top: -50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .textContainer {
+    margin-top: -130px;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .inner {
+    gap: 24px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .inner {
+    align-items: center;
+    padding: 0;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  color: #141414;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .descriptionContainer {
+    gap: 24px;
+  }
+}
+
+.description {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #141414;
+}
+@media screen and (min-width: 1024px) {
+  .description {
+    font-size: 18px;
+  }
+}
+
+.btn {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 308px;
+  font-size: 16px;
+  padding: 12px 40px;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    padding: 16px 40px;
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=firstContent.module.css.map */

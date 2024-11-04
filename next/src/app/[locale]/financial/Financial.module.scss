@@ -20,7 +20,7 @@
 			max-width: 532px;
 		}
 		@media screen and (min-width: 768px) {
-			min-width: 532px;
+			width: 532px;
 			padding: 48px 0px;
 		}
 		@media screen and (min-width: 1024px) {
@@ -83,7 +83,6 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	/* min-width: 272px; */
 	@media screen and (min-width: 768px) {
 		width: 100%;
 	}
@@ -92,28 +91,32 @@
 	}
 }
 
-.amoontBlock {
+.amountBlock {
 	margin-bottom: 16px;
+}
+
+.gridContainer {
+	display: grid;
+	gap: 8px;
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+	margin-bottom: 16px;
+	@media screen and (min-width: 768px) {
+		gap: 12px;
+	}
 
 	&__inputWrapper {
-		width: 100%;
+		grid-column: span 2;
+		display: flex;
+		flex-direction: column;
 	}
-	&__option {
-		background-color: #fff;
-		color: #333;
-		font-size: 20px;
-	}
-	&__recomendationText {
+	&__recommendationText {
 		margin-top: 4px;
 		font-size: 12px;
 		color: $main-grey;
-	}
-	&.donateBtnWrapper {
-		display: flex;
-		justify-content: space-between;
-		gap: 8px;
-		@media screen and (min-width: 768px) {
-			gap: 12px;
+
+		&.redText {
+			color: $red-text;
 		}
 	}
 }
@@ -128,15 +131,13 @@
 	text-align: center;
 	font-weight: 300;
 	font-size: 16px;
-	@media screen and (min-width: 768px) {
-		width: 308px;
-	}
-	@media screen and (min-width: 1024px) {
-		width: 184px;
+	outline: none;
+	&:hover,
+	&:focus {
+		border: 2px solid $green-hover;
 	}
 }
 
-/* порадитись з Ірою. Якщо що, зробити кастомний select */
 .fixedAmountDonatBtn {
 	border: 1px solid $main-green;
 	border-radius: 8px;
@@ -146,51 +147,97 @@
 	background-color: white;
 	font-weight: 300;
 	font-size: 16px;
-	&.donatInputBtn {
-		appearance: none;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		@media screen and (min-width: 768px) and (max-width: 1023px) {
-			text-align: center;
-		}
-	}
 	&.marginNone {
 		margin: 0;
 	}
 }
 
-.selectBtnWrapper {
+/* custom select */
+.selectBtnBlock {
 	position: relative;
 	display: inline-block;
-	min-width: 86px;
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
-		min-width: 148px;
-	}
-	&::after {
-		content: '';
-		position: absolute;
-		top: 16%;
-		right: 14px;
-		width: 24px;
-		height: 24px;
-		background-image: url('../../../../public/financial/arrow_drop_down.svg');
-		background-size: contain;
-		background-repeat: no-repeat;
-		pointer-events: none;
-		transition: transform 0.3s ease;
-		@media screen and (min-width: 768px) and (max-width: 1023px) {
-			right: 34px;
-		}
-	}
-	&.active::after {
+	cursor: pointer;
+}
+
+.selectBtn {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	border: 1px solid $main-green;
+	border-radius: 8px;
+	padding: 4px 16px;
+	width: 100%;
+	height: 48px;
+	background-color: white;
+	font-weight: 300;
+	font-size: 16px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	&.active .svgIcon {
+		transition: transform 0.8s;
 		transform: rotate(180deg);
 	}
 }
 
-.donateBtnWrapper {
+.svgIcon__thumb {
+	width: 24px;
+	height: 24px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	align-items: center;
+}
+
+.svgIcon {
+	transition: transform 0.3s ease;
+}
+
+.optionsList {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: $second-white;
+	list-style: none;
+	padding: 10px;
+	border-radius: 4px;
+	width: 100%;
+	transition: transform 1.5s;
+	text-decoration: none;
+	font-size: 16px;
+	transition: color 0.3s;
+	box-shadow: 6px 6px 2px rgba(255, 255, 255, 0.2),
+		5px 5px 15px rgb(0 0 0 / 35%);
+	z-index: 1;
+
+	&.active {
+		display: block;
+	}
+
+	&__option {
+		display: flex;
+		align-items: center;
+		padding: 10px 5px;
+		width: 100%;
+		&:hover {
+			border-radius: 8px;
+			background: $green-50;
+		}
+	}
+
+	&__item {
+		color: $second-grey-text;
+	}
+}
+
+/* ammount donate buttons */
+
+.donateBtnWrapper {
+	grid-column: span 3;
+	display: grid;
 	gap: 8px;
+	grid-template-columns: repeat(3, 1fr);
 	@media screen and (min-width: 768px) {
 		gap: 12px;
 	}
@@ -245,6 +292,11 @@
 	&:focus {
 		background: $green-hover;
 	}
+	&:disabled {
+		background: $main-grey;
+		color: $main-white;
+		cursor: not-allowed;
+	}
 }
 
 .bankDetailsBlock {
@@ -276,6 +328,7 @@
 		}
 	}
 }
+
 //====================Modal===============================
 .modal__content {
 	padding: 30px 55px 50px;

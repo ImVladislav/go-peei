@@ -1,12 +1,13 @@
 'use client'
 import { projectsItem } from '@/app/types'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styles from '../../financial/financial.module.scss'
 import LiqPayButton from '../../financial/LiqPayButton'
 import ButtonSvg from '../Button/ButtonSvg'
 import Translator from '../translator/Translator'
+import CustomSelect from './CustomSelect'
 
 interface financialComponentProps {
 	project?: projectsItem
@@ -14,14 +15,14 @@ interface financialComponentProps {
 }
 
 const FinancialComponent = ({ project, locale }: financialComponentProps) => {
-	const [donationAmount, setDonationAmount] = useState(20)
+	const [donationAmount, setDonationAmount] = useState(0)
 	const [currency, setCurrency] = useState('UAH')
+	const [btnValues, setBtnValues] = useState([100, 200, 300])
 	const { t, i18n } = useTranslation()
 	const currentLanguage = i18n.language
 	const [selectedCurrency, setSelectedCurrency] = useState(
 		currentLanguage === 'uk' ? 'UAH' : 'USD'
 	)
-	const [selectedInputBtn, setSelectedInputBtn] = useState(false)
 	const selectWrapperRef = useRef<HTMLDivElement>(null)
 
 	/* bank details fields data */
@@ -47,12 +48,17 @@ const FinancialComponent = ({ project, locale }: financialComponentProps) => {
 		{
 			key: 'purposeOfPayment',
 			label: 'purposeOfPayment',
-			value: `${t('charitydonation')}: ${
-				locale === 'uk' ? project?.title : project?.titleEn
-			}`,
+			value: project
+				? `${t('charitydonation')}: ${
+						locale === 'uk' ? project?.title : project?.titleEn
+				  }`
+				: t('charitydonation'),
 			id: 'purpose',
 		},
 	]
+
+	const minAmount = selectedCurrency === 'UAH' ? 20 : 5
+	const isAmountBelowMinimum = donationAmount < minAmount
 
 	const handleAmountButtonClick = (amount: number) => {
 		setDonationAmount(amount)
@@ -62,43 +68,22 @@ const FinancialComponent = ({ project, locale }: financialComponentProps) => {
 		const value = event.target.value
 		const parsedValue = parseFloat(value)
 
-		if (!isNaN(parsedValue) && parsedValue >= 20) {
+		if (value === '') {
+			setDonationAmount(0)
+		} else if (!isNaN(parsedValue) && parsedValue >= 0) {
 			setDonationAmount(parsedValue)
-		} else if (parsedValue < 20) {
-			setDonationAmount(currency === 'UAH' ? 20 : 5)
 		}
 	}
-	/* натиснута кнопка select, чи ні */
-	const handleSelectInputBtn = () => {
-		setSelectedInputBtn(!selectedInputBtn)
-	}
-	/* обробник кліка по документу */
-	useEffect(() => {
-		const handleClickOutside = (evt: MouseEvent) => {
-			if (
-				selectWrapperRef.current &&
-				!selectWrapperRef.current.contains(evt.target as Node)
-			) {
-				setSelectedInputBtn(false)
-			}
-		}
-		document.addEventListener('mousedown', handleClickOutside)
-		/* видаляє слухача при розмонтуванні компоненту */
-		return () => {
-			document.removeEventListener('mousedown', handleClickOutside)
-		}
-	}, [selectWrapperRef])
 
-	const handleCurrencyChange = (
-		event: React.ChangeEvent<HTMLSelectElement>
-	) => {
-		const selected = event.target.value
-		setSelectedCurrency(selected)
+	const handleCurrencyChange = (currency: string) => {
+		setSelectedCurrency(currency)
 
-		if (selected === 'USD' || selected === 'EUR') {
-			setDonationAmount(5)
+		if (currency === 'USD' || currency === 'EUR') {
+			setDonationAmount(0)
+			setBtnValues([10, 25, 50])
 		} else {
-			setDonationAmount(20)
+			setDonationAmount(0)
+			setBtnValues([100, 200, 300])
 		}
 	}
 
@@ -120,84 +105,57 @@ const FinancialComponent = ({ project, locale }: financialComponentProps) => {
 		<div className={styles.container_mainBlock}>
 			{/* left block; financial operationtyles */}
 			<div className={styles.container_leftBlock}>
-				<div className={styles.amoontBlock}>
-					<h2 className={styles.title}>
-						<Translator>specifyContributionAmount</Translator>
-					</h2>
-					<div
-						ref={selectWrapperRef}
-						className={`${styles.amoontBlock} ${styles.donateBtnWrapper}`}
-					>
-						<div className={styles.amoontBlock__inputWrapper}>
-							<input
-								className={styles.fixedAmountDonatInput}
-								type='text'
-								pattern='\d*'
-								placeholder={selectedCurrency === 'UAH' ? '20' : '5'}
-								value={donationAmount.toString()}
-								onChange={handleInputChange}
-							/>
-							<p className={styles.amoontBlock__recomendationText}>
-								<Translator>minimumContributionAmount</Translator>{' '}
-								{selectedCurrency === 'UAH' ? '20' : '5'}{' '}
-								{
-									{
-										UAH: `${locale === 'uk' ? 'грн' : 'uah'}`,
-										USD: '$',
-										EUR: '€',
-									}[selectedCurrency]
-								}
-							</p>
-						</div>
-						{/* порадитись з Ірою. Якщо що, зробити кастомний select */}
-						<div
-							className={`${styles.selectBtnWrapper} ${
-								selectedInputBtn ? styles.active : ''
-							}`}
+				<h2 className={styles.title}>
+					<Translator>specifyContributionAmount</Translator>
+				</h2>
+				<div ref={selectWrapperRef} className={styles.gridContainer}>
+					<div className={styles.gridContainer__inputWrapper}>
+						<input
+							className={styles.fixedAmountDonatInput}
+							type='text'
+							pattern='\d*'
+							placeholder='0'
+							value={donationAmount.toString()}
+							onChange={handleInputChange}
+						/>
+						<p
+							className={`${styles.gridContainer__recommendationText} ${
+								isAmountBelowMinimum ? styles.redText : ''
+							} `}
 						>
-							<select
-								className={`${styles.fixedAmountDonatBtn} ${styles.donatInputBtn}`}
-								value={selectedCurrency}
-								onChange={handleCurrencyChange}
-								onClick={handleSelectInputBtn}
-							>
-								<option className={styles.amoontBlock__option} value='UAH'>
-									UAH
-								</option>
-								<option className={styles.amoontBlock__option} value='USD'>
-									USD
-								</option>
-								<option className={styles.amoontBlock__option} value='EUR'>
-									EUR
-								</option>
-							</select>
-						</div>
+							<Translator>minimumContributionAmount</Translator>{' '}
+							{selectedCurrency === 'UAH' ? '20' : '5'}{' '}
+							{
+								{
+									UAH: `${locale === 'uk' ? 'грн' : 'uah'}`,
+									USD: '$',
+									EUR: '€',
+								}[selectedCurrency]
+							}
+						</p>
 					</div>
+
+					<CustomSelect
+						selectedCurrency={selectedCurrency}
+						setSelectedCurrency={handleCurrencyChange}
+					/>
 				</div>
+
 				{/* ammount donate buttons */}
 				<div className='buttons'>
 					<h2 className={styles.title}>
 						<Translator>selectContributionAmount</Translator>
 					</h2>
 					<div className={styles.donateBtnWrapper}>
-						<button
-							className={`${styles.fixedAmountDonatBtn} ${styles.marginNone}`}
-							onClick={() => handleAmountButtonClick(100.0)}
-						>
-							100
-						</button>
-						<button
-							className={styles.fixedAmountDonatBtn}
-							onClick={() => handleAmountButtonClick(200.0)}
-						>
-							200
-						</button>
-						<button
-							className={styles.fixedAmountDonatBtn}
-							onClick={() => handleAmountButtonClick(300.0)}
-						>
-							300
-						</button>
+						{btnValues.map(value => (
+							<button
+								key={value}
+								className={`${styles.fixedAmountDonatBtn} ${styles.marginNone}`}
+								onClick={() => handleAmountButtonClick(value)}
+							>
+								{value}
+							</button>
+						))}
 					</div>
 				</div>
 				{/* liqpay button */}
@@ -208,6 +166,7 @@ const FinancialComponent = ({ project, locale }: financialComponentProps) => {
 						private_key={privateKey}
 						amount={donationAmount}
 						description={t('charitydonation')}
+						disabled={isAmountBelowMinimum}
 					/>
 				</div>
 				{/* offer contract */}

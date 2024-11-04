@@ -1,0 +1,103 @@
+.section {
+  padding: 60px 0 54px;
+}
+@media screen and (min-width: 1440px) {
+  .section {
+    padding: 60px 0 120px;
+  }
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+@media screen and (min-width: 1440px) {
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+  }
+}
+
+.imgFirstContent {
+  transform: scale(1);
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+@media screen and (min-width: 768px) {
+  .imgFirstContent {
+    -o-object-position: center;
+       object-position: center;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .imgFirstContent {
+    transform: scale(1.2);
+    -o-object-position: 0px -280px;
+       object-position: 0px -280px;
+  }
+}
+
+.imgListContentFirst {
+  -o-object-position: -75px -40px;
+     object-position: -75px -40px;
+  transform: scale(1.6);
+}
+@media screen and (min-width: 1024px) {
+  .imgListContentFirst {
+    -o-object-position: -100px -50px;
+       object-position: -100px -50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .imgListContentFirst {
+    -o-object-position: -135px -75px;
+       object-position: -135px -75px;
+    transform: scale(1.6);
+  }
+}
+
+.imgListContentSecond {
+  -o-object-position: right;
+     object-position: right;
+}
+
+.imgStepContent {
+  -o-object-position: 0px 0px;
+     object-position: 0px 0px;
+}
+@media screen and (min-width: 1024px) {
+  .imgStepContent {
+    -o-object-position: 0px -50px;
+       object-position: 0px -50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .imgStepContent {
+    -o-object-position: 0px -70px;
+       object-position: 0px -70px;
+  }
+}
+
+.contactUsWrap {
+  margin: 20px 0;
+}
+@media screen and (min-width: 1440px) {
+  .contactUsWrap {
+    margin: 0;
+  }
+}
+
+.imgContactUs {
+  margin-left: auto;
+  margin-right: auto;
+  width: 52px;
+  height: 58px;
+}
+@media screen and (min-width: 1024px) {
+  .imgContactUs {
+    width: 95px;
+    height: 120px;
+  }
+}/*# sourceMappingURL=partnership.module.css.map */

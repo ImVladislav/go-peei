@@ -1,0 +1,17 @@
+.social__wrap {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .social__wrap {
+    margin-bottom: 0;
+    gap: 43px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .social__wrap {
+    gap: 40px;
+  }
+}/*# sourceMappingURL=socialsNews.module.css.map */

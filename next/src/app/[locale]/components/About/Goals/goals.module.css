@@ -1,0 +1,225 @@
+.section {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.section.desktop {
+  display: none;
+}
+.section.mobile {
+  display: block;
+}
+.section.mobile::before {
+  content: url("/about/bg-leaf-mob-1.png");
+  display: block;
+  position: absolute;
+  width: 83px;
+  height: 146px;
+  top: 10%;
+  left: 20px;
+  z-index: -1;
+}
+.section.mobile::after {
+  content: url("/about/bg-leaf-mob-2.png");
+  display: block;
+  position: absolute;
+  width: 83px;
+  height: 146px;
+  bottom: 10px;
+  right: 20px;
+  z-index: -1;
+}
+@media screen and (min-width: 768px) {
+  .section.mobile {
+    overflow: visible;
+  }
+  .section.mobile::before {
+    content: url("/about/bg-leaf-tab-1.png");
+    width: 228px;
+    height: 402px;
+    left: 0px;
+  }
+  .section.mobile::after {
+    content: url("/about/bg-leaf-tab-2.png");
+    width: 204px;
+    height: 359px;
+    bottom: -30%;
+    right: 80px;
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section.mobile {
+    display: none;
+  }
+  .section.desktop {
+    display: block;
+    overflow: visible;
+  }
+  .section.desktop::before {
+    content: url("/about/bg-leaf-1.png");
+    display: block;
+    position: absolute;
+    width: 443px;
+    height: 412px;
+    top: 8%;
+    left: 0;
+    z-index: -1;
+  }
+  .section.desktop::after {
+    content: url("/about/bg-leaf-2.png");
+    display: block;
+    position: absolute;
+    width: 443px;
+    height: 412px;
+    bottom: -25px;
+    right: 5px;
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 1024px) and (min-width: 1440px) {
+  .section::before {
+    left: 0;
+  }
+  .section::after {
+    right: 20px;
+  }
+}
+
+.accentTitle {
+  color: #0d490d;
+}
+
+@media screen and (min-width: 1024px) {
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .content .list,
+  .content .desc_wrap {
+    flex: 1;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .content .list,
+  .content .desc_wrap {
+    padding: 0 26px;
+  }
+}
+
+.item {
+  /* active */
+}
+.item:not(:last-child) {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .item:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+.item__title_wrap {
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+@media screen and (min-width: 1440px) {
+  .item__title_wrap {
+    max-width: 619px;
+  }
+}
+.item__iconWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.item__title_wrap.active {
+  position: relative;
+}
+.item__title_wrap.active::before {
+  content: url("/about/Arrow-2.svg");
+  display: inline-block;
+  position: absolute;
+  width: 48px;
+  height: 32px;
+  top: 0;
+  left: 0;
+}
+.item__title_wrap.active .item__title {
+  color: green;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+@media screen and (min-width: 768px) {
+  .item__title_wrap.active .item__title {
+    width: 632px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .item__title_wrap.active .item__title {
+    width: 386px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .item__title_wrap.active .item__title {
+    width: 495px;
+  }
+}
+.item__title_wrap.active:hover .item__title, .item__title_wrap.active:focus .item__title {
+  transform: translateX(56px);
+}
+.item__title_wrap.active .item__title {
+  transform: translateX(56px);
+}
+.item__title_wrap.active .item__arrowSmall {
+  display: none;
+}
+.item__title {
+  width: 264px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .item__title {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .item__title {
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+}
+
+.desc_wrap {
+  position: relative;
+  width: 596px;
+}
+
+.desc {
+  display: none;
+}
+.desc.active {
+  display: block;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 1024px) {
+  .desc {
+    display: block;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}/*# sourceMappingURL=goals.module.css.map */

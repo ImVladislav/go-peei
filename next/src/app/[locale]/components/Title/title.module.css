@@ -1,0 +1,42 @@
+.box {
+  display: inline-block;
+  margin-bottom: 32px;
+}
+@media screen and (min-width: 768px) {
+  .box {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .box {
+    margin-bottom: 52px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .box {
+    margin-bottom: 60px;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #141414;
+}
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+.accentTitle {
+  color: #0d490d;
+}
+
+.line {
+  height: 4px;
+  background: #0d490d;
+  transform: skew(-50deg, 0deg);
+}/*# sourceMappingURL=title.module.css.map */

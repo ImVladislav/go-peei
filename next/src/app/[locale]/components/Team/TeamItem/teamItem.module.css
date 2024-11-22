@@ -1,0 +1,125 @@
+.item {
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 320px;
+  background: #f5f8f5;
+}
+@media screen and (min-width: 768px) {
+  .item {
+    width: calc((100% - 24px) / 2);
+    height: 386px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .item {
+    border-radius: 18px;
+    padding: 16px;
+    height: 466px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .item {
+    width: calc((100% - 52px) / 3);
+    padding: 18px;
+  }
+}
+.item__container {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .item__container {
+    margin-bottom: 16px;
+  }
+}
+.item__imgWrapper {
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  min-width: 90px;
+  height: 106px;
+}
+@media screen and (min-width: 1024px) {
+  .item__imgWrapper {
+    border-radius: 10px;
+    min-width: 135px;
+    height: 159px;
+  }
+}
+.item__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+}
+.item__title {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #141414;
+}
+@media screen and (min-width: 1024px) {
+  .item__title {
+    margin-bottom: 8px;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+}
+.item__position {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 1024px) {
+  .item__position {
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+.item__email {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: underline;
+}
+.item__email img {
+  width: 24px;
+  height: 24px;
+}
+.item__email p:hover, .item__email p:focus {
+  color: #10880d;
+}
+@media screen and (min-width: 768px) {
+  .item__email {
+    font-weight: 300;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .item__email {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .item__email {
+    font-weight: 300;
+    font-size: 18px;
+  }
+}
+.item__about {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 1024px) {
+  .item__about {
+    font-size: 18px;
+  }
+}/*# sourceMappingURL=teamItem.module.css.map */

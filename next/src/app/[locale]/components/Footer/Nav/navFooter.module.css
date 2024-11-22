@@ -1,0 +1,125 @@
+.container {
+  margin: 24px 0;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    margin: 28px 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 425px) {
+  .wrap {
+    margin: 0 50px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .wrap {
+    margin: 0 100px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .wrap {
+    gap: 64px;
+    margin: 0;
+  }
+}
+
+.list {
+  display: grid;
+  grid-auto-flow: column dense;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(6, 1fr);
+  justify-content: space-between;
+  row-gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .list {
+    grid-auto-flow: column dense;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 8px;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .list {
+    gap: 8px 64px;
+  }
+}
+
+.item {
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 1024px) {
+  .item {
+    padding: 12px 8px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .item {
+    padding: 8px;
+    line-height: 1.5;
+  }
+}
+
+.link {
+  color: #141414;
+  font-weight: 300;
+  position: relative;
+  transition: color 200ms ease-in-out;
+}
+.link:hover, .link:focus {
+  color: #10880d;
+}
+.link:hover::after, .link:focus::after {
+  width: 100%;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #10880d;
+  transition: width 200ms ease-in-out;
+}
+
+.active {
+  color: #10880d;
+}
+.active::after {
+  width: 100%;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media screen and (min-width: 640px) {
+  .modal {
+    width: 90%;
+  }
+}/*# sourceMappingURL=navFooter.module.css.map */

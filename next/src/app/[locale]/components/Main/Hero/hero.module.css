@@ -1,0 +1,204 @@
+.section {
+  position: relative;
+  padding-top: 81px;
+}
+@media screen and (min-width: 768px) {
+  .section {
+    padding-top: 132px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section {
+    padding-top: 0;
+    height: 445px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section {
+    padding-top: 0;
+    height: auto;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  .inner {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .inner {
+    justify-content: space-between;
+  }
+}
+
+.column {
+  margin-bottom: 41px;
+}
+@media screen and (min-width: 768px) {
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .column {
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .column {
+    gap: 42px;
+  }
+}
+
+.sloganContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (min-width: 768px) {
+  .sloganContainer {
+    gap: 14px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sloganContainer {
+    width: 567px;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .sloganContainer {
+    gap: 12px;
+    margin-left: 3px;
+  }
+}
+
+.sloganInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+@media screen and (min-width: 1024px) {
+  .sloganInner {
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
+}
+
+.slogan {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #141414;
+}
+.slogan span {
+  color: #0d490d;
+  margin-top: 10px;
+}
+@media screen and (min-width: 768px) {
+  .slogan {
+    font-weight: 500;
+    font-size: 36px;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .slogan {
+    font-size: 40px;
+  }
+}
+
+.btnWrap {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .btnWrap {
+    display: inline-block;
+  }
+}
+
+.btn {
+  display: inline-block;
+  width: 308px;
+  height: 52px;
+  font-size: 20px;
+  padding: 12px 40px;
+}
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: 20px;
+    padding: 16px 40px;
+  }
+}
+
+.img_wrap {
+  position: relative;
+  width: 320px;
+  height: 302px;
+  margin-bottom: 48px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .img_wrap {
+    margin-bottom: 0;
+    width: 562px;
+    height: 530px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .img_wrap {
+    height: 530px;
+    margin-left: -25px;
+    margin-right: -60px;
+    z-index: -1;
+    margin-bottom: -55px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .img_wrap {
+    width: 421px;
+    height: 397px;
+    margin: 24px 0;
+  }
+}
+
+.img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 1024px) {
+  .img {
+    -o-object-position: -30px 0px;
+       object-position: -30px 0px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .btn_lastWrap {
+    display: none;
+  }
+}
+
+.btn_last {
+  width: 320px;
+  height: 40px;
+  padding: 12px 40px;
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .btn_last {
+    display: none;
+  }
+}/*# sourceMappingURL=hero.module.css.map */

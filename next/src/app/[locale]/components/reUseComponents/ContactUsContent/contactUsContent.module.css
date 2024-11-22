@@ -1,0 +1,82 @@
+.container {
+  border: 1px solid #0d490d;
+  border-radius: 18px;
+  padding: 24px;
+  background: #f5f8f5;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    border-radius: 24px;
+    padding: 36px 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    padding: 48px 60px;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (min-width: 1024px) {
+  .inner {
+    gap: 24px;
+  }
+}
+
+.img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1024px) {
+  .list {
+    width: 540px;
+  }
+}
+
+.description {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #141414;
+}
+@media screen and (min-width: 768px) {
+  .description {
+    font-size: 18px;
+  }
+}
+
+.link {
+  font-weight: 600;
+  color: #0d490d;
+  transition: all 200ms ease-in-out;
+}
+.link:hover, .link:focus {
+  color: #10880d;
+}
+
+.btn {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 308px;
+  font-size: 16px;
+  padding: 12px 40px;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    width: 308px;
+    padding: 16px 40px;
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=contactUsContent.module.css.map */

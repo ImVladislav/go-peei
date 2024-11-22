@@ -1,0 +1,74 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0 0;
+  border-top: 1px solid #0d490d;
+}
+@media screen and (min-width: 1024px) {
+  .wrap {
+    flex-direction: row;
+    padding: 28px 0 0;
+  }
+}
+
+.copy {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  color: #141414;
+}
+@media screen and (min-width: 768px) {
+  .copy {
+    text-align: start;
+    font-size: 14px;
+    margin-top: 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .copy {
+    margin: 0;
+  }
+}
+
+.inner {
+  display: flex;
+  gap: 26px;
+}
+@media screen and (min-width: 425px) {
+  .inner {
+    gap: 24px;
+  }
+}
+
+.link_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .link_wrap {
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
+.link {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #141414;
+  transition: all 200ms ease-in-out;
+}
+.link:hover, .link:focus {
+  color: #10880d;
+}
+@media screen and (min-width: 768px) {
+  .link {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=copyright.module.css.map */

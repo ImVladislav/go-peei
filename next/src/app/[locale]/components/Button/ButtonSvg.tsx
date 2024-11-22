@@ -7,7 +7,8 @@ import SvgComponent from '../SvgComponent/SvgComponent'
 
 interface iconProps {
 	nameSvg: string
-	href: string
+	href?: string
+	onClick?: () => void
 	styleSvg: string
 	fill?: string
 	fillHovered?: string
@@ -15,7 +16,8 @@ interface iconProps {
 
 const ButtonSvg = ({
 	nameSvg,
-	href,
+	href = '#',
+	onClick,
 	styleSvg,
 	fill,
 	fillHovered,
@@ -26,6 +28,7 @@ const ButtonSvg = ({
 			<Link
 				className={styleSvg}
 				href={href}
+				onClick={onClick}
 				key={nameSvg}
 				onMouseEnter={() => setIsHovered(nameSvg)}
 				onMouseLeave={() => setIsHovered('')}

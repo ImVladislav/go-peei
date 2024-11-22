@@ -1,0 +1,99 @@
+.button {
+  font-weight: 300;
+  line-height: 1;
+  text-align: center;
+  color: #fffefe;
+  border-radius: 40px 0;
+  background: #0d490d;
+  border: none;
+  transition: all 250ms ease-in-out;
+}
+.button:hover, .button:focus {
+  background: #10880d;
+}
+.button.active {
+  background: #10880d;
+}
+.button:disabled {
+  cursor: no-drop;
+  background: #adadad;
+}
+
+/* Button scroll top */
+.scrollTopBtn {
+  text-align: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1;
+  border: none;
+  border-radius: 999px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  background: #e8f1e7;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+.scrollTopBtn:hover, .scrollTopBtn:focus {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+  background: #10880d;
+}
+.scrollTopBtn > svg {
+  width: 10px;
+  height: 14px;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.closed {
+  background: #adadad;
+}
+.closed:hover, .closed:focus {
+  background: #adadad;
+}
+.closed.active {
+  background: #adadad;
+}
+@media screen and (min-width: 768px) {
+  .closed {
+    font-weight: 300;
+    line-height: 1;
+    text-align: center;
+    color: #141414;
+    border-radius: 40px 0;
+    background: #fffefe;
+    border: none;
+    transition: all 250ms ease-in-out;
+  }
+}
+
+.checked {
+  background: #adadad;
+}
+.checked:hover, .checked:focus {
+  background: #adadad;
+}
+.checked.active {
+  background: #adadad;
+}
+@media screen and (min-width: 768px) {
+  .checked {
+    font-weight: 300;
+    line-height: 1;
+    text-align: center;
+    color: #fffefe;
+    border-radius: 40px 0;
+    border: none;
+    transition: all 250ms ease-in-out;
+  }
+}/*# sourceMappingURL=button.module.css.map */

@@ -1,0 +1,69 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50%;
+  margin-bottom: 50%;
+  gap: 48px;
+}
+@media screen and (min-width: 1024px) {
+  .section {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section {
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  width: 320px;
+  height: 130px;
+}
+@media screen and (min-width: 768px) {
+  .imgContainer {
+    width: 531px;
+    height: 215px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .imgContainer {
+    width: 531px;
+    height: 215px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .imgContainer {
+    width: 531px;
+    height: 215px;
+  }
+}
+
+.desc {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+  color: #141414;
+}
+
+.btn {
+  border-radius: 40px 0;
+  padding: 16px 61px;
+  width: 320px;
+  height: 52px;
+  background: #0d490d;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    border-radius: 40px 0;
+    padding: 16px 61px;
+    width: 530px;
+    height: 52px;
+  }
+}/*# sourceMappingURL=notFound.module.css.map */

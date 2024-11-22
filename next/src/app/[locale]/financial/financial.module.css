@@ -1,0 +1,415 @@
+@charset "UTF-8";
+.section {
+  padding: 60px 0px 60px 0px;
+}
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 80px 78px 80px 78px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section {
+    padding: 100px 0px 100px 0px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section {
+    padding: 100px 0px 120px 0px;
+  }
+}
+.section__content {
+  margin: 0 auto;
+  padding: 24px 0px;
+  border-radius: 18px;
+  box-shadow: 0 0 36px 4px rgba(45, 93, 55, 0.2);
+}
+@media screen and (max-width: 767px) {
+  .section__content {
+    max-width: 532px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section__content {
+    width: 532px;
+    padding: 48px 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section__content {
+    min-width: 904px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section__content {
+    width: 937px;
+  }
+}
+.section__titleWrapper {
+  text-align: center;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .section__title {
+    font-size: 24px !important;
+  }
+}
+
+.title {
+  margin-bottom: 4px;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.headTitle {
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+@media screen and (min-width: 768px) {
+  .headTitle {
+    font-size: 18px;
+  }
+}
+
+.container_mainBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 0px 24px 0px 24px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .container_mainBlock {
+    padding: 0px 32px 0px 32px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container_mainBlock {
+    padding: 0px 36px 0px 36px;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container_mainBlock {
+    padding: 0px 48px 0px 48px;
+    gap: 32px;
+  }
+}
+
+/* left block */
+.container_leftBlock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* min-width: 272px; */
+}
+@media screen and (min-width: 768px) {
+  .container_leftBlock {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container_leftBlock {
+    width: 282px;
+  }
+}
+
+.amountBlock {
+  margin-bottom: 16px;
+}
+
+.gridContainer {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .gridContainer {
+    gap: 12px;
+  }
+}
+.gridContainer__inputWrapper {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+.gridContainer__recommendationText {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #adadad;
+}
+
+.fixedAmountDonatInput {
+  border: 1px solid #0d490d;
+  border-radius: 8px;
+  padding: 4px 16px;
+  width: 100%;
+  height: 48px;
+  background-color: white;
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+/* порадитись з Ірою. Якщо що, зробити кастомний select */
+.fixedAmountDonatBtn {
+  border: 1px solid #0d490d;
+  border-radius: 8px;
+  padding: 4px 16px;
+  width: 100%;
+  height: 48px;
+  background-color: white;
+  font-weight: 300;
+  font-size: 16px;
+}
+.fixedAmountDonatBtn.marginNone {
+  margin: 0;
+}
+
+.selectBtnWrapper {
+  position: relative;
+  display: inline-block;
+  grid-column: span 1;
+}
+.selectBtnWrapper::after {
+  content: "";
+  position: absolute;
+  top: 16%;
+  right: 14px;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../../public/financial/arrow_drop_down.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .selectBtnWrapper::after {
+    right: 34px;
+  }
+}
+.selectBtnWrapper.active::after {
+  transform: rotate(180deg);
+}
+
+/* custom select */
+.selectBtnBlock {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.selectBtn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #0d490d;
+  border-radius: 8px;
+  padding: 4px 16px;
+  width: 100%;
+  height: 48px;
+  background-color: white;
+  font-weight: 300;
+  font-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.selectBtn.active .svgIcon {
+  transition: transform 0.8s;
+  stroke: green;
+}
+@media screen and (min-width: 1240px) {
+  .selectBtn.active .svgIcon {
+    transform: rotate(180deg);
+  }
+}
+.selectBtn:hover .optionsList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.selectBtn__itemText:hover .optionsList {
+  display: block;
+  transition: transform 1.5s;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .selectBtn {
+    text-align: center;
+  }
+}
+
+.svgIcon__thumb {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svgIcon {
+  transition: transform 0.3s ease;
+}
+
+.optionsList {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  transition: transform 1.5s;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+  box-shadow: 6px 6px 2px rgba(255, 255, 255, 0.2), 5px 5px 15px rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  /* position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10; */
+}
+.optionsList.optionsListOpen {
+  display: block;
+}
+.optionsList__option {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  width: 100%;
+  /* background-color: #fff;
+  color: #333;
+  font-size: 20px; */
+}
+.optionsList__option:hover {
+  background-color: #f0f0f0;
+}
+.optionsList__item {
+  color: #000000;
+}
+
+.optionsList li:hover {
+  border-radius: 8px;
+  background: #e8f1e7;
+}
+
+.optionsList__active {
+  border-radius: 8px;
+  background: #e8f1e7;
+}
+
+.donateBtnWrapper {
+  grid-column: span 3;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (min-width: 768px) {
+  .donateBtnWrapper {
+    gap: 12px;
+  }
+}
+
+.payBtn {
+  text-align: center;
+}
+
+/* right block */
+.container_rightBlock {
+  flex-grow: 1;
+}
+@media screen and (max-width: 1240px) {
+  .container_rightBlock {
+    width: 100%;
+  }
+}
+
+.financial__title {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: #141414;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.offerLink {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+}
+
+.btnPay {
+  margin: 16px 0px;
+  border: none;
+  border-radius: 40px 0;
+  padding: 16px 40px;
+  width: 272px;
+  height: 52px;
+  background: #0d490d;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+  color: #fffefe;
+  transition: all 250ms ease-in-out;
+}
+.btnPay:hover, .btnPay:focus {
+  background: #10880d;
+}
+
+.bankDetailsBlock__infoField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bankDetailsBlock__subTitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.bankDetailsBlock__descriptionBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.bankDetailsBlock__descriptionBlock__text {
+  min-width: 244px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+.bankDetailsBlock__descriptionBlock__copyBtn {
+  border: none;
+  background-color: transparent;
+  margin-left: 4px;
+}
+
+.modal__content {
+  padding: 30px 55px 50px;
+}
+
+.modal__paymentIcomThumb {
+  width: 146px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}/*# sourceMappingURL=financial.module.css.map */
